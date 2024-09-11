@@ -68,7 +68,7 @@ params:
     imageTitle: my image
     buttons:
       - name: Learning
-        url: Learning
+        url: learning
       - name: Ideas
         url: ideas
       - name: Academic
