@@ -17,7 +17,7 @@ params:
   title: Ryan's Blog
   description: "Ryan's Blog"
   keywords: [Blog, Portfolio, PaperMod]
-  author: Me
+  author: Ryan Ming
   # author: ["Me", "You"] # multiple authors
   images: ["<link or path of image for opengraph, twitter-cards>"]
   DateFormat: "January 2, 2006"
@@ -68,6 +68,8 @@ params:
         url: learning
       - name: Tags
         url: tags
+      - name: Ideas
+        url: ideas
 
   # home-info mode
   homeInfoParams:
@@ -115,18 +117,18 @@ params:
     keys: ["title", "permalink", "summary", "content"]
 menu:
   main:
-    - identifier: categories
-      name: categories
-      url: /categories/
+    - identifier: Learning
+      name: learning
+      url: /learning/
       weight: 10
-    - identifier: tags
-      name: tags
-      url: /tags/
+    - identifier: Academic
+      name: academic
+      url: /ryanming-portfolio/
       weight: 20
-    - identifier: example
-      name: example.org
-      url: https://example.org
-      weight: 30
+    # - identifier: example
+    #   name: example.org
+    #   url: https://example.org
+    #   weight: 30
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
 markup:
