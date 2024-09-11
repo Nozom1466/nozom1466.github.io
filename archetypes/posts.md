@@ -2,7 +2,6 @@
 title: '{{ replace .File.ContentBaseName "-" " " | title }}'
 date: {{ .Date }}
 slug:
-category:
 summary:
 description:
 cover:
@@ -12,4 +11,6 @@ cover:
     relative: false
 showtoc: false
 draft: false
+tags: []
+categories:
 ---

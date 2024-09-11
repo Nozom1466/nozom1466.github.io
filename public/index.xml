@@ -26,7 +26,12 @@
       <pubDate>Wed, 11 Sep 2024 17:41:15 +0800</pubDate>
       <guid>http://localhost:1313/learning/tutorials/hugo/</guid>
       <description>&lt;h3 id=&#34;installation&#34;&gt;Installation&lt;/h3&gt;
-&lt;p&gt;Tutorial for hugo site setup!&lt;/p&gt;</description>
+&lt;p&gt;Tutorial for hugo site setup!&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-git&#34; data-lang=&#34;git&#34;&gt;git branch -M main
+git add .
+git commit -m &amp;#34;update&amp;#34;
+git push origin main
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
   </channel>
 </rss>

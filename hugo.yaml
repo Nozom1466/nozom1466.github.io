@@ -12,12 +12,15 @@ minify:
   disableXML: true
   minifyOutput: true
 
+
+
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: Ryan's Blog
   description: "Ryan's Blog"
   keywords: [Blog, Portfolio, PaperMod]
   author: Ryan Ming
+  tags: ["Anime"]
   # author: ["Me", "You"] # multiple authors
   images: ["<link or path of image for opengraph, twitter-cards>"]
   DateFormat: "January 2, 2006"
@@ -65,11 +68,11 @@ params:
     imageTitle: my image
     buttons:
       - name: Learning
-        url: learning
-      - name: Tags
-        url: tags
+        url: Learning
       - name: Ideas
         url: ideas
+      - name: Academic
+        url: ryanming-portfolio
       
 
   # home-info mode
@@ -119,13 +122,17 @@ params:
 menu:
   main:
     - identifier: Learning
-      name: learning
+      name: Learning
       url: /learning/
       weight: 10
     - identifier: Academic
-      name: academic
+      name: Academic
       url: /ryanming-portfolio/
       weight: 20
+    - identifier: Tags
+      name: Tags
+      url: /tags/
+      weight: 25
     - identifier: Archive
       name: Archive
       url: /archives/

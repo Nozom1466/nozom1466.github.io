@@ -7,3 +7,11 @@ draft = false
 ### Installation
 
 Tutorial for hugo site setup!
+
+
+```git
+git branch -M main
+git add .
+git commit -m "update"
+git push origin main
+```
