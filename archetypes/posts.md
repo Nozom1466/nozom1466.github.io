@@ -4,12 +4,12 @@ date: {{ .Date }}
 slug:
 category:
 summary:
-description: Same as summary
+description:
 cover:
     image:
     alt:
     caption:
     relative: false
-showtoc: true
+showtoc: false
 draft: false
 ---

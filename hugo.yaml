@@ -25,7 +25,7 @@ params:
   disableThemeToggle: false
 
   ShowReadingTime: true
-  ShowShareButtons: true
+  ShowShareButtons: false
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: true
@@ -70,6 +70,7 @@ params:
         url: tags
       - name: Ideas
         url: ideas
+      
 
   # home-info mode
   homeInfoParams:
@@ -113,7 +114,7 @@ params:
     distance: 1000
     threshold: 0.4
     minMatchCharLength: 0
-    limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
+    # limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
     keys: ["title", "permalink", "summary", "content"]
 menu:
   main:
@@ -125,6 +126,14 @@ menu:
       name: academic
       url: /ryanming-portfolio/
       weight: 20
+    - identifier: Archive
+      name: Archive
+      url: /archives/
+      weight: 30
+    - identifier: Search
+      name: Search
+      url: /search/
+      weight: 40
     # - identifier: example
     #   name: example.org
     #   url: https://example.org
@@ -139,3 +148,9 @@ markup:
     # guessSyntax: true
     # lineNos: true
     # style: monokai
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON

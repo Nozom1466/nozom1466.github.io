@@ -17,6 +17,8 @@
     <loc>http://localhost:1313/learning/</loc>
     <lastmod>2024-09-11T17:41:15+08:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/archives/</loc>
+  </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
