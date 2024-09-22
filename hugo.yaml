@@ -20,20 +20,21 @@ params:
   description: "Ryan's Blog"
   keywords: [Blog, Portfolio, PaperMod]
   author: Ryan Ming
-  tags: ["Anime"]
   # author: ["Me", "You"] # multiple authors
   images: ["<link or path of image for opengraph, twitter-cards>"]
   DateFormat: "January 2, 2006"
   defaultTheme: auto # dark, light
   disableThemeToggle: false
+  math: true
 
-  ShowReadingTime: true
+  ShowReadingTime: false
   ShowShareButtons: false
-  ShowPostNavLinks: true
+  ShowPostNavLinks: false
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: true
   ShowWordCount: true
-  ShowRssButtonInSectionTermList: true
+  ShowRssButtonInSectionTermList: false
+  ShowAllPagesInArchive: true
   UseHugoToc: true
   disableSpecial1stPost: false
   disableScrollToTop: false
@@ -42,6 +43,7 @@ params:
   hideSummary: false
   showtoc: false
   tocopen: false
+
 
   assets:
     # disableHLJS: true # to disable highlight.js
@@ -99,14 +101,14 @@ params:
       SiteVerificationTag: "XYZabc"
 
   cover:
-    hidden: true # hide everywhere but not in structured data
-    hiddenInList: true # hide on list pages and home
-    hiddenInSingle: true # hide on single page
+    hidden: false # hide everywhere but not in structured data
+    hiddenInList: false # hide on list pages and home
+    hiddenInSingle: false # hide on single page
 
-  editPost:
-    URL: "https://github.com/<path_to_repo>/content"
-    Text: "Suggest Changes" # edit text
-    appendFilePath: true # to append file path to Edit link
+  # editPost:
+  #   URL: "https://github.com/<path_to_repo>/content"
+  #   Text: "Suggest Changes" # edit text
+  #   appendFilePath: true # to append file path to Edit link
 
   # for search
   # https://fusejs.io/api/options.html
@@ -125,6 +127,10 @@ menu:
       name: Learning
       url: /learning/
       weight: 10
+    - identifier: Ideas
+      name: Ideas
+      url: /ideas/
+      weight: 15
     - identifier: Academic
       name: Academic
       url: /ryanming-portfolio/
@@ -155,6 +161,17 @@ markup:
     # guessSyntax: true
     # lineNos: true
     # style: monokai
+  goldmark:
+    extensions:
+      passthrough:
+        delimiters:
+          block:
+          - - $$
+            - $$
+          inline:
+          - - '@'
+            - '@'
+        enable: true
 
 outputs:
   home:

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Ideas on Ryan&#39;s Blog</title>
-    <link>http://localhost:1313/ideas/</link>
-    <description>Recent content in Ideas on Ryan&#39;s Blog</description>
+    <title>Movie on Ryan&#39;s Blog</title>
+    <link>http://localhost:1313/tags/movie/</link>
+    <description>Recent content in Movie on Ryan&#39;s Blog</description>
     <image>
       <title>Ryan&#39;s Blog</title>
       <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
@@ -12,7 +12,7 @@
     <generator>Hugo -- 0.134.1</generator>
     <language>en</language>
     <lastBuildDate>Sun, 22 Sep 2024 15:30:42 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/ideas/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/movie/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>花束みたいな恋をした 坂元裕二</title>
       <link>http://localhost:1313/ideas/%E8%8A%B1%E6%9D%9F%E3%81%BF%E3%81%9F%E3%81%84%E3%81%AA%E6%81%8B%E3%82%92%E3%81%97%E3%81%9F-%E5%9D%82%E5%85%83%E8%A3%95%E4%BA%8C/</link>

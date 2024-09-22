@@ -11,15 +11,38 @@
     </image>
     <generator>Hugo -- 0.134.1</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 11 Sep 2024 17:41:15 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 22 Sep 2024 15:08:10 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/learning/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Hugo Blog Setup</title>
-      <link>http://localhost:1313/learning/tutorials/hugo/</link>
-      <pubDate>Wed, 11 Sep 2024 17:41:15 +0800</pubDate>
-      <guid>http://localhost:1313/learning/tutorials/hugo/</guid>
-      <description>&lt;h3 id=&#34;installation&#34;&gt;Installation&lt;/h3&gt;
-&lt;p&gt;Tutorial for hugo site setup!&lt;/p&gt;
+      <title>Hugo Feature Test</title>
+      <link>http://localhost:1313/learning/hugo/hugo-feature-test/</link>
+      <pubDate>Sun, 22 Sep 2024 15:08:10 +0800</pubDate>
+      <guid>http://localhost:1313/learning/hugo/hugo-feature-test/</guid>
+      <description>&lt;h3 id=&#34;text&#34;&gt;Text&lt;/h3&gt;
+&lt;p&gt;This is a plain text. Text with &lt;strong&gt;Stress&lt;/strong&gt;, &lt;em&gt;Italic&lt;/em&gt;, &lt;del&gt;Del line&lt;/del&gt;. Text with &lt;code&gt;inline item&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;GIF&lt;!-- raw HTML omitted --&gt; is a bitmap image format.&lt;/p&gt;
+&lt;p&gt;H&lt;!-- raw HTML omitted --&gt;2&lt;!-- raw HTML omitted --&gt;O&lt;/p&gt;
+&lt;p&gt;X&lt;!-- raw HTML omitted --&gt;n&lt;!-- raw HTML omitted --&gt; + Y&lt;!-- raw HTML omitted --&gt;n&lt;!-- raw HTML omitted --&gt; = Z&lt;!-- raw HTML omitted --&gt;n&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hugo Setup</title>
+      <link>http://localhost:1313/learning/hugo/setup/</link>
+      <pubDate>Sun, 22 Sep 2024 14:40:51 +0800</pubDate>
+      <guid>http://localhost:1313/learning/hugo/setup/</guid>
+      <description>&lt;h3 id=&#34;why-hugo&#34;&gt;Why Hugo&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Hugo是由Go语言实现的静态网站生成器。简单、易用、高效、易扩展、快速部署。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;download&#34;&gt;Download&lt;/h3&gt;
+&lt;h3 id=&#34;themes&#34;&gt;Themes&lt;/h3&gt;
+&lt;h3 id=&#34;create-new-page&#34;&gt;Create new page&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-Linux&#34; data-lang=&#34;Linux&#34;&gt;hugo new &amp;lt;sub/content/in/content/folder&amp;gt;/name.md
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;tips&#34;&gt;Tips&lt;/h3&gt;
+&lt;h4 id=&#34;archives&#34;&gt;Archives&lt;/h4&gt;
+&lt;h4 id=&#34;search&#34;&gt;Search&lt;/h4&gt;
+&lt;h4 id=&#34;tags&#34;&gt;Tags&lt;/h4&gt;
+&lt;h3 id=&#34;deployment&#34;&gt;Deployment&lt;/h3&gt;
+&lt;h3 id=&#34;updates&#34;&gt;Updates&lt;/h3&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-git&#34; data-lang=&#34;git&#34;&gt;git branch -M main
 git add .
 git commit -m &amp;#34;update&amp;#34;

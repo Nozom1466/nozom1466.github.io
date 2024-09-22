@@ -11,13 +11,20 @@
     </image>
     <generator>Hugo -- 0.134.1</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 11 Sep 2024 20:14:33 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 22 Sep 2024 15:30:42 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Anime</title>
-      <link>http://localhost:1313/tags/anime/</link>
-      <pubDate>Wed, 11 Sep 2024 20:14:33 +0800</pubDate>
-      <guid>http://localhost:1313/tags/anime/</guid>
+      <title>Movie</title>
+      <link>http://localhost:1313/tags/movie/</link>
+      <pubDate>Sun, 22 Sep 2024 15:30:42 +0800</pubDate>
+      <guid>http://localhost:1313/tags/movie/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hugo</title>
+      <link>http://localhost:1313/tags/hugo/</link>
+      <pubDate>Sun, 22 Sep 2024 15:08:10 +0800</pubDate>
+      <guid>http://localhost:1313/tags/hugo/</guid>
       <description></description>
     </item>
   </channel>
