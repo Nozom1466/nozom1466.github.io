@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Japanese on Ryan&#39;s Blog</title>
+    <link>http://localhost:1313/tags/japanese/</link>
+    <description>Recent content in Japanese on Ryan&#39;s Blog</description>
+    <image>
+      <title>Ryan&#39;s Blog</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.134.1</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 28 Sep 2024 19:59:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/japanese/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>日语输入法</title>
+      <link>http://localhost:1313/learning/japanese/%E6%97%A5%E8%AF%AD%E8%BE%93%E5%85%A5%E6%B3%95/</link>
+      <pubDate>Sat, 28 Sep 2024 19:59:00 +0800</pubDate>
+      <guid>http://localhost:1313/learning/japanese/%E6%97%A5%E8%AF%AD%E8%BE%93%E5%85%A5%E6%B3%95/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

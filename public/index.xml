@@ -11,20 +11,64 @@
     </image>
     <generator>Hugo -- 0.134.1</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 22 Sep 2024 15:30:42 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 28 Sep 2024 20:16:09 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>花束みたいな恋をした 坂元裕二</title>
-      <link>http://localhost:1313/ideas/%E8%8A%B1%E6%9D%9F%E3%81%BF%E3%81%9F%E3%81%84%E3%81%AA%E6%81%8B%E3%82%92%E3%81%97%E3%81%9F-%E5%9D%82%E5%85%83%E8%A3%95%E4%BA%8C/</link>
-      <pubDate>Sun, 22 Sep 2024 15:30:42 +0800</pubDate>
-      <guid>http://localhost:1313/ideas/%E8%8A%B1%E6%9D%9F%E3%81%BF%E3%81%9F%E3%81%84%E3%81%AA%E6%81%8B%E3%82%92%E3%81%97%E3%81%9F-%E5%9D%82%E5%85%83%E8%A3%95%E4%BA%8C/</guid>
+      <title>Llama 源码学习</title>
+      <link>http://localhost:1313/learning/llm/llama-%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Sat, 28 Sep 2024 20:16:09 +0800</pubDate>
+      <guid>http://localhost:1313/learning/llm/llama-%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/</guid>
       <description></description>
     </item>
     <item>
-      <title>Love Letter 岩井俊二</title>
-      <link>http://localhost:1313/ideas/love-letter-%E5%B2%A9%E4%BA%95%E4%BF%8A%E4%BA%8C/</link>
-      <pubDate>Sun, 22 Sep 2024 15:25:15 +0800</pubDate>
-      <guid>http://localhost:1313/ideas/love-letter-%E5%B2%A9%E4%BA%95%E4%BF%8A%E4%BA%8C/</guid>
+      <title>木头窗户与烘焙味的阳光</title>
+      <link>http://localhost:1313/ideas/%E6%9C%A8%E5%A4%B4%E7%AA%97%E6%88%B7%E4%B8%8E%E7%83%98%E7%84%99%E5%91%B3%E7%9A%84%E9%98%B3%E5%85%89/</link>
+      <pubDate>Sat, 28 Sep 2024 20:13:01 +0800</pubDate>
+      <guid>http://localhost:1313/ideas/%E6%9C%A8%E5%A4%B4%E7%AA%97%E6%88%B7%E4%B8%8E%E7%83%98%E7%84%99%E5%91%B3%E7%9A%84%E9%98%B3%E5%85%89/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>日语输入法</title>
+      <link>http://localhost:1313/learning/japanese/%E6%97%A5%E8%AF%AD%E8%BE%93%E5%85%A5%E6%B3%95/</link>
+      <pubDate>Sat, 28 Sep 2024 19:59:00 +0800</pubDate>
+      <guid>http://localhost:1313/learning/japanese/%E6%97%A5%E8%AF%AD%E8%BE%93%E5%85%A5%E6%B3%95/</guid>
+      <description>&lt;h3 id=&#34;安装与切换语言&#34;&gt;安装与切换语言&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;安装：（Windows10）设置 -&amp;gt; 时间和语言 -&amp;gt; 语言 -&amp;gt; 首选语言 -&amp;gt; 添加语言 -&amp;gt; 日语&lt;/li&gt;
+&lt;li&gt;切换语言： &lt;code&gt;Alt + Shift&lt;/code&gt; 或者 &lt;code&gt;Windows + Space&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;切换相关&#34;&gt;切换相关&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Ctrl + caps lock&lt;/code&gt;： 片假名输入切换为平假名输入&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Alt + caps lock&lt;/code&gt;：平假名输入切换为片假名输入&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;F6&lt;/code&gt;: 片假名输入过程切换为平假名&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;F7&lt;/code&gt;: 平假名输入过程切换为片假名&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;F8&lt;/code&gt;: 变窄 (ｹｰｷ)&lt;/li&gt;
+&lt;li&gt;使用 Alt + ` 切换日文与英文&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;输入&#34;&gt;输入&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;长音&lt;/strong&gt; 按照字面音打字，片假名长音打减号&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;高校（こうこう）koukou&lt;/li&gt;
+&lt;li&gt;コーヒー　ko-hi-&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;拨音&lt;/strong&gt; 两个 n&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;任務（にんむ）ninnmu&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;促音&lt;/strong&gt; 促音后的音的辅音重复&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;実際（じっさい）jissai&lt;/li&gt;
+&lt;li&gt;雑誌（ざっし）zasshi&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;拗音与外来语特殊拗音&lt;/strong&gt;
+正常拗音正常输入，小写字符前加 &lt;code&gt;x&lt;/code&gt; 或者 &lt;code&gt;l&lt;/code&gt;, 记得写片假名切换 &lt;code&gt;Alt + caps lock&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>另一维的诗歌</title>
+      <link>http://localhost:1313/ideas/%E5%8F%A6%E4%B8%80%E7%BB%B4%E7%9A%84%E8%AF%97%E6%AD%8C/</link>
+      <pubDate>Sat, 28 Sep 2024 19:43:53 +0800</pubDate>
+      <guid>http://localhost:1313/ideas/%E5%8F%A6%E4%B8%80%E7%BB%B4%E7%9A%84%E8%AF%97%E6%AD%8C/</guid>
       <description></description>
     </item>
     <item>

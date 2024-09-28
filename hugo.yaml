@@ -1,6 +1,8 @@
 baseURL: "https://nozom1466.github.io/"
 title: Ryan's Blog
-paginate: 5
+# paginate: 5
+pagiantion:
+  pagerSize: 5
 theme: PaperMod
 
 enableRobotsTXT: true
