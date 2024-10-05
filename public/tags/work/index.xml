@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Work on Ryan&#39;s Blog</title>
+    <link>http://localhost:1313/tags/work/</link>
+    <description>Recent content in Work on Ryan&#39;s Blog</description>
+    <image>
+      <title>Ryan&#39;s Blog</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.134.1</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 04 Oct 2024 14:59:49 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/work/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>海外工作 身份篇</title>
+      <link>http://localhost:1313/learning/overseas/%E6%B5%B7%E5%A4%96%E5%B7%A5%E4%BD%9C-%E8%BA%AB%E4%BB%BD%E7%AF%87/</link>
+      <pubDate>Fri, 04 Oct 2024 14:59:49 +0800</pubDate>
+      <guid>http://localhost:1313/learning/overseas/%E6%B5%B7%E5%A4%96%E5%B7%A5%E4%BD%9C-%E8%BA%AB%E4%BB%BD%E7%AF%87/</guid>
+      <description>&lt;p&gt;一直对于海外工作所需要的身份、签证、时间线等不太了解。在申请前了解一下也不是坏事，毕竟还有一部分项目是 &lt;code&gt;MEng&lt;/code&gt; 类型的，找工/科研时间都非常紧张。&lt;/p&gt;
+&lt;h2 id=&#34;heading&#34;&gt;&lt;/h2&gt;</description>
+    </item>
+  </channel>
+</rss>

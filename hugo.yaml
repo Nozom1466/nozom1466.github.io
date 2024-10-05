@@ -34,7 +34,7 @@ params:
   ShowPostNavLinks: false
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: true
-  ShowWordCount: true
+  ShowWordCount: false
   ShowRssButtonInSectionTermList: false
   ShowAllPagesInArchive: true
   UseHugoToc: true
