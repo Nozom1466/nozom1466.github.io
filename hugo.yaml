@@ -47,7 +47,7 @@ params:
   tocopen: false
 
   customcss:
-    - css/mod.css
+    - "/css/mod.css"
 
   assets:
     # disableHLJS: true # to disable highlight.js
