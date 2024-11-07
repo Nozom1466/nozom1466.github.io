@@ -43,9 +43,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: master
           submodules: recursive
           fetch-depth: 0
+          ref: master
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
