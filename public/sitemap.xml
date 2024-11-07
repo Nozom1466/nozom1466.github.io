@@ -2,19 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/tags/essay/</loc>
-    <lastmod>2024-10-05T13:10:59+08:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/ideas/</loc>
-    <lastmod>2024-10-05T13:10:59+08:00</lastmod>
+    <lastmod>2024-10-30T23:39:11+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/review/</loc>
-    <lastmod>2024-10-05T13:10:59+08:00</lastmod>
+    <lastmod>2024-10-30T23:39:11+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/ideas/rich-dad-poor-dad-review/</loc>
+    <lastmod>2024-10-30T23:39:11+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2024-10-05T13:10:59+08:00</lastmod>
+    <lastmod>2024-10-30T23:39:11+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2024-10-30T23:39:11+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/essay/</loc>
     <lastmod>2024-10-05T13:10:59+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/ideas/%E9%A4%98%E5%91%BD-7-%E5%B9%B4/</loc>

@@ -174,9 +174,13 @@ markup:
           - - '@'
             - '@'
         enable: true
+    renderer:
+      hardWraps: true
 
 outputs:
   home:
     - HTML
     - RSS
     - JSON
+
+
