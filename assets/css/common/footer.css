@@ -26,6 +26,11 @@
     border-bottom: 1px solid var(--secondary);
 }
 
+.footer .busuanzi-counter {
+    color: inherit;
+    border-bottom: none;
+}
+
 .footer a:hover {
     border-bottom: 1px solid var(--primary);
 }

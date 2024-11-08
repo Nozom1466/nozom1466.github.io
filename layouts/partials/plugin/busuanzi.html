@@ -1,0 +1,44 @@
+{{ if .params.enable }}
+    {{ if eq .bsz_type "footer" }}
+        <script async src=" //busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js "></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
+    {{ end }}
+
+    {{ if or (eq .params.site_pv true) (eq .params.site_uv true) (eq .params.page_pv true) }}
+        {{ if eq .bsz_type "footer" }}
+            <a class="busuanzi-counter">
+                {{ if eq .params.site_pv true }}
+                    <span id="busuanzi_container_value_site_pv">
+                        {{- with .params.page_pv_pre -}}
+                            {{ . | safeHTML }}
+                        {{ end }}
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                {{ end }}
+
+                {{ if and (eq .params.site_pv true) (eq .params.site_uv true) }}
+                    &nbsp;|&nbsp;              
+                {{ end }}
+
+                {{ if eq .params.site_uv true }}
+                    <span id="busuanzi_container_value_site_uv">
+                        {{- with .params.site_uv_pre -}}
+                            {{ . | safeHTML }}
+                        {{ end }}
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                {{ end }}
+            </a>
+        {{ end }}
+
+        {{ if and (eq .params.page_pv true) (eq .bsz_type "page-reading") }}
+            <span id="busuanzi_container_value_page_pv">
+                {{- with .params.page_pv_pre -}}
+                    {{ . | safeHTML }}
+                {{ end }}
+                <span id="busuanzi_value_page_pv"></span>&nbsp;
+                {{- T "views" -}}
+            </span>
+        {{ end }}
+    {{ end }}
+{{ end }}
