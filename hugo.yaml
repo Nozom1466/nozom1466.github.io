@@ -48,23 +48,14 @@ params:
 
   busuanzi:
     enable: true
-    # 是否开启全站独立访客数
-    site_uv: true
-    # 全站独立访客数前的图标或提示语
-    site_uv_pre: '<i class="fa fa-user"></i>' 
-    # 全站独立访客数后的图标或提示语
-    site_uv_post: ''
-    # 是否开启全站浏览量
-    site_pv: true
-    # 全站浏览量前的图标或提示语
+    site_uv: true  # user
+    site_uv_pre: '<i class="fa fa-user"></i>'  # user hint front
+    site_uv_post: ''  # user hint back
+    site_pv: true  # click
     site_pv_pre: '<i class="fa fa-eye"></i>'
-    # 全站浏览量后的图标或提示语
     site_pv_post: ''
-    # 是否开启单页浏览量
-    page_pv: true
-    # 单页浏览量前的图标或提示语
+    page_pv: true  # page
     page_pv_pre: '<i class="far fa-eye fa-fw"></i>'
-    # 单页浏览量后的图标或提示语
     page_pv_post: ''
 
 
@@ -79,7 +70,7 @@ params:
 
   label:
     text: "Home"
-    icon: "/meta/apple-touch-icon.png"
+    icon: "/meta/favicon.ico"
     iconHeight: 35
 
   # profile-mode
