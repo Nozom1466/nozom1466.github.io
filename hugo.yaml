@@ -96,8 +96,6 @@ params:
     Title: "Hi there 1 \U0001F44B"
     Content: Welcome to my blog
 
-
-
   socialIcons:
     - name: x
       url: "https://x.com/NozomiKasa1466"
