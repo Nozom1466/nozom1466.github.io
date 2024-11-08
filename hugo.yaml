@@ -70,7 +70,7 @@ params:
 
   label:
     text: "Home"
-    icon: "/meta/favicon.ico"
+    icon: "/meta/favicon-16x16.png"
     iconHeight: 35
 
   # profile-mode
