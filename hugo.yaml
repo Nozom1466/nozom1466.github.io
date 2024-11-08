@@ -70,8 +70,8 @@ params:
 
   label:
     text: "Home"
-    icon: "/meta/android-chrome-192x192.png"
-    iconHeight: 35
+    # icon: "/meta/android-chrome-192x192.png"
+    iconHeight: 20
 
   # profile-mode
   profileMode:
