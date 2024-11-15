@@ -11,8 +11,21 @@
     </image>
     <generator>Hugo -- 0.134.1</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 28 Sep 2024 19:59:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 15 Nov 2024 22:37:35 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>COS597G 22 Introduction</title>
+      <link>http://localhost:1313/learning/llm/cos597g-22-introduction/</link>
+      <pubDate>Fri, 15 Nov 2024 22:37:35 +0800</pubDate>
+      <guid>http://localhost:1313/learning/llm/cos597g-22-introduction/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.cs.princeton.edu/courses/archive/fall22/cos597G/&#34;&gt;Homepage&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;human-language-understanding--reasoning&#34;&gt;Human Language Understanding &amp;amp; Reasoning&lt;/h2&gt;
+&lt;p&gt;Introductory reading authored by &lt;a href=&#34;https://nlp.stanford.edu/~manning/&#34;&gt;Christopher D. Manning&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;brief-introduction-of-nlp-history&#34;&gt;Brief introduction of NLP history&lt;/h3&gt;
+&lt;p&gt;The NLP history is divided into four sections, running from the middle of last century to 2 years ago. NLP starts with machine translation in Cold War 1950 - 1969, when researchers on both sides sought to develop systems capable of translating the scientific output of the other nations. The NLP system provided little more the word-level lookups and some simple principle-based mechanisms.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>日语输入法</title>
       <link>http://localhost:1313/learning/japanese/%E6%97%A5%E8%AF%AD%E8%BE%93%E5%85%A5%E6%B3%95/</link>

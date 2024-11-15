@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>LLM on Ryan&#39;s Blog</title>
-    <link>http://localhost:1313/tags/llm/</link>
-    <description>Recent content in LLM on Ryan&#39;s Blog</description>
+    <title>COS597G:2022 on Ryan&#39;s Blog</title>
+    <link>http://localhost:1313/tags/cos597g2022/</link>
+    <description>Recent content in COS597G:2022 on Ryan&#39;s Blog</description>
     <image>
       <title>Ryan&#39;s Blog</title>
       <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
@@ -12,7 +12,7 @@
     <generator>Hugo -- 0.134.1</generator>
     <language>en</language>
     <lastBuildDate>Fri, 15 Nov 2024 22:37:35 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/llm/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/cos597g2022/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>COS597G 22 Introduction</title>
       <link>http://localhost:1313/learning/llm/cos597g-22-introduction/</link>

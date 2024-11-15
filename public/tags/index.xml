@@ -11,8 +11,22 @@
     </image>
     <generator>Hugo -- 0.134.1</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 30 Oct 2024 23:39:11 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 15 Nov 2024 22:37:35 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>COS597G:2022</title>
+      <link>http://localhost:1313/tags/cos597g2022/</link>
+      <pubDate>Fri, 15 Nov 2024 22:37:35 +0800</pubDate>
+      <guid>http://localhost:1313/tags/cos597g2022/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LLM</title>
+      <link>http://localhost:1313/tags/llm/</link>
+      <pubDate>Fri, 15 Nov 2024 22:37:35 +0800</pubDate>
+      <guid>http://localhost:1313/tags/llm/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Review</title>
       <link>http://localhost:1313/tags/review/</link>

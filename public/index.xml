@@ -11,8 +11,21 @@
     </image>
     <generator>Hugo -- 0.134.1</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 30 Oct 2024 23:39:11 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 15 Nov 2024 22:37:35 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>COS597G 22 Introduction</title>
+      <link>http://localhost:1313/learning/llm/cos597g-22-introduction/</link>
+      <pubDate>Fri, 15 Nov 2024 22:37:35 +0800</pubDate>
+      <guid>http://localhost:1313/learning/llm/cos597g-22-introduction/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.cs.princeton.edu/courses/archive/fall22/cos597G/&#34;&gt;Homepage&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;human-language-understanding--reasoning&#34;&gt;Human Language Understanding &amp;amp; Reasoning&lt;/h2&gt;
+&lt;p&gt;Introductory reading authored by &lt;a href=&#34;https://nlp.stanford.edu/~manning/&#34;&gt;Christopher D. Manning&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;brief-introduction-of-nlp-history&#34;&gt;Brief introduction of NLP history&lt;/h3&gt;
+&lt;p&gt;The NLP history is divided into four sections, running from the middle of last century to 2 years ago. NLP starts with machine translation in Cold War 1950 - 1969, when researchers on both sides sought to develop systems capable of translating the scientific output of the other nations. The NLP system provided little more the word-level lookups and some simple principle-based mechanisms.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Rich Dad Poor Dad Review</title>
       <link>http://localhost:1313/ideas/rich-dad-poor-dad-review/</link>
@@ -37,9 +50,9 @@
 &lt;blockquote&gt;
 &lt;p&gt;未知生，焉知死？ ——《论语 · 先进篇》&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;我当时是不以为然，毕竟高中生想法的倔劲谁都有过感受，现在回想起来不禁有些感动。海德格尔在《存在与时间》中有过向死而生的表述，在茉莉的生活中，这份想死而生的心情表达的淋漓尽致。有时候我会胡乱瞎想，如果我真的得了什么绝症，那最后那几年一定是我未来人生中最精彩的几年吧，那种生活的色彩一定会超过过去单色生活的总和。我们意识不到过于遥远的终点，在当下似乎漫漫的旅途当中做些无关紧要的小事浪费时间也不会影响下一段旅程。&lt;/p&gt;
+&lt;p&gt;我当时是不以为然，毕竟高中生想法的倔劲谁都有过感受，现在回想起来不禁有些感动。海德格尔在《存在与时间》中有过向死而生的表述，在茉莉的生活中，这份因死而生的心情表达的淋漓尽致。有时候我会胡乱瞎想，如果我真的得了什么绝症，那最后存活的那几年一定是我未来人生中最精彩的几年吧，那种生活的色彩一定会超过过去单色生活的总和。我们意识不到过于遥远的终点，在当下似乎漫漫的旅途当中做些无关紧要的小事浪费时间也不会影响下一段旅程。&lt;/p&gt;
 &lt;p&gt;所以七年的时间节点突然跳了出来。&lt;/p&gt;
-&lt;p&gt;在七年之后我可以说“我”一定会死亡，那么在这之前我想有怎样的生活呢？站在第四个七年的起点处，我希望在七年之后的我可以带着七年充满生命力的生活回忆满足地走入生理周期的坟墓，然后由下一个我开启另一端向死而生的旅程。&lt;/p&gt;
+&lt;p&gt;在七年之后我可以说“我”一定会死亡，那么在这之前我想有怎样的生活呢？站在第四个七年的起点处，我希望在七年之后的我可以带着七年充满生命力的生活回忆满足地走入生理周期的坟墓，然后由下一个我开启另一段向死而生的旅程。&lt;/p&gt;
 &lt;p&gt;我想稍稍修改一下小坂流加老师的作品名称：&lt;/p&gt;
 &lt;p&gt;餘命 7 年。&lt;/p&gt;</description>
     </item>
