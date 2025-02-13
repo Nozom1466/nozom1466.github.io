@@ -196,3 +196,9 @@ Because the model produces the outputs one at a time, we can assume that the mod
 [1] C. D. Manning, "Human Language Understanding & Reasoning," journal-article, 2022. [Online]. Available: https://www.amacad.org/sites/default/files/publication/downloads/Daedalus_Sp22_09_Manning.pdf
 [2] A. Vaswani et al., "Attention Is All You Need," arXiv.org, Jun. 12, 2017. https://arxiv.org/abs/1706.03762
 [3] J. Alammar, "The Illustrated Transformer." https://jalammar.github.io/illustrated-transformer/
+
+
+
+
+
+

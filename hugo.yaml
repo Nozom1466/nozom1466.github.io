@@ -87,8 +87,10 @@ params:
         url: learning
       - name: Ideas
         url: ideas
-      - name: Academic
-        url: ryanming-portfolio
+      # - name: Academic
+      #   url: ryanming-portfolio
+      - name: Travel
+        url: travel
       
 
   # home-info mode
@@ -142,6 +144,10 @@ menu:
     - identifier: Ideas
       name: Ideas
       url: /ideas/
+      weight: 15
+    - identifier: Travel
+      name: Travel
+      url: /travel/
       weight: 15
     - identifier: Academic
       name: Academic
