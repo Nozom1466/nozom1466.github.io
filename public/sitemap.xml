@@ -2,28 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/tags/cookbook/</loc>
-    <lastmod>2025-02-13T17:48:43+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/japan/</loc>
-    <lastmod>2025-02-13T17:48:43+08:00</lastmod>
+    <loc>http://localhost:1313/ideas/</loc>
+    <lastmod>2025-02-25T22:45:34+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-02-13T17:48:43+08:00</lastmod>
+    <lastmod>2025-02-25T22:45:34+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-02-13T17:48:43+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/travel/</loc>
-    <lastmod>2025-02-13T17:48:43+08:00</lastmod>
+    <loc>http://localhost:1313/learning/</loc>
+    <lastmod>2025-02-20T08:41:51+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/travel/</loc>
-    <lastmod>2025-02-13T17:48:43+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/uji/</loc>
-    <lastmod>2025-02-13T17:48:43+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/travel/%E6%97%A5%E6%9C%AC%E8%87%AA%E7%94%B1%E8%A1%8C%E7%99%BD%E6%97%A5%E6%A2%A6%E6%89%8B%E5%86%8C/</loc>
     <lastmod>2025-02-13T17:48:43+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/learning/llm/cos597g-22-encoder-only-models/</loc>
@@ -32,17 +20,14 @@
     <loc>http://localhost:1313/tags/cos597g2022/</loc>
     <lastmod>2025-02-13T15:10:32+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/learning/</loc>
+    <loc>http://localhost:1313/tags/llm/</loc>
     <lastmod>2025-02-13T15:10:32+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/llm/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-02-13T15:10:32+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/learning/llm/cos597g-22-introduction/</loc>
     <lastmod>2024-11-15T22:37:35+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/ideas/</loc>
-    <lastmod>2024-10-30T23:39:11+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/review/</loc>
     <lastmod>2024-10-30T23:39:11+08:00</lastmod>
@@ -67,9 +52,6 @@
   </url><url>
     <loc>http://localhost:1313/learning/hugo/hugo-feature-test/</loc>
     <lastmod>2024-09-22T15:08:10+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/learning/hugo/setup/</loc>
-    <lastmod>2024-09-22T14:40:51+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/archives/</loc>
   </url><url>

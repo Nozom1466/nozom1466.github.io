@@ -130,8 +130,7 @@ computation & networking & storage
       3. broadcast skpt partition
 
 
-
-falure analysis
+## 8. Falure analysis
 1. infra / hardware issues
    1. temperature
    2. infiniband slow network
@@ -149,3 +148,13 @@ falure analysis
    2. learning rate
 
 
+## 容错系统
+Failure analysis
+Exception Monitoring
+- monitor & history data
+- lightweighted detection  & self-diagnoisis
+
+Recovery
+- checkpointing
+- hot transfer
+- backups

@@ -65,6 +65,18 @@ p {
     margin-bottom: 0;
 }
 
+p {
+    text-align: justify;
+}
+
+
+
+
+figcaption p {
+    text-align: center;
+}
+
+
 ul {
     padding: 0;
 }

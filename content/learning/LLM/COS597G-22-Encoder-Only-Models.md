@@ -23,9 +23,7 @@ For BERT, RoBERTa and ELECTRA
 ## (ELMo) Deep contextualized word representations
 
 ### Before Reading
-Authors are from [AI2](https://allenai.org/) and [UW](https://www.cs.washington.edu/). Citation 16115 (until 11/25/2024). Paper accepted by NAACL 2018, nominated as Best Paper.
-
-Paper introduced a embedding by stacking embeddings from bidirectional LSTMs.
+Authors are from [AI2](https://allenai.org/) and [UW](https://www.cs.washington.edu/). Citation 16115 (until 11/25/2024). Paper accepted by NAACL 2018, nominated as Best Paper. Paper introduced a embedding by stacking embeddings from bidirectional LSTMs.
 
 
 ### Motivation
@@ -78,11 +76,11 @@ Adding ELMo representations yields SOTA results, as illustrated in Figure 2.
 
 {{< figure src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*aQb-FD7F33Z_svGr4jTrfg.png" width="400" caption="Fig. 2 Results by adding ELMo across 6 tasks." align="center">}}
 
-**Where to add ELMo?**: The author add the representation in the lowest layer in this paper yet claims that some tasks may prefer adding representation in the output of the layer.
+- **Where to add ELMo?**: The author add the representation in the lowest layer in this paper yet claims that some tasks may prefer adding representation in the output of the layer.
 
-**Differences between layers**: for tasks like Word Sense Disambiguation, last layer is better than the first layer probably because of semantic meanings in final layer. However, for tasks like POS Tagging, as structural information is needed, the first layer outperforms the last layer.
+- **Differences between layers**: for tasks like Word Sense Disambiguation, last layer is better than the first layer probably because of semantic meanings in final layer. However, for tasks like POS Tagging, as structural information is needed, the first layer outperforms the last layer.
 
-**Efficiency in sampling**:  In the SRL case, the ELMo model with 1% of the training set has about the same F1 as the baseline model with 10% of the training set. Faster convergence by adding "offsets" to vectors in high dimension space, which helps model be optimized towards optimal points efficiently?
+- **Efficiency in sampling**:  In the SRL case, the ELMo model with 1% of the training set has about the same F1 as the baseline model with 10% of the training set. Faster convergence by adding "offsets" to vectors in high dimension space, which helps model be optimized towards optimal points efficiently?
 
 
 
@@ -102,7 +100,7 @@ Training on labeled data has received successful results on NLP tasks, while usi
 ### Framework
 There are two stages of training procedure: unsupervised pretraining and supervised fine-tuning. For fine-tuning, the paper introduces a task-agnostic approach to better adapt learnt representations to spcific tasks.
 
-**Unsupervised pre-training**
+- **Unsupervised pre-training**
 Classic Transformer Decoder next word prediction with multi-head attention, FFN ... 
 
 Next word prediction objective is given by
@@ -120,7 +118,7 @@ $$
 where @\mathcal{U = \{u_1, \dots, u_{i - 1}\}}@ are unsupervised tokens, parameters @\Theta@, @W_e@ token embedding matrix, @W_p@ position embedding matrix. 
 
 
-**Supervised fine-tuning**
+- **Supervised fine-tuning**
 We get labeled dataset @\mathcal{C}@ in supervised fine-tuning, in which input tokens @x^{i}, i \in [1, m]@ are labeled with @y@. @y@ prediction is formulated as 
 $$
     P\left(y \mid x^1, \ldots, x^m\right)=\operatorname{softmax}\left(h_l^m W_y\right).
@@ -137,25 +135,22 @@ $$
 $$
 
 
-**Task-specific input transformations**
+- **Task-specific input transformations**
 The paper also introduced a task-specific strategy in fine-tuning so as to aviod making extensive changes to the model architecture across tasks. Startegy is illustrated in Figure 3.
 
-{{< figure src="https://img2023.cnblogs.com/blog/2046695/202311/2046695-20231119160809045-1028600097.png" width="300" caption="Fig. 3: (left) Transformer architecture and training objectives used in this work. (right) Inputtransformations for fne-tuning on different tasks. We convert all structured inputs into tokensequences to be processed by our pre-trained model, followed by a linear+softmax layer." align="center">}}
+{{< figure src="https://miro.medium.com/v2/resize:fit:4800/format:webp/1*ME_kS-46o8zsF2q-Lt1caA.png" width="700" caption="Fig. 3: (left) Transformer architecture and training objectives used in this work. (right) Input transformations for fine-tuning on different tasks. We convert all structured inputs into tokensequences to be processed by our pre-trained model, followed by a linear+softmax layer." align="center">}}
 
 Sounds like structured prompt input.
 
 
 ### Experiments
 
-**Setups**
-For pre-training, the paper use BooksCorpus dataset & 1B Word Benchmark (used by ELMo), because both datasets contains long and contigious contexts. For fine-tuning, parameters are learning rate 6.25e-5, batchsize 32, linear learning rate decay with 0.2% training warm up. 
+- **Setups**: For pre-training, the paper use BooksCorpus dataset & 1B Word Benchmark (used by ELMo), because both datasets contains long and contigious contexts. For fine-tuning, parameters are learning rate 6.25e-5, batchsize 32, linear learning rate decay with 0.2% training warm up. 
 
 
-**Results**
-4 downstream NLP tasks in fine-tuning: Natural Language Inference (recognizing textual entailment), Question answering and commonsense reasoning, Semantic Similarity, Classification. 
-The approach achieved SOTA in 9 out of 12 datasets and works well on both small and large datasets
+- **Results**: 4 downstream NLP tasks in fine-tuning: Natural Language Inference (recognizing textual entailment), Question answering and commonsense reasoning, Semantic Similarity, Classification. The approach achieved SOTA in 9 out of 12 datasets and works well on both small and large datasets
 
-**Analysis**
+- **Analysis**
 1. Impact of the number of transferred layers on overall performance: all layers are useful and each layer adds approx. 9% of performance increase on datasets RACE and Mutlti NLI.
 2. Zero-shot performance of pretraining models on NLP tasks: performance steadily increases as over pretraining, which suggests that  generative pretraining supports the learning of a wide variety of task relevant functionality.
 3. Ablation studies: 
@@ -179,11 +174,11 @@ There are two strategies in applying pre-trained language representations: featu
 
 
 ### BERT
-**Training:** There are two steps of BERT: pre-training and fine-tuning. During pre-training, BERT utilize two objectives to get pre-training representations. Fine-tuning is firstly initialized with pre-trained parameters and all of the parameters are fine-tuned.
+- **Training:** There are two steps of BERT: pre-training and fine-tuning. During pre-training, BERT utilize two objectives to get pre-training representations. Fine-tuning is firstly initialized with pre-trained parameters and all of the parameters are fine-tuned.
 
-**Architecture:** BERT is basically a multi-layer bidirectional Transformer encoder, which is different from GPT constrained by left-to-right nature. (In my opinion, bidirectional is mostly illustrated by attention mechanism in encoder)
+- **Architecture:** BERT is basically a multi-layer bidirectional Transformer encoder, which is different from GPT constrained by left-to-right nature. (In my opinion, bidirectional is mostly illustrated by attention mechanism in encoder)
 
-**Input/Output Representations:** In BERT, the input sequence might be a single sentence or a pack of two sentences. The first token is always [CLS] and seperation token between two sentences is [SEP]. For two sentences, the author add learned segment embedding @E_A, E_B@ to mark tokens in two sentences @A@ and @B@. The final input is the summation of token, segment embedding and position embedding, as illustrated in Figure 4.
+- **Input/Output Representations:** In BERT, the input sequence might be a single sentence or a pack of two sentences. The first token is always [CLS] and seperation token between two sentences is [SEP]. For two sentences, the author add learned segment embedding @E_A, E_B@ to mark tokens in two sentences @A@ and @B@. The final input is the summation of token, segment embedding and position embedding, as illustrated in Figure 4.
 
 {{< figure src="https://upload.wikimedia.org/wikipedia/commons/6/65/BERT_input_embeddings.png" width="700" caption="Fig. 4 BERT input representation. The input embeddings are the sum of the token embeddings, the segmentation embeddings and the position embeddings." align="center">}}
 
@@ -205,7 +200,7 @@ Tested on four different tasks:
 3. SQuAD v2.0: The answer probably does not exists in contexts. No answer -> span from [CLS] to [CLS]. The rule of SQuAD also applies.
 4. SWAG: Given a sentence, the task is to choose the most plausible continuation among four choices.
 
-**Ablations**
+- **Ablations**
 1. Effect of Pre-training tasks: experiments on No NSP, LTR(left2right)&No NSP
    1. removing NSP hurts performance significantly on QNLI, MNLI, and SQuAD 1.1
    2. The LTR model performs worse than the MLM model on all tasks, with large drops on MRPC and SQuAD.
@@ -238,23 +233,19 @@ BERT is optimized with Adam with @\beta_1 = 0.9, \beta_2 = 0.999, \epsilon=1e-6@
 Training data includes BOOKCORPUS, CC-NEWS, OPENWEBTEXT and STORIES.
 
 ### Training Analysis
-**Dynamic masking and static masking**
-To avoid using the same mask for each epoch, the training data were duplicated 10 times and were masked with different ways for each epoch. This was introduced in BERT and called static masking. While for dynamic masking, masking patterns are generated every time we feed a sequence to the model. And ... as the results presented, we indeed see the increase though being marginal.
+**Dynamic masking and static masking**: To avoid using the same mask for each epoch, the training data were duplicated 10 times and were masked with different ways for each epoch. This was introduced in BERT and called static masking. While for dynamic masking, masking patterns are generated every time we feed a sequence to the model. And ... as the results presented, we indeed see the increase though being marginal.
 
 
-**Next Sentence Prediction**
-NSP loss was questioned by replication experiments. The authors found:
+**Next Sentence Prediction**: NSP loss was questioned by replication experiments. The authors found:
 1. Using individual sentences hurts performance on downstream tasks, which we hypothesize is because the model is not able to learn long-range dependencies.
 2. Removing the NSP loss matches or slightly improves downstream task performance.
 3. Restricting sequences to come from a single document performs slightly better than packing sequences from multiple documents
 
 
-**Training with large batches**
-Training with large batches improves perplexity for the masked language modeling objective, as well as end-task accuracy. Large batches are also easier to parallelize via distributed data parallel training.
+**Training with large batches**: Training with large batches improves perplexity for the masked language modeling objective, as well as end-task accuracy. Large batches are also easier to parallelize via distributed data parallel training.
 
 
-**Text Encoding**
-Train BERT model using Byte-Pair Encoding.
+- **Text Encoding**: Train BERT model using Byte-Pair Encoding.
 
 
 ### RoBERTa Training settings
@@ -266,14 +257,14 @@ The author further conbimed three datasets for training (160GB) and trained the 
 ### Evaluations
 Models are evaluated on GLUE, SQuAD and RACE.
 
-**GLUE**
+- **GLUE**
 There are 2 types of tasks: single-task and emsembled task in GLUE. RoBERTa was finetuned for single task on each training dataset based on pretrained model. And for ensembled task, RoBERTa did not depend on multi-task finetuning. Instead, for RTE, STS and MRPC, the model was fine-tuned on MNLI single-task model.
 
-**SQuAD**
+- **SQuAD**
 RoBERTa finetuned only on SQuAD training data without data augmentation like previous works. The single RoBERTa model outperforms all but one of the single model submissions, and is the top scoring system among those that do not rely on data augmentation.
 
 
-**RACE**
+- **RACE**
 Each candidate answer was concatenated with the corresponding question and passage. The total length is at most 512 tokens.
 
 
@@ -290,9 +281,7 @@ In MLM task, only 15% of the tokens are learnt by the model as the number of mas
 
 
 ### Method
-There are two NNs in this work, namely *Generator* and *Discriminator*. The generator is in charge of putting mask on input sentence and generating corrupted sentence by replacing masks with other words. The discriminator then tries to distinguish which word in the corrupted sentence is replaced by Generator. 
-
-In Generator mask words @m_i@, which follows uniform distribution:
+There are two NNs in this work, namely *Generator* and *Discriminator*. The generator is in charge of putting mask on input sentence and generating corrupted sentence by replacing masks with other words. The discriminator then tries to distinguish which word in the corrupted sentence is replaced by Generator. In Generator mask words @m_i@, which follows uniform distribution:
 $$
     m_i \sim \operatorname{unif}\{1, n\} \text{ for } i=1 \text{ to } k \quad \mathbf{x}^{\text {masked }}=\operatorname{REPLACE}(\mathbf{x}, \mathbf{m},[ \text{MASK} ])
 $$
@@ -323,7 +312,7 @@ $$
 $$
 > Disc loss: cross-entropy loss for discrimination.
 
-**Difference with GAN** 
+- **Difference with GAN** 
 1. If the generated token happens to ben correct, the token will be considered "real" instead of "fake".
 2. The generator is trained with maximum likelihood rather than being trained adversarially to fool the
 discriminator. (Ad training is challenging because of it is impossible to backpropergate through sampling from generator.)
@@ -332,8 +321,7 @@ discriminator. (Ad training is challenging because of it is impossible to backpr
 ### Experiments
 Datasets are GLUE, SQuAD. EM and F1 scores.
 
-**Model extension**
-Some techiques used in initialization and training.
+- **Model extension**: Some techiques used in initialization and training.
 1. Weight sharing: share all/parts of parameters between generator and discriminator
 2. Smaller generators: large models generates challenging tasks for discriminator, and sometimes being too hard to answer by discriminator. Smaller generator works effectively. (small model here: keep some of params in generator constant without updating in BP)
 3. Training algorithms: Two stage procedure: training MLM task for n steps; initialize params in discriminator using params in trained generator. Train the discriminator with generator frozen. 
