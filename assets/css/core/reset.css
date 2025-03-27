@@ -152,9 +152,8 @@ img {
 }
 
 .photo-img-wrap img {
-    width: 80%;
+    /* width: 80%; */
     height: auto;
-
 }
 
 .photo-caption-wrap {
@@ -192,6 +191,6 @@ img {
     }
 
     .post-content figcaption .photo-caption {
-        font-size: 15px;
+        font-size: 12px;
     }
 }
