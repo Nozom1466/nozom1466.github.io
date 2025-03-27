@@ -11,7 +11,14 @@
     </image>
     <generator>Hugo -- 0.134.1</generator>
     <language>en</language>
-    <lastBuildDate></lastBuildDate>
+    <lastBuildDate>Tue, 25 Mar 2025 23:28:59 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/travel/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Serendipity</title>
+      <link>http://localhost:1313/travel/serendipity/</link>
+      <pubDate>Tue, 25 Mar 2025 23:28:59 +0800</pubDate>
+      <guid>http://localhost:1313/travel/serendipity/</guid>
+      <description>一些旅行碎片</description>
+    </item>
   </channel>
 </rss>

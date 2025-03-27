@@ -128,3 +128,70 @@ img {
     display: block;
     max-width: 100%;
 }
+
+
+/* -------------------------------------------------------- */
+
+.post-content figcaption .photo-caption {
+    font-size: 18px;
+}
+
+.photo-wrap {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    /* gap: 64px; */
+    width: 100%;
+}
+
+.photo-img-wrap {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    align-self: center;
+}
+
+.photo-img-wrap img {
+    width: 80%;
+    height: auto;
+
+}
+
+.photo-caption-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    width: 30%;
+}
+
+.photo-caption-wrap p {
+    text-align: left;
+    width: 100%;
+}
+
+
+@media (max-width: 700px) {
+    .photo-wrap {
+        flex-direction: column;
+    }
+
+    .photo-img-wrap {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        align-self: center;
+    }
+
+    .photo-caption-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+        width: 100%;
+    }
+
+    .post-content figcaption .photo-caption {
+        font-size: 15px;
+    }
+}

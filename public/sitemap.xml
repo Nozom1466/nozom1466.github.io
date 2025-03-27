@@ -2,17 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/ideas/</loc>
-    <lastmod>2025-02-25T22:45:34+08:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/</loc>
+    <lastmod>2025-03-25T23:28:59+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/travel/serendipity/</loc>
+    <lastmod>2025-03-25T23:28:59+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/travel/</loc>
+    <lastmod>2025-03-25T23:28:59+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/ideas/</loc>
     <lastmod>2025-02-25T22:45:34+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/learning/</loc>
     <lastmod>2025-02-20T08:41:51+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/travel/</loc>
-    <lastmod>2025-02-13T17:48:43+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/learning/llm/cos597g-22-encoder-only-models/</loc>
     <lastmod>2025-02-13T15:10:32+08:00</lastmod>

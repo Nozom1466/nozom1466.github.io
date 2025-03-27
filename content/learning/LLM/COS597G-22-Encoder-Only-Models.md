@@ -17,9 +17,6 @@ categories:
 
 [Homepage](https://www.cs.princeton.edu/courses/archive/fall22/cos597G/)
 
-For BERT, RoBERTa and ELECTRA
-
-
 ## (ELMo) Deep contextualized word representations
 
 ### Before Reading

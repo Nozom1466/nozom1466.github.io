@@ -19,7 +19,6 @@
       <pubDate>Thu, 13 Feb 2025 15:10:32 +0800</pubDate>
       <guid>http://localhost:1313/learning/llm/cos597g-22-encoder-only-models/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://www.cs.princeton.edu/courses/archive/fall22/cos597G/&#34;&gt;Homepage&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;For BERT, RoBERTa and ELECTRA&lt;/p&gt;
 &lt;h2 id=&#34;elmo-deep-contextualized-word-representations&#34;&gt;(ELMo) Deep contextualized word representations&lt;/h2&gt;
 &lt;h3 id=&#34;before-reading&#34;&gt;Before Reading&lt;/h3&gt;
 &lt;p&gt;Authors are from &lt;a href=&#34;https://allenai.org/&#34;&gt;AI2&lt;/a&gt; and &lt;a href=&#34;https://www.cs.washington.edu/&#34;&gt;UW&lt;/a&gt;. Citation 16115 (until 11/25/2024). Paper accepted by NAACL 2018, nominated as Best Paper. Paper introduced a embedding by stacking embeddings from bidirectional LSTMs.&lt;/p&gt;
