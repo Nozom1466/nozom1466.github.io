@@ -21,4 +21,3 @@ categories:
 
 {{< photo src="https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/DSC_3177.jpg" width="600" caption="Hakura 到站！" align="center">}}
 
-

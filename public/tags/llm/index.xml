@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>LLM on Ryan&#39;s Blog</title>
     <link>http://localhost:1313/tags/llm/</link>
     <description>Recent content in LLM on Ryan&#39;s Blog</description>
-    <image>
-      <title>Ryan&#39;s Blog</title>
-      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
-    </image>
-    <generator>Hugo -- 0.134.1</generator>
+    <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Thu, 13 Feb 2025 15:10:32 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/llm/index.xml" rel="self" type="application/rss+xml" />
@@ -18,25 +13,14 @@
       <link>http://localhost:1313/learning/llm/cos597g-22-encoder-only-models/</link>
       <pubDate>Thu, 13 Feb 2025 15:10:32 +0800</pubDate>
       <guid>http://localhost:1313/learning/llm/cos597g-22-encoder-only-models/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://www.cs.princeton.edu/courses/archive/fall22/cos597G/&#34;&gt;Homepage&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;elmo-deep-contextualized-word-representations&#34;&gt;(ELMo) Deep contextualized word representations&lt;/h2&gt;
-&lt;h3 id=&#34;before-reading&#34;&gt;Before Reading&lt;/h3&gt;
-&lt;p&gt;Authors are from &lt;a href=&#34;https://allenai.org/&#34;&gt;AI2&lt;/a&gt; and &lt;a href=&#34;https://www.cs.washington.edu/&#34;&gt;UW&lt;/a&gt;. Citation 16115 (until 11/25/2024). Paper accepted by NAACL 2018, nominated as Best Paper. Paper introduced a embedding by stacking embeddings from bidirectional LSTMs.&lt;/p&gt;
-&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
-&lt;p&gt;ELMo aims to find better embeddings for NLP tasks. Previous methods proposed word vectors, which are encoded in static strategy and failed to deal with words with various meanings in different contexts (Training multiple representation for 1 word partly solved the problem but it is not feasible when it comes to evolving meanings). Improvements are using subword meaning and bidirectional LSTM to encode contexts around the target word. ELMo embeddings are based on biLSTM hidden representations. Previous work also claims that layers from different depth encode meanings of different levels. ELMo takes it into account in hidden representation concatenation.&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.cs.princeton.edu/courses/archive/fall22/cos597G/&#34;&gt;Homepage&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;elmo-deep-contextualized-word-representations&#34;&gt;(ELMo) Deep contextualized word representations&lt;/h2&gt;&#xA;&lt;h3 id=&#34;before-reading&#34;&gt;Before Reading&lt;/h3&gt;&#xA;&lt;p&gt;Authors are from &lt;a href=&#34;https://allenai.org/&#34;&gt;AI2&lt;/a&gt; and &lt;a href=&#34;https://www.cs.washington.edu/&#34;&gt;UW&lt;/a&gt;. Citation 16115 (until 11/25/2024). Paper accepted by NAACL 2018, nominated as Best Paper. Paper introduced a embedding by stacking embeddings from bidirectional LSTMs.&lt;/p&gt;&#xA;&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;&#xA;&lt;p&gt;ELMo aims to find better embeddings for NLP tasks. Previous methods proposed word vectors, which are encoded in static strategy and failed to deal with words with various meanings in different contexts (Training multiple representation for 1 word partly solved the problem but it is not feasible when it comes to evolving meanings). Improvements are using subword meaning and bidirectional LSTM to encode contexts around the target word. ELMo embeddings are based on biLSTM hidden representations. Previous work also claims that layers from different depth encode meanings of different levels. ELMo takes it into account in hidden representation concatenation.&lt;/p&gt;</description>
     </item>
     <item>
       <title>COS597G 22 Introduction</title>
       <link>http://localhost:1313/learning/llm/cos597g-22-introduction/</link>
       <pubDate>Fri, 15 Nov 2024 22:37:35 +0800</pubDate>
       <guid>http://localhost:1313/learning/llm/cos597g-22-introduction/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.cs.princeton.edu/courses/archive/fall22/cos597G/&#34;&gt;Homepage&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;human-language-understanding--reasoning&#34;&gt;Human Language Understanding &amp;amp; Reasoning&lt;/h2&gt;
-&lt;p&gt;Introductory reading authored by &lt;a href=&#34;https://nlp.stanford.edu/~manning/&#34;&gt;Christopher D. Manning&lt;/a&gt;.&lt;/p&gt;
-&lt;h3 id=&#34;brief-introduction-of-nlp-history&#34;&gt;Brief introduction of NLP history&lt;/h3&gt;
-&lt;p&gt;The NLP history is divided into four sections, running from the middle of last century to 2 years ago. NLP starts with machine translation in Cold War 1950 - 1969, when researchers on both sides sought to develop systems capable of translating the scientific output of the other nations. The NLP system provided little more the word-level lookups and some simple principle-based mechanisms.&lt;/p&gt;</description>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.cs.princeton.edu/courses/archive/fall22/cos597G/&#34;&gt;Homepage&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;human-language-understanding--reasoning&#34;&gt;Human Language Understanding &amp;amp; Reasoning&lt;/h2&gt;&#xA;&lt;p&gt;Introductory reading authored by &lt;a href=&#34;https://nlp.stanford.edu/~manning/&#34;&gt;Christopher D. Manning&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h3 id=&#34;brief-introduction-of-nlp-history&#34;&gt;Brief introduction of NLP history&lt;/h3&gt;&#xA;&lt;p&gt;The NLP history is divided into four sections, running from the middle of last century to 2 years ago. NLP starts with machine translation in Cold War 1950 - 1969, when researchers on both sides sought to develop systems capable of translating the scientific output of the other nations. The NLP system provided little more the word-level lookups and some simple principle-based mechanisms.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
