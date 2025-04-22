@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Ryan&#39;s Blog</title>
     <link>http://localhost:1313/</link>
     <description>Recent content on Ryan&#39;s Blog</description>
-    <generator>Hugo</generator>
+    <image>
+      <title>Ryan&#39;s Blog</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.134.1</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 25 Mar 2025 23:28:59 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 22 Apr 2025 23:45:33 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>COS597G 22 Encoder Decoder Models</title>
+      <link>http://localhost:1313/learning/llm/cos597g-22-encoder-decoder-models/</link>
+      <pubDate>Tue, 22 Apr 2025 23:45:33 +0800</pubDate>
+      <guid>http://localhost:1313/learning/llm/cos597g-22-encoder-decoder-models/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.cs.princeton.edu/courses/archive/fall22/cos597G/&#34;&gt;Homepage&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;For BART, T5, mT5 and AlexaTM 20B&lt;/p&gt;
+&lt;h2 id=&#34;bart-denoising-sequence-to-sequence-pre-training-for-natural-language-generation-translation-and-comprehension&#34;&gt;BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension&lt;/h2&gt;
+&lt;p&gt;Encoder-decoder model was not actually a popular architecture between 2019 and 2020. As you can observe from Figure 1, during 2019-2020 slot, lots of tech companies bid on Encoder-only models, including BERT, RoBERTa, ALBERT. Encoder-decoder and decoder-only models are not yet well explored. But if we further look at the end of branches, Encoder-decoder models still take a place in model zoo, such as Flan series.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Serendipity</title>
       <link>http://localhost:1313/travel/serendipity/</link>
@@ -20,56 +35,103 @@
       <link>http://localhost:1313/learning/llm/cos597g-22-encoder-only-models/</link>
       <pubDate>Thu, 13 Feb 2025 15:10:32 +0800</pubDate>
       <guid>http://localhost:1313/learning/llm/cos597g-22-encoder-only-models/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://www.cs.princeton.edu/courses/archive/fall22/cos597G/&#34;&gt;Homepage&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;elmo-deep-contextualized-word-representations&#34;&gt;(ELMo) Deep contextualized word representations&lt;/h2&gt;&#xA;&lt;h3 id=&#34;before-reading&#34;&gt;Before Reading&lt;/h3&gt;&#xA;&lt;p&gt;Authors are from &lt;a href=&#34;https://allenai.org/&#34;&gt;AI2&lt;/a&gt; and &lt;a href=&#34;https://www.cs.washington.edu/&#34;&gt;UW&lt;/a&gt;. Citation 16115 (until 11/25/2024). Paper accepted by NAACL 2018, nominated as Best Paper. Paper introduced a embedding by stacking embeddings from bidirectional LSTMs.&lt;/p&gt;&#xA;&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;&#xA;&lt;p&gt;ELMo aims to find better embeddings for NLP tasks. Previous methods proposed word vectors, which are encoded in static strategy and failed to deal with words with various meanings in different contexts (Training multiple representation for 1 word partly solved the problem but it is not feasible when it comes to evolving meanings). Improvements are using subword meaning and bidirectional LSTM to encode contexts around the target word. ELMo embeddings are based on biLSTM hidden representations. Previous work also claims that layers from different depth encode meanings of different levels. ELMo takes it into account in hidden representation concatenation.&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.cs.princeton.edu/courses/archive/fall22/cos597G/&#34;&gt;Homepage&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;elmo-deep-contextualized-word-representations&#34;&gt;(ELMo) Deep contextualized word representations&lt;/h2&gt;
+&lt;h3 id=&#34;before-reading&#34;&gt;Before Reading&lt;/h3&gt;
+&lt;p&gt;Authors are from &lt;a href=&#34;https://allenai.org/&#34;&gt;AI2&lt;/a&gt; and &lt;a href=&#34;https://www.cs.washington.edu/&#34;&gt;UW&lt;/a&gt;. Citation 16115 (until 11/25/2024). Paper accepted by NAACL 2018, nominated as Best Paper. Paper introduced a embedding by stacking embeddings from bidirectional LSTMs.&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;p&gt;ELMo aims to find better embeddings for NLP tasks. Previous methods proposed word vectors, which are encoded in static strategy and failed to deal with words with various meanings in different contexts (Training multiple representation for 1 word partly solved the problem but it is not feasible when it comes to evolving meanings). Improvements are using subword meaning and bidirectional LSTM to encode contexts around the target word. ELMo embeddings are based on biLSTM hidden representations. Previous work also claims that layers from different depth encode meanings of different levels. ELMo takes it into account in hidden representation concatenation.&lt;/p&gt;</description>
     </item>
     <item>
       <title>COS597G 22 Introduction</title>
       <link>http://localhost:1313/learning/llm/cos597g-22-introduction/</link>
       <pubDate>Fri, 15 Nov 2024 22:37:35 +0800</pubDate>
       <guid>http://localhost:1313/learning/llm/cos597g-22-introduction/</guid>
-      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.cs.princeton.edu/courses/archive/fall22/cos597G/&#34;&gt;Homepage&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;human-language-understanding--reasoning&#34;&gt;Human Language Understanding &amp;amp; Reasoning&lt;/h2&gt;&#xA;&lt;p&gt;Introductory reading authored by &lt;a href=&#34;https://nlp.stanford.edu/~manning/&#34;&gt;Christopher D. Manning&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h3 id=&#34;brief-introduction-of-nlp-history&#34;&gt;Brief introduction of NLP history&lt;/h3&gt;&#xA;&lt;p&gt;The NLP history is divided into four sections, running from the middle of last century to 2 years ago. NLP starts with machine translation in Cold War 1950 - 1969, when researchers on both sides sought to develop systems capable of translating the scientific output of the other nations. The NLP system provided little more the word-level lookups and some simple principle-based mechanisms.&lt;/p&gt;</description>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.cs.princeton.edu/courses/archive/fall22/cos597G/&#34;&gt;Homepage&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;human-language-understanding--reasoning&#34;&gt;Human Language Understanding &amp;amp; Reasoning&lt;/h2&gt;
+&lt;p&gt;Introductory reading authored by &lt;a href=&#34;https://nlp.stanford.edu/~manning/&#34;&gt;Christopher D. Manning&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;brief-introduction-of-nlp-history&#34;&gt;Brief introduction of NLP history&lt;/h3&gt;
+&lt;p&gt;The NLP history is divided into four sections, running from the middle of last century to 2 years ago. NLP starts with machine translation in Cold War 1950 - 1969, when researchers on both sides sought to develop systems capable of translating the scientific output of the other nations. The NLP system provided little more the word-level lookups and some simple principle-based mechanisms.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rich Dad Poor Dad Review</title>
       <link>http://localhost:1313/ideas/rich-dad-poor-dad-review/</link>
       <pubDate>Wed, 30 Oct 2024 23:39:11 +0800</pubDate>
       <guid>http://localhost:1313/ideas/rich-dad-poor-dad-review/</guid>
-      <description>&lt;h3 id=&#34;overview&#34;&gt;Overview&lt;/h3&gt;&#xA;&lt;p&gt;An inspiring book in changing the personal finance view of the readers. The wealth never comes easy and especially tougher in the era of Rat Race where individuals exploit themselves to get the salary as the rewards of their &amp;ldquo;diligence&amp;rdquo;. The deeply rooted view held by majorities and me, before I encountered with the book, is subverted by Robert T.Kiyosaki in &lt;em&gt;Rich Dad Poor Dad&lt;/em&gt;. Working in Rat Race provides us with stable or growing income and, at the same time, turns the master of money &amp;ndash; us &amp;ndash; into slaves who is fettered by conventional mindset of personal finance. The book enlightened readers with the way out of Rat Race and secrets of building personal wealth.&lt;/p&gt;</description>
+      <description>&lt;h3 id=&#34;overview&#34;&gt;Overview&lt;/h3&gt;
+&lt;p&gt;An inspiring book in changing the personal finance view of the readers. The wealth never comes easy and especially tougher in the era of Rat Race where individuals exploit themselves to get the salary as the rewards of their &amp;ldquo;diligence&amp;rdquo;. The deeply rooted view held by majorities and me, before I encountered with the book, is subverted by Robert T.Kiyosaki in &lt;em&gt;Rich Dad Poor Dad&lt;/em&gt;. Working in Rat Race provides us with stable or growing income and, at the same time, turns the master of money &amp;ndash; us &amp;ndash; into slaves who is fettered by conventional mindset of personal finance. The book enlightened readers with the way out of Rat Race and secrets of building personal wealth.&lt;/p&gt;</description>
     </item>
     <item>
       <title>餘命 7 年</title>
       <link>http://localhost:1313/ideas/%E9%A4%98%E5%91%BD-7-%E5%B9%B4/</link>
       <pubDate>Sat, 05 Oct 2024 13:10:59 +0800</pubDate>
       <guid>http://localhost:1313/ideas/%E9%A4%98%E5%91%BD-7-%E5%B9%B4/</guid>
-      <description>&lt;p&gt;我和 7 这个数字很有缘分。&lt;/p&gt;&#xA;&lt;p&gt;初高中时每次考试分发座位表，我都会第一时间去查看自己的班级号和座位号。在我有限的印象里，我的号码总是与 7 这个数字有着各种联系：7？17？14？21？考试时看到这个并不和谐的质数总是会点亮一下我的心情，这个在数字文化里被冷落的符号对我来说有一种天然的亲近感。&lt;/p&gt;&#xA;&lt;p&gt;我不太记得哪个网站说过，七年是全身细胞更新的周期，在生理上，我相对于七年之前的自己是一个全新的存在。我知道每一个器官组织的更新速率不同，但是总要选一个平均值的上限来代表一下这个过程，一个带着点宿命味道的数字是再好不过了。我倒是很喜欢这个不长不短的时间，还带着点儿初高中回忆的味道。今年 21 岁，正好经过了三次更新迭代，兢兢业业工作的器官组织们都至少走过了三个轮回。在十多个轮回中，三个七年仅仅是三分之一的时光，在这个节点上去回顾这短短的二十一年未免有些做作，但是简单回头去看看过去的自己倒是一件蛮有趣的事情。&lt;/p&gt;&#xA;&lt;p&gt;在第一个七年的节点我在上二三年级，刚刚从一楼带着铁栅栏的教室升入二楼的小教室里。四班在走廊的堵头，挨着小水池倒还有一点乐趣。夏天的时候班上总有几个不怕挨打的小孩拿着灌好的水气球扔来扔去，我是不太去玩这种水气球炸弹，但是也不妨碍我在旁边观摩几员猛将的拼杀，有时候也会被误伤就是了。被告知不好的事情坚决不碰是我小小的脑袋瓜里的唯一哲学，我好像也是家长和老师面前的好孩子。我记得最骄傲的事情是被选上写字课代表，每周抱着全班的练字本在座位上用红笔批改。写字本沉甸甸的，放在桌膛里边整整齐齐，也是一个小小的成就。好孩子的标准是不说脏话不吃辣条不到处乱跑，但是从根本上说这些有点坏的习惯对我来说从来没有存在的必要。每天的生活对我这个地球玩家新手来说仍然很明亮，这个小镇好大，我怎么也探索不完每一个有趣的角落。我记得端午节和家人去山上采带着露珠的艾草，下完雨去找松树墩旁边的小蘑菇，秋天躺在金黄的落叶床垫上闻一闻泥土的腥味，每次回来那种筋疲力竭躺在床上的感觉总是能让我很满足。放学路上我看到路尽头金红色的小山丘披着西斜的阳光，我总是感觉到一股暖流腾起。从林子里回来，我应该也裁了一片小小的阳光留在我心里了吧。学校微机室的大肚子电脑、夏天三十九度的教室里凉凉的红色小水桶、长满齐腰高杂草的神秘小水沟、查理九世的青铜棺和游戏王的三幻神好像都在回忆的黑柔滤镜下变得有点不太真实。&lt;/p&gt;&#xA;&lt;p&gt;在第二个七年的节点我已经是初三的学生了。在转学之后的教育体系中，小学只有五年而初中有四年的时间。三年时间对于一个十多岁的毛头小子来说很漫长，我只记得分数从及格线爬到了班级前几，我从一个小透明也似乎变成了有点存在感的小角色了。关于初三一半的记忆是灰色纸的试卷，堆成山的作业试题和每周每一天考试的心惊胆战。我们学校的学习强度还是比较有名的，每一周对于数学英语物理化学必定会有标准考试，不定时语文也会占用时间来考试，我就在这每一周的循环中经历心跳和肾上腺素的波动起伏。我记得初三的我总是有那种莫名的恐惧，生怕被别人超过分数或者名次，于是在作业练习里边疯狂训练，每一周的考试都当作证明自己的机会一样极为重视。结果当然不会辜负这样“自残”一样的努力，我的名字也能和那些被大家誉为“大神”的角色写在一起了，老师和同学们似乎也比以前温和了许多，我好像获得了阶段性的成功。是吗？我好像更加敏感了，那些成绩和排名兜兜转转都离不开周围的评价。至于对我自己我可能自始至终都没有认知，我只知道在半夜一点刷完这本习题册能让我在下次考试当中多一点胜算，分数高一点这样我也可以高兴地度过这周余下的几天，然后再迎接下一周的血压飙升。在成绩起伏大时候我会自己报复自己，不需要老师督促，毕竟我是自诩的“好孩子”嘛。怕落在别人后边是我唯一的想法。关于初三的另一半呢是一位女生。我记得有一段时间是坐在我的斜后方，她平时比较内向，我们的交集也并不是很多。初三学生的喜欢总是停留在对只言片语和微小的动作理解上，有些幼稚的行为现在想想也是颇有趣的。有时候多交谈几句能够开心好几天；悄悄地把她的QQ设为特别关心，在节日打了很多字删掉送上最普通的祝福；给她讲题时略带兴奋但也小心翼翼克制着不想让对方发现&amp;hellip;&amp;hellip;我记得有一次同学打赌，比写练习册的页数，页数少的人给某某表白，我表白的对象正好是她。我怎么都是不好意思的，于是在当天晚上写了八十多页练习册，是对方的八倍多&amp;hellip;&amp;hellip;哈哈哈这些事情真的是幼稚到极点，比安昙小太郎和水野茜的初期发展还要缓慢，但是相信我那时能够每次上学看到她就已经很开心了吧。我不会形容初三学生双向暗恋的感觉，我只知道当时的世界对于七年前的我来说还是太过复杂，这两种记忆交织着描绘了七年前的我的生活，混着铅灰色和玫瑰色的色彩。七年前的我还好吗？&lt;/p&gt;&#xA;&lt;p&gt;第三个七年的结尾是在刚上大四的秋天，我带着七年的回忆来到北京开始了很不顺利的实习生活。高中的三年有太多太多情感，我永远不会忘记三年中的很多瞬间，那是第三节人生中最最珍贵的三年。紧接着是高考砸锅、转专业成功、专业学习长征、科研阻力和长时间的焦虑与迷茫。奇怪的是，这七年我感觉被按下了加速键，我找不到在时间轴上被偷走的那几年。那几段时间就那么堂而皇之地溜走了。有留下什么吗？我倒是觉得大学三年所有情绪的重量都留下了，有一小部分开心的，有大部分焦虑的，也有一部分是无所谓的。大三课程结束我终于意识到大学生活这场漫长的跋涉竟然快走到了尽头，那个日夜埋头赶路的自己应该会很欣慰吧。七年旅途的末尾有上低音号的尾音，有实验没有起色的数字，有utown的落日和晚霞。我倒是又捡起了相机去拍拍星轨，拿起标日初级看看泡温泉的小李，看完了之前总是想查但是总忘记的导演的电影，给自己留出近乎奢侈的时间来思考一些天马行空的问题。我也会躺在床上刷上几个小时的 bilibili，在屏幕前对着新老 cp 傻笑，闷头一觉睡到中午。但是也许现在这个处在七年节点的我也可以说，在这第三节里我的生活过的实实在在。&lt;/p&gt;&#xA;&lt;p&gt;我昨天看了小坂流加老师作品改编的 &lt;em&gt;餘命10年&lt;/em&gt; 电影，如果单从剧情的角度这部电影没有什么新奇，甚至可以说某些情节有一些老套和不合理。但是每次看到茉莉挣扎着在最后的日子里生活时我却总能被感触到，那种在存活百分制概率下生活的希望和动力让我有些触动。小坂流加老师没能看到作品上映，但是我能够想到在病床前写下这些文字的情景，那种强烈的想要延展生活的渴望。在过去两年里，我有些时候觉得我患上了虚无感的绝症，在各种压力的催化下这种症状更加明显，恶性循环之中导致了无语和迷茫。我弄不明白这生活热情到底是什么，跟着环境亦步亦趋也许是折衷之策吧，毕竟大学三年我都是这样。所以看到茉莉我才意识到，生活本身就是一首最朴实且丰富的诗歌，尽全力去想下一刻想要做的事，尽全力去做下一刻想要做的事已经赋予了生活本身最好的意义，哪怕是已经在绝症当中。&lt;/p&gt;&#xA;&lt;p&gt;我记得高中的时候老师留了一篇议论文周记，是有关生活与死亡的讨论，我洋洋洒洒地写了很长一篇有理有据的论述死亡意义的文章，但是关于生活的部分只是起到陪衬死亡这个“明显更加重大的话题”的作用，我还清晰地记得老师用了一句论语的句子做批注：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;未知生，焉知死？ ——《论语 · 先进篇》&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;我当时是不以为然，毕竟高中生想法的倔劲谁都有过感受，现在回想起来不禁有些感动。海德格尔在《存在与时间》中有过向死而生的表述，在茉莉的生活中，这份因死而生的心情表达的淋漓尽致。有时候我会胡乱瞎想，如果我真的得了什么绝症，那最后存活的那几年一定是我未来人生中最精彩的几年吧，那种生活的色彩一定会超过过去单色生活的总和。我们意识不到过于遥远的终点，在当下似乎漫漫的旅途当中做些无关紧要的小事浪费时间也不会影响下一段旅程。&lt;/p&gt;&#xA;&lt;p&gt;所以七年的时间节点突然跳了出来。&lt;/p&gt;&#xA;&lt;p&gt;在七年之后我可以说“我”一定会死亡，那么在这之前我想有怎样的生活呢？站在第四个七年的起点处，我希望在七年之后的我可以带着七年充满生命力的生活回忆满足地走入生理周期的坟墓，然后由下一个我开启另一段向死而生的旅程。&lt;/p&gt;&#xA;&lt;p&gt;我想稍稍修改一下小坂流加老师的作品名称：&lt;/p&gt;&#xA;&lt;p&gt;餘命 7 年。&lt;/p&gt;</description>
+      <description>&lt;p&gt;我和 7 这个数字很有缘分。&lt;/p&gt;
+&lt;p&gt;初高中时每次考试分发座位表，我都会第一时间去查看自己的班级号和座位号。在我有限的印象里，我的号码总是与 7 这个数字有着各种联系：7？17？14？21？考试时看到这个并不和谐的质数总是会点亮一下我的心情，这个在数字文化里被冷落的符号对我来说有一种天然的亲近感。&lt;/p&gt;
+&lt;p&gt;我不太记得哪个网站说过，七年是全身细胞更新的周期，在生理上，我相对于七年之前的自己是一个全新的存在。我知道每一个器官组织的更新速率不同，但是总要选一个平均值的上限来代表一下这个过程，一个带着点宿命味道的数字是再好不过了。我倒是很喜欢这个不长不短的时间，还带着点儿初高中回忆的味道。今年 21 岁，正好经过了三次更新迭代，兢兢业业工作的器官组织们都至少走过了三个轮回。在十多个轮回中，三个七年仅仅是三分之一的时光，在这个节点上去回顾这短短的二十一年未免有些做作，但是简单回头去看看过去的自己倒是一件蛮有趣的事情。&lt;/p&gt;
+&lt;p&gt;在第一个七年的节点我在上二三年级，刚刚从一楼带着铁栅栏的教室升入二楼的小教室里。四班在走廊的堵头，挨着小水池倒还有一点乐趣。夏天的时候班上总有几个不怕挨打的小孩拿着灌好的水气球扔来扔去，我是不太去玩这种水气球炸弹，但是也不妨碍我在旁边观摩几员猛将的拼杀，有时候也会被误伤就是了。被告知不好的事情坚决不碰是我小小的脑袋瓜里的唯一哲学，我好像也是家长和老师面前的好孩子。我记得最骄傲的事情是被选上写字课代表，每周抱着全班的练字本在座位上用红笔批改。写字本沉甸甸的，放在桌膛里边整整齐齐，也是一个小小的成就。好孩子的标准是不说脏话不吃辣条不到处乱跑，但是从根本上说这些有点坏的习惯对我来说从来没有存在的必要。每天的生活对我这个地球玩家新手来说仍然很明亮，这个小镇好大，我怎么也探索不完每一个有趣的角落。我记得端午节和家人去山上采带着露珠的艾草，下完雨去找松树墩旁边的小蘑菇，秋天躺在金黄的落叶床垫上闻一闻泥土的腥味，每次回来那种筋疲力竭躺在床上的感觉总是能让我很满足。放学路上我看到路尽头金红色的小山丘披着西斜的阳光，我总是感觉到一股暖流腾起。从林子里回来，我应该也裁了一片小小的阳光留在我心里了吧。学校微机室的大肚子电脑、夏天三十九度的教室里凉凉的红色小水桶、长满齐腰高杂草的神秘小水沟、查理九世的青铜棺和游戏王的三幻神好像都在回忆的黑柔滤镜下变得有点不太真实。&lt;/p&gt;
+&lt;p&gt;在第二个七年的节点我已经是初三的学生了。在转学之后的教育体系中，小学只有五年而初中有四年的时间。三年时间对于一个十多岁的毛头小子来说很漫长，我只记得分数从及格线爬到了班级前几，我从一个小透明也似乎变成了有点存在感的小角色了。关于初三一半的记忆是灰色纸的试卷，堆成山的作业试题和每周每一天考试的心惊胆战。我们学校的学习强度还是比较有名的，每一周对于数学英语物理化学必定会有标准考试，不定时语文也会占用时间来考试，我就在这每一周的循环中经历心跳和肾上腺素的波动起伏。我记得初三的我总是有那种莫名的恐惧，生怕被别人超过分数或者名次，于是在作业练习里边疯狂训练，每一周的考试都当作证明自己的机会一样极为重视。结果当然不会辜负这样“自残”一样的努力，我的名字也能和那些被大家誉为“大神”的角色写在一起了，老师和同学们似乎也比以前温和了许多，我好像获得了阶段性的成功。是吗？我好像更加敏感了，那些成绩和排名兜兜转转都离不开周围的评价。至于对我自己我可能自始至终都没有认知，我只知道在半夜一点刷完这本习题册能让我在下次考试当中多一点胜算，分数高一点这样我也可以高兴地度过这周余下的几天，然后再迎接下一周的血压飙升。在成绩起伏大时候我会自己报复自己，不需要老师督促，毕竟我是自诩的“好孩子”嘛。怕落在别人后边是我唯一的想法。关于初三的另一半呢是一位女生。我记得有一段时间是坐在我的斜后方，她平时比较内向，我们的交集也并不是很多。初三学生的喜欢总是停留在对只言片语和微小的动作理解上，有些幼稚的行为现在想想也是颇有趣的。有时候多交谈几句能够开心好几天；悄悄地把她的QQ设为特别关心，在节日打了很多字删掉送上最普通的祝福；给她讲题时略带兴奋但也小心翼翼克制着不想让对方发现&amp;hellip;&amp;hellip;我记得有一次同学打赌，比写练习册的页数，页数少的人给某某表白，我表白的对象正好是她。我怎么都是不好意思的，于是在当天晚上写了八十多页练习册，是对方的八倍多&amp;hellip;&amp;hellip;哈哈哈这些事情真的是幼稚到极点，比安昙小太郎和水野茜的初期发展还要缓慢，但是相信我那时能够每次上学看到她就已经很开心了吧。我不会形容初三学生双向暗恋的感觉，我只知道当时的世界对于七年前的我来说还是太过复杂，这两种记忆交织着描绘了七年前的我的生活，混着铅灰色和玫瑰色的色彩。七年前的我还好吗？&lt;/p&gt;
+&lt;p&gt;第三个七年的结尾是在刚上大四的秋天，我带着七年的回忆来到北京开始了很不顺利的实习生活。高中的三年有太多太多情感，我永远不会忘记三年中的很多瞬间，那是第三节人生中最最珍贵的三年。紧接着是高考砸锅、转专业成功、专业学习长征、科研阻力和长时间的焦虑与迷茫。奇怪的是，这七年我感觉被按下了加速键，我找不到在时间轴上被偷走的那几年。那几段时间就那么堂而皇之地溜走了。有留下什么吗？我倒是觉得大学三年所有情绪的重量都留下了，有一小部分开心的，有大部分焦虑的，也有一部分是无所谓的。大三课程结束我终于意识到大学生活这场漫长的跋涉竟然快走到了尽头，那个日夜埋头赶路的自己应该会很欣慰吧。七年旅途的末尾有上低音号的尾音，有实验没有起色的数字，有utown的落日和晚霞。我倒是又捡起了相机去拍拍星轨，拿起标日初级看看泡温泉的小李，看完了之前总是想查但是总忘记的导演的电影，给自己留出近乎奢侈的时间来思考一些天马行空的问题。我也会躺在床上刷上几个小时的 bilibili，在屏幕前对着新老 cp 傻笑，闷头一觉睡到中午。但是也许现在这个处在七年节点的我也可以说，在这第三节里我的生活过的实实在在。&lt;/p&gt;
+&lt;p&gt;我昨天看了小坂流加老师作品改编的 &lt;em&gt;餘命10年&lt;/em&gt; 电影，如果单从剧情的角度这部电影没有什么新奇，甚至可以说某些情节有一些老套和不合理。但是每次看到茉莉挣扎着在最后的日子里生活时我却总能被感触到，那种在存活百分制概率下生活的希望和动力让我有些触动。小坂流加老师没能看到作品上映，但是我能够想到在病床前写下这些文字的情景，那种强烈的想要延展生活的渴望。在过去两年里，我有些时候觉得我患上了虚无感的绝症，在各种压力的催化下这种症状更加明显，恶性循环之中导致了无语和迷茫。我弄不明白这生活热情到底是什么，跟着环境亦步亦趋也许是折衷之策吧，毕竟大学三年我都是这样。所以看到茉莉我才意识到，生活本身就是一首最朴实且丰富的诗歌，尽全力去想下一刻想要做的事，尽全力去做下一刻想要做的事已经赋予了生活本身最好的意义，哪怕是已经在绝症当中。&lt;/p&gt;
+&lt;p&gt;我记得高中的时候老师留了一篇议论文周记，是有关生活与死亡的讨论，我洋洋洒洒地写了很长一篇有理有据的论述死亡意义的文章，但是关于生活的部分只是起到陪衬死亡这个“明显更加重大的话题”的作用，我还清晰地记得老师用了一句论语的句子做批注：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;未知生，焉知死？ ——《论语 · 先进篇》&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我当时是不以为然，毕竟高中生想法的倔劲谁都有过感受，现在回想起来不禁有些感动。海德格尔在《存在与时间》中有过向死而生的表述，在茉莉的生活中，这份因死而生的心情表达的淋漓尽致。有时候我会胡乱瞎想，如果我真的得了什么绝症，那最后存活的那几年一定是我未来人生中最精彩的几年吧，那种生活的色彩一定会超过过去单色生活的总和。我们意识不到过于遥远的终点，在当下似乎漫漫的旅途当中做些无关紧要的小事浪费时间也不会影响下一段旅程。&lt;/p&gt;
+&lt;p&gt;所以七年的时间节点突然跳了出来。&lt;/p&gt;
+&lt;p&gt;在七年之后我可以说“我”一定会死亡，那么在这之前我想有怎样的生活呢？站在第四个七年的起点处，我希望在七年之后的我可以带着七年充满生命力的生活回忆满足地走入生理周期的坟墓，然后由下一个我开启另一段向死而生的旅程。&lt;/p&gt;
+&lt;p&gt;我想稍稍修改一下小坂流加老师的作品名称：&lt;/p&gt;
+&lt;p&gt;餘命 7 年。&lt;/p&gt;</description>
     </item>
     <item>
       <title>日语输入法</title>
       <link>http://localhost:1313/learning/japanese/%E6%97%A5%E8%AF%AD%E8%BE%93%E5%85%A5%E6%B3%95/</link>
       <pubDate>Sat, 28 Sep 2024 19:59:00 +0800</pubDate>
       <guid>http://localhost:1313/learning/japanese/%E6%97%A5%E8%AF%AD%E8%BE%93%E5%85%A5%E6%B3%95/</guid>
-      <description>&lt;h3 id=&#34;安装与切换语言&#34;&gt;安装与切换语言&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;安装：（Windows10）设置 -&amp;gt; 时间和语言 -&amp;gt; 语言 -&amp;gt; 首选语言 -&amp;gt; 添加语言 -&amp;gt; 日语&lt;/li&gt;&#xA;&lt;li&gt;切换语言： &lt;code&gt;Alt + Shift&lt;/code&gt; 或者 &lt;code&gt;Windows + Space&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;切换相关&#34;&gt;切换相关&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;Ctrl + caps lock&lt;/code&gt;： 片假名输入切换为平假名输入&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;Alt + caps lock&lt;/code&gt;：平假名输入切换为片假名输入&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;F6&lt;/code&gt;: 片假名输入过程切换为平假名&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;F7&lt;/code&gt;: 平假名输入过程切换为片假名&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;F8&lt;/code&gt;: 变窄 (ｹｰｷ)&lt;/li&gt;&#xA;&lt;li&gt;使用 Alt + ` 切换日文与英文&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;输入&#34;&gt;输入&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;长音&lt;/strong&gt; 按照字面音打字，片假名长音打减号&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;高校（こうこう）koukou&lt;/li&gt;&#xA;&lt;li&gt;コーヒー　ko-hi-&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;拨音&lt;/strong&gt; 两个 n&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;任務（にんむ）ninnmu&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;促音&lt;/strong&gt; 促音后的音的辅音重复&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;実際（じっさい）jissai&lt;/li&gt;&#xA;&lt;li&gt;雑誌（ざっし）zasshi&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;拗音与外来语特殊拗音&lt;/strong&gt;&lt;br&gt;&#xA;正常拗音正常输入，小写字符前加 &lt;code&gt;x&lt;/code&gt; 或者 &lt;code&gt;l&lt;/code&gt;, 记得写片假名切换 &lt;code&gt;Alt + caps lock&lt;/code&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;地球（ちきゅう）chikyuu&lt;/li&gt;&#xA;&lt;li&gt;写真（しゃしん）shashinn/syashinn&lt;/li&gt;&#xA;&lt;li&gt;女性（じょせい）jyosei/josei&lt;/li&gt;&#xA;&lt;li&gt;ティ texi&lt;/li&gt;&#xA;&lt;li&gt;フェ fuxe&lt;/li&gt;&#xA;&lt;li&gt;ヴ vu&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;特殊助词&lt;/strong&gt; 按照五十音&lt;/p&gt;</description>
+      <description>&lt;h3 id=&#34;安装与切换语言&#34;&gt;安装与切换语言&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;安装：（Windows10）设置 -&amp;gt; 时间和语言 -&amp;gt; 语言 -&amp;gt; 首选语言 -&amp;gt; 添加语言 -&amp;gt; 日语&lt;/li&gt;
+&lt;li&gt;切换语言： &lt;code&gt;Alt + Shift&lt;/code&gt; 或者 &lt;code&gt;Windows + Space&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;切换相关&#34;&gt;切换相关&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Ctrl + caps lock&lt;/code&gt;： 片假名输入切换为平假名输入&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Alt + caps lock&lt;/code&gt;：平假名输入切换为片假名输入&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;F6&lt;/code&gt;: 片假名输入过程切换为平假名&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;F7&lt;/code&gt;: 平假名输入过程切换为片假名&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;F8&lt;/code&gt;: 变窄 (ｹｰｷ)&lt;/li&gt;
+&lt;li&gt;使用 Alt + ` 切换日文与英文&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;输入&#34;&gt;输入&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;长音&lt;/strong&gt; 按照字面音打字，片假名长音打减号&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;高校（こうこう）koukou&lt;/li&gt;
+&lt;li&gt;コーヒー　ko-hi-&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;拨音&lt;/strong&gt; 两个 n&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;任務（にんむ）ninnmu&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;促音&lt;/strong&gt; 促音后的音的辅音重复&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;実際（じっさい）jissai&lt;/li&gt;
+&lt;li&gt;雑誌（ざっし）zasshi&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;拗音与外来语特殊拗音&lt;/strong&gt;&lt;br&gt;
+正常拗音正常输入，小写字符前加 &lt;code&gt;x&lt;/code&gt; 或者 &lt;code&gt;l&lt;/code&gt;, 记得写片假名切换 &lt;code&gt;Alt + caps lock&lt;/code&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hugo Feature Test</title>
       <link>http://localhost:1313/learning/hugo/hugo-feature-test/</link>
       <pubDate>Sun, 22 Sep 2024 15:08:10 +0800</pubDate>
       <guid>http://localhost:1313/learning/hugo/hugo-feature-test/</guid>
-      <description>&lt;h3 id=&#34;text&#34;&gt;Text&lt;/h3&gt;&#xA;&lt;p&gt;This is a plain text. Text with &lt;strong&gt;Stress&lt;/strong&gt;, &lt;em&gt;Italic&lt;/em&gt;, &lt;del&gt;Del line&lt;/del&gt;. Text with &lt;code&gt;inline item&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;GIF&lt;!-- raw HTML omitted --&gt; is a bitmap image format.&lt;/p&gt;&#xA;&lt;p&gt;H&lt;!-- raw HTML omitted --&gt;2&lt;!-- raw HTML omitted --&gt;O&lt;/p&gt;&#xA;&lt;p&gt;X&lt;!-- raw HTML omitted --&gt;n&lt;!-- raw HTML omitted --&gt; + Y&lt;!-- raw HTML omitted --&gt;n&lt;!-- raw HTML omitted --&gt; = Z&lt;!-- raw HTML omitted --&gt;n&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;Press &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;CTRL&lt;!-- raw HTML omitted --&gt;+&lt;!-- raw HTML omitted --&gt;ALT&lt;!-- raw HTML omitted --&gt;+&lt;!-- raw HTML omitted --&gt;Delete&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt; to end the session.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Archive</title>
-      <link>http://localhost:1313/archives/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/archives/</guid>
-      <description>archives</description>
-    </item>
-    <item>
-      <title>Search</title>
-      <link>http://localhost:1313/search/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/search/</guid>
-      <description>search</description>
+      <description>&lt;h3 id=&#34;text&#34;&gt;Text&lt;/h3&gt;
+&lt;p&gt;This is a plain text. Text with &lt;strong&gt;Stress&lt;/strong&gt;, &lt;em&gt;Italic&lt;/em&gt;, &lt;del&gt;Del line&lt;/del&gt;. Text with &lt;code&gt;inline item&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;GIF&lt;!-- raw HTML omitted --&gt; is a bitmap image format.&lt;/p&gt;
+&lt;p&gt;H&lt;!-- raw HTML omitted --&gt;2&lt;!-- raw HTML omitted --&gt;O&lt;/p&gt;
+&lt;p&gt;X&lt;!-- raw HTML omitted --&gt;n&lt;!-- raw HTML omitted --&gt; + Y&lt;!-- raw HTML omitted --&gt;n&lt;!-- raw HTML omitted --&gt; = Z&lt;!-- raw HTML omitted --&gt;n&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

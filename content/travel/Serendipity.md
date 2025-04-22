@@ -19,5 +19,5 @@ categories:
 
 {{< photo src="https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/DSC_5024.jpg" width="600" caption="京阪宇治线的下午\n温柔的冬日阳光" align="center">}}
 
-{{< photo src="https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/DSC_3177.jpg" width="600" caption="Hakura 到站！" align="center">}}
+{{< photo src="https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/DSC_3177.jpg" width="600" caption="Haruka 到站！" align="center">}}
 

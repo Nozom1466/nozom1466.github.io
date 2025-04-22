@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Learnings on Ryan&#39;s Blog</title>
     <link>http://localhost:1313/learning/</link>
     <description>Recent content in Learnings on Ryan&#39;s Blog</description>
-    <generator>Hugo</generator>
+    <image>
+      <title>Ryan&#39;s Blog</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.134.1</generator>
     <language>en</language>
     <lastBuildDate>Thu, 13 Feb 2025 15:10:32 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/learning/index.xml" rel="self" type="application/rss+xml" />
@@ -13,28 +18,73 @@
       <link>http://localhost:1313/learning/llm/cos597g-22-encoder-only-models/</link>
       <pubDate>Thu, 13 Feb 2025 15:10:32 +0800</pubDate>
       <guid>http://localhost:1313/learning/llm/cos597g-22-encoder-only-models/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://www.cs.princeton.edu/courses/archive/fall22/cos597G/&#34;&gt;Homepage&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;elmo-deep-contextualized-word-representations&#34;&gt;(ELMo) Deep contextualized word representations&lt;/h2&gt;&#xA;&lt;h3 id=&#34;before-reading&#34;&gt;Before Reading&lt;/h3&gt;&#xA;&lt;p&gt;Authors are from &lt;a href=&#34;https://allenai.org/&#34;&gt;AI2&lt;/a&gt; and &lt;a href=&#34;https://www.cs.washington.edu/&#34;&gt;UW&lt;/a&gt;. Citation 16115 (until 11/25/2024). Paper accepted by NAACL 2018, nominated as Best Paper. Paper introduced a embedding by stacking embeddings from bidirectional LSTMs.&lt;/p&gt;&#xA;&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;&#xA;&lt;p&gt;ELMo aims to find better embeddings for NLP tasks. Previous methods proposed word vectors, which are encoded in static strategy and failed to deal with words with various meanings in different contexts (Training multiple representation for 1 word partly solved the problem but it is not feasible when it comes to evolving meanings). Improvements are using subword meaning and bidirectional LSTM to encode contexts around the target word. ELMo embeddings are based on biLSTM hidden representations. Previous work also claims that layers from different depth encode meanings of different levels. ELMo takes it into account in hidden representation concatenation.&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.cs.princeton.edu/courses/archive/fall22/cos597G/&#34;&gt;Homepage&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;elmo-deep-contextualized-word-representations&#34;&gt;(ELMo) Deep contextualized word representations&lt;/h2&gt;
+&lt;h3 id=&#34;before-reading&#34;&gt;Before Reading&lt;/h3&gt;
+&lt;p&gt;Authors are from &lt;a href=&#34;https://allenai.org/&#34;&gt;AI2&lt;/a&gt; and &lt;a href=&#34;https://www.cs.washington.edu/&#34;&gt;UW&lt;/a&gt;. Citation 16115 (until 11/25/2024). Paper accepted by NAACL 2018, nominated as Best Paper. Paper introduced a embedding by stacking embeddings from bidirectional LSTMs.&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;p&gt;ELMo aims to find better embeddings for NLP tasks. Previous methods proposed word vectors, which are encoded in static strategy and failed to deal with words with various meanings in different contexts (Training multiple representation for 1 word partly solved the problem but it is not feasible when it comes to evolving meanings). Improvements are using subword meaning and bidirectional LSTM to encode contexts around the target word. ELMo embeddings are based on biLSTM hidden representations. Previous work also claims that layers from different depth encode meanings of different levels. ELMo takes it into account in hidden representation concatenation.&lt;/p&gt;</description>
     </item>
     <item>
       <title>COS597G 22 Introduction</title>
       <link>http://localhost:1313/learning/llm/cos597g-22-introduction/</link>
       <pubDate>Fri, 15 Nov 2024 22:37:35 +0800</pubDate>
       <guid>http://localhost:1313/learning/llm/cos597g-22-introduction/</guid>
-      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.cs.princeton.edu/courses/archive/fall22/cos597G/&#34;&gt;Homepage&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;human-language-understanding--reasoning&#34;&gt;Human Language Understanding &amp;amp; Reasoning&lt;/h2&gt;&#xA;&lt;p&gt;Introductory reading authored by &lt;a href=&#34;https://nlp.stanford.edu/~manning/&#34;&gt;Christopher D. Manning&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h3 id=&#34;brief-introduction-of-nlp-history&#34;&gt;Brief introduction of NLP history&lt;/h3&gt;&#xA;&lt;p&gt;The NLP history is divided into four sections, running from the middle of last century to 2 years ago. NLP starts with machine translation in Cold War 1950 - 1969, when researchers on both sides sought to develop systems capable of translating the scientific output of the other nations. The NLP system provided little more the word-level lookups and some simple principle-based mechanisms.&lt;/p&gt;</description>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.cs.princeton.edu/courses/archive/fall22/cos597G/&#34;&gt;Homepage&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;human-language-understanding--reasoning&#34;&gt;Human Language Understanding &amp;amp; Reasoning&lt;/h2&gt;
+&lt;p&gt;Introductory reading authored by &lt;a href=&#34;https://nlp.stanford.edu/~manning/&#34;&gt;Christopher D. Manning&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;brief-introduction-of-nlp-history&#34;&gt;Brief introduction of NLP history&lt;/h3&gt;
+&lt;p&gt;The NLP history is divided into four sections, running from the middle of last century to 2 years ago. NLP starts with machine translation in Cold War 1950 - 1969, when researchers on both sides sought to develop systems capable of translating the scientific output of the other nations. The NLP system provided little more the word-level lookups and some simple principle-based mechanisms.&lt;/p&gt;</description>
     </item>
     <item>
       <title>日语输入法</title>
       <link>http://localhost:1313/learning/japanese/%E6%97%A5%E8%AF%AD%E8%BE%93%E5%85%A5%E6%B3%95/</link>
       <pubDate>Sat, 28 Sep 2024 19:59:00 +0800</pubDate>
       <guid>http://localhost:1313/learning/japanese/%E6%97%A5%E8%AF%AD%E8%BE%93%E5%85%A5%E6%B3%95/</guid>
-      <description>&lt;h3 id=&#34;安装与切换语言&#34;&gt;安装与切换语言&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;安装：（Windows10）设置 -&amp;gt; 时间和语言 -&amp;gt; 语言 -&amp;gt; 首选语言 -&amp;gt; 添加语言 -&amp;gt; 日语&lt;/li&gt;&#xA;&lt;li&gt;切换语言： &lt;code&gt;Alt + Shift&lt;/code&gt; 或者 &lt;code&gt;Windows + Space&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;切换相关&#34;&gt;切换相关&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;Ctrl + caps lock&lt;/code&gt;： 片假名输入切换为平假名输入&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;Alt + caps lock&lt;/code&gt;：平假名输入切换为片假名输入&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;F6&lt;/code&gt;: 片假名输入过程切换为平假名&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;F7&lt;/code&gt;: 平假名输入过程切换为片假名&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;F8&lt;/code&gt;: 变窄 (ｹｰｷ)&lt;/li&gt;&#xA;&lt;li&gt;使用 Alt + ` 切换日文与英文&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;输入&#34;&gt;输入&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;长音&lt;/strong&gt; 按照字面音打字，片假名长音打减号&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;高校（こうこう）koukou&lt;/li&gt;&#xA;&lt;li&gt;コーヒー　ko-hi-&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;拨音&lt;/strong&gt; 两个 n&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;任務（にんむ）ninnmu&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;促音&lt;/strong&gt; 促音后的音的辅音重复&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;実際（じっさい）jissai&lt;/li&gt;&#xA;&lt;li&gt;雑誌（ざっし）zasshi&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;拗音与外来语特殊拗音&lt;/strong&gt;&lt;br&gt;&#xA;正常拗音正常输入，小写字符前加 &lt;code&gt;x&lt;/code&gt; 或者 &lt;code&gt;l&lt;/code&gt;, 记得写片假名切换 &lt;code&gt;Alt + caps lock&lt;/code&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;地球（ちきゅう）chikyuu&lt;/li&gt;&#xA;&lt;li&gt;写真（しゃしん）shashinn/syashinn&lt;/li&gt;&#xA;&lt;li&gt;女性（じょせい）jyosei/josei&lt;/li&gt;&#xA;&lt;li&gt;ティ texi&lt;/li&gt;&#xA;&lt;li&gt;フェ fuxe&lt;/li&gt;&#xA;&lt;li&gt;ヴ vu&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;特殊助词&lt;/strong&gt; 按照五十音&lt;/p&gt;</description>
+      <description>&lt;h3 id=&#34;安装与切换语言&#34;&gt;安装与切换语言&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;安装：（Windows10）设置 -&amp;gt; 时间和语言 -&amp;gt; 语言 -&amp;gt; 首选语言 -&amp;gt; 添加语言 -&amp;gt; 日语&lt;/li&gt;
+&lt;li&gt;切换语言： &lt;code&gt;Alt + Shift&lt;/code&gt; 或者 &lt;code&gt;Windows + Space&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;切换相关&#34;&gt;切换相关&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Ctrl + caps lock&lt;/code&gt;： 片假名输入切换为平假名输入&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Alt + caps lock&lt;/code&gt;：平假名输入切换为片假名输入&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;F6&lt;/code&gt;: 片假名输入过程切换为平假名&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;F7&lt;/code&gt;: 平假名输入过程切换为片假名&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;F8&lt;/code&gt;: 变窄 (ｹｰｷ)&lt;/li&gt;
+&lt;li&gt;使用 Alt + ` 切换日文与英文&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;输入&#34;&gt;输入&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;长音&lt;/strong&gt; 按照字面音打字，片假名长音打减号&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;高校（こうこう）koukou&lt;/li&gt;
+&lt;li&gt;コーヒー　ko-hi-&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;拨音&lt;/strong&gt; 两个 n&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;任務（にんむ）ninnmu&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;促音&lt;/strong&gt; 促音后的音的辅音重复&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;実際（じっさい）jissai&lt;/li&gt;
+&lt;li&gt;雑誌（ざっし）zasshi&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;拗音与外来语特殊拗音&lt;/strong&gt;&lt;br&gt;
+正常拗音正常输入，小写字符前加 &lt;code&gt;x&lt;/code&gt; 或者 &lt;code&gt;l&lt;/code&gt;, 记得写片假名切换 &lt;code&gt;Alt + caps lock&lt;/code&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hugo Feature Test</title>
       <link>http://localhost:1313/learning/hugo/hugo-feature-test/</link>
       <pubDate>Sun, 22 Sep 2024 15:08:10 +0800</pubDate>
       <guid>http://localhost:1313/learning/hugo/hugo-feature-test/</guid>
-      <description>&lt;h3 id=&#34;text&#34;&gt;Text&lt;/h3&gt;&#xA;&lt;p&gt;This is a plain text. Text with &lt;strong&gt;Stress&lt;/strong&gt;, &lt;em&gt;Italic&lt;/em&gt;, &lt;del&gt;Del line&lt;/del&gt;. Text with &lt;code&gt;inline item&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;GIF&lt;!-- raw HTML omitted --&gt; is a bitmap image format.&lt;/p&gt;&#xA;&lt;p&gt;H&lt;!-- raw HTML omitted --&gt;2&lt;!-- raw HTML omitted --&gt;O&lt;/p&gt;&#xA;&lt;p&gt;X&lt;!-- raw HTML omitted --&gt;n&lt;!-- raw HTML omitted --&gt; + Y&lt;!-- raw HTML omitted --&gt;n&lt;!-- raw HTML omitted --&gt; = Z&lt;!-- raw HTML omitted --&gt;n&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;Press &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;CTRL&lt;!-- raw HTML omitted --&gt;+&lt;!-- raw HTML omitted --&gt;ALT&lt;!-- raw HTML omitted --&gt;+&lt;!-- raw HTML omitted --&gt;Delete&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt; to end the session.&lt;/p&gt;</description>
+      <description>&lt;h3 id=&#34;text&#34;&gt;Text&lt;/h3&gt;
+&lt;p&gt;This is a plain text. Text with &lt;strong&gt;Stress&lt;/strong&gt;, &lt;em&gt;Italic&lt;/em&gt;, &lt;del&gt;Del line&lt;/del&gt;. Text with &lt;code&gt;inline item&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;GIF&lt;!-- raw HTML omitted --&gt; is a bitmap image format.&lt;/p&gt;
+&lt;p&gt;H&lt;!-- raw HTML omitted --&gt;2&lt;!-- raw HTML omitted --&gt;O&lt;/p&gt;
+&lt;p&gt;X&lt;!-- raw HTML omitted --&gt;n&lt;!-- raw HTML omitted --&gt; + Y&lt;!-- raw HTML omitted --&gt;n&lt;!-- raw HTML omitted --&gt; = Z&lt;!-- raw HTML omitted --&gt;n&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
