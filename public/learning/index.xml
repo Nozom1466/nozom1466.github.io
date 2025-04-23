@@ -11,8 +11,18 @@
     </image>
     <generator>Hugo -- 0.134.1</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 13 Feb 2025 15:10:32 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 22 Apr 2025 23:45:33 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>COS597G 22 Encoder Decoder Models</title>
+      <link>http://localhost:1313/learning/llm/cos597g-22-encoder-decoder-models/</link>
+      <pubDate>Tue, 22 Apr 2025 23:45:33 +0800</pubDate>
+      <guid>http://localhost:1313/learning/llm/cos597g-22-encoder-decoder-models/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.cs.princeton.edu/courses/archive/fall22/cos597G/&#34;&gt;Homepage&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;For BART, T5, mT5 and AlexaTM 20B&lt;/p&gt;
+&lt;h2 id=&#34;bart-denoising-sequence-to-sequence-pre-training-for-natural-language-generation-translation-and-comprehension&#34;&gt;BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension&lt;/h2&gt;
+&lt;p&gt;Encoder-decoder model was not actually a popular architecture between 2019 and 2020. As you can observe from Figure 1, during 2019-2020 slot, lots of tech companies bid on Encoder-only models, including BERT, RoBERTa, ALBERT. Encoder-decoder and decoder-only models are not yet well explored. But if we further look at the end of branches, Encoder-decoder models still take a place in model zoo, such as Flan series.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>COS597G 22 Encoder Only Models</title>
       <link>http://localhost:1313/learning/llm/cos597g-22-encoder-only-models/</link>

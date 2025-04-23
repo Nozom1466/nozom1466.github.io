@@ -10,7 +10,7 @@ cover:
     caption:
     relative: false
 showtoc: true
-draft: true
+draft: false
 tags: []
 categories:
 ---
@@ -140,7 +140,7 @@ Another classification other than encoder/decoder: look into attention mask adop
 Prefix LMs resembles BERT for classification tasks when you feeding the model with tasks like: `I hate pigeons. hypothesis: My feelings towards pigeons are filled with animosity. target:` (Of course! Didn't see why the author are adding this paragraph ...). Attention masking seems to be an interesting topic, which involves many other memory-efficient or computing-efficient methods (paged attention for vllm?).
 
 
-{{< figure src="https://dkharazi.github.io/88459ae93dd4af11a69cab297fec5dbd/t5training.png" width="800" caption="Schematics of the Transformer architecture variants we consider. In this diagram, blocks represent elements of a sequence and lines represent attention visibility. Different colored groups of blocks indicate different Transformer layer stacks. Dark grey lines correspond to fully-visible masking and light grey lines correspond to causal masking. We use “.” to denote a special end-of-sequence token that represents the end of a prediction. The input and output sequences are represented as x and y respectively. Left: A standard encoder-decoder architecture uses fullyvisible masking in the encoder and the encoder-decoder attention, with causal masking in the decoder. Middle: A language model consists of a single Transformer layer stack and is fed the concatenation of the input and target, using a causal mask throughout. Right: Adding a prefix to a language model corresponds to allowing fully-visible masking over the input." align="center">}}
+{{< figure src="https://dkharazi.github.io/88459ae93dd4af11a69cab297fec5dbd/t5training.png" width="800" caption="Figure 6. Schematics of the Transformer architecture variants we consider. In this diagram, blocks represent elements of a sequence and lines represent attention visibility. Different colored groups of blocks indicate different Transformer layer stacks. Dark grey lines correspond to fully-visible masking and light grey lines correspond to causal masking. We use “.” to denote a special end-of-sequence token that represents the end of a prediction. The input and output sequences are represented as x and y respectively. Left: A standard encoder-decoder architecture uses fullyvisible masking in the encoder and the encoder-decoder attention, with causal masking in the decoder. Middle: A language model consists of a single Transformer layer stack and is fed the concatenation of the input and target, using a causal mask throughout. Right: Adding a prefix to a language model corresponds to allowing fully-visible masking over the input." align="center">}}
 
 Here the authors mentioned criterions in selecting models, condidering these models are in different architectures and parameters. We suppose two models are equivalent if they have the same parameter @P@ or the same computational cost @C@. Consider an *encoder-decoder model* with @L + L@ layers, @P + P@ parameters and a *language model*(decoder) with @2L@ layers and @2P@ parameters. The parameters are approximately the same for these models but the **computation cost** of *language model* is approx. twice of that in *encoder-decoder* model. Because the latter has to deal with both input squence and output sequence but the former deal with inputs and outputs separately. (has lots to do with sequence length ...). Theresfore, they select:
 - e-d, L + L -> 2P, M flops
@@ -150,10 +150,34 @@ Here the authors mentioned criterions in selecting models, condidering these mod
 - d, prefix -> P, M flops
 where e-d for encoder and decoder and L for layers, P for parameters, M for computational cost. 
 
+
 - **Results (for different architecture)**: Denoising task (metioned in previous section) and language modeling task (predicting the whole sentence for language model and predicting the second half of the sentence given the first half). Sharing the params across e-d performed very well and halfing params hurts the performace. 
 
 
 
 
 ### Unsupervised Objectives
+Examples of common unsupervised objectives (Figure 7). Models are fisrt pretrained based on these unsupervised objectives then evaluated on downstream tasks (GLUE, CNNDM, SQuAD, SGLUE, EnDe, EnFr and EnRo). This section extends in: 3 common unsupervised objectives -> variants of BERT objective (MLM) -> exploration of corruption rate -> exploration of corrupting spans.
 
+
+{{< figure src="https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/20250423235343386.png" width="1000" caption="Figure 7. Examples of inputs and targets produced by some of the unsupervised objectives we consider applied to the input text “Thank you for inviting me to your party last week .” Note that all of our objectives process tokenized text. For this particular sentence, all words were mapped to a single token by our vocabulary. We write (original text) as a target to denote that the model is tasked with reconstructing the entire input text. <M> denotes a shared mask token and <X>, <Y>, and <Z> denote sentinel tokens that are assigned unique token IDs. The BERT-style objective (second row) includes a corruption where some tokens are replaced by a random token ID; we show this via the greyed-out word apple." align="center">}}
+
+
+- **High Level Approaches**: Tha author evaluated 3 types of objectives: Prefix language modeling, BERT-syle(MLM) and deshuffuling (as illustarted in Figure 7). BERT objective stands out (signifigantly over Deshuffling).
+- **Variants of BERT Objective**: Purpose: better performance and better efficiency. 
+    - *VARIANT 1: MASS-style*, reconstruct the original uncorrupted sequence(4th in Figure 7); 
+    - *VARIANT 2: Unique mask token*, predict token prefixed by special token(5th in Figure 7).; 
+    - *VARIANT 3: Drop Corrupted Tokens*, concatenate predicted tokens(6th in Figure 7). All these variants performs similarly. 
+    - Notice that performace of dropping corrupted tokens fluctuates on several metrics. Dropping is still attractive because it *reduces the input length thus making training faster*.
+- **Corruption Rate**: Limited effect on performance. Larger corruption rate -> more inference time.
+- **Corrupting Spans**: BERT mask follows i.i.d., masking tokens independently. While in some cases we need consecutive corruption. Number of corruption span and span lengths are determined by parameters. Again, this trick has limited effect on downstream task performance. While span corruption slightly speeds up training because it produces shorter sequence on average.
+
+- **Conclusions**: 
+1. Denoising objectives(BERT MLM) outperforms language modeling and deshuffling.
+2. Choosing among the denoising objectives we considered here should mainly be done **according to their computational cost**(since similar approaches yields slight improvements). It may be fortuitous to explore entirely different ways of leveraging unlabeled data.
+
+
+> For conclusion 2, the paper seems only to explore BERT variants. What about the other two?
+
+
+### Pretraining Data set
