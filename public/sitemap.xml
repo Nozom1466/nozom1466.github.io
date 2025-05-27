@@ -2,19 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-05-27T22:59:47+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/travel/</loc>
+    <lastmod>2025-05-27T22:59:47+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/travel/%E5%9B%9B%E5%B9%B3%E8%B7%AF1239%E5%8F%B7/</loc>
+    <lastmod>2025-05-27T22:59:47+08:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/learning/llm/cos597g-22-encoder-decoder-models/</loc>
     <lastmod>2025-04-22T23:45:33+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/learning/</loc>
     <lastmod>2025-04-22T23:45:33+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2025-04-22T23:45:33+08:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/travel/serendipity/</loc>
-    <lastmod>2025-03-25T23:28:59+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/travel/</loc>
     <lastmod>2025-03-25T23:28:59+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/learning/llm/cos597g-22-encoder-only-models/</loc>

@@ -180,4 +180,17 @@ Examples of common unsupervised objectives (Figure 7). Models are fisrt pretrain
 > For conclusion 2, the paper seems only to explore BERT variants. What about the other two?
 
 
-### Pretraining Data set
+### Pretraining Data set    
+The effects of pretraininig dataset. There are these fun facts:
+
+1. `C4` dataset proposed by this paper invloves a heuristic filtering strategy, which proved to be helpful in pretraining.
+2. Pretraining on in-domain unlabeled data can improve performance on downstream tasks. (not superising? like SFT?) But it's not good if we want our model to adapt to language tasks from arbitraray domains. BUT the dataset gathered for specific domains are much smaller.
+3. Pretraining dataset size is also a key factor. The performance of pretrained model degrades as the size of dataset getting smaller. (model trys to memorize the dataset rather than learning.)
+4. Use large dataset as possible. Repeated dataset will degrade the performance while its ok if the repeated time are smaller than 64 (som  metrics are even better)
+
+
+> 
+
+
+
+
