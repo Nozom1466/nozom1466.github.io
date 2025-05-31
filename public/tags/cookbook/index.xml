@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Travels on Ryan&#39;s Blog</title>
-    <link>http://localhost:1313/travel/</link>
-    <description>Recent content in Travels on Ryan&#39;s Blog</description>
+    <title>Cookbook on Ryan&#39;s Blog</title>
+    <link>http://localhost:1313/tags/cookbook/</link>
+    <description>Recent content in Cookbook on Ryan&#39;s Blog</description>
     <image>
       <title>Ryan&#39;s Blog</title>
       <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
@@ -11,29 +11,14 @@
     </image>
     <generator>Hugo -- 0.134.1</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 27 May 2025 22:59:47 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/travel/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>四平路1239号</title>
-      <link>http://localhost:1313/travel/%E5%9B%9B%E5%B9%B3%E8%B7%AF1239%E5%8F%B7/</link>
-      <pubDate>Tue, 27 May 2025 22:59:47 +0800</pubDate>
-      <guid>http://localhost:1313/travel/%E5%9B%9B%E5%B9%B3%E8%B7%AF1239%E5%8F%B7/</guid>
-      <description>关于四平路1239号的一些回忆</description>
-    </item>
-    <item>
-      <title>Serendipity</title>
-      <link>http://localhost:1313/travel/serendipity/</link>
-      <pubDate>Tue, 25 Mar 2025 23:28:59 +0800</pubDate>
-      <guid>http://localhost:1313/travel/serendipity/</guid>
-      <description>一些旅行碎片</description>
-    </item>
+    <lastBuildDate>Thu, 13 Feb 2025 17:48:43 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/cookbook/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>日本自由行：白日梦手册</title>
       <link>http://localhost:1313/travel/%E6%97%A5%E6%9C%AC%E8%87%AA%E7%94%B1%E8%A1%8C%E7%99%BD%E6%97%A5%E6%A2%A6%E6%89%8B%E5%86%8C/</link>
       <pubDate>Thu, 13 Feb 2025 17:48:43 +0800</pubDate>
       <guid>http://localhost:1313/travel/%E6%97%A5%E6%9C%AC%E8%87%AA%E7%94%B1%E8%A1%8C%E7%99%BD%E6%97%A5%E6%A2%A6%E6%89%8B%E5%86%8C/</guid>
-      <description>&lt;h2 id=&#34;未完待续&#34;&gt;[未完待续]&lt;/h2&gt;
-&lt;p&gt;Updates:&lt;br&gt;
+      <description>&lt;p&gt;Updates:&lt;br&gt;
 12/13/2024: 订1.25出发机票、1.28返程机票(北京大兴机场&amp;amp;关西国际机场)，订送签旅行社&lt;br&gt;
 12/19/2024: 签证材料邮寄、电子材料发送&lt;br&gt;
 12/20/2024: 租用运动相机(1.18-2.4)、配件、SD卡&lt;br&gt;

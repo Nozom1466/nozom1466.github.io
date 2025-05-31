@@ -2,7 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/tags/essay/</loc>
+    <lastmod>2025-05-27T22:59:47+08:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/</loc>
+    <lastmod>2025-05-27T22:59:47+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-05-27T22:59:47+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/tongji/</loc>
     <lastmod>2025-05-27T22:59:47+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/travel/</loc>
@@ -20,6 +29,21 @@
     <loc>http://localhost:1313/travel/serendipity/</loc>
     <lastmod>2025-03-25T23:28:59+08:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/cookbook/</loc>
+    <lastmod>2025-02-13T17:48:43+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/japan/</loc>
+    <lastmod>2025-02-13T17:48:43+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/travel/</loc>
+    <lastmod>2025-02-13T17:48:43+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/uji/</loc>
+    <lastmod>2025-02-13T17:48:43+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/travel/%E6%97%A5%E6%9C%AC%E8%87%AA%E7%94%B1%E8%A1%8C%E7%99%BD%E6%97%A5%E6%A2%A6%E6%89%8B%E5%86%8C/</loc>
+    <lastmod>2025-02-13T17:48:43+08:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/learning/llm/cos597g-22-encoder-only-models/</loc>
     <lastmod>2025-02-13T15:10:32+08:00</lastmod>
   </url><url>
@@ -27,9 +51,6 @@
     <lastmod>2025-02-13T15:10:32+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/llm/</loc>
-    <lastmod>2025-02-13T15:10:32+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-02-13T15:10:32+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/learning/llm/cos597g-22-introduction/</loc>
@@ -43,9 +64,6 @@
   </url><url>
     <loc>http://localhost:1313/ideas/rich-dad-poor-dad-review/</loc>
     <lastmod>2024-10-30T23:39:11+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/essay/</loc>
-    <lastmod>2024-10-05T13:10:59+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/ideas/%E9%A4%98%E5%91%BD-7-%E5%B9%B4/</loc>
     <lastmod>2024-10-05T13:10:59+08:00</lastmod>
