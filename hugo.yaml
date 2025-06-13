@@ -75,9 +75,9 @@ params:
 
   # profile-mode
   profileMode:
-    enabled: true # needs to be explicitly set
+    enabled: True # needs to be explicitly set
     title: Ryan Ming
-    subtitle: "Find your way of thinking."
+    subtitle: "LEARN & CREATE"
     imageUrl: "/profileMode/avatar.jpg"
     imageWidth: 120
     imageHeight: 120
