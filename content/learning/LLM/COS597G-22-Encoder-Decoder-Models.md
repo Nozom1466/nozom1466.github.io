@@ -2,15 +2,14 @@
 title: 'COS597G 22 Encoder Decoder Models'
 date: 2025-04-22T23:45:33+08:00
 slug:
-summary:
+summary: Encoder Decoder Models
 description:
 cover:
     image:
     alt:
     caption:
     relative: false
-showtoc: true
-draft: false
+draft: true
 tags: []
 categories:
 ---

@@ -10,7 +10,7 @@ cover:
     caption:
     relative: false
 showtoc: true
-draft: false
+draft: true
 tags: ['LLM', 'COS597G:2022']
 categories:
 ---

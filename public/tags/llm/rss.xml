@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LLM on Ryan's Blog</title><link>http://localhost:1313/tags/llm/</link><description>Recent content in LLM on Ryan's Blog</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Thu, 13 Feb 2025 15:10:32 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/llm/rss.xml" rel="self" type="application/rss+xml"/><item><title>COS597G 22 Encoder Only Models</title><link>http://localhost:1313/learning/llm/cos597g-22-encoder-only-models/</link><pubDate>Thu, 13 Feb 2025 15:10:32 +0800</pubDate><guid>http://localhost:1313/learning/llm/cos597g-22-encoder-only-models/</guid><description>&lt;p&gt;
+&lt;a href="https://www.cs.princeton.edu/courses/archive/fall22/cos597G/" title="Homepage" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl"&gt;
+ Homepage
+ 
+ &lt;i class="fa fa-external-link-alt"&gt;&lt;/i&gt;
+ 
+&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="elmo-deep-contextualized-word-representations"&gt;(ELMo) Deep contextualized word representations
+&lt;a class="header-anchor" href="#elmo-deep-contextualized-word-representations"&gt;&lt;/a&gt;
+&lt;/h2&gt;&lt;h3 id="before-reading"&gt;Before Reading
+&lt;a class="header-anchor" href="#before-reading"&gt;&lt;/a&gt;
+&lt;/h3&gt;&lt;p&gt;Authors are from 
+&lt;a href="https://allenai.org/" title="AI2" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl"&gt;
+ AI2
+ 
+ &lt;i class="fa fa-external-link-alt"&gt;&lt;/i&gt;
+ 
+&lt;/a&gt; and 
+&lt;a href="https://www.cs.washington.edu/" title="UW" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl"&gt;
+ UW
+ 
+ &lt;i class="fa fa-external-link-alt"&gt;&lt;/i&gt;
+ 
+&lt;/a&gt;. Citation 16115 (until 11/25/2024). Paper accepted by NAACL 2018, nominated as Best Paper. Paper introduced a embedding by stacking embeddings from bidirectional LSTMs.&lt;/p&gt;
+&lt;h3 id="motivation"&gt;Motivation
+&lt;a class="header-anchor" href="#motivation"&gt;&lt;/a&gt;
+&lt;/h3&gt;&lt;p&gt;ELMo aims to find better embeddings for NLP tasks. Previous methods proposed word vectors, which are encoded in static strategy and failed to deal with words with various meanings in different contexts (Training multiple representation for 1 word partly solved the problem but it is not feasible when it comes to evolving meanings). Improvements are using subword meaning and bidirectional LSTM to encode contexts around the target word. ELMo embeddings are based on biLSTM hidden representations. Previous work also claims that layers from different depth encode meanings of different levels. ELMo takes it into account in hidden representation concatenation.&lt;/p&gt;</description></item><item><title>COS597G 22 Introduction</title><link>http://localhost:1313/learning/llm/cos597g-22-introduction/</link><pubDate>Fri, 15 Nov 2024 22:37:35 +0800</pubDate><guid>http://localhost:1313/learning/llm/cos597g-22-introduction/</guid><description>&lt;blockquote&gt;
+ &lt;p&gt;
+&lt;a href="https://www.cs.princeton.edu/courses/archive/fall22/cos597G/" title="Homepage" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl"&gt;
+ Homepage
+ 
+ &lt;i class="fa fa-external-link-alt"&gt;&lt;/i&gt;
+ 
+&lt;/a&gt;&lt;/p&gt;
+
+ &lt;/blockquote&gt;
+&lt;h2 id="human-language-understanding--reasoning"&gt;Human Language Understanding &amp;amp; Reasoning
+&lt;a class="header-anchor" href="#human-language-understanding--reasoning"&gt;&lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;Introductory reading authored by 
+&lt;a href="https://nlp.stanford.edu/~manning/" title="Christopher D. Manning" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl"&gt;
+ Christopher D. Manning
+ 
+ &lt;i class="fa fa-external-link-alt"&gt;&lt;/i&gt;
+ 
+&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id="brief-introduction-of-nlp-history"&gt;Brief introduction of NLP history
+&lt;a class="header-anchor" href="#brief-introduction-of-nlp-history"&gt;&lt;/a&gt;
+&lt;/h3&gt;&lt;p&gt;The NLP history is divided into four sections, running from the middle of last century to 2 years ago. NLP starts with machine translation in Cold War 1950 - 1969, when researchers on both sides sought to develop systems capable of translating the scientific output of the other nations. The NLP system provided little more the word-level lookups and some simple principle-based mechanisms.&lt;/p&gt;</description></item></channel></rss>

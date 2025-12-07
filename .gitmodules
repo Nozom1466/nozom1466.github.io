@@ -3,3 +3,6 @@
  	url = git@github.com:adityatelange/hugo-PaperMod.git
 	# url = git@github.com:Nozom1466/nozom1466.github.io.git
 	# branch = master
+[submodule "themes/hugo-theme-next"]
+	path = themes/hugo-theme-next
+	url = https://github.com/hugo-next/hugo-theme-next.git

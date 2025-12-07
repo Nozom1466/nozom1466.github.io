@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Japanese on Ryan's Blog</title><link>http://localhost:1313/tags/japanese/</link><description>Recent content in Japanese on Ryan's Blog</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Sat, 28 Sep 2024 19:59:00 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/japanese/rss.xml" rel="self" type="application/rss+xml"/><item><title>日语输入法</title><link>http://localhost:1313/learning/japanese/%E6%97%A5%E8%AF%AD%E8%BE%93%E5%85%A5%E6%B3%95/</link><pubDate>Sat, 28 Sep 2024 19:59:00 +0800</pubDate><guid>http://localhost:1313/learning/japanese/%E6%97%A5%E8%AF%AD%E8%BE%93%E5%85%A5%E6%B3%95/</guid><description>&lt;h3 id="安装与切换语言"&gt;安装与切换语言
+&lt;a class="header-anchor" href="#%e5%ae%89%e8%a3%85%e4%b8%8e%e5%88%87%e6%8d%a2%e8%af%ad%e8%a8%80"&gt;&lt;/a&gt;
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;安装：（Windows10）设置 -&amp;gt; 时间和语言 -&amp;gt; 语言 -&amp;gt; 首选语言 -&amp;gt; 添加语言 -&amp;gt; 日语&lt;/li&gt;
+&lt;li&gt;切换语言： &lt;code&gt;Alt + Shift&lt;/code&gt; 或者 &lt;code&gt;Windows + Space&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="切换相关"&gt;切换相关
+&lt;a class="header-anchor" href="#%e5%88%87%e6%8d%a2%e7%9b%b8%e5%85%b3"&gt;&lt;/a&gt;
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Ctrl + caps lock&lt;/code&gt;： 片假名输入切换为平假名输入&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Alt + caps lock&lt;/code&gt;：平假名输入切换为片假名输入&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;F6&lt;/code&gt;: 片假名输入过程切换为平假名&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;F7&lt;/code&gt;: 平假名输入过程切换为片假名&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;F8&lt;/code&gt;: 变窄 (ｹｰｷ)&lt;/li&gt;
+&lt;li&gt;使用 Alt + ` 切换日文与英文&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="输入"&gt;输入
+&lt;a class="header-anchor" href="#%e8%be%93%e5%85%a5"&gt;&lt;/a&gt;
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;长音&lt;/strong&gt; 按照字面音打字，片假名长音打减号&lt;/p&gt;</description></item></channel></rss>

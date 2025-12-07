@@ -1,0 +1,64 @@
+/* Hide post footer hr separator */
+.post-footer hr {
+  display: block !important;
+  order: 1;
+}
+
+.flinks-list-footer hr {
+  display: none;
+}
+
+/* Hide entire site footer */
+.footer {
+  display: none !important;
+}
+
+/* Hide sidebar toggle button */
+.sidebar-toggle {
+  display: none !important;
+}
+
+/* Hide multilingual translate button */
+#goto-i18n-translate {
+  display: none !important;
+}
+
+/* Move tool-buttons to the right side and align with sidebar toggle */
+.tool-buttons {
+  /* right: 20px !important; */
+  /* left: auto !important; */
+  bottom: 2rem !important;
+}
+
+/* Hide post navigation text (prev/next links) but keep the container */
+.post-nav-item a {
+  display: none !important;
+}
+
+/* Hide entire post-nav section */
+.post-nav {
+  display: none !important;
+}
+
+/* Reorder post footer: hr first, then tags */
+.post-footer {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.post-footer .post-tags {
+  order: 2;
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* Align menu to the right */
+.main-menu {
+  display: flex !important;
+  justify-content: flex-end !important;
+}
+
+/* Hide logo lines in site title */
+.logo-line {
+  display: none !important;
+}
