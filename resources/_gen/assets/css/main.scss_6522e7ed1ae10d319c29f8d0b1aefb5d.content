@@ -619,8 +619,6 @@ td {
   background: var(--highlight-background);
   margin-bottom: 26px;
   line-height: 1.25;
-  border-radius: 5px;
-  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.4);
 }
 
 .highlight > .code-header {
@@ -947,7 +945,9 @@ td {
   font-style: normal;
   font-variant: normal;
   text-rendering: auto;
-  color: var(--highlight-foreground);
+  background-color: #eee;
+  background-image: linear-gradient(#fcfcfc, #eee);
+  border: 1px solid #d5d5d5;
 }
 
 .highlight > .chroma .copy-btn::before {
@@ -960,16 +960,6 @@ td {
 
 .highlight > .chroma .copy-btn.uncopied::before {
   content: "\f057";
-}
-
-.highlight .code-header::before {
-  background: #fc625d;
-  box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
-  margin-left: 10px;
-  border-radius: 50%;
-  content: ' ';
-  height: 12px;
-  width: 12px;
 }
 
 /** monokai highlight style **/
@@ -4940,7 +4930,7 @@ hr {
 }
 
 .links-of-author a::before, .links-of-social a::before {
-  background: #b19ad9;
+  background: #4d1287;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);

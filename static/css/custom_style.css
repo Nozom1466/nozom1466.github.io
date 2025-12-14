@@ -140,3 +140,107 @@ figcaption,
 .abc-music .abcjs-composer {
   font-size: 0.9em !important;
 }
+
+/* Inline code styles - follows VSCode Modern Light/Dark theme */
+[data-theme="light"] p > code,
+[data-theme="light"] li > code {
+  background: #f3f3f3 !important;
+  color: #1f1f1f !important;
+}
+
+p > code,
+li > code {
+  background: #2d2d2d !important;
+  color: #d4d4d4 !important;
+}
+
+/* Code block language label - reduce size and weight, align left */
+.highlight .code-header .code-lang {
+  font-size: 0.8em !important;
+  font-weight: normal !important;
+  text-align: left !important;
+  padding-left: 0.5em !important;
+  font-family: 'consolas', 'monaco', 'courier new', monospace !important;
+}
+
+.highlight .code-header .code-lang::before {
+  content: "> ";
+}
+
+/* Code block light mode - light gray background */
+[data-theme="light"] .highlight {
+  background: #f5f5f5 !important;
+}
+
+[data-theme="light"] .highlight .chroma {
+  background: #f5f5f5 !important;
+  color: #1f1f1f !important;
+}
+
+[data-theme="light"] .highlight .code-header {
+  background: #e0e0e0 !important;
+  color: #333 !important;
+}
+
+[data-theme="light"] .highlight .chroma .lntd:first-child {
+  background: #e8e8e8 !important;
+}
+
+/* Light mode syntax highlighting - VS Code Light+ inspired */
+[data-theme="light"] .highlight .chroma .ln,
+[data-theme="light"] .highlight .chroma .lnt { color: #6e7681 !important; }
+/* Keyword */ [data-theme="light"] .highlight .chroma .k { color: #0000ff !important; }
+/* KeywordConstant */ [data-theme="light"] .highlight .chroma .kc { color: #0000ff !important; }
+/* KeywordDeclaration */ [data-theme="light"] .highlight .chroma .kd { color: #0000ff !important; }
+/* KeywordNamespace */ [data-theme="light"] .highlight .chroma .kn { color: #af00db !important; }
+/* KeywordPseudo */ [data-theme="light"] .highlight .chroma .kp { color: #0000ff !important; }
+/* KeywordReserved */ [data-theme="light"] .highlight .chroma .kr { color: #0000ff !important; }
+/* KeywordType */ [data-theme="light"] .highlight .chroma .kt { color: #267f99 !important; }
+/* NameAttribute */ [data-theme="light"] .highlight .chroma .na { color: #e50000 !important; }
+/* NameClass */ [data-theme="light"] .highlight .chroma .nc { color: #267f99 !important; }
+/* NameConstant */ [data-theme="light"] .highlight .chroma .no { color: #0070c1 !important; }
+/* NameDecorator */ [data-theme="light"] .highlight .chroma .nd { color: #795e26 !important; }
+/* NameException */ [data-theme="light"] .highlight .chroma .ne { color: #267f99 !important; }
+/* NameFunction */ [data-theme="light"] .highlight .chroma .nf { color: #795e26 !important; }
+/* NameOther */ [data-theme="light"] .highlight .chroma .nx { color: #795e26 !important; }
+/* NameTag */ [data-theme="light"] .highlight .chroma .nt { color: #800000 !important; }
+/* Literal */ [data-theme="light"] .highlight .chroma .l { color: #098658 !important; }
+/* LiteralString */ [data-theme="light"] .highlight .chroma .s { color: #a31515 !important; }
+/* LiteralStringAffix */ [data-theme="light"] .highlight .chroma .sa { color: #a31515 !important; }
+/* LiteralStringBacktick */ [data-theme="light"] .highlight .chroma .sb { color: #a31515 !important; }
+/* LiteralStringChar */ [data-theme="light"] .highlight .chroma .sc { color: #a31515 !important; }
+/* LiteralStringDelimiter */ [data-theme="light"] .highlight .chroma .dl { color: #a31515 !important; }
+/* LiteralStringDoc */ [data-theme="light"] .highlight .chroma .sd { color: #a31515 !important; }
+/* LiteralStringDouble */ [data-theme="light"] .highlight .chroma .s2 { color: #a31515 !important; }
+/* LiteralStringEscape */ [data-theme="light"] .highlight .chroma .se { color: #ee0000 !important; }
+/* LiteralStringHeredoc */ [data-theme="light"] .highlight .chroma .sh { color: #a31515 !important; }
+/* LiteralStringInterpol */ [data-theme="light"] .highlight .chroma .si { color: #a31515 !important; }
+/* LiteralStringOther */ [data-theme="light"] .highlight .chroma .sx { color: #a31515 !important; }
+/* LiteralStringRegex */ [data-theme="light"] .highlight .chroma .sr { color: #811f3f !important; }
+/* LiteralStringSingle */ [data-theme="light"] .highlight .chroma .s1 { color: #a31515 !important; }
+/* LiteralStringSymbol */ [data-theme="light"] .highlight .chroma .ss { color: #a31515 !important; }
+/* LiteralNumber */ [data-theme="light"] .highlight .chroma .m { color: #098658 !important; }
+/* LiteralNumberBin */ [data-theme="light"] .highlight .chroma .mb { color: #098658 !important; }
+/* LiteralNumberFloat */ [data-theme="light"] .highlight .chroma .mf { color: #098658 !important; }
+/* LiteralNumberHex */ [data-theme="light"] .highlight .chroma .mh { color: #098658 !important; }
+/* LiteralNumberInteger */ [data-theme="light"] .highlight .chroma .mi { color: #098658 !important; }
+/* LiteralNumberIntegerLong */ [data-theme="light"] .highlight .chroma .il { color: #098658 !important; }
+/* LiteralNumberOct */ [data-theme="light"] .highlight .chroma .mo { color: #098658 !important; }
+/* Operator */ [data-theme="light"] .highlight .chroma .o { color: #000000 !important; }
+/* OperatorWord */ [data-theme="light"] .highlight .chroma .ow { color: #0000ff !important; }
+/* Comment */ [data-theme="light"] .highlight .chroma .c { color: #008000 !important; }
+/* CommentHashbang */ [data-theme="light"] .highlight .chroma .ch { color: #008000 !important; }
+/* CommentMultiline */ [data-theme="light"] .highlight .chroma .cm { color: #008000 !important; }
+/* CommentSingle */ [data-theme="light"] .highlight .chroma .c1 { color: #008000 !important; }
+/* CommentSpecial */ [data-theme="light"] .highlight .chroma .cs { color: #008000 !important; }
+/* CommentPreproc */ [data-theme="light"] .highlight .chroma .cp { color: #af00db !important; }
+/* CommentPreprocFile */ [data-theme="light"] .highlight .chroma .cpf { color: #a31515 !important; }
+/* Generic */ [data-theme="light"] .highlight .chroma .g { color: #1f1f1f !important; }
+/* GenericDeleted */ [data-theme="light"] .highlight .chroma .gd { color: #a31515 !important; background-color: #ffeef0 !important; }
+/* GenericInserted */ [data-theme="light"] .highlight .chroma .gi { color: #098658 !important; background-color: #e6ffec !important; }
+/* Punctuation */ [data-theme="light"] .highlight .chroma .p { color: #1f1f1f !important; }
+
+/* Disable code block expand animation */
+.highlight .chroma.hidden-code {
+    animation: none !important;
+}

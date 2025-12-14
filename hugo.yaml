@@ -211,10 +211,10 @@ params:
   # 不同尺寸站点图标
   # Different size of favicon
   favicon:
-    icon: /imgs/icons/favicon.ico
-    small: /imgs/icons/favicon_16x16_next.png
-    medium: /imgs/icons/favicon_32_32_next.png
-    appleTouchIcon: /imgs/icons/apple_touch_icon_next.png
+    icon: /meta/favicon.ico
+    small: /meta/favicon-16x16.png
+    medium: /meta/favicon-32x32.png
+    appleTouchIcon: /meta/apple-touch-icon.png
 
   # 自定义 Logo （目前只支持 Mist 页面模式）
   # Custom Logo (Warning: Only support scheme Mist)
@@ -635,7 +635,7 @@ params:
   codeblock:    
     # 支持样式类型： default | flat | mac
     # Available values: default | flat | mac
-    style: mac
+    style: default
     # 在代码块上添加拷贝按钮
     # Add copy button on codeblock
     copyBtn: true
