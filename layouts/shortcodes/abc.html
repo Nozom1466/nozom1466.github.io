@@ -1,0 +1,242 @@
+{{- $id := printf "abc-%d" (index (seq 1000 | shuffle) 0) -}}
+{{- $playable := .Get "play" | default false -}}
+<div id="{{ $id }}" class="abc-music"></div>
+{{ if $playable }}
+<div id="{{ $id }}-audio"></div>
+{{ end }}
+<script src="https://cdn.jsdelivr.net/npm/abcjs@6.4.1/dist/abcjs-basic-min.js"></script>
+<style>
+  .abc-music { margin: 1em 0; overflow-x: auto; }
+  .abc-music svg { max-width: 100%; height: auto; }
+  /* Lyrics text style */
+  .abc-music .abcjs-lyric {
+    font-size: 0.75em;
+    font-weight: normal;
+  }
+  
+  /* abcjs audio player styles */
+  .abcjs-inline-audio {
+    height: 1.625em;
+    padding: 0 0.3em;
+    border-radius: 0.2em;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  .abcjs-inline-audio.abcjs-disabled { opacity: 0.5; }
+  .abcjs-inline-audio .abcjs-btn {
+    display: block;
+    width: 1.4em;
+    height: 1.7em;
+    margin-right: 0.1em;
+    padding: 0.3em 0.2em;
+    background: none !important;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    line-height: 1;
+    cursor: pointer;
+  }
+  .abcjs-btn g { fill: #f4f4f4; stroke: #f4f4f4; }
+  .abcjs-inline-audio .abcjs-btn:hover g { fill: #cccccc; stroke: #cccccc; }
+  .abcjs-inline-audio .abcjs-midi-selection.abcjs-pushed,
+  .abcjs-inline-audio .abcjs-midi-loop.abcjs-pushed,
+  .abcjs-inline-audio .abcjs-midi-reset.abcjs-pushed {
+    border: 1px solid #cccccc;
+    background-color: #666666;
+    box-sizing: border-box;
+  }
+  .abcjs-inline-audio .abcjs-midi-start .abcjs-pause-svg { display: none; }
+  .abcjs-inline-audio .abcjs-midi-start .abcjs-loading-svg { display: none; }
+  .abcjs-inline-audio .abcjs-midi-start.abcjs-pushed .abcjs-play-svg { display: none; }
+  .abcjs-inline-audio .abcjs-midi-start.abcjs-loading .abcjs-play-svg { display: none; }
+  .abcjs-inline-audio .abcjs-midi-start.abcjs-pushed .abcjs-pause-svg { display: block; }
+  .abcjs-inline-audio .abcjs-midi-progress-background {
+    background-color: transparent;
+    height: 0.5em;
+    border-radius: 0.25em;
+    border: 0.0625em solid #cccccc;
+    margin: 0 0.5em 0 0.5em;
+    position: relative;
+    flex: 1;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+  .abcjs-inline-audio .abcjs-midi-progress-background .abcjs-progress-fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background-color: #888;
+    border-radius: 0.2em;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .abcjs-inline-audio .abcjs-midi-progress-indicator {
+    z-index: 1;
+    width: 1em;
+    height: 1em;
+    margin-left: -0.5em;
+    background-color: #f4f4f4;
+    position: absolute;
+    display: inline-block;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    box-sizing: border-box;
+  }
+  .abcjs-inline-audio .abcjs-midi-clock {
+    margin-left: 0.25em;
+    margin-top: 0.0625em;
+    margin-right: 0.125em;
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: 0.875em;
+    box-sizing: border-box;
+    color: #f4f4f4;
+  }
+  .abcjs-inline-audio .abcjs-tempo-wrapper {
+    font-size: 0.875em;
+    color: #f4f4f4;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+  }
+  .abcjs-inline-audio .abcjs-midi-tempo {
+    border-radius: 0.125em;
+    border: none;
+    margin: 0 0.125em 0 0.25em;
+    width: 2em;
+    padding-left: 0.125em;
+    box-sizing: border-box;
+    font-size: 0.875em;
+    /* Hide spinner arrows */
+    -moz-appearance: textfield;
+  }
+  .abcjs-inline-audio .abcjs-midi-tempo::-webkit-outer-spin-button,
+  .abcjs-inline-audio .abcjs-midi-tempo::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  .abcjs-inline-audio .abcjs-loading .abcjs-loading-svg { display: inherit; }
+  .abcjs-inline-audio .abcjs-loading {
+    outline: none;
+    animation-name: abcjs-spin;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  .abcjs-inline-audio .abcjs-loading-svg circle { stroke: #f4f4f4; }
+  @keyframes abcjs-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  /* Large size for touch devices */
+  .abcjs-large .abcjs-inline-audio { height: 3.25em; }
+  .abcjs-large .abcjs-btn { width: 3.5em; height: 3.25em; font-size: 1.75em; padding: 0.375em 0.5em; }
+  .abcjs-large .abcjs-midi-progress-background { height: 1.25em; border: 0.25em solid #cccccc; }
+  .abcjs-large .abcjs-midi-progress-indicator { height: 1.75em; top: -0.5em; width: 2.5em; margin-left: -1.25em; }
+  .abcjs-large .abcjs-midi-clock { font-size: 2em; margin-right: 0.625em; margin-left: 0.625em; margin-top: -0.0625em; }
+  .abcjs-large .abcjs-midi-tempo { font-size: 1.25em; width: 3.125em; }
+  .abcjs-large .abcjs-tempo-wrapper { font-size: 1.25em; }
+  .abcjs-css-warning { display: none !important; }
+  
+  /* Light mode overrides */
+  [data-theme="light"] .abcjs-btn g {
+    fill: #333;
+    stroke: #333;
+  }
+  [data-theme="light"] .abcjs-inline-audio .abcjs-btn:hover g {
+    fill: #555;
+    stroke: #555;
+  }
+  [data-theme="light"] .abcjs-inline-audio .abcjs-midi-progress-background {
+    background-color: transparent;
+    border-color: #666;
+  }
+  [data-theme="light"] .abcjs-inline-audio .abcjs-midi-progress-background .abcjs-progress-fill {
+    background-color: #aaa;
+  }
+  [data-theme="light"] .abcjs-inline-audio .abcjs-midi-progress-indicator {
+    background-color: #333;
+  }
+  [data-theme="light"] .abcjs-inline-audio .abcjs-midi-clock,
+  [data-theme="light"] .abcjs-inline-audio .abcjs-tempo-wrapper {
+    color: #333;
+  }
+  [data-theme="light"] .abcjs-inline-audio .abcjs-midi-selection.abcjs-pushed,
+  [data-theme="light"] .abcjs-inline-audio .abcjs-midi-loop.abcjs-pushed,
+  [data-theme="light"] .abcjs-inline-audio .abcjs-midi-reset.abcjs-pushed {
+    border-color: #666;
+    background-color: #ccc;
+  }
+  [data-theme="light"] .abcjs-inline-audio .abcjs-loading-svg circle {
+    stroke: #333;
+  }
+</style>
+<script>
+  (function() {
+    var abcNotation = `{{ .Inner }}`;
+    var visualObj = ABCJS.renderAbc('{{ $id }}', abcNotation, {
+      responsive: 'resize',
+      add_classes: true
+    });
+    {{ if $playable }}
+    if (ABCJS.synth.supportsAudio()) {
+      var synthControl = new ABCJS.synth.SynthController();
+      synthControl.load('#{{ $id }}-audio', null, {
+        displayLoop: true,
+        displayRestart: true,
+        displayPlay: true,
+        displayProgress: true,
+        displayWarp: true
+      });
+      synthControl.setTune(visualObj[0], false).then(function(response) {
+        console.log('Audio initialized for {{ $id }}');
+        var audioDiv = document.getElementById('{{ $id }}-audio');
+        
+        // Create progress fill element
+        var progressBg = audioDiv.querySelector('.abcjs-midi-progress-background');
+        var progressIndicator = audioDiv.querySelector('.abcjs-midi-progress-indicator');
+        if (progressBg && progressIndicator) {
+          var progressFill = document.createElement('div');
+          progressFill.className = 'abcjs-progress-fill';
+          progressBg.insertBefore(progressFill, progressIndicator);
+          
+          // Update fill width based on indicator position
+          var updateFill = function() {
+            var indicatorLeft = progressIndicator.style.left;
+            progressFill.style.width = indicatorLeft;
+          };
+          
+          // Observe indicator style changes
+          var observer = new MutationObserver(updateFill);
+          observer.observe(progressIndicator, { attributes: true, attributeFilter: ['style'] });
+        }
+        
+        // Clip tempo input to [min, max] range
+        var tempoInput = audioDiv.querySelector('.abcjs-midi-tempo');
+        if (tempoInput) {
+          tempoInput.addEventListener('change', function() {
+            var min = parseInt(this.min, 10) || 1;
+            var max = parseInt(this.max, 10) || 300;
+            var val = parseInt(this.value, 10);
+            if (isNaN(val) || val < min) {
+              this.value = min;
+            } else if (val > max) {
+              this.value = max;
+            }
+          });
+        }
+      }).catch(function(error) {
+        console.warn('Audio error:', error);
+      });
+    } else {
+      document.getElementById('{{ $id }}-audio').innerHTML = '<p style="color: #999;">您的浏览器不支持音频播放</p>';
+    }
+    {{ end }}
+  })();
+</script>

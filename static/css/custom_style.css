@@ -130,3 +130,13 @@ figcaption,
   margin-top: 0.5em !important;
   font-weight: normal !important;
 }
+
+/* ABC music notation styles */
+.abc-music .abcjs-title {
+  font-size: 0.9em !important;
+}
+
+.abc-music .abcjs-subtitle,
+.abc-music .abcjs-composer {
+  font-size: 0.9em !important;
+}
