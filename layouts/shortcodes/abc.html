@@ -194,6 +194,16 @@
         displayProgress: true,
         displayWarp: true
       });
+      
+      // iOS Safari compatibility: resume AudioContext on user interaction
+      var audioContext = ABCJS.synth.activeAudioContext();
+      if (audioContext && audioContext.state === 'suspended') {
+        document.addEventListener('touchstart', function resumeAudio() {
+          audioContext.resume();
+          document.removeEventListener('touchstart', resumeAudio);
+        }, { once: true });
+      }
+      
       synthControl.setTune(visualObj[0], false).then(function(response) {
         console.log('Audio initialized for {{ $id }}');
         var audioDiv = document.getElementById('{{ $id }}-audio');
