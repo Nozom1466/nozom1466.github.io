@@ -21,10 +21,7 @@
  
  &lt;i class="fa fa-external-link-alt"&gt;&lt;/i&gt;
  
-&lt;/a&gt;. Citation 16115 (until 11/25/2024). Paper accepted by NAACL 2018, nominated as Best Paper. Paper introduced a embedding by stacking embeddings from bidirectional LSTMs.&lt;/p&gt;
-&lt;h3 id="motivation"&gt;Motivation
-&lt;a class="header-anchor" href="#motivation"&gt;&lt;/a&gt;
-&lt;/h3&gt;&lt;p&gt;ELMo aims to find better embeddings for NLP tasks. Previous methods proposed word vectors, which are encoded in static strategy and failed to deal with words with various meanings in different contexts (Training multiple representation for 1 word partly solved the problem but it is not feasible when it comes to evolving meanings). Improvements are using subword meaning and bidirectional LSTM to encode contexts around the target word. ELMo embeddings are based on biLSTM hidden representations. Previous work also claims that layers from different depth encode meanings of different levels. ELMo takes it into account in hidden representation concatenation.&lt;/p&gt;</description></item><item><title>COS597G 22 Introduction</title><link>http://localhost:1313/learning/llm/cos597g-22-introduction/</link><pubDate>Fri, 15 Nov 2024 22:37:35 +0800</pubDate><guid>http://localhost:1313/learning/llm/cos597g-22-introduction/</guid><description>&lt;blockquote&gt;
+&lt;/a&gt;. Citation 16115 (until 11/25/2024). Paper accepted by NAACL 2018, nominated as Best Paper. Paper introduced a embedding by stacking embeddings from bidirectional LSTMs.&lt;/p&gt;</description></item><item><title>COS597G 22 Introduction</title><link>http://localhost:1313/learning/llm/cos597g-22-introduction/</link><pubDate>Fri, 15 Nov 2024 22:37:35 +0800</pubDate><guid>http://localhost:1313/learning/llm/cos597g-22-introduction/</guid><description>&lt;blockquote&gt;
  &lt;p&gt;
 &lt;a href="https://www.cs.princeton.edu/courses/archive/fall22/cos597G/" title="Homepage" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl"&gt;
  Homepage

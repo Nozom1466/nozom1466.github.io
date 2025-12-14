@@ -1,0 +1,18 @@
+#--------------------------------------
+# Custom English Overrides
+#--------------------------------------
+PostArchive:
+  cheers:
+    um: ""
+    ok: ""
+    nice: ""
+    good: ""
+    great: ""
+    excellent: ""
+  keepOn: ""
+
+Symbol:
+  comma: ""
+
+Terms:
+  archives: "Total {{ .Count }} posts."

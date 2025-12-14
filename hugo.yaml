@@ -72,7 +72,7 @@ languages:
           enable: false
       
       postFooter:
-        endLineTip: "~ End Line ~"
+        endLineTip: ""
       
       rewardSets:
         comment: '<i class="fa-solid fa-mug-hot"></i>  How about you buy me a coffee?ヾ(^▽^*)))'

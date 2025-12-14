@@ -62,3 +62,71 @@
 .logo-line {
   display: none !important;
 }
+
+/* Hide end line tip completely */
+.post-footer hr:after,
+.flinks-list-footer hr:after {
+  display: none !important;
+}
+
+.post-tags a:before {
+  content: "#";  /* 改成其他图标 */
+  margin-right: 2px;
+  /* 或者隐藏它 */
+  /* display: none; */
+}
+
+/* Pagination styles */
+.pagination {
+  border-top: none !important;
+}
+
+.pagination .prev,
+.pagination .next,
+.pagination .page-number {
+  border: 1px solid #ddd !important;
+  border-radius: 50% !important;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  padding: 0 !important;
+  text-align: center;
+}
+
+.pagination .page-number.current {
+  border-radius: 50% !important;
+}
+
+/* Reduce header height */
+.header-inner {
+  padding-top: 0.4em !important;
+  padding-bottom: 0.4em !important;
+}
+
+.site-brand-container {
+  padding: 0 !important;
+}
+
+.site-meta {
+  padding: 0.3em 0 !important;
+}
+
+.site-title {
+  font-size: 1.2em !important;
+}
+
+.site-subtitle {
+  margin-top: 0.1em !important;
+  font-size: 0.85em !important;
+}
+
+/* Image caption styles */
+figure img {
+  margin-bottom: 0 !important;
+}
+
+figcaption,
+.image-caption {
+  margin-top: 0.5em !important;
+  font-weight: normal !important;
+}

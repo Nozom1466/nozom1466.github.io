@@ -6,25 +6,4 @@
 &lt;a class="header-anchor" href="#1-clipper-%e6%96%87%e7%ab%a0%e8%ae%b2%e8%a7%a3"&gt;&lt;/a&gt;
 &lt;/h2&gt;&lt;p&gt;Serving 文章
 Sky Computing Lab in UCB
-Ion Stoica&lt;/p&gt;
-&lt;p&gt;什么是 ML/DL serving
-如何优化
-学术 vs 工业&lt;/p&gt;
-&lt;p&gt;training -&amp;gt; serving
-优化指标&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;latency
-&lt;ol&gt;
-&lt;li&gt;P99&lt;/li&gt;
-&lt;li&gt;P50&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;Throughput
-&lt;ol&gt;
-&lt;li&gt;qps&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id="2-clipper对吞吐量优化"&gt;2. clipper　对吞吐量优化
-&lt;a class="header-anchor" href="#2-clipper%e5%af%b9%e5%90%9e%e5%90%90%e9%87%8f%e4%bc%98%e5%8c%96"&gt;&lt;/a&gt;
-&lt;/h2&gt;&lt;p&gt;latency &amp;amp; througput &amp;amp; accuracy&lt;/p&gt;</description></item></channel></rss>
+Ion Stoica&lt;/p&gt;</description></item></channel></rss>
