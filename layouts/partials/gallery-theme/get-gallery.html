@@ -1,0 +1,58 @@
+{{ $gallery := "" }}
+{{ $images :=  where (.Resources.ByType "image") "Params.hidden" "ne" true }}
+{{ $remoteImages := .Params.remote_images }}
+{{ $hasImages := or (gt (len $images) 0) (gt (len $remoteImages) 0) }}
+
+{{ if $hasImages }}
+  {{ $thumbnail := "" }}
+  {{ $color := "transparent" }}
+  {{ $imageCount := 0 }}
+  {{ $albumCount := 0 }}
+  
+  {{/* Try to get cover from local images first */}}
+  {{ if gt (len $images) 0 }}
+    {{ $covers := where (.Resources.ByType "image") "Params.cover" "eq" true }}
+    {{ $cover := "" }}
+    {{ if ge (len $covers) 0 }}
+      {{ $cover = index $covers 0 }}
+    {{ end }}
+    {{ $featured := $cover | default ((.Resources.ByType "image").GetMatch (.Params.featured_image | default "*feature*")) | default (index $images 0) }}
+    {{ $thumbnail = $featured.Filter (slice images.AutoOrient (images.Process "fit 600x600")) }}
+    {{ $color = index $thumbnail.Colors 0 | default "transparent" }}
+  {{ end }}
+  
+  {{/* If no local cover, use first remote image with cover=true or first remote image */}}
+  {{ if and (not $thumbnail) (gt (len $remoteImages) 0) }}
+    {{ $coverRemote := "" }}
+    {{ range $remoteImages }}
+      {{ if and (not $coverRemote) (index .params "cover") }}
+        {{ $coverRemote = . }}
+      {{ end }}
+    {{ end }}
+    {{ $coverRemote = $coverRemote | default (index $remoteImages 0) }}
+    {{/* Create a fake thumbnail dict for remote images */}}
+    {{ $thumbnail = dict "RelPermalink" $coverRemote.url "Width" ($coverRemote.width | default 600) "Height" ($coverRemote.height | default 600) }}
+    {{ $color = "#ccc" }}
+  {{ end }}
+  
+  {{ if .IsPage }}
+    {{ $imageCount = add (len $images) (len $remoteImages) }}
+  {{ else }}
+    {{ range where .RegularPagesRecursive "Params.private" "ne" true }}
+      {{ $albumCount = add $albumCount 1 }}
+      {{ $localCount := len (where (.Resources.ByType "image") "Params.hidden" "ne" true) }}
+      {{ $remoteCount := len .Params.remote_images }}
+      {{ $imageCount = add $imageCount (add $localCount $remoteCount) }}
+    {{ end }}
+  {{ end }}
+  
+  {{ $gallery = dict
+    "page" $
+    "images" $images
+    "thumbnail" $thumbnail
+    "color" $color
+    "albumCount" $albumCount
+    "imageCount" $imageCount
+  }}
+{{ end }}
+{{ return $gallery }}

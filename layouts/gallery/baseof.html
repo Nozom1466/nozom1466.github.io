@@ -1,0 +1,20 @@
+<!doctype html>
+{{- $theme := .Params.theme | default "dark" }}
+<html class="{{- if (eq $theme "light") -}}light{{- else if (eq $theme "dark") }}dark{{ end }}" lang="{{- site.LanguageCode | default "en" -}}">
+  {{ partial "gallery-theme/head.html" . }}
+  <body style="margin: 0;">
+    <header style="padding: 0.4em 2rem; background: #333; margin: 0; display: flex; align-items: center; justify-content: space-between; gap: 2rem; min-height: auto;">
+      <a href="{{ "/" | relURL }}" style="font-size: 1.2em; font-weight: 600; text-decoration: none; color: var(--text-1); padding: 0.3em 0; margin: 0;">
+        Ryan's Gallery
+      </a>
+      <div style="display: flex; gap: 2rem; align-items: center; margin: 0;">
+        <a href="{{ "/" | relURL }}" style="font-size: 0.85em; text-decoration: none; color: var(--text-1); margin: 0;"><i class="fa fa-home" style="margin-right: 0.3em;"></i>Home</a>
+        <a href="{{ "/gallery" | relURL }}" style="font-size: 0.85em; text-decoration: none; color: var(--text-1); font-weight: 600; margin: 0;"><i class="fa fa-image" style="margin-right: 0.3em;"></i>Gallery</a>
+      </div>
+    </header>
+    <main style="max-width: none; width: 100%; padding: 0; box-sizing: border-box;">
+      {{ block "main" . }}{{ end }}
+    </main>
+    {{ partial "gallery-theme/footer.html" . }}
+  </body>
+</html>

@@ -1,0 +1,116 @@
+<section class="gallery">
+  <div id="gallery" style="visibility: hidden; height: 1px; overflow: hidden">
+    {{ $images := slice }}
+    
+    {{/* First, handle remote images from front matter params.remote_images */}}
+    {{ with .Params.remote_images }}
+      {{ range . }}
+        {{ $tags := .tags | default slice }}
+        {{ $originalUrl := .url }}
+        {{/* Extract filename from URL if name is not provided */}}
+        {{ $fileName := .name }}
+        {{ if not $fileName }}
+          {{ $urlParts := split $originalUrl "/" }}
+          {{ $fileName = index $urlParts (sub (len $urlParts) 1) }}
+          {{/* Remove query parameters from filename */}}
+          {{ $fileName = index (split $fileName "?") 0 }}
+        {{ end }}
+        {{/* For Unsplash, remove any existing query parameters to get the original */}}
+        {{ if strings.Contains $originalUrl "unsplash.com" }}
+          {{ $originalUrl = (index (split $originalUrl "?") 0) }}
+        {{ end }}
+        {{ $fullUrl := $originalUrl }}
+        {{ $thumbnailUrl := $originalUrl }}
+        {{/* Auto-generate thumbnail URL for Unsplash images */}}
+        {{ if strings.Contains $fullUrl "unsplash.com" }}
+          {{ $thumbnailUrl = printf "%s?w=800&q=60&fit=crop" $fullUrl }}
+        {{ end }}
+        {{ $images = $images | append (dict
+          "Name" $fileName
+          "Title" (.title | default "")
+          "Date" ""
+          "isRemote" true
+          "url" $fullUrl
+          "thumbnail_url" $thumbnailUrl
+          "width" (.width | default 1200)
+          "height" (.height | default 800)
+          "Params" .params
+          "Tags" $tags
+        ) }}
+      {{ end }}
+    {{ end }}
+    
+    {{/* Then handle local images */}}
+    {{ range $image := where (.Resources.ByType "image") "Params.hidden" "ne" true }}
+      {{ $title := "" }}
+      {{ $date := "" }}
+      {{ with $image.Exif }}
+        {{ $date = .Date }}
+        {{ with .Tags.ImageDescription }}
+          {{/* Title from EXIF ImageDescription */}}
+          {{ $title = . }}
+        {{ end }}
+      {{ end }}
+      {{ if ne $image.Title $image.Name }}
+        {{/* Title from front matter */}}
+        {{ $title = $image.Title }}
+      {{ end }}
+      {{ if $image.Params.Date }}
+        {{/* Date from front matter */}}
+        {{ $date = time $image.Params.Date }}
+      {{ end }}
+      {{ $images = $images | append (dict
+        "Name" $image.Name
+        "Title" $title
+        "Date" $date
+        "image" $image
+        "isRemote" false
+        "Params" $image.Params
+        "Tags" ($image.Params.tags | default slice)
+        )
+      }}
+    {{ end }}
+    
+    {{ $publishResources := default true .Params.build.publishResources }}
+    {{ range sort $images (.Params.sort_by | default "Name") (.Params.sort_order | default "asc") }}
+      {{ $tagsStr := delimit .Tags "," }}
+      {{ if .isRemote }}
+        {{/* Remote image */}}
+        {{ $fullUrl := .url }}
+        {{ $thumbnailUrl := .thumbnail_url }}
+        {{ $width := .width }}
+        {{ $height := .height }}
+        {{ $aspectRatio := div (float $width) (float $height) }}
+        {{/* Format title with paragraph tags for each line */}}
+        {{ $titleLines := split .Title "\n" }}
+        {{ $formattedTitle := "" }}
+        {{ range $titleLines }}
+          {{ $formattedTitle = printf "%s<p>%s</p>" $formattedTitle . }}
+        {{ end }}
+        <a class="gallery-item" href="{{ $fullUrl }}" data-pswp-src="{{ $fullUrl }}" data-pswp-width="{{ $width }}" data-pswp-height="{{ $height }}" data-pswp-target="{{ .Name | urlize }}" data-tags="{{ $tagsStr }}" title="{{ .Title }}" data-caption="{{ $formattedTitle }}" itemscope itemtype="https://schema.org/ImageObject" style="aspect-ratio: {{ $aspectRatio }}">
+          <figure style="background-color: #ccc; aspect-ratio: {{ $aspectRatio }}">
+            <img class="lazyload" width="{{ $width }}" height="{{ $height }}" data-src="{{ $thumbnailUrl }}" alt="{{ .Title }}" />
+          </figure>
+          <meta itemprop="contentUrl" content="{{ $fullUrl }}" />
+        </a>
+      {{ else }}
+        {{/* Local image */}}
+        {{ $image := .image }}
+        {{ $thumbnail := $image.Filter (slice images.AutoOrient (images.Process "fit 600x600")) }}
+        {{ $full := $image.Filter (slice images.AutoOrient (images.Process "fit 1600x1600")) }}
+        {{ $color := index $thumbnail.Colors 0 | default "transparent" }}
+        <a class="gallery-item" href="{{ if $publishResources }}{{ $image.RelPermalink }}{{ else }}{{ $full.RelPermalink }}{{ end }}" data-pswp-src="{{ $full.RelPermalink }}" data-pswp-width="{{ $full.Width }}" data-pswp-height="{{ $full.Height }}" data-pswp-target="{{ $image.Name | urlize }}" data-tags="{{ $tagsStr }}" title="{{ .Title }}" itemscope itemtype="https://schema.org/ImageObject" style="aspect-ratio: {{ $thumbnail.Width }} / {{ $thumbnail.Height }}">
+          <figure style="background-color: {{ $color }}; aspect-ratio: {{ $thumbnail.Width }} / {{ $thumbnail.Height }}">
+            <img class="lazyload" width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}" data-src="{{ $thumbnail.RelPermalink }}" alt="{{ .Title }}" />
+          </figure>
+          <meta itemprop="contentUrl" content="{{ if $publishResources }}{{ $image.RelPermalink }}{{ else }}{{ $full.RelPermalink }}{{ end }}" />
+          {{ with site.Params.Author }}
+            <span itemprop="creator" itemtype="https://schema.org/Person" itemscope>
+              <meta itemprop="name" content="{{ site.Params.Author.name }}" />
+            </span>
+          {{ end }}
+        </a>
+      {{ end }}
+    {{ end }}
+  </div>
+</section>

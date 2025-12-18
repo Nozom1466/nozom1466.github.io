@@ -1,0 +1,50 @@
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ with .Title }}{{ . }} -{{ end }} {{ .Site.Title }}</title>
+  <link rel="canonical" href="{{ .Permalink }}" />
+  <link rel="icon" type="image/svg+xml" href="{{ "/images/favicon.svg" | relURL }}" />
+  <link rel="icon" type="image/png" href="{{ "/images/favicon.png" | relURL }}" />
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ "/images/apple-touch-icon.png" | relURL }}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <meta name="description" content="{{ with .Description }}{{ . | markdownify | plainify }}{{ else }}{{ with .Site.Params.description }}{{ . | markdownify | plainify }}{{ end }}{{ end }}" />
+  {{ if .Params.keywords }}
+    <meta name="keywords" content="{{ delimit .Params.keywords `, ` }}" />
+  {{ end }}
+  {{ if .Params.private }}
+    <meta name="robots" content="noindex, nofollow" />
+  {{ else }}
+    <meta name="robots" content="index, follow" />
+  {{ end }}
+  {{ range .AlternativeOutputFormats -}}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+  {{ end -}}
+  {{ partial "gallery-theme/opengraph.html" . }}
+  {{ $css := resources.Get "/gallery/css/main.scss" | toCSS | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
+  <style>
+    /* Hide scrollbar but keep scroll functionality */
+    html, body {
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE/Edge */
+    }
+    html::-webkit-scrollbar, body::-webkit-scrollbar {
+      display: none; /* Chrome/Safari/Webkit */
+    }
+  </style>
+  {{ $params := dict
+    "closeTitle" (i18n "closeTitle" | default "Close")
+    "zoomTitle" (i18n "zoomTitle" | default "Zoom")
+    "arrowPrevTitle" (i18n "arrowPrevTitle" | default "Previous")
+    "arrowNextTitle" (i18n "arrowNextTitle" | default "Next")
+    "errorMsg" (i18n "errorMsg" | default "Image cannot be loaded")
+    "downloadTitle" (i18n "downloadTitle" | default "Download")
+    "boxSpacing" (default 8 .Site.Params.gallery.boxSpacing)
+    "targetRowHeight" (default 288 .Site.Params.gallery.targetRowHeight)
+    "targetRowHeightTolerance" (default 0.25 .Site.Params.gallery.targetRowHeightTolerance)
+    "enableDownload" (default true .Params.build.publishResources)
+  }}
+  {{ $js := resources.Get "/gallery/js/main.js" | js.Build (dict "minify" true "params" $params) | resources.Fingerprint }}
+  <script src="{{ $js.RelPermalink }}" defer></script>
+  {{- partial "gallery-theme/head-custom.html" . -}}
+</head>

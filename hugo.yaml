@@ -53,8 +53,18 @@ languages:
           pageRef: /tags
           pre: tags
           weight: 3
+        - identifier: gallery
+          name: Gallery
+          pageRef: /gallery
+          pre: image
+          weight: 4
     params:
       yearFormat: "2006"
+      # Gallery settings
+      gallery:
+        boxSpacing: 8
+        targetRowHeight: 300
+        targetRowHeightTolerance: 0.25
       monthFormat: "01/02"
       dateFormat: "2006/01/02"
       timeFormat: "2006/01/02 15:04:05 -07:00"

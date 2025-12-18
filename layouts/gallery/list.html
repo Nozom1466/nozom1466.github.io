@@ -1,0 +1,68 @@
+{{ define "main" }}
+  {{/* Collect all unique tags from remote_images */}}
+  {{ $allTags := slice }}
+  {{ with .Params.remote_images }}
+    {{ range . }}
+      {{ with .tags }}
+        {{ range . }}
+          {{ if not (in $allTags .) }}
+            {{ $allTags = $allTags | append . }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+  {{ $allTags = sort $allTags }}
+  
+  {{/* Tag navigation bar */}}
+  <nav class="tag-filter" style="padding: 1rem 2rem; text-align: center; background: var(--surface-1, #282828);">
+    <a href="{{ .Permalink }}" class="tag-link" data-tag="all" style="display: inline-block; margin: 0.25rem; padding: 0.3rem 0.8rem; border: 1px solid var(--text-1, #fafafa); border-radius: 8px; background: transparent; text-decoration: none; color: var(--text-1, #fafafa); transition: all 0.3s ease;">All</a>
+    {{ range $allTags }}
+      <a href="{{ $.Permalink }}?tag={{ . }}" class="tag-link" data-tag="{{ . }}" style="display: inline-block; margin: 0.25rem; padding: 0.3rem 0.8rem; border: 1px solid var(--text-1, #fafafa); border-radius: 8px; background: transparent; text-decoration: none; color: var(--text-1, #fafafa); transition: all 0.3s ease;">{{ . }}</a>
+    {{ end }}
+  </nav>
+  
+  {{/* Waterfall gallery */}}
+  {{ partial "gallery-theme/gallery.html" . }}
+  
+  {{/* Tag filtering JavaScript based on URL parameter */}}
+  <script>
+  (function() {
+    document.addEventListener('DOMContentLoaded', function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const currentTag = urlParams.get('tag');
+      const galleryItems = document.querySelectorAll('.gallery-item');
+      const tagLinks = document.querySelectorAll('.tag-link');
+      
+      // Highlight active tag link
+      tagLinks.forEach(function(link) {
+        const linkTag = link.getAttribute('data-tag');
+        if ((currentTag && linkTag === currentTag) || (!currentTag && linkTag === 'all')) {
+          link.style.background = 'var(--text-1, #fafafa)';
+          link.style.color = 'var(--surface-1, #282828)';
+          link.style.borderColor = 'var(--text-1, #fafafa)';
+        }
+      });
+      
+      // Filter gallery items by adding/removing tag-hidden class
+      let visibleCount = 0;
+      galleryItems.forEach(function(item) {
+        const itemTags = (item.getAttribute('data-tags') || '').split(',');
+        if (!currentTag || itemTags.includes(currentTag)) {
+          item.classList.remove('tag-hidden');
+          visibleCount++;
+        } else {
+          item.classList.add('tag-hidden');
+        }
+      });
+      
+      // Trigger layout recalculation after filtering
+      setTimeout(function() {
+        if (typeof window.updateGalleryLayout === 'function') {
+          window.updateGalleryLayout();
+        }
+      }, 50);
+    });
+  })();
+  </script>
+{{ end }}

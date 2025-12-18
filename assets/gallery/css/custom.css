@@ -1,0 +1,42 @@
+﻿/* custom.css */
+/* Fix white gap below images in gallery */
+.gallery-item figure {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 0;
+  display: block;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  vertical-align: top;
+}
+
+/* Allow line breaks in PhotoSwipe captions */
+.pswp__dynamic-caption {
+  white-space: normal !important;
+  line-height: 1.6 !important;
+}
+
+.pswp__dynamic-caption--below,
+.pswp__dynamic-caption--aside,
+.pswp__dynamic-caption--mobile {
+  white-space: normal !important;
+  line-height: 1.6 !important;
+}
+
+.pswp__dynamic-caption p {
+  margin: 0.3em 0;
+}
+
+.pswp__dynamic-caption p:first-child {
+  margin-top: 0;
+}
+
+.pswp__dynamic-caption p:last-child {
+  margin-bottom: 0;
+}

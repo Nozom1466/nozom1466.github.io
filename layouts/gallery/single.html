@@ -1,0 +1,10 @@
+{{ define "main" }}
+  {{ partial "gallery-theme/title.html" . }}
+  {{ partial "gallery-theme/gallery.html" . }}
+  {{ partial "gallery-theme/related.html" . }}
+  {{ with .Content }}
+    <section class="prose" style="max-width: 1200px; margin: 2rem auto; padding: 0 2rem;">
+      {{ . }}
+    </section>
+  {{ end }}
+{{ end }}
