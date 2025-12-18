@@ -4,6 +4,16 @@
   order: 1;
 }
 
+/* Hide scrollbar but keep scroll functionality */
+html, body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  display: none; /* Chrome/Safari/Webkit */
+}
+
 .flinks-list-footer hr {
   display: none;
 }
@@ -243,4 +253,66 @@ li > code {
 /* Disable code block expand animation */
 .highlight .chroma.hidden-code {
     animation: none !important;
+}
+
+/* Header theme toggle button */
+.menu-item-theme {
+  cursor: pointer;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.menu-item-theme a {
+  cursor: pointer;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 100%;
+  padding: 0 10px !important;
+}
+
+/* Hide the original toggle-theme button in tool-buttons */
+.tool-buttons #toggle-theme {
+  display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  pointer-events: none !important;
+}
+
+/* Tag cloud page styles */
+.tag-cloud-tags {
+  text-align: left;
+}
+
+.tag-cloud-tags a.tag-cloud-item {
+  display: inline-block;
+  margin: 0;
+  padding: 0.3rem 0.6rem;
+  font-size: 1rem !important;
+  color: var(--text-color) !important;
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+.tag-cloud-tags a.tag-cloud-item:hover {
+  text-decoration: underline !important;
+}
+
+/* Disable all hover icon animations */
+.hvr-icon-pulse,
+.hvr-icon {
+  animation: none !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.hvr-icon-pulse:hover .hvr-icon,
+.hvr-icon-pulse:focus .hvr-icon,
+.hvr-icon-pulse:active .hvr-icon {
+  animation: none !important;
+  transform: none !important;
 }

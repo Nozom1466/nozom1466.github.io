@@ -1,20 +1,100 @@
 <!doctype html>
 {{- $theme := .Params.theme | default "dark" }}
-<html class="{{- if (eq $theme "light") -}}light{{- else if (eq $theme "dark") }}dark{{ end }}" lang="{{- site.LanguageCode | default "en" -}}">
+<html data-theme="{{- if (eq $theme "light") -}}light{{- else -}}dark{{- end -}}" lang="{{- site.LanguageCode | default "en" -}}">
   {{ partial "gallery-theme/head.html" . }}
   <body style="margin: 0;">
-    <header style="padding: 0.4em 2rem; background: #333; margin: 0; display: flex; align-items: center; justify-content: space-between; gap: 2rem; min-height: auto;">
+    <header style="padding: 0.4em 2rem; background: var(--header-bg, #1a1a1a); margin: 0; display: flex; align-items: center; justify-content: space-between; gap: 2rem; min-height: auto;">
       <a href="{{ "/" | relURL }}" style="font-size: 1.2em; font-weight: 600; text-decoration: none; color: var(--text-1); padding: 0.3em 0; margin: 0;">
         Ryan's Gallery
       </a>
       <div style="display: flex; gap: 2rem; align-items: center; margin: 0;">
         <a href="{{ "/" | relURL }}" style="font-size: 0.85em; text-decoration: none; color: var(--text-1); margin: 0;"><i class="fa fa-home" style="margin-right: 0.3em;"></i>Home</a>
         <a href="{{ "/gallery" | relURL }}" style="font-size: 0.85em; text-decoration: none; color: var(--text-1); font-weight: 600; margin: 0;"><i class="fa fa-image" style="margin-right: 0.3em;"></i>Gallery</a>
+        <button id="toggle-theme" title="Toggle theme" style="background: none; border: none; cursor: pointer; padding: 0.3em; margin: 0; display: flex; align-items: center; justify-content: center; color: var(--text-1); font-size: 1em;">
+          <i class="fa fa-moon" id="theme-icon-dark" style="display: none;"></i>
+          <i class="fa fa-sun" id="theme-icon-light" style="display: none;"></i>
+        </button>
       </div>
     </header>
     <main style="max-width: none; width: 100%; padding: 0; box-sizing: border-box;">
       {{ block "main" . }}{{ end }}
     </main>
     {{ partial "gallery-theme/footer.html" . }}
+    <script>
+    (function() {
+      // Local storage helper with expiry
+      const localDB = {
+        set: function(key, value, ttl) {
+          if (ttl === 0) return;
+          const now = new Date();
+          const expiryDay = ttl * 86400000;
+          const item = {
+            value: value,
+            expiry: now.getTime() + expiryDay
+          };
+          localStorage.setItem(key, JSON.stringify(item));
+        },
+        get: function(key) {
+          const itemStr = localStorage.getItem(key);
+          if (!itemStr) {
+            return undefined;
+          }
+          const item = JSON.parse(itemStr);
+          const now = new Date();
+          if (now.getTime() > item.expiry) {
+            localStorage.removeItem(key);
+            return undefined;
+          }
+          return item.value;
+        }
+      };
+
+      // Theme management
+      const theme = {
+        updateIcons: function(currentTheme) {
+          const darkIcon = document.getElementById('theme-icon-dark');
+          const lightIcon = document.getElementById('theme-icon-light');
+          if (currentTheme === 'dark') {
+            darkIcon.style.display = 'none';
+            lightIcon.style.display = 'inline';
+          } else {
+            darkIcon.style.display = 'inline';
+            lightIcon.style.display = 'none';
+          }
+        },
+        toggle: function(newTheme) {
+          document.documentElement.setAttribute('data-theme', newTheme);
+          localDB.set('theme', newTheme, 2);
+          this.updateIcons(newTheme);
+        },
+        init: function() {
+          const localState = localDB.get('theme');
+          const currentTheme = localState || document.documentElement.getAttribute('data-theme') || 'dark';
+          if (localState) {
+            document.documentElement.setAttribute('data-theme', localState);
+          }
+          this.updateIcons(currentTheme);
+          
+          // Listen for system theme changes
+          window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(evt) {
+            if (!localDB.get('theme')) {
+              theme.toggle(evt.matches ? 'dark' : 'light');
+            }
+          });
+        }
+      };
+
+      // Initialize on DOM ready
+      document.addEventListener('DOMContentLoaded', function() {
+        theme.init();
+        
+        // Toggle button click handler
+        document.getElementById('toggle-theme').addEventListener('click', function() {
+          const currentTheme = document.documentElement.getAttribute('data-theme');
+          theme.toggle(currentTheme === 'dark' ? 'light' : 'dark');
+        });
+      });
+    })();
+    </script>
   </body>
 </html>

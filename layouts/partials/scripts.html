@@ -1,0 +1,35 @@
+{{ partialCached "head/script/global.html" . }}
+{{ partial "head/script/plugins.html" . }}
+
+{{/* Custom script for header theme toggle button */}}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var headerToggleTheme = document.getElementById('header-toggle-theme');
+  var darkIcon = document.getElementById('header-theme-icon-dark');
+  var lightIcon = document.getElementById('header-theme-icon-light');
+  
+  // Update icons based on current theme
+  function updateThemeIcons() {
+    var curTheme = document.documentElement.getAttribute('data-theme');
+    if (curTheme === 'dark') {
+      if (darkIcon) darkIcon.style.display = 'none';
+      if (lightIcon) lightIcon.style.display = 'inline';
+    } else {
+      if (darkIcon) darkIcon.style.display = 'inline';
+      if (lightIcon) lightIcon.style.display = 'none';
+    }
+  }
+  
+  // Initial icon state
+  updateThemeIcons();
+  
+  if (headerToggleTheme) {
+    headerToggleTheme.addEventListener('click', function() {
+      var curTheme = document.documentElement.getAttribute('data-theme');
+      window.theme.toggle(curTheme === 'dark' ? 'light' : 'dark');
+      // Update icons after toggle
+      setTimeout(updateThemeIcons, 10);
+    });
+  }
+});
+</script>

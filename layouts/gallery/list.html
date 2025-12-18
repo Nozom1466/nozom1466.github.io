@@ -15,10 +15,10 @@
   {{ $allTags = sort $allTags }}
   
   {{/* Tag navigation bar */}}
-  <nav class="tag-filter" style="padding: 1rem 2rem; text-align: center; background: var(--surface-1, #282828);">
-    <a href="{{ .Permalink }}" class="tag-link" data-tag="all" style="display: inline-block; margin: 0.25rem; padding: 0.3rem 0.8rem; border: 1px solid var(--text-1, #fafafa); border-radius: 8px; background: transparent; text-decoration: none; color: var(--text-1, #fafafa); transition: all 0.3s ease;">All</a>
+  <nav class="tag-filter" style="padding: 1rem 2rem; text-align: center; background: var(--surface-1);">
+    <a href="{{ .Permalink }}" class="tag-link" data-tag="all" style="display: inline-block; margin: 0.25rem; padding: 0.3rem 0.8rem; border: 1px solid var(--text-1); border-radius: 8px; background: transparent; text-decoration: none; color: var(--text-1);">All</a>
     {{ range $allTags }}
-      <a href="{{ $.Permalink }}?tag={{ . }}" class="tag-link" data-tag="{{ . }}" style="display: inline-block; margin: 0.25rem; padding: 0.3rem 0.8rem; border: 1px solid var(--text-1, #fafafa); border-radius: 8px; background: transparent; text-decoration: none; color: var(--text-1, #fafafa); transition: all 0.3s ease;">{{ . }}</a>
+      <a href="{{ $.Permalink }}?tag={{ . }}" class="tag-link" data-tag="{{ . }}" style="display: inline-block; margin: 0.25rem; padding: 0.3rem 0.8rem; border: 1px solid var(--text-1); border-radius: 8px; background: transparent; text-decoration: none; color: var(--text-1);">{{ . }}</a>
     {{ end }}
   </nav>
   
@@ -34,13 +34,11 @@
       const galleryItems = document.querySelectorAll('.gallery-item');
       const tagLinks = document.querySelectorAll('.tag-link');
       
-      // Highlight active tag link
+      // Highlight active tag link using CSS class for proper theme switching
       tagLinks.forEach(function(link) {
         const linkTag = link.getAttribute('data-tag');
         if ((currentTag && linkTag === currentTag) || (!currentTag && linkTag === 'all')) {
-          link.style.background = 'var(--text-1, #fafafa)';
-          link.style.color = 'var(--surface-1, #282828)';
-          link.style.borderColor = 'var(--text-1, #fafafa)';
+          link.classList.add('active');
         }
       });
       

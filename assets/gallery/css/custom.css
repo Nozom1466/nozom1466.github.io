@@ -40,3 +40,44 @@
 .pswp__dynamic-caption p:last-child {
   margin-bottom: 0;
 }
+
+/* Theme toggle button styles */
+#toggle-theme {
+  cursor: pointer;
+}
+
+/* Tag filter navigation */
+.tag-filter {
+  background: var(--surface-1) !important;
+}
+
+.tag-link {
+  border-color: var(--text-1) !important;
+  color: var(--text-1) !important;
+}
+
+.tag-link.active {
+  background: var(--text-1) !important;
+  color: var(--surface-1) !important;
+  border-color: var(--text-1) !important;
+}
+
+/* PhotoSwipe lightbox customizations */
+/* Arrows controlled by JavaScript based on mouse edge position */
+.pswp .pswp__button--arrow.pswp__hide-on-close {
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+/* Make arrow icons smaller */
+.pswp__button--arrow .pswp__icn {
+  width: 40px;
+  height: 40px;
+}
+
+/* Hide download, zoom, and close buttons */
+.pswp__button--download-button,
+.pswp__button--zoom,
+.pswp__button--close {
+  display: none !important;
+}

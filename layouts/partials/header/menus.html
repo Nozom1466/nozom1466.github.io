@@ -1,0 +1,46 @@
+{{ $ms := .Site.Params.menuSets }}
+{{ $curP := .Page }}
+<nav class="site-nav">
+  <ul class="main-menu menu">    
+  {{ range .Site.Menus.main }}
+    {{ $active := $curP.IsMenuCurrent .Menu . }}
+    <li class="menu-item menu-item-{{ .Identifier }}">
+      <a href="{{ .URL | relLangURL }}" class="{{ if .HasChildren }}menus-parent{{ end }}{{if $active }} menu-item-active{{ end }}" rel="section">
+        {{ if $ms.icons }}<i class="fa fa-{{ .Pre }}"></i>{{ end }}{{ .Name }}
+        {{ if .HasChildren }}<span class="menu-item-shrink-icon"><i class="fa fa-angle-right"></i></span>{{ end }}
+        {{ if and $ms.badges (eq .Identifier "archives") }}
+          <span class="badge">{{ $.Scratch.Get "postsCount" }}</span>
+        {{ end }}
+      </a>
+      {{ if .HasChildren }}
+      <ul class="menu-children">
+      {{ range .Children }}
+      {{ $active = $curP.IsMenuCurrent .Menu . }}
+        <li class="menu-child-item">
+          <a href="{{ .URL | relLangURL }}" class="{{if $active }}menu-item-active{{ end }}" rel="section">
+            <i class="fa"></i>{{ .Name }}
+          </a>
+        </li>
+      {{ end }}
+      </ul>
+      {{ end }}
+    </li>
+  {{ end }}    
+
+  {{ if or .Site.Params.algoliaSearch.enable .Site.Params.localSearch.enable }}
+    <li class="menu-item menu-item-search">
+      <a role="button" class="popup-trigger">
+        {{ if $ms.icons }}<i class="fa fa-search fa-fw"></i>{{ end }}{{ T "Sidebar.label.search" }}
+      </a>
+    </li>
+  {{ end }}
+
+  {{/* Theme toggle button in header - using sun/moon icons like gallery */}}
+  <li class="menu-item menu-item-theme">
+    <a role="button" id="header-toggle-theme" title="{{ T "ToolBtns.theme" }}">
+      <i class="fa fa-moon" id="header-theme-icon-dark" style="display: none;"></i>
+      <i class="fa fa-sun" id="header-theme-icon-light" style="display: none;"></i>
+    </a>
+  </li>
+  </ul>
+</nav>
