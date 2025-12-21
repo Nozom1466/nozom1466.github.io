@@ -138,6 +138,14 @@ if (gallery) {
   // Call twice to adjust for scrollbars appearing after first call
   updateGallery(true).then(() => {
     updateGallery(true).then(() => {
+      // Hide loading indicator
+      const loadingEl = document.getElementById('gallery-loading');
+      if (loadingEl) {
+        loadingEl.classList.add('hidden');
+        setTimeout(() => {
+          loadingEl.style.display = 'none';
+        }, 300);
+      }
       // Dispatch event after images are loaded and dimensions updated
       window.dispatchEvent(new CustomEvent('galleryReady'));
     });

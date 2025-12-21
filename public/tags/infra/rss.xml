@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Infra on Ryan's Blog</title><link>http://localhost:1313/tags/infra/</link><description>Recent content in Infra on Ryan's Blog</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Wed, 12 Feb 2025 01:15:28 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/infra/rss.xml" rel="self" type="application/rss+xml"/><item><title>从0单排AI_Sys</title><link>http://localhost:1313/learning/infra/%E4%BB%8E0%E5%8D%95%E6%8E%92ai_sys/</link><pubDate>Wed, 12 Feb 2025 01:15:28 +0800</pubDate><guid>http://localhost:1313/learning/infra/%E4%BB%8E0%E5%8D%95%E6%8E%92ai_sys/</guid><description>&lt;h2 id="0-介绍"&gt;0. 介绍
-&lt;a class="header-anchor" href="#0-%e4%bb%8b%e7%bb%8d"&gt;&lt;/a&gt;
-&lt;/h2&gt;&lt;p&gt;ML Sys -&amp;gt; LLM Sys -&amp;gt; domain specific Sys&lt;/p&gt;
-&lt;p&gt;(data -&amp;gt; training -&amp;gt; serving) &amp;amp; platform&lt;/p&gt;
-&lt;h2 id="1-clipper-文章讲解"&gt;1. Clipper 文章讲解
-&lt;a class="header-anchor" href="#1-clipper-%e6%96%87%e7%ab%a0%e8%ae%b2%e8%a7%a3"&gt;&lt;/a&gt;
-&lt;/h2&gt;&lt;p&gt;Serving 文章
-Sky Computing Lab in UCB
-Ion Stoica&lt;/p&gt;</description></item></channel></rss>
