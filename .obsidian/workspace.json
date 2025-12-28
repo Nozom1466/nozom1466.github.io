@@ -53,12 +53,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/library/hibike-euphonium-3.md",
+                "file": "content/library/pingpong.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "hibike-euphonium-3"
+              "title": "pingpong"
             }
           },
           {
@@ -153,8 +153,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "3a6a3cc95abeb6f6",
@@ -264,12 +263,16 @@
   },
   "active": "ba6b26fe4bf73df4",
   "lastOpenFiles": [
+    "public/js/main.js",
+    "resources/_gen/assets/css/main.scss_6522e7ed1ae10d319c29f8d0b1aefb5d.content",
+    "resources/_gen/assets/css/main.scss_6522e7ed1ae10d319c29f8d0b1aefb5d.json",
+    "public/css/main.css",
+    "content/library/pingpong.md",
+    "content/library/hibike-euphonium-3.md",
     "content/library/flowers-for-algernon.md",
     "public/library/css/main.min.06df34d3b4fb5972cec904180c0d7d4ec5e0a7cee753cd3662169dd1935553ac.css",
-    "content/library/hibike-euphonium-3.md",
     "content/library/Interstellar.md",
     "content/library/_index.md",
-    "content/library/pingpong.md",
     "content/library/rich-dad-poor-dad.md",
     "public/tags/film/page/1/index.html",
     "public/tags/film/page/1",
@@ -277,9 +280,6 @@
     "public/tags/film/rss.xml",
     "public/tags/film/index.html",
     "public/tags/film",
-    "public/library/interstellar/index.html",
-    "public/library/interstellar",
-    "public/library/inter/index.html",
     "content/ideas/四平路1239号.md"
   ]
 }
