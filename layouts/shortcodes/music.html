@@ -1,0 +1,24 @@
+{{- $theme := "#448aff" -}}
+{{- $theme = .Get "theme" | default $theme -}}
+{{- $loop := .Get "loop" | default "none" -}}
+
+<music-placeholder 
+  data-theme="{{ $theme }}"
+  data-loop="{{ $loop }}"
+  {{ with .Get "id" }} data-id="{{ . }}" {{ end }}
+  {{ with .Get "server" }} data-server="{{ . }}" {{ end }}
+  {{ with .Get "type" }} data-type="{{ . }}" {{ end }}
+  {{ with .Get "auto" }} data-auto="{{ . }}" {{ end }}
+  {{ with .Get "url" }} data-url="{{ . }}" {{ end }}
+  {{ with .Get "name" }} data-name="{{ . }}" {{ end }}
+  {{ with .Get "artist" }} data-artist="{{ . }}" {{ end }}
+  {{ with .Get "cover" }} data-cover="{{ . }}" {{ end }}
+  {{ with .Get "fixed" }} data-fixed="{{ . }}" {{ end }}
+  {{ with .Get "mini" }} data-mini="{{ . }}" {{ end }}
+  {{ with .Get "autoplay" }} data-autoplay="{{ . }}" {{ end }}
+  {{ with .Get "order" }} data-order="{{ . }}" {{ end }}
+  {{ with .Get "volume" }} data-volume="{{ . }}" {{ end }}
+  {{ with .Get "mutex" }} data-mutex="{{ . }}" {{ end }}
+  {{ with .Get "list-folded" }} data-list-folded="{{ . }}" {{ end }}
+  {{ with .Get "list-max-height" }} data-list-max-height="{{ . }}px" {{ end }}
+></music-placeholder>

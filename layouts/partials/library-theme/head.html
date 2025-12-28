@@ -7,6 +7,8 @@
   <link rel="icon" type="image/png" href="{{ "/images/favicon.png" | relURL }}" />
   <link rel="apple-touch-icon" sizes="180x180" href="{{ "/images/apple-touch-icon.png" | relURL }}" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  {{/* APlayer CSS for music shortcode */}}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />
   <meta name="description" content="{{ with .Description }}{{ . | markdownify | plainify }}{{ else }}{{ with .Site.Params.description }}{{ . | markdownify | plainify }}{{ end }}{{ end }}" />
   {{ if .Params.keywords }}
     <meta name="keywords" content="{{ delimit .Params.keywords `, ` }}" />

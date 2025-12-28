@@ -4,96 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "1509f50f6fecdce8",
+        "id": "35cce22b260ec8ef",
         "type": "tabs",
-        "dimension": 44.50146627565982,
         "children": [
           {
-            "id": "ba6b26fe4bf73df4",
-            "type": "leaf",
-            "pinned": true,
-            "state": {
-              "type": "terminal:terminal",
-              "state": {
-                "terminal:terminal": {
-                  "cwd": "D:\\blog\\nozom1466.github.io",
-                  "focus": false,
-                  "profile": {
-                    "args": [],
-                    "executable": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-                    "name": "powershell",
-                    "platforms": {
-                      "win32": true
-                    },
-                    "pythonExecutable": "",
-                    "restoreHistory": false,
-                    "rightClickAction": "copyPaste",
-                    "successExitCodes": [
-                      "0",
-                      "SIGINT",
-                      "SIGTERM"
-                    ],
-                    "terminalOptions": {
-                      "documentOverride": null
-                    },
-                    "type": "integrated",
-                    "useWin32Conhost": true
-                  },
-                  "serial": null
-                }
-              },
-              "pinned": true,
-              "icon": "terminal",
-              "title": "Terminal: C:\\Windows\\System32\\conhost.exe"
-            }
-          },
-          {
-            "id": "4f3f0aec6678f73e",
+            "id": "48a2ea5d7d4a6356",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/library/pingpong.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "pingpong"
-            }
-          },
-          {
-            "id": "7b92af779855e148",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/library/flowers-for-algernon.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "flowers-for-algernon"
-            }
-          }
-        ]
-      },
-      {
-        "id": "e9ee8f2469a91dd8",
-        "type": "tabs",
-        "dimension": 55.49853372434017,
-        "children": [
-          {
-            "id": "7aca13cd05c6f09e",
-            "type": "leaf",
-            "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "http://localhost:62590/library/",
-                "title": "Library - Ryan's Blog",
-                "mode": "webview"
-              },
-              "icon": "globe-2",
-              "title": "Library - Ryan's Blog"
+              "title": "New tab"
             }
           }
         ]
@@ -261,25 +182,35 @@
       "vscode-editor:Create Code File": false
     }
   },
-  "active": "ba6b26fe4bf73df4",
+  "active": "48a2ea5d7d4a6356",
   "lastOpenFiles": [
-    "public/js/main.js",
-    "resources/_gen/assets/css/main.scss_6522e7ed1ae10d319c29f8d0b1aefb5d.content",
-    "resources/_gen/assets/css/main.scss_6522e7ed1ae10d319c29f8d0b1aefb5d.json",
-    "public/css/main.css",
-    "content/library/pingpong.md",
-    "content/library/hibike-euphonium-3.md",
-    "content/library/flowers-for-algernon.md",
-    "public/library/css/main.min.06df34d3b4fb5972cec904180c0d7d4ec5e0a7cee753cd3662169dd1935553ac.css",
-    "content/library/Interstellar.md",
-    "content/library/_index.md",
     "content/library/rich-dad-poor-dad.md",
-    "public/tags/film/page/1/index.html",
-    "public/tags/film/page/1",
-    "public/tags/film/page",
-    "public/tags/film/rss.xml",
-    "public/tags/film/index.html",
-    "public/tags/film",
+    "content/library/Interstellar.md",
+    "public/library/css/main.min.721f4dc0f3ba396cd759bde70ed11c8f17daf0e711e0968fa90eea6f2697ab46.css",
+    "public/library/css/main.min.747d83d1e0dc77fcaf290a1f123baa24c272dc2af9cc4c6729cd2cadbbb2b392.css",
+    "content/library/hibike-euphonium-3.md",
+    "content/library/pingpong.md",
+    "public/library/css/main.min.1aee08e835271a5aba5a63d14a910be3aa59fb05a684ed55afe54680252a2446.css",
+    "public/library/css/main.min.94ff611b2d6a43beeeff8fbc7198ddeba65e3686cbedc2b3844355f65ab2917c.css",
+    "public/js/clipboard.js",
+    "public/library/css/main.min.54bd04e88fdf9f55d89afe18c0647256e96608f97095b6f91d0a0321788074c3.css",
+    "public/library/css/main.min.0e12eba7796a6bfef8bd952eee8a19906b06db3f50f2f5dbe7e3961aa1133cb1.css",
+    "public/js/main.js",
+    "public/library/css/main.min.0193150c2c8e6cefb661462fee9fb4bed5cd64c61981bdcec2e9ea76f89e9d2a.css",
+    "resources/_gen/assets/css/main.scss_6522e7ed1ae10d319c29f8d0b1aefb5d.content",
+    "public/imgs/notbyai/zh-hant/white.svg",
+    "public/imgs/notbyai/zh-hant/black.svg",
+    "public/imgs/notbyai/en/white.svg",
+    "public/imgs/notbyai/fr/white.svg",
+    "public/imgs/notbyai/fr/black.svg",
+    "public/imgs/notbyai/zh-hans/black.svg",
+    "public/imgs/notbyai/zh-hans/white.svg",
+    "public/imgs/notbyai/en/black.svg",
+    "public/imgs/cc/small/by_sa.svg",
+    "public/imgs/cc/small/cc_zero.svg",
+    "content/library/flowers-for-algernon.md",
+    "content/gallery/_index.md",
+    "content/library/_index.md",
     "content/ideas/四平路1239号.md"
   ]
 }

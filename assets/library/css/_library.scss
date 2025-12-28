@@ -387,7 +387,7 @@ html[data-theme="light"] .star {
   text-align: center;
   color: var(--text-2);
   font-size: 0.9em;
-  margin-top: 0.5em;
+  margin-top: 0;
 }
 
 .library-popup-review figcaption p {
@@ -398,7 +398,7 @@ html[data-theme="light"] .star {
   display: block;
   max-width: 80%;
   max-height: 400px;
-  margin: 1em auto;
+  margin: 1em auto 0.3em;
   border-radius: 0;
   object-fit: contain;
 }
@@ -544,4 +544,104 @@ html[data-theme="light"] .star {
 .library-single-content {
   border-top: 1px solid var(--border);
   padding-top: 2rem;
+}
+
+/* APlayer styles */
+.aplayer {
+  border-radius: 4px !important;
+  overflow: hidden !important;
+  background: var(--surface-2) !important;
+  box-shadow: none !important;
+  border: 1px solid var(--border) !important;
+}
+
+.aplayer .aplayer-body {
+  background: var(--surface-2);
+}
+
+.aplayer .aplayer-info {
+  background: var(--surface-2);
+  border-color: var(--border) !important;
+}
+
+.aplayer .aplayer-info .aplayer-music {
+  color: var(--text-1);
+}
+
+.aplayer .aplayer-info .aplayer-music .aplayer-author {
+  color: var(--text-2);
+}
+
+.aplayer .aplayer-lrc {
+  background: var(--surface-2);
+}
+
+.aplayer .aplayer-lrc::before,
+.aplayer .aplayer-lrc::after {
+  display: none;
+}
+
+.aplayer .aplayer-controller {
+  background: var(--surface-2);
+}
+
+.aplayer .aplayer-controller .aplayer-time {
+  color: var(--text-2);
+}
+
+.aplayer .aplayer-controller .aplayer-bar-wrap .aplayer-bar {
+  background: var(--surface-3);
+}
+
+.aplayer .aplayer-list {
+  background: var(--surface-1);
+}
+
+.aplayer .aplayer-list ol li {
+  border-color: var(--border);
+}
+
+.aplayer .aplayer-list ol li:hover {
+  background: var(--surface-2);
+}
+
+.aplayer .aplayer-list ol li .aplayer-list-title,
+.aplayer .aplayer-list ol li .aplayer-list-author {
+  color: var(--text-1);
+}
+
+.aplayer svg {
+  fill: var(--text-2);
+}
+
+.aplayer svg:hover {
+  fill: var(--text-1);
+}
+
+/* Volume bar styles */
+.aplayer .aplayer-volume-bar {
+  background: var(--surface-3) !important;
+}
+
+.aplayer .aplayer-volume {
+  background: var(--text-1) !important;
+}
+
+/* Show loop button (hidden by aplayer-arrow class) */
+.aplayer.aplayer-arrow .aplayer-icon-loop {
+  display: inline-block !important;
+}
+
+/* Keep order button hidden but show volume */
+.aplayer.aplayer-arrow .aplayer-icon-volume-down {
+  display: inline-block !important;
+}
+
+/* Swap volume and loop button order using float */
+.aplayer .aplayer-icon-loop {
+  float: right;
+}
+
+.aplayer .aplayer-volume-wrap {
+  float: right;
 }

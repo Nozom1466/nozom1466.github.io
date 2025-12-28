@@ -197,6 +197,38 @@
       const reviewContent = document.getElementById('review-' + reviewId);
       if (reviewContent) {
         reviewEl.innerHTML = reviewContent.innerHTML;
+        
+        // Convert music-placeholder to APlayer directly (not meting-js to avoid issues)
+        reviewEl.querySelectorAll('music-placeholder').forEach(function(placeholder) {
+          const container = document.createElement('div');
+          container.className = 'aplayer-container';
+          placeholder.replaceWith(container);
+          
+          const url = placeholder.getAttribute('data-url');
+          const name = placeholder.getAttribute('data-name') || 'Audio';
+          const artist = placeholder.getAttribute('data-artist') || 'Unknown';
+          const cover = placeholder.getAttribute('data-cover') || '';
+          const theme = placeholder.getAttribute('data-theme') || '#448aff';
+          const loop = placeholder.getAttribute('data-loop') || 'none';
+          
+          const ap = new APlayer({
+            container: container,
+            audio: [{
+              name: name,
+              artist: artist,
+              url: url,
+              cover: cover
+            }],
+            theme: theme,
+            loop: loop,
+            volume: 0.7,
+            mutex: true
+          });
+          
+          // Store player instance for cleanup
+          if (!window.libraryAPlayers) window.libraryAPlayers = [];
+          window.libraryAPlayers.push(ap);
+        });
       } else {
         reviewEl.innerHTML = '<p>No review yet.</p>';
       }
@@ -209,6 +241,14 @@
       const popup = document.getElementById('library-popup');
       popup.style.display = 'none';
       document.body.style.overflow = '';
+      
+      // Destroy all APlayer instances
+      if (window.libraryAPlayers) {
+        window.libraryAPlayers.forEach(function(ap) {
+          ap.destroy();
+        });
+        window.libraryAPlayers = [];
+      }
     }
     
     // Close on overlay click
@@ -225,5 +265,8 @@
       }
     });
     </script>
+    {{/* APlayer + Meting JS for music shortcode */}}
+    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
   </body>
 </html>
