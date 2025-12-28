@@ -29,6 +29,13 @@
   line-height: 1.6 !important;
 }
 
+/* Vertically center aside caption */
+.pswp__dynamic-caption--aside {
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  margin-top: 0 !important;
+}
+
 .pswp__dynamic-caption p {
   margin: 0.3em 0;
 }

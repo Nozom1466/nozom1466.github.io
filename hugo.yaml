@@ -58,6 +58,11 @@ languages:
           pageRef: /gallery
           pre: image
           weight: 4
+        - identifier: library
+          name: Library
+          pageRef: /library
+          pre: book
+          weight: 5
     params:
       yearFormat: "2006"
       # Gallery settings
@@ -406,7 +411,7 @@ params:
     enable: true
     # 自动设置列表的数字
     # Automatically add list number to toc.
-    number: true
+    number: false
     # 开启自动换行显示
     # If true, all words will placed on next lines 
     # if header width longer then sidebar width.

@@ -1,12 +1,19 @@
 {{ define "main" }}
-  {{/* Collect all unique tags from remote_images */}}
+  {{/* Collect all unique tags and count images per tag */}}
   {{ $allTags := slice }}
+  {{ $tagCounts := dict }}
+  {{ $totalCount := 0 }}
   {{ with .Params.remote_images }}
+    {{ $totalCount = len . }}
     {{ range . }}
       {{ with .tags }}
         {{ range . }}
           {{ if not (in $allTags .) }}
             {{ $allTags = $allTags | append . }}
+            {{ $tagCounts = merge $tagCounts (dict . 1) }}
+          {{ else }}
+            {{ $currentCount := index $tagCounts . }}
+            {{ $tagCounts = merge $tagCounts (dict . (add $currentCount 1)) }}
           {{ end }}
         {{ end }}
       {{ end }}
@@ -16,9 +23,10 @@
   
   {{/* Tag navigation bar */}}
   <nav class="tag-filter" style="padding: 1rem 2rem; text-align: center; background: var(--surface-1);">
-    <a href="{{ .Permalink }}" class="tag-link" data-tag="all" style="display: inline-block; margin: 0.25rem; padding: 0.3rem 0.8rem; border: 1px solid var(--text-1); border-radius: 8px; background: transparent; text-decoration: none; color: var(--text-1);">All</a>
+    <a href="{{ .Permalink }}" class="tag-link" data-tag="all" style="display: inline-block; margin: 0.25rem; padding: 0.3rem 0.8rem; border: 1px solid var(--text-1); border-radius: 8px; background: transparent; text-decoration: none; color: var(--text-1);">All({{ $totalCount }})</a>
     {{ range $allTags }}
-      <a href="{{ $.Permalink }}?tag={{ . }}" class="tag-link" data-tag="{{ . }}" style="display: inline-block; margin: 0.25rem; padding: 0.3rem 0.8rem; border: 1px solid var(--text-1); border-radius: 8px; background: transparent; text-decoration: none; color: var(--text-1);">{{ . }}</a>
+      {{ $count := index $tagCounts . }}
+      <a href="{{ $.Permalink }}?tag={{ . }}" class="tag-link" data-tag="{{ . }}" style="display: inline-block; margin: 0.25rem; padding: 0.3rem 0.8rem; border: 1px solid var(--text-1); border-radius: 8px; background: transparent; text-decoration: none; color: var(--text-1);">{{ . }}({{ $count }})</a>
     {{ end }}
   </nav>
   

@@ -1,0 +1,125 @@
+{{ define "main" }}
+  {{/* Collect all unique tags and count items per tag */}}
+  {{ $allTags := slice }}
+  {{ $tagCounts := dict }}
+  {{ $totalCount := 0 }}
+  {{ $items := .Pages }}
+  {{ $totalCount = len $items }}
+  
+  {{ range $items }}
+    {{ with .Params.tags }}
+      {{ range . }}
+        {{ if not (in $allTags .) }}
+          {{ $allTags = $allTags | append . }}
+          {{ $tagCounts = merge $tagCounts (dict . 1) }}
+        {{ else }}
+          {{ $currentCount := index $tagCounts . }}
+          {{ $tagCounts = merge $tagCounts (dict . (add $currentCount 1)) }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+  {{ $allTags = sort $allTags }}
+  
+  {{/* Tag navigation bar */}}
+  <nav class="tag-filter" style="padding: 1rem 2rem; text-align: center; background: var(--surface-1);">
+    <a href="{{ .Permalink }}" class="tag-link" data-tag="all" style="display: inline-block; margin: 0.25rem; padding: 0.3rem 0.8rem; border: 1px solid var(--text-1); border-radius: 8px; background: transparent; text-decoration: none; color: var(--text-1);">All({{ $totalCount }})</a>
+    {{ range $allTags }}
+      {{ $count := index $tagCounts . }}
+      <a href="{{ $.Permalink }}?tag={{ . }}" class="tag-link" data-tag="{{ . }}" style="display: inline-block; margin: 0.25rem; padding: 0.3rem 0.8rem; border: 1px solid var(--text-1); border-radius: 8px; background: transparent; text-decoration: none; color: var(--text-1);">{{ . }}({{ $count }})</a>
+    {{ end }}
+  </nav>
+  
+  {{/* Grid gallery for books/works */}}
+  <section class="library-grid-container">
+    <div class="library-grid">
+      {{ range $items }}
+        {{ $tagsStr := delimit .Params.tags "," }}
+        {{ $slug := .File.BaseFileName }}
+        {{ $creatorsJson := "{}" }}
+        {{ with .Params.creators }}
+          {{ $creatorsJson = . | jsonify }}
+        {{ end }}
+        {{ $rating := .Params.rating | default 0 }}
+        {{ $summary := .Params.summary | default "" }}
+        <div class="library-card" 
+             data-tags="{{ $tagsStr }}"
+             data-cover="{{ .Params.cover }}"
+             data-title="{{ .Title }}"
+             data-creators="{{ $creatorsJson }}"
+             data-rating="{{ $rating }}"
+             data-summary="{{ $summary }}"
+             data-review-id="{{ $slug }}"
+             onclick="openLibraryPopup(this)">
+          <div class="library-card-cover">
+            <img src="{{ .Params.cover }}" alt="{{ .Title }}" loading="lazy" />
+          </div>
+          <div class="library-card-info">
+            <h3 class="library-card-title">{{ .Title }}</h3>
+            {{ with .Params.creators }}
+              {{ range $role, $name := . }}
+                {{- $displayRole := replaceRE "^[0-9]+_" "" $role -}}
+                <p class="library-card-creator">{{ $displayRole }}: {{ $name }}</p>
+                {{ break }}
+              {{ end }}
+            {{ end }}
+            {{ $cardRating := .Params.rating | default 0.0 | float }}
+            <p class="library-card-rating">
+              {{- $fullStars := int (math.Floor $cardRating) -}}
+              {{- $remainder := sub $cardRating (float $fullStars) -}}
+              {{- $hasPartial := gt $remainder 0.0 -}}
+              {{- range $i := seq 1 5 -}}
+                {{- if le $i $fullStars -}}
+                  <span class="card-star" style="--ratio: 100%">★</span>
+                {{- else if and $hasPartial (eq $i (add $fullStars 1)) -}}
+                  <span class="card-star" style="--ratio: {{ mul $remainder 100 }}%">★</span>
+                {{- else -}}
+                  <span class="card-star" style="--ratio: 0%">★</span>
+                {{- end -}}
+              {{- end -}}
+              <span class="card-rating-number">{{ printf "%.1f" $cardRating }}/5.0</span>
+            </p>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </section>
+  
+  {{/* Hidden review content for popup */}}
+  {{ range $items }}
+    {{ $slug := .File.BaseFileName }}
+    <div id="review-{{ $slug }}" style="display: none;">
+      {{ .Content }}
+    </div>
+  {{ end }}
+  
+  {{/* Tag filtering JavaScript */}}
+  <script>
+  (function() {
+    document.addEventListener('DOMContentLoaded', function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const currentTag = urlParams.get('tag');
+      const libraryCards = document.querySelectorAll('.library-card');
+      const tagLinks = document.querySelectorAll('.tag-link');
+      
+      // Highlight active tag link
+      tagLinks.forEach(function(link) {
+        const linkTag = link.getAttribute('data-tag');
+        if ((currentTag && linkTag === currentTag) || (!currentTag && linkTag === 'all')) {
+          link.classList.add('active');
+        }
+      });
+      
+      // Filter library cards
+      libraryCards.forEach(function(card) {
+        const cardTags = (card.getAttribute('data-tags') || '').split(',');
+        if (!currentTag || cardTags.includes(currentTag)) {
+          card.classList.remove('tag-hidden');
+        } else {
+          card.classList.add('tag-hidden');
+        }
+      });
+    });
+  })();
+  </script>
+{{ end }}

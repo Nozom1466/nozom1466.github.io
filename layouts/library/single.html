@@ -1,0 +1,30 @@
+{{ define "main" }}
+  <article class="library-single">
+    <div class="library-single-header">
+      <img src="{{ .Params.cover }}" alt="{{ .Title }}" class="library-single-cover" />
+      <div class="library-single-meta">
+        <h1>{{ .Title }}</h1>
+        <p class="author">{{ .Params.author }}</p>
+        {{ with .Params.status }}
+          {{ $statusClass := "status-not-started" }}
+          {{ if eq . "Completed" }}{{ $statusClass = "status-completed" }}{{ end }}
+          {{ if eq . "Reading" }}{{ $statusClass = "status-reading" }}{{ end }}
+          <span class="status-badge {{ $statusClass }}">{{ . }}</span>
+        {{ end }}
+        {{ with .Params.rating }}
+          <span class="rating">{{ . }}</span>
+        {{ end }}
+        {{ with .Params.tags }}
+          <div class="tags">
+            {{ range . }}
+              <span class="tag">{{ . }}</span>
+            {{ end }}
+          </div>
+        {{ end }}
+      </div>
+    </div>
+    <div class="library-single-content prose">
+      {{ .Content }}
+    </div>
+  </article>
+{{ end }}

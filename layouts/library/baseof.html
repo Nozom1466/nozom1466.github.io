@@ -1,0 +1,228 @@
+<!doctype html>
+{{- $theme := .Params.theme | default "dark" }}
+<html data-theme="{{- if (eq $theme "light") -}}light{{- else -}}dark{{- end -}}" lang="{{- site.LanguageCode | default "en" -}}">
+  {{ partial "library-theme/head.html" . }}
+  <body style="margin: 0;">
+    <header style="padding: 0.4em 2rem; background: var(--header-bg, #1a1a1a); margin: 0; display: flex; align-items: center; justify-content: space-between; gap: 2rem; min-height: auto;">
+      <a href="{{ "/" | relURL }}" style="font-size: 1.2em; font-weight: bold; text-decoration: none; color: var(--text-1); padding: 0.3em 0; margin: 0;">
+        Ryan's Library
+      </a>
+      <div style="display: flex; gap: 2rem; align-items: center; margin: 0;">
+        <a href="{{ "/" | relURL }}" style="font-size: 14px; text-decoration: none; color: var(--text-1); margin: 0;"><i class="fa fa-home" style="margin-right: 0.3em;"></i>Home</a>
+        <a href="{{ "/gallery" | relURL }}" style="font-size: 14px; text-decoration: none; color: var(--text-1); margin: 0;"><i class="fa fa-image" style="margin-right: 0.3em;"></i>Gallery</a>
+        <button id="toggle-theme" title="Toggle theme" style="background: none; border: none; cursor: pointer; padding: 0.3em; margin: 0; display: flex; align-items: center; justify-content: center; color: var(--text-1); font-size: 1em;">
+          <i class="fa fa-moon" id="theme-icon-dark" style="display: none;"></i>
+          <i class="fa fa-sun" id="theme-icon-light" style="display: none;"></i>
+        </button>
+      </div>
+    </header>
+    <main style="max-width: none; width: 100%; padding: 0; box-sizing: border-box;">
+      {{ block "main" . }}{{ end }}
+    </main>
+    
+    {{/* Popup Modal for book details */}}
+    <div id="library-popup" class="library-popup-overlay" style="display: none;">
+      <div class="library-popup-container">
+        <button class="library-popup-close" onclick="closeLibraryPopup()">&times;</button>
+        <div class="library-popup-content">
+          <div class="library-popup-header">
+            <img id="popup-cover" src="" alt="Cover" class="library-popup-cover" />
+            <div class="library-popup-meta">
+              <h1 id="popup-title"></h1>
+              <div id="popup-creators" class="popup-creators"></div>
+              <div id="popup-rating" class="popup-rating"></div>
+              <div id="popup-tags" class="popup-tags"></div>
+              <div id="popup-summary" class="popup-summary"></div>
+            </div>
+          </div>
+          <div id="popup-review" class="library-popup-review prose"></div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+    (function() {
+      // Local storage helper with expiry
+      const localDB = {
+        set: function(key, value, ttl) {
+          if (ttl === 0) return;
+          const now = new Date();
+          const expiryDay = ttl * 86400000;
+          const item = {
+            value: value,
+            expiry: now.getTime() + expiryDay
+          };
+          localStorage.setItem(key, JSON.stringify(item));
+        },
+        get: function(key) {
+          const itemStr = localStorage.getItem(key);
+          if (!itemStr) {
+            return undefined;
+          }
+          const item = JSON.parse(itemStr);
+          const now = new Date();
+          if (now.getTime() > item.expiry) {
+            localStorage.removeItem(key);
+            return undefined;
+          }
+          return item.value;
+        }
+      };
+
+      // Theme management
+      const theme = {
+        updateIcons: function(currentTheme) {
+          const darkIcon = document.getElementById('theme-icon-dark');
+          const lightIcon = document.getElementById('theme-icon-light');
+          if (currentTheme === 'dark') {
+            darkIcon.style.display = 'none';
+            lightIcon.style.display = 'inline';
+          } else {
+            darkIcon.style.display = 'inline';
+            lightIcon.style.display = 'none';
+          }
+        },
+        toggle: function(newTheme) {
+          document.documentElement.setAttribute('data-theme', newTheme);
+          localDB.set('theme', newTheme, 2);
+          this.updateIcons(newTheme);
+        },
+        init: function() {
+          const localState = localDB.get('theme');
+          const currentTheme = localState || document.documentElement.getAttribute('data-theme') || 'dark';
+          if (localState) {
+            document.documentElement.setAttribute('data-theme', localState);
+          }
+          this.updateIcons(currentTheme);
+          
+          // Listen for system theme changes
+          window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(evt) {
+            if (!localDB.get('theme')) {
+              theme.toggle(evt.matches ? 'dark' : 'light');
+            }
+          });
+        }
+      };
+
+      // Initialize on DOM ready
+      document.addEventListener('DOMContentLoaded', function() {
+        theme.init();
+        
+        // Toggle button click handler
+        document.getElementById('toggle-theme').addEventListener('click', function() {
+          const currentTheme = document.documentElement.getAttribute('data-theme');
+          theme.toggle(currentTheme === 'dark' ? 'light' : 'dark');
+        });
+      });
+    })();
+    
+    // Popup functions
+    function renderStarRating(rating) {
+      // Ensure rating is between 0 and 5
+      let numRating = parseFloat(rating) || 0;
+      numRating = Math.max(0, Math.min(5, numRating));
+      
+      let starsHtml = '';
+      for (let i = 1; i <= 5; i++) {
+        let fillPercent = 0;
+        if (numRating >= i) {
+          fillPercent = 100;
+        } else if (numRating > i - 1) {
+          fillPercent = (numRating - (i - 1)) * 100;
+        }
+        starsHtml += '<span class="star" style="--ratio: ' + fillPercent + '%">★</span>';
+      }
+      return '<span class="star-rating">' + starsHtml + ' <span class="rating-number">' + numRating.toFixed(1) + '/5.0</span></span>';
+    }
+    
+    function openLibraryPopup(card) {
+      const popup = document.getElementById('library-popup');
+      const cover = card.getAttribute('data-cover');
+      const title = card.getAttribute('data-title');
+      const creators = card.getAttribute('data-creators');
+      const rating = card.getAttribute('data-rating');
+      const tags = card.getAttribute('data-tags');
+      const summary = card.getAttribute('data-summary');
+      const reviewId = card.getAttribute('data-review-id');
+      
+      document.getElementById('popup-cover').src = cover;
+      document.getElementById('popup-title').textContent = title;
+      
+      // Creators (JSON key-value pairs)
+      const creatorsEl = document.getElementById('popup-creators');
+      if (creators) {
+        try {
+          const creatorsObj = JSON.parse(creators);
+          let creatorsHtml = '';
+          for (const [role, name] of Object.entries(creatorsObj)) {
+            // Remove number prefix like "1_" from role
+            const displayRole = role.replace(/^[0-9]+_/, '');
+            creatorsHtml += '<p class="popup-creator"><span class="creator-role">' + displayRole + ':</span> ' + name + '</p>';
+          }
+          creatorsEl.innerHTML = creatorsHtml;
+        } catch(e) {
+          creatorsEl.innerHTML = '';
+        }
+      } else {
+        creatorsEl.innerHTML = '';
+      }
+      
+      // Rating with stars
+      document.getElementById('popup-rating').innerHTML = renderStarRating(rating);
+      
+      // Tags
+      const tagsEl = document.getElementById('popup-tags');
+      if (tags) {
+        const tagList = tags.split(',').map(t => '<span class="popup-tag">' + t.trim() + '</span>').join('');
+        tagsEl.innerHTML = tagList;
+      } else {
+        tagsEl.innerHTML = '';
+      }
+      
+      // Summary
+      const summaryEl = document.getElementById('popup-summary');
+      if (summary) {
+        // Convert \n to <br> for line breaks
+        const formattedSummary = summary.replace(/\\n/g, '<br>').replace(/\n/g, '<br>');
+        summaryEl.innerHTML = '<p>' + formattedSummary + '</p>';
+        summaryEl.style.display = 'block';
+      } else {
+        summaryEl.innerHTML = '';
+        summaryEl.style.display = 'none';
+      }
+      
+      // Load review content
+      const reviewEl = document.getElementById('popup-review');
+      const reviewContent = document.getElementById('review-' + reviewId);
+      if (reviewContent) {
+        reviewEl.innerHTML = reviewContent.innerHTML;
+      } else {
+        reviewEl.innerHTML = '<p>No review yet.</p>';
+      }
+      
+      popup.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeLibraryPopup() {
+      const popup = document.getElementById('library-popup');
+      popup.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+    
+    // Close on overlay click
+    document.addEventListener('click', function(e) {
+      if (e.target.classList.contains('library-popup-overlay')) {
+        closeLibraryPopup();
+      }
+    });
+    
+    // Close on ESC key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeLibraryPopup();
+      }
+    });
+    </script>
+  </body>
+</html>

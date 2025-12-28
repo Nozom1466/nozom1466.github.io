@@ -2703,11 +2703,6 @@ header.header {
   border: none;
 }
 
-.post-toc ul a:before {
-  content: counters(item, ".") ". ";
-  counter-increment: item;
-}
-
 .post-toc ul a:hover {
   text-decoration: underline;
   color: #fc6423;
@@ -3281,37 +3276,6 @@ header.header {
 
 .use-motion .collection-header {
   visibility: hidden;
-}
-
-.autonumber {
-  counter-reset: h2;
-}
-
-.autonumber h2 {
-  counter-reset: h3;
-}
-
-.autonumber h2:before {
-  counter-increment: h2;
-  content: counter(h2) ". ";
-}
-
-.autonumber h3 {
-  counter-reset: h4;
-}
-
-.autonumber h3:before {
-  counter-increment: h3;
-  content: counter(h2) ". " counter(h3) ". ";
-}
-
-.autonumber h4 {
-  counter-reset: h5;
-}
-
-.autonumber h4:before {
-  counter-increment: h4;
-  content: counter(h2) "." counter(h3) "." counter(h4) ". ";
 }
 
 .posts-collapse .post-content {
@@ -4930,7 +4894,7 @@ hr {
 }
 
 .links-of-author a::before, .links-of-social a::before {
-  background: #1fcece;
+  background: #d5a471;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
