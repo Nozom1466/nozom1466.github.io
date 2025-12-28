@@ -8,7 +8,7 @@ body {
 
 /* Grid Container */
 .library-grid-container {
-  padding: 2rem;
+  padding: 0 2rem 2rem 2rem;
   max-width: none;
   margin: 0;
 }
@@ -219,10 +219,12 @@ body {
   border-radius: 4px;
   flex-shrink: 0;
   background: var(--surface-1);
+  align-self: center;
 }
 
 .library-popup-meta {
   flex: 1;
+  align-self: flex-start;
 }
 
 .library-popup-meta h1 {

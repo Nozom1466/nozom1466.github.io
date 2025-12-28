@@ -58,7 +58,7 @@
             <h3 class="library-card-title">{{ .Title }}</h3>
             {{ with .Params.creators }}
               {{ range $role, $name := . }}
-                {{- $displayRole := replaceRE "^[0-9]+_" "" $role -}}
+                {{- $displayRole := replaceRE "^[0-9]+_" "" $role | title -}}
                 <p class="library-card-creator">{{ $displayRole }}: {{ $name }}</p>
                 {{ break }}
               {{ end }}

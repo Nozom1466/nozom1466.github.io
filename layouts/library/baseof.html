@@ -155,8 +155,9 @@
           const creatorsObj = JSON.parse(creators);
           let creatorsHtml = '';
           for (const [role, name] of Object.entries(creatorsObj)) {
-            // Remove number prefix like "1_" from role
-            const displayRole = role.replace(/^[0-9]+_/, '');
+            // Remove number prefix like "1_" from role and capitalize first letter
+            const cleanRole = role.replace(/^[0-9]+_/, '');
+            const displayRole = cleanRole.charAt(0).toUpperCase() + cleanRole.slice(1);
             creatorsHtml += '<p class="popup-creator"><span class="creator-role">' + displayRole + ':</span> ' + name + '</p>';
           }
           creatorsEl.innerHTML = creatorsHtml;
