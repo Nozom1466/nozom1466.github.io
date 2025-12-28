@@ -1,0 +1,285 @@
+{
+  "main": {
+    "id": "bddfcec326fce5cf",
+    "type": "split",
+    "children": [
+      {
+        "id": "1509f50f6fecdce8",
+        "type": "tabs",
+        "dimension": 44.50146627565982,
+        "children": [
+          {
+            "id": "ba6b26fe4bf73df4",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "terminal:terminal",
+              "state": {
+                "terminal:terminal": {
+                  "cwd": "D:\\blog\\nozom1466.github.io",
+                  "focus": false,
+                  "profile": {
+                    "args": [],
+                    "executable": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                    "name": "powershell",
+                    "platforms": {
+                      "win32": true
+                    },
+                    "pythonExecutable": "",
+                    "restoreHistory": false,
+                    "rightClickAction": "copyPaste",
+                    "successExitCodes": [
+                      "0",
+                      "SIGINT",
+                      "SIGTERM"
+                    ],
+                    "terminalOptions": {
+                      "documentOverride": null
+                    },
+                    "type": "integrated",
+                    "useWin32Conhost": true
+                  },
+                  "serial": null
+                }
+              },
+              "pinned": true,
+              "icon": "terminal",
+              "title": "Terminal: C:\\Windows\\System32\\conhost.exe"
+            }
+          },
+          {
+            "id": "4f3f0aec6678f73e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "content/library/hibike-euphonium-3.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "hibike-euphonium-3"
+            }
+          },
+          {
+            "id": "7b92af779855e148",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "content/library/flowers-for-algernon.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "flowers-for-algernon"
+            }
+          }
+        ]
+      },
+      {
+        "id": "e9ee8f2469a91dd8",
+        "type": "tabs",
+        "dimension": 55.49853372434017,
+        "children": [
+          {
+            "id": "7aca13cd05c6f09e",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "http://localhost:62590/library/",
+                "title": "Library - Ryan's Blog",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "Library - Ryan's Blog"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d1ec512bf5e19bb0",
+    "type": "split",
+    "children": [
+      {
+        "id": "159ac45ec310a14e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "224fdf0d143f1c9d",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "ecbcc37c1d79d44b",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "897084518403c938",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "3a6a3cc95abeb6f6",
+    "type": "split",
+    "children": [
+      {
+        "id": "01bc65c8f72cd598",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ee2f70b7c12dfa19",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "content/ideas/四平路1239号.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 四平路1239号"
+            }
+          },
+          {
+            "id": "59bd7474bc178ffa",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "content/ideas/四平路1239号.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 四平路1239号"
+            }
+          },
+          {
+            "id": "4ee9eaabb7e8cde4",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "dfc1ae028b82e446",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "3702aeb240444696",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "content/ideas/四平路1239号.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 四平路1239号"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "terminal:Open terminal": false,
+      "vscode-editor:Create Code File": false
+    }
+  },
+  "active": "ba6b26fe4bf73df4",
+  "lastOpenFiles": [
+    "content/library/flowers-for-algernon.md",
+    "public/library/css/main.min.06df34d3b4fb5972cec904180c0d7d4ec5e0a7cee753cd3662169dd1935553ac.css",
+    "content/library/hibike-euphonium-3.md",
+    "content/library/Interstellar.md",
+    "content/library/_index.md",
+    "content/library/pingpong.md",
+    "content/library/rich-dad-poor-dad.md",
+    "public/tags/film/page/1/index.html",
+    "public/tags/film/page/1",
+    "public/tags/film/page",
+    "public/tags/film/rss.xml",
+    "public/tags/film/index.html",
+    "public/tags/film",
+    "public/library/interstellar/index.html",
+    "public/library/interstellar",
+    "public/library/inter/index.html",
+    "content/ideas/四平路1239号.md"
+  ]
+}
