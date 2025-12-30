@@ -15,7 +15,7 @@
 baseURL: https://nozom1466.github.io/
 # 站点标题
 # Website title
-title: Ryan's Blog
+title: Fries on the pier
 # 主题名称
 # Theme name
 theme: hugo-theme-next
@@ -219,9 +219,9 @@ params:
   # 站点基本信息
   # Site Information Settings
   author: Ryan Ming
-  subtitle: LEARN & CREATE
-  description: Ryan's Blog - Learning, Ideas, and Travel
-  keywords: Blog,Hugo,Learning,Travel,Ideas
+  subtitle: FRIES ON THE PIER
+  description: I am going to get some fries on the pier.
+  keywords: Blog,Hugo,Learning,Photography,Ideas,LLM,Music,Reflection,Life,Cooking.Economics,Japanese,Movies,Anime,Books,Reviews
 
   # 不同尺寸站点图标
   # Different size of favicon
@@ -788,7 +788,7 @@ params:
     enable: true
     # 给所有外部链接加上图标
     # If true, an icon will be attached to each external URL
-    icon: true
+    icon: false
 
   # 谷歌站点验证
   # Google Webmaster tools verification.
