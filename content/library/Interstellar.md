@@ -2,7 +2,7 @@
 title: Interstellar
 cover: https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/interstellar.jpg
 rating: 5
-tags:
+library_tags:
   - film
 date: 2017-01-01
 summary: 个人评价最好的硬科幻电影，其中关于星际航行、相对论、因果关系的展现完全满足了我对星际故事的想象。家庭与亲情的描写又稍软化了硬核的科幻叙事线条，穿越时间与空间的情感是影片另一大动人的侧面。不愧是 Nolan 的手笔！

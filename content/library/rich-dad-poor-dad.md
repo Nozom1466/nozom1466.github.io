@@ -2,7 +2,7 @@
 title: "Rich Dad Poor Dad"
 cover: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/rich_dad_poor_dad.jpg"
 rating: 4.0
-tags: ["book"]
+library_tags: ["book"]
 date: 2024-12-27
 summary: "算是我看的第一本跟投资有关的书，各种自媒体/营销号/问答平台的推荐。之前觉得概念不错，现在看感觉有些不太一样了，有些地方还是得多考虑考虑。\nreview 之前写的，现在看来有点奇怪了哈哈。"
 creators:

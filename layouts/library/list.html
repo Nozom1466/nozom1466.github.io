@@ -7,7 +7,7 @@
   {{ $totalCount = len $items }}
   
   {{ range $items }}
-    {{ with .Params.tags }}
+    {{ with .Params.library_tags }}
       {{ range . }}
         {{ if not (in $allTags .) }}
           {{ $allTags = $allTags | append . }}
@@ -34,7 +34,7 @@
   <section class="library-grid-container">
     <div class="library-grid">
       {{ range $items }}
-        {{ $tagsStr := delimit .Params.tags "," }}
+        {{ $tagsStr := delimit .Params.library_tags "," }}
         {{ $slug := .File.BaseFileName }}
         {{ $creatorsJson := "{}" }}
         {{ with .Params.creators }}
