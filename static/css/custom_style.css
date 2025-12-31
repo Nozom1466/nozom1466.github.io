@@ -68,6 +68,43 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
   justify-content: flex-end !important;
 }
 
+/* Mobile navigation - vertical dropdown menu */
+@media (max-width: 767px) {
+  .main-menu {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  .menu {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+  
+  .menu-item {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin: 0 !important;
+  }
+  
+  .menu-item a {
+    padding: 10px 0 !important;
+    width: 100% !important;
+  }
+  
+  /* Add spacing to header toggle and search icons */
+  .site-nav-toggle {
+    padding-left: 0.5rem !important;
+  }
+  
+  .site-nav-right {
+    padding-right: 0.5rem !important;
+  }
+}
+
 /* Hide logo lines in site title */
 .logo-line {
   display: none !important;
@@ -139,6 +176,11 @@ figcaption,
 .image-caption {
   margin-top: 0.5em !important;
   font-weight: normal !important;
+  line-height: 1.4 !important;
+}
+
+figcaption p {
+  line-height: 1.4  !important;
 }
 
 /* ABC music notation styles */
@@ -315,4 +357,23 @@ li > code {
 .hvr-icon-pulse:active .hvr-icon {
   animation: none !important;
   transform: none !important;
+}
+
+/* Mobile pagination bottom margin - placed at end for highest priority */
+@media (max-width: 767px) {
+  nav.pagination {
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+  }
+  
+  nav.pagination::after {
+    content: "";
+    display: block;
+    height: 2rem;
+  }
+  
+  /* Add top spacing for main content on mobile */
+  .main-inner.posts-expand .post-block:first-of-type {
+    padding-top: 2rem !important;
+  }
 }

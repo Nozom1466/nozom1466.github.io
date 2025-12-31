@@ -3,18 +3,113 @@
 <html data-theme="{{- if (eq $theme "light") -}}light{{- else -}}dark{{- end -}}" lang="{{- site.LanguageCode | default "en" -}}">
   {{ partial "library-theme/head.html" . }}
   <body style="margin: 0;">
-    <header style="padding: 0.4em 2rem; background: var(--header-bg, #1a1a1a); margin: 0; display: flex; align-items: center; justify-content: space-between; gap: 2rem; min-height: auto;">
-      <a href="{{ "/" | relURL }}" style="font-size: 1.2em; font-weight: bold; text-decoration: none; color: var(--text-1); padding: 0.3em 0; margin: 0;">
-        Ryan's Library
+    <style>
+      .library-header {
+        padding: 0.4em 2rem;
+        background: var(--header-bg, #1a1a1a);
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        min-height: auto;
+      }
+      .library-header-title {
+        font-size: 1.2em;
+        font-weight: bold;
+        text-decoration: none;
+        color: var(--text-1);
+        padding: 0.3em 0;
+        margin: 0;
+      }
+      .library-header-nav {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        margin: 0;
+      }
+      .library-header-nav a {
+        font-size: 14px;
+        text-decoration: none;
+        color: var(--text-1);
+        margin: 0;
+      }
+      .library-header-nav a i {
+        margin-right: 0.3em;
+      }
+      .library-header-nav button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.3em;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-1);
+        font-size: 1em;
+      }
+      .library-hamburger {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5em;
+        color: var(--text-1);
+        font-size: 1.2em;
+      }
+      
+      @media (max-width: 767px) {
+        .library-header {
+          flex-wrap: wrap;
+          padding: 0.4em 1rem;
+          gap: 0;
+        }
+        .library-header-title {
+          flex: 1;
+        }
+        .library-hamburger {
+          display: block;
+        }
+        .library-header-nav {
+          display: none;
+          flex-direction: column;
+          width: 100%;
+          gap: 0;
+          padding: 0.5em 0;
+        }
+        .library-header-nav.open {
+          display: flex;
+        }
+        .library-header-nav a {
+          padding: 0.8em 0;
+          width: 100%;
+          text-align: center;
+          border-top: 1px solid var(--border, #555);
+        }
+        .library-header-nav button {
+          padding: 0.8em 0;
+          width: 100%;
+          justify-content: center;
+          border-top: 1px solid var(--border, #555);
+        }
+      }
+    </style>
+    <header class="library-header">
+      <a href="{{ "/" | relURL }}" class="library-header-title">
+        Fries Library
       </a>
-      <div style="display: flex; gap: 2rem; align-items: center; margin: 0;">
-        <a href="{{ "/" | relURL }}" style="font-size: 14px; text-decoration: none; color: var(--text-1); margin: 0;"><i class="fa fa-home" style="margin-right: 0.3em;"></i>Home</a>
-        <a href="{{ "/gallery" | relURL }}" style="font-size: 14px; text-decoration: none; color: var(--text-1); margin: 0;"><i class="fa fa-image" style="margin-right: 0.3em;"></i>Gallery</a>
-        <button id="toggle-theme" title="Toggle theme" style="background: none; border: none; cursor: pointer; padding: 0.3em; margin: 0; display: flex; align-items: center; justify-content: center; color: var(--text-1); font-size: 1em;">
+      <button class="library-hamburger" onclick="document.querySelector('.library-header-nav').classList.toggle('open')">
+        <i class="fa fa-bars"></i>
+      </button>
+      <nav class="library-header-nav">
+        <a href="{{ "/" | relURL }}"><i class="fa fa-home"></i>Home</a>
+        <a href="{{ "/gallery" | relURL }}"><i class="fa fa-image"></i>Gallery</a>
+        <button id="toggle-theme" title="Toggle theme">
           <i class="fa fa-moon" id="theme-icon-dark" style="display: none;"></i>
           <i class="fa fa-sun" id="theme-icon-light" style="display: none;"></i>
         </button>
-      </div>
+      </nav>
     </header>
     <main style="max-width: none; width: 100%; padding: 0; box-sizing: border-box;">
       {{ block "main" . }}{{ end }}
