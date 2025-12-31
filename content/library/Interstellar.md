@@ -16,4 +16,11 @@ creators:
 
 初中时看的星际穿越，正好是对物理学特别感兴趣的时期。当时正好在看基普·索恩的科普书《黑洞与时间弯曲》，没想到他正好是星际穿越的科学顾问。
 
+## 配乐
+
+Cornfield Chase 这首曲子应该每一位看过星际穿越的观众会记得：
+
+{{< music url="https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/cornfield%20_chase.mp3" name="Night Cruising" artist="Hans Zimmer" cover="https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/interstellar_ost.jpg" >}}
+
+
 [未完待续]
