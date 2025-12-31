@@ -11,6 +11,6 @@ params:
       title: "大一暑假的月牙\n周五傍晚蓝调时刻\n学子超市前"
       tags: ["tongji", "cold", "blue"]
     - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/IMG_3523.jpg"
-      title: "白桃味的下午"
+      title: "白桃味的下午从樱花树走向河岸旁"
       tags: ["tongji", "warm", "sunshine"]
 ---
