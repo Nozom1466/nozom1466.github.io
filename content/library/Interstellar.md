@@ -20,7 +20,7 @@ creators:
 
 Cornfield Chase 这首曲子应该每一位看过星际穿越的观众会记得：
 
-{{< music url="https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/cornfield%20_chase.mp3" name="Night Cruising" artist="Hans Zimmer" cover="https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/interstellar_ost.jpg" >}}
+{{< music url="https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/cornfield%20_chase.mp3" name="Cornfield Chase" artist="Hans Zimmer" cover="https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/interstellar_ost.jpg" >}}
 
 
 [未完待续]
