@@ -1,7 +1,7 @@
 ---
 title: ピンポン THE ANIMATION
 cover: https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/pingpong.jpg
-rating: 5
+rating: 4.9
 library_tags:
   - anime
 date: 2024-12-15
