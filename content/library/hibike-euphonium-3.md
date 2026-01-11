@@ -11,7 +11,7 @@ creators:
   2_author: 武田绫乃
 ---
 
-{{< music url="https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/azuka_solo.mp3" name="響け！ユーフォニアム" artist="松田彬人" cover="https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/epho_ost.jpg" >}}
+{{< music url="https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/azuka_solo.mp3" name="響け！ユーフォニアム(明日香 ver.)" artist="松田彬人" cover="https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/epho_ost.jpg" >}}
 
 过去了整整一年半，我的 b 站首页仍是久美子第三季的各种分析。每次回去听一听发现爱的地方再想起来第三季大吉山上久美子的神情，各种想法就爆发了出来：如果山田没走呢？如果没发生那场火灾呢？如果，如果明年能重置呢！？... 回过头来几分钟几小时的时间又被浪费掉了，那当然是不可能的，没什么如果的事情，TV 里久美子就是没有独奏，最后吹响上低音号的就是真由。
 

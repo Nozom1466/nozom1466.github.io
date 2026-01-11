@@ -1,7 +1,7 @@
 ---
 title: 东京八平米
 cover: https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/tokyo-8-poster.jpg
-rating: 4.7
+rating: 4.4
 library_tags:
   - book
 date: 2022-11-01
