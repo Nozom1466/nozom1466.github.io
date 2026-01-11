@@ -28,6 +28,16 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
   display: none !important;
 }
 
+/* Hide APlayer volume control */
+.aplayer .aplayer-info .aplayer-controller .aplayer-volume-wrap,
+.aplayer-volume-wrap {
+  display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
 /* Hide multilingual translate button */
 #goto-i18n-translate {
   display: none !important;
