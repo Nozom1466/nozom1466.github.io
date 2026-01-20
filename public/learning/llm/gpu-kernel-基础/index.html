@@ -1,0 +1,890 @@
+<!doctype html><html lang=en-US data-theme=dark><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=theme-color content="#222" media="(prefers-color-scheme: dark)"><meta name=generator content="Hugo 0.152.0"><link rel="shortcut icon" type=image/x-icon href=/meta/favicon.ico><link rel=icon type=image/x-icon href=/meta/favicon.ico><link rel=icon type=image/png sizes=16x16 href=/meta/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=/meta/favicon-32x32.png><link rel=apple-touch-icon sizes=180x180 href=/meta/apple-touch-icon.png><meta itemprop=name content="GPU Kernel 基础"><meta itemprop=description content="Keep it simple, keep it powerful."><meta name=description content="Keep it simple, keep it powerful."><meta itemprop=datePublished zgotmplz><meta itemprop=dateModified zgotmplz><meta itemprop=image content="https://nozom1466.github.io/profileMode/avatar.jpg"><meta itemprop=keywords content="cuda,kernel,llm,system"><meta property="og:type" content="article"><meta property="og:title" content="GPU Kernel 基础"><meta property="og:description" content="Keep it simple, keep it powerful."><meta property="og:image" content="/profileMode/avatar.jpg"><meta property="og:image:width" content="312"><meta property="og:image:height" content="312"><meta property="og:image:type" content="image/jpeg/png/svg/jpg"><meta property="og:url" content="https://nozom1466.github.io/learning/llm/gpu-kernel-%E5%9F%BA%E7%A1%80/"><meta property="og:site_name" content="Fries on the pier"><meta property="og:locale" content="en-US"><meta property="article:author" content="NexT Theme"><meta property="article:published_time" content="2026-01-19 22:11:19 -0500 EST"><meta property="article:modified_time" content="2026-01-19 22:11:19 -0500 EST"><link type=text/css rel=stylesheet href=https://nozom1466.github.io/js/3rd/font-awesome/6.7.2/css/all.min.css><link type=text/css rel=stylesheet href=https://nozom1466.github.io/js/3rd/animate.css/3.1.1/animate.min.css><link type=text/css rel=stylesheet href=https://nozom1466.github.io/js/3rd/viewerjs/1.11.6/viewer.min.css><link rel=stylesheet href="/css/main.min.css?=1768879224"><style type=text/css>.post-footer hr:after{content:""}.flinks-list-footer hr:after{content:""}</style><link rel=stylesheet type=text/css href="/css/custom_style.css?=1768879224"><script type=text/javascript>(function(){localDB={set:function(e,t,n){if(n===0)return;const s=new Date,o=n*864e5,i={value:t,expiry:s.getTime()+o};localStorage.setItem(e,JSON.stringify(i))},get:function(e){const t=localStorage.getItem(e);if(!t)return 0[0];const n=JSON.parse(t),s=new Date;return s.getTime()>n.expiry?(localStorage.removeItem(e),0[0]):n.value}},theme={active:function(){const e=localDB.get("theme");if(e==null)return;theme.toggle(e),window.matchMedia("(prefers-color-scheme: dark)").addListener(function(e){theme.toggle(e.matches?"dark":"light")})},toggle:function(e){document.documentElement.setAttribute("data-theme",e),localDB.set("theme",e,2);const t=document.querySelector("iframe.giscus-frame");if(t){const n={setConfig:{theme:e}};t.contentWindow.postMessage({giscus:n},"https://giscus.app")}}},theme.active()})(window)</script><script type=text/javascript>document.addEventListener("DOMContentLoaded",()=>{var e=document.createElement("script");e.charset="UTF-8",e.src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js",e.async=!1,e.defer=!0,document.head.appendChild(e),e.onload=function(){NexT.utils.fmtBusuanzi()}})</script><title>GPU Kernel 基础 - Fries on the pier</title><noscript><link rel=stylesheet href=/css/noscript.css></noscript></head><body itemscope itemtype=http://schema.org/WebPage><div class=headband></div><main class=main><header class=header itemscope itemtype=http://schema.org/WPHeader><div class=header-inner><div class=site-brand-container><div class=site-nav-toggle><div class=toggle aria-label role=button><span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span></div></div><div class=site-meta><a href=/ class=brand rel=start><i class=logo-line></i><h1 class=site-title>Fries on the pier</h1><i class=logo-line></i></a><p class=site-subtitle itemprop=description>Build for Hugo Theme</p></div><div class=site-nav-right><div class="toggle popup-trigger"><i class="fa fa-search fa-fw fa-lg"></i></div></div></div><nav class=site-nav><ul class="main-menu menu"><li class="menu-item menu-item-home"><a href=/ rel=section><i class="fa fa-home"></i>Home</a></li><li class="menu-item menu-item-archives"><a href=/archives/ rel=section><i class="fa fa-archive"></i>Archives
+<span class=badge>6</span></a></li><li class="menu-item menu-item-tags"><a href=/tags/ rel=section><i class="fa fa-tags"></i>Tags</a></li><li class="menu-item menu-item-gallery"><a href=/gallery/ rel=section><i class="fa fa-image"></i>Gallery</a></li><li class="menu-item menu-item-library"><a href=/library/ rel=section><i class="fa fa-book"></i>Library</a></li><li class="menu-item menu-item-search"><a role=button class=popup-trigger><i class="fa fa-search fa-fw"></i>Search</a></li><li class="menu-item menu-item-theme"><a role=button id=header-toggle-theme title="Change Theme"><i class="fa fa-moon" id=header-theme-icon-dark style=display:none></i>
+<i class="fa fa-sun" id=header-theme-icon-light style=display:none></i></a></li></ul></nav><div class=search-pop-overlay><div class="popup search-popup"><div class=search-header><span class=search-icon><i class="fa fa-search"></i></span><div class=search-input-container><input autocomplete=off autocapitalize=off maxlength=80 placeholder=Searching... spellcheck=false type=search class=search-input></div><span class=popup-btn-close role=button><i class="fa fa-times-circle"></i></span></div><div class="search-result-container no-result"><div class=search-result-icon><i class="fa fa-spinner fa-pulse fa-5x"></i></div></div></div></div></div><div class="toggle sidebar-toggle" role=button><span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span></div><aside class=sidebar><div class="sidebar-inner sidebar-nav-active sidebar-toc-active"><ul class=sidebar-nav><li class=sidebar-nav-toc>TOC</li><li class=sidebar-nav-overview>Overview</li></ul><div class=sidebar-panel-container><div class="post-toc-wrap sidebar-panel"><div class="post-toc animated"><nav id=TableOfContents><ul><li><ul><li><a href=#gpu-的结构管理>GPU 的结构管理</a></li><li><a href=#kernel-编写的概念与例子>Kernel 编写的概念与例子</a></li><li><a href=#python-使用-kernel>Python 使用 Kernel</a></li><li><a href=#一些拓展资料>一些拓展资料</a></li></ul></li></ul></nav></div></div><div class="site-overview-wrap sidebar-panel"><div class="site-author site-overview-item animated" itemprop=author itemscope itemtype=http://schema.org/Person><img class=site-author-image itemprop=image alt="NexT Theme" src=/imgs/img-lazy-loading.gif data-src=/profileMode/avatar.jpg><p class=site-author-name itemprop=name>NexT Theme</p><div class=site-description itemprop=description>Keep it simple, keep it powerful.</div></div><div class="site-state-wrap site-overview-item animated"><nav class=site-state><div class="site-state-item site-state-posts"><a href=/archives/><span class=site-state-item-count>6</span>
+<span class=site-state-item-name>Posts</span></a></div><div class="site-state-item site-state-categories"><a href=/categories/><span class=site-state-item-count>0</span>
+<span class=site-state-item-name>Categories</span></a></div><div class="site-state-item site-state-tags"><a href=/tags/><span class=site-state-item-count>12</span>
+<span class=site-state-item-name>Tags</span></a></div></nav></div><div class="links-of-social site-overview-item animated"><span class=links-of-social-item><a href=https://github.com/Nozom1466 title="Github → https://github.com/Nozom1466" rel=noopener class=hvr-icon-pulse target=_blank><i class="fab fa-github fa-fw hvr-icon"></i>
+Github
+</a></span><span class=links-of-social-item><a href=https://x.com/NozomiKasa1466 title="Twitter → https://x.com/NozomiKasa1466" rel=noopener class=hvr-icon-pulse target=_blank><i class="fab fa-twitter fa-fw hvr-icon"></i>
+Twitter</a></span></div><div class="cc-license animated" itemprop=license><a href=https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en class=cc-opacity rel=noopener target=_blank title="Creative Commons"><img src=/imgs/img-lazy-loading.gif data-src=/imgs/cc/big/by_nc_sa.svg alt="Creative Commons"></a></div><div class="links-of-blogroll site-overview-item animated"><div class=links-of-blogroll-title><i class="fa fa-globe fa-fw"></i>
+Links</div><ul class=links-of-blogroll-list><li class=links-of-blogroll-item><a href=https://gitee.com/hugo-next/hugo-theme-next title=https://gitee.com/hugo-next/hugo-theme-next target=_blank>Hugo-NexT</a></li><li class=links-of-blogroll-item><a href=https://lisenhui.cn title=https://lisenhui.cn target=_blank>凡梦星尘空间站</a></li></ul></div></div></div></div><div id=siteinfo-card-widget class=sidebar-card-widget><div class=item-headline><i class="fas fa-chart-line"></i>
+<span>Web Status</span></div><div class=siteinfo><div class=siteinfo-item><div class=item-name><i class="fa-solid fa-calendar-check"></i>Running:</div><div class=item-count id=runTimes data-publishdate="2024-09-28 19:59:00 +0800 +0800"></div></div><div class=siteinfo-item><div class=item-name><i class="fas fa fa-user"></i>Visitors:</div><div class=item-count id=busuanzi_value_site_uv><i class="fa fa-sync fa-spin"></i></div></div><div class=siteinfo-item><div class=item-name><i class="fas fa fa-eye"></i>Views:</div><div class=item-count id=busuanzi_value_site_pv><i class="fa fa-sync fa-spin"></i></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-font"></i>Words:</div><div class=item-count id=wordsCount data-count=22921></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-mug-hot"></i>ReadTime:</div><div class=item-count id=readTimes data-times=49></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-clock-rotate-left"></i>Last Update:</div><div class=item-count id=last-push-date data-lastpushdate="2026-01-19 22:11:19 -0500 EST"></div></div></div></div></aside><div class=sidebar-dimmer></div></header><div class=tool-buttons><div id=goto-i18n-translate class=button title="Multilingual translation"><i class="fas fa-globe"></i></div><div id=toggle-theme class=button style=display:none!important><i class="fas fa-adjust"></i></div></div><noscript><div class=noscript-warning>Theme NexT works best with JavaScript enabled</div></noscript><div class="main-inner post posts-expand"><div class=post-block><article itemscope itemtype=http://schema.org/Article class=post-content lang><link itemprop=mainEntityOfPage href=https://nozom1466.github.io/learning/llm/gpu-kernel-%E5%9F%BA%E7%A1%80/><span hidden itemprop=author itemscope itemtype=http://schema.org/Person><meta itemprop=image content="/profileMode/avatar.jpg"><meta itemprop=name content="NexT Theme"></span><span hidden itemprop=publisher itemscope itemtype=http://schema.org/Organization><meta itemprop=name content="NexT Theme"><meta itemprop=description content="Keep it simple, keep it powerful."></span><span hidden itemprop=post itemscope itemtype=http://schema.org/CreativeWork><meta itemprop=name content="GPU Kernel 基础"><meta itemprop=description content="简单的 GPU Kernel 编程基础"></span><header class=post-header><h1 class=post-title itemprop="name headline">GPU Kernel 基础</h1><div class=post-meta-container><div class=post-meta-items><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-calendar"></i>
+</span><span class=post-meta-item-text title="Publish on">Publish on:
+</span><time title="Create Time:2026/01/19 22:11:19 -05:00" itemprop="dateCreated datePublished" datetime="2026-01-19 22:11:19 -0500 EST">2026/01/19</time></span></div><div class=post-meta-items></div></div></header><div class=post-body itemprop=articleBody><a id=more></a><p>这个 GPU 编程搞的非常头疼，主要原因是涉及到 thread 并行以及不了解 cuda 运行的主要流程。</p><p>代码参考: <a href=https://github.com/llmsystem/llmsys_hw1 title="llmsys assignment 1 official codebase" rel="noopener external nofollow noreferrer" target=_blank class=exturl>llmsys assignment 1 official codebase</a></p><h3 id=gpu-的结构管理>GPU 的结构管理
+<a class=header-anchor href=#gpu-%e7%9a%84%e7%bb%93%e6%9e%84%e7%ae%a1%e7%90%86></a></h3><p><strong>GPU 物理结构：</strong> GPU 里边有多个 Streaming Multiprocessor, 是真正执行 kernel 的硬件计算单元。一个 SM 里边有 CUDA cores, Tensor cores, warp scheduler，寄存器文件，shared memory 等。在这个上边运行的最小执行单位是一个 warp。这个 warp 里边有 32 个 threads，是 nvidia 硬件规定。我们在编程的时候不需要写 warp 调用，但是需要意识到这个存在，比如说一个 warp 内有 if-else 判断走不同分支的时候可能会影响效率之类。</p><figure><img src=https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/20260119120234646.png alt="Streaming Multiprocessors" width=400><figcaption><p>Streaming Multiprocessors</p></figcaption></figure><p><strong>GPU 概念结构：</strong> 在一块 GPU 里主要是 Grid -> Block -> (Warp) -> Thread 的概念结构。在Grid 中有组织好的 Block 结构，这个结构是一个三维结构，具有 x, y, z 坐标：<code>blockIdx.x, blockIdx.y, blockIdx.z</code>，并且有每个坐标轴的单位长度：<code>blockDim.x, blockDim.y, blockDim.z</code>，nvidia 的 GPU 需要满足：<code>blockDim.x * blockDim.y * blockDim.z ≤ 1024</code> 。在此基础上能够通过这个坐标系定位到 block 的坐标。我们可以在初始化的时候指定 block 的各个维度，设置一个 block 中有多少 thread。但是考虑到一个 warp 是 32 个 threads，我们最好能设置成 32 的倍数，防止最后 warp 真正执行的时候影响效率。并且在每个方向上能够初始化的最大 threads 数量也是有限制的。在 <a href=https://docs.nvidia.com/cuda/archive/9.2/pdf/CUDA_Runtime_API.pdf title=官方文档 rel="noopener external nofollow noreferrer" target=_blank class=exturl>官方文档</a>
+中，这个最大的 threads 数量需要你通过访问你的 GPU 得到。在一个 block 内部有组织好的 Thread 结构，同样具有三维坐标: <code>threadIdx.x, threadIdx.y, threadIdx.z</code>。这个坐标是在某一个 block <em>内部</em> 的坐标。一个初始化的示例：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a class=lnlinks href=#hl-0-1> 1</a>
+</span><span class=lnt id=hl-0-2><a class=lnlinks href=#hl-0-2> 2</a>
+</span><span class=lnt id=hl-0-3><a class=lnlinks href=#hl-0-3> 3</a>
+</span><span class=lnt id=hl-0-4><a class=lnlinks href=#hl-0-4> 4</a>
+</span><span class=lnt id=hl-0-5><a class=lnlinks href=#hl-0-5> 5</a>
+</span><span class=lnt id=hl-0-6><a class=lnlinks href=#hl-0-6> 6</a>
+</span><span class=lnt id=hl-0-7><a class=lnlinks href=#hl-0-7> 7</a>
+</span><span class=lnt id=hl-0-8><a class=lnlinks href=#hl-0-8> 8</a>
+</span><span class=lnt id=hl-0-9><a class=lnlinks href=#hl-0-9> 9</a>
+</span><span class=lnt id=hl-0-10><a class=lnlinks href=#hl-0-10>10</a>
+</span><span class=lnt id=hl-0-11><a class=lnlinks href=#hl-0-11>11</a>
+</span><span class=lnt id=hl-0-12><a class=lnlinks href=#hl-0-12>12</a>
+</span><span class=lnt id=hl-0-13><a class=lnlinks href=#hl-0-13>13</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C++ data-lang=C++><span class=line><span class=cl><span class=c1>// 1 dim
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>int</span> <span class=n>threadsPerBlock</span> <span class=o>=</span> <span class=mi>256</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=n>blocksPerGrid</span> <span class=o>=</span> <span class=p>(</span><span class=n>N</span> <span class=o>+</span> <span class=n>threadsPerBlock</span> <span class=o>-</span> <span class=mi>1</span><span class=p>)</span> <span class=o>/</span> <span class=n>threadsPerBlock</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>kernel</span><span class=o>&lt;&lt;&lt;</span><span class=n>blocksPerGrid</span><span class=p>,</span> <span class=n>threadsPerBlock</span><span class=o>&gt;&gt;&gt;</span><span class=p>(...);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>//2 dim
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>dim3</span> <span class=nf>block</span><span class=p>(</span><span class=mi>16</span><span class=p>,</span> <span class=mi>16</span><span class=p>);</span>   <span class=c1>// 256 threads
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>dim3</span> <span class=nf>grid</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=p>(</span><span class=n>width</span>  <span class=o>+</span> <span class=n>block</span><span class=p>.</span><span class=n>x</span> <span class=o>-</span> <span class=mi>1</span><span class=p>)</span> <span class=o>/</span> <span class=n>block</span><span class=p>.</span><span class=n>x</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=p>(</span><span class=n>height</span> <span class=o>+</span> <span class=n>block</span><span class=p>.</span><span class=n>y</span> <span class=o>-</span> <span class=mi>1</span><span class=p>)</span> <span class=o>/</span> <span class=n>block</span><span class=p>.</span><span class=n>y</span>
+</span></span><span class=line><span class=cl><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>kernel</span><span class=o>&lt;&lt;&lt;</span><span class=n>grid</span><span class=p>,</span> <span class=n>block</span><span class=o>&gt;&gt;&gt;</span><span class=p>(...);</span></span></span></code></pre></td></tr></table></div></div><p>如果想要访问一个 thread 在 grid 中的具体坐标：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-1-1><a class=lnlinks href=#hl-1-1>1</a>
+</span><span class=lnt id=hl-1-2><a class=lnlinks href=#hl-1-2>2</a>
+</span><span class=lnt id=hl-1-3><a class=lnlinks href=#hl-1-3>3</a>
+</span><span class=lnt id=hl-1-4><a class=lnlinks href=#hl-1-4>4</a>
+</span><span class=lnt id=hl-1-5><a class=lnlinks href=#hl-1-5>5</a>
+</span><span class=lnt id=hl-1-6><a class=lnlinks href=#hl-1-6>6</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c++ data-lang=c++><span class=line><span class=cl><span class=c1>// 1 dim
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>int</span> <span class=n>x</span> <span class=o>=</span> <span class=n>blockIdx</span><span class=p>.</span><span class=n>x</span> <span class=o>*</span> <span class=n>blockDim</span><span class=p>.</span><span class=n>x</span> <span class=o>+</span> <span class=n>threadIdx</span><span class=p>.</span><span class=n>x</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// 2 dim
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>int</span> <span class=n>x</span> <span class=o>=</span> <span class=n>blockIdx</span><span class=p>.</span><span class=n>x</span> <span class=o>*</span> <span class=n>blockDim</span><span class=p>.</span><span class=n>x</span> <span class=o>+</span> <span class=n>threadIdx</span><span class=p>.</span><span class=n>x</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=n>y</span> <span class=o>=</span> <span class=n>blockIdx</span><span class=p>.</span><span class=n>y</span> <span class=o>*</span> <span class=n>blockDim</span><span class=p>.</span><span class=n>y</span> <span class=o>+</span> <span class=n>threadIdx</span><span class=p>.</span><span class=n>y</span><span class=p>;</span></span></span></code></pre></td></tr></table></div></div><p><strong>Kernel 编程与内存访问：</strong> 在编程的时候，GPU 会为 block 当中的每个 thread 启动一份 kernel，但是一个 kernel里边是可以调用多个 threads 来操作的。这里要注意在 block 中的每一个 thread 都要执行这个 kernel，所以一般要进行边界检查。在同一个 block 内，你可以通过 <code>__syncthreads();</code> 来同步一个 block 中所有 threads 的行为，但是跨 block 不行。在一个 block 内的 threads 可以访问一块 shared_memory，在一个 grid 内的所有 block 中的 threads 可以访问 global memory。不同 Block 之间 <strong>不能</strong> 共享 shared_memory ，但是能访问同一块 global_memory。这两个 memory 的访问速度就 <em>类似于</em> 多级缓存的访问速度。 global 快一点，shared 慢一点。</p><p><strong>一些关系说明：</strong> grid, block, threads 属于概念层面描述，SM，warp是在物理执行层面描述，在真正执行的时候，一个 block 内的所有 threads 将会被分配到一个 SM 上执行，warp 是执行的最小单元。这也解释了为什么 shared_memory 不能跨 Block 访问，因为可能不再一个 SM 上，即使在一个 SM 上，SM 分配给每个 Block 的 shared memory 也是互相独立的。</p><p><strong>跨 GPU 通信：</strong> 包括GPU 和 CPU/其他 GPU 之间的通信，前者通过内存拷贝比如说 <code>cudaMemcpy</code> ，后者可以用 <code>NNCL</code>（通信库） 通过 <code>NVLink</code> 通信。其中 <code>NVLink</code> 专用于 GPU 间通信，传输速度快；<code>PCIe</code> 是通用数据总线，传数据都可以用，但是比较慢。</p><h3 id=kernel-编写的概念与例子>Kernel 编写的概念与例子
+<a class=header-anchor href=#kernel-%e7%bc%96%e5%86%99%e7%9a%84%e6%a6%82%e5%bf%b5%e4%b8%8e%e4%be%8b%e5%ad%90></a></h3><p>就是注意普通写法就是一个 thread 处理一个 out 元素位置，并行就是多个 thread 处理一个 out 元素位置。并且在一个 kernel 中，thread 既可以扮演搬运数据角色，也可以扮演计算的角色，而且可以</p><p><strong>映射关系：<em>一维存储数组</em> 与 <em>高维概念数组</em> 的映射关系：</strong> 简单来说，在 kernel 看来你所谓的二维、三维等等数组其实全都以 <strong>1维</strong> 的形式来存储。也就是说在 kernel 中，你需要手动进行 <em>一维存储数组</em> 与 <em>高维概念数组</em> 之间的映射。比如说，一个二维数组的映射关系：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-2-1><a class=lnlinks href=#hl-2-1>1</a>
+</span><span class=lnt id=hl-2-2><a class=lnlinks href=#hl-2-2>2</a>
+</span><span class=lnt id=hl-2-3><a class=lnlinks href=#hl-2-3>3</a>
+</span><span class=lnt id=hl-2-4><a class=lnlinks href=#hl-2-4>4</a>
+</span><span class=lnt id=hl-2-5><a class=lnlinks href=#hl-2-5>5</a>
+</span><span class=lnt id=hl-2-6><a class=lnlinks href=#hl-2-6>6</a>
+</span><span class=lnt id=hl-2-7><a class=lnlinks href=#hl-2-7>7</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>2 dim tensor: [2, 3]
+</span></span><span class=line><span class=cl>[[1, 2, 3], 
+</span></span><span class=line><span class=cl>[4, 5, 6]]
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>stored as 1 dim tensor: [6]
+</span></span><span class=line><span class=cl>- stride = [3, 2]: [1, 2, 3, 4, 5, 6] &lt;- kernel 实际看到的
+</span></span><span class=line><span class=cl>- stride = [2, 1]: [1, 4, 2, 5, 3, 6]</span></span></code></pre></td></tr></table></div></div><p>其中多种存储方式主要是取决于 <strong>stride</strong> 的设置。你可以通过使用 stride 快速完成从<em>一维存储数组</em> 到 <em>高维概念数组</em> 的映射。stride 的一个语义含义就是，你想要在 <em>一维存储数组</em> 当中访问 <em>高维概念数组</em> 的在这个维度的下一个元素，需要下标 + 多少 ，比如说在 <code>[2, 1]</code> 中，2 这个元素要在 1 这个维度上访问 5，需要 +1，而这个 1 就是 <code>stride[1]</code>。具体方式：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-3-1><a class=lnlinks href=#hl-3-1> 1</a>
+</span><span class=lnt id=hl-3-2><a class=lnlinks href=#hl-3-2> 2</a>
+</span><span class=lnt id=hl-3-3><a class=lnlinks href=#hl-3-3> 3</a>
+</span><span class=lnt id=hl-3-4><a class=lnlinks href=#hl-3-4> 4</a>
+</span><span class=lnt id=hl-3-5><a class=lnlinks href=#hl-3-5> 5</a>
+</span><span class=lnt id=hl-3-6><a class=lnlinks href=#hl-3-6> 6</a>
+</span><span class=lnt id=hl-3-7><a class=lnlinks href=#hl-3-7> 7</a>
+</span><span class=lnt id=hl-3-8><a class=lnlinks href=#hl-3-8> 8</a>
+</span><span class=lnt id=hl-3-9><a class=lnlinks href=#hl-3-9> 9</a>
+</span><span class=lnt id=hl-3-10><a class=lnlinks href=#hl-3-10>10</a>
+</span><span class=lnt id=hl-3-11><a class=lnlinks href=#hl-3-11>11</a>
+</span><span class=lnt id=hl-3-12><a class=lnlinks href=#hl-3-12>12</a>
+</span><span class=lnt id=hl-3-13><a class=lnlinks href=#hl-3-13>13</a>
+</span><span class=lnt id=hl-3-14><a class=lnlinks href=#hl-3-14>14</a>
+</span><span class=lnt id=hl-3-15><a class=lnlinks href=#hl-3-15>15</a>
+</span><span class=lnt id=hl-3-16><a class=lnlinks href=#hl-3-16>16</a>
+</span><span class=lnt id=hl-3-17><a class=lnlinks href=#hl-3-17>17</a>
+</span><span class=lnt id=hl-3-18><a class=lnlinks href=#hl-3-18>18</a>
+</span><span class=lnt id=hl-3-19><a class=lnlinks href=#hl-3-19>19</a>
+</span><span class=lnt id=hl-3-20><a class=lnlinks href=#hl-3-20>20</a>
+</span><span class=lnt id=hl-3-21><a class=lnlinks href=#hl-3-21>21</a>
+</span><span class=lnt id=hl-3-22><a class=lnlinks href=#hl-3-22>22</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c++ data-lang=c++><span class=line><span class=cl><span class=n>__device__</span> <span class=kt>void</span> <span class=nf>to_index</span><span class=p>(</span><span class=kt>int</span> <span class=n>ordinal</span><span class=p>,</span> <span class=k>const</span> <span class=kt>int</span> <span class=o>*</span><span class=n>shape</span><span class=p>,</span> <span class=kt>int</span> <span class=o>*</span><span class=n>out_index</span><span class=p>,</span> <span class=kt>int</span> <span class=n>num_dims</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=cm>/**
+</span></span></span><span class=line><span class=cl><span class=cm>   * Convert an ordinal to an index in the shape. Should ensure that enumerating position 0 ... size of
+</span></span></span><span class=line><span class=cl><span class=cm>   * a tensor produces every index exactly once. It may not be the inverse of index_to_position.
+</span></span></span><span class=line><span class=cl><span class=cm>   * Args:
+</span></span></span><span class=line><span class=cl><span class=cm>   *    ordinal: ordinal position to convert
+</span></span></span><span class=line><span class=cl><span class=cm>   *    shape: tensor shape
+</span></span></span><span class=line><span class=cl><span class=cm>   *    out_index: return index corresponding to position
+</span></span></span><span class=line><span class=cl><span class=cm>   *    num_dims: number of dimensions in the tensor
+</span></span></span><span class=line><span class=cl><span class=cm>   *
+</span></span></span><span class=line><span class=cl><span class=cm>   * Returns:
+</span></span></span><span class=line><span class=cl><span class=cm>   *    None (Fills in out_index)
+</span></span></span><span class=line><span class=cl><span class=cm>   */</span>
+</span></span><span class=line><span class=cl>  <span class=kt>int</span> <span class=n>cur_ord</span> <span class=o>=</span> <span class=n>ordinal</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>num_dims</span> <span class=o>-</span> <span class=mi>1</span><span class=p>;</span> <span class=n>i</span> <span class=o>&gt;=</span> <span class=mi>0</span><span class=p>;</span> <span class=o>--</span><span class=n>i</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>sh</span> <span class=o>=</span> <span class=n>shape</span><span class=p>[</span><span class=n>i</span><span class=p>];</span>
+</span></span><span class=line><span class=cl>    <span class=n>out_index</span><span class=p>[</span><span class=n>i</span><span class=p>]</span> <span class=o>=</span> <span class=n>cur_ord</span> <span class=o>%</span> <span class=n>sh</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=n>cur_ord</span> <span class=o>/=</span> <span class=n>sh</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></td></tr></table></div></div><p>以上是从 <em>一维存储数组</em> 的下标 映射到 <em>高维概念数组</em> 的坐标，反过来也是一样通过 stride 计算下标即可：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-4-1><a class=lnlinks href=#hl-4-1> 1</a>
+</span><span class=lnt id=hl-4-2><a class=lnlinks href=#hl-4-2> 2</a>
+</span><span class=lnt id=hl-4-3><a class=lnlinks href=#hl-4-3> 3</a>
+</span><span class=lnt id=hl-4-4><a class=lnlinks href=#hl-4-4> 4</a>
+</span><span class=lnt id=hl-4-5><a class=lnlinks href=#hl-4-5> 5</a>
+</span><span class=lnt id=hl-4-6><a class=lnlinks href=#hl-4-6> 6</a>
+</span><span class=lnt id=hl-4-7><a class=lnlinks href=#hl-4-7> 7</a>
+</span><span class=lnt id=hl-4-8><a class=lnlinks href=#hl-4-8> 8</a>
+</span><span class=lnt id=hl-4-9><a class=lnlinks href=#hl-4-9> 9</a>
+</span><span class=lnt id=hl-4-10><a class=lnlinks href=#hl-4-10>10</a>
+</span><span class=lnt id=hl-4-11><a class=lnlinks href=#hl-4-11>11</a>
+</span><span class=lnt id=hl-4-12><a class=lnlinks href=#hl-4-12>12</a>
+</span><span class=lnt id=hl-4-13><a class=lnlinks href=#hl-4-13>13</a>
+</span><span class=lnt id=hl-4-14><a class=lnlinks href=#hl-4-14>14</a>
+</span><span class=lnt id=hl-4-15><a class=lnlinks href=#hl-4-15>15</a>
+</span><span class=lnt id=hl-4-16><a class=lnlinks href=#hl-4-16>16</a>
+</span><span class=lnt id=hl-4-17><a class=lnlinks href=#hl-4-17>17</a>
+</span><span class=lnt id=hl-4-18><a class=lnlinks href=#hl-4-18>18</a>
+</span><span class=lnt id=hl-4-19><a class=lnlinks href=#hl-4-19>19</a>
+</span><span class=lnt id=hl-4-20><a class=lnlinks href=#hl-4-20>20</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c++ data-lang=c++><span class=line><span class=cl><span class=n>__device__</span> <span class=kt>int</span> <span class=nf>index_to_position</span><span class=p>(</span><span class=k>const</span> <span class=kt>int</span> <span class=o>*</span><span class=n>index</span><span class=p>,</span> <span class=k>const</span> <span class=kt>int</span> <span class=o>*</span><span class=n>strides</span><span class=p>,</span> <span class=kt>int</span> <span class=n>num_dims</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=cm>/**
+</span></span></span><span class=line><span class=cl><span class=cm>   * Converts a multidimensional tensor index into a single-dimensional position in storage
+</span></span></span><span class=line><span class=cl><span class=cm>   * based on strides.
+</span></span></span><span class=line><span class=cl><span class=cm>   * Args:
+</span></span></span><span class=line><span class=cl><span class=cm>   *    index: index tuple of ints
+</span></span></span><span class=line><span class=cl><span class=cm>   *    strides: tensor strides
+</span></span></span><span class=line><span class=cl><span class=cm>   *    num_dims: number of dimensions in the tensor, e.g. shape/strides of [2, 3, 4] has 3 dimensions
+</span></span></span><span class=line><span class=cl><span class=cm>   *
+</span></span></span><span class=line><span class=cl><span class=cm>   * Returns:
+</span></span></span><span class=line><span class=cl><span class=cm>   *    int - position in storage
+</span></span></span><span class=line><span class=cl><span class=cm>   */</span>
+</span></span><span class=line><span class=cl>  <span class=kt>int</span> <span class=n>position</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>num_dims</span><span class=p>;</span> <span class=o>++</span><span class=n>i</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=n>position</span> <span class=o>+=</span> <span class=n>index</span><span class=p>[</span><span class=n>i</span><span class=p>]</span> <span class=o>*</span> <span class=n>strides</span><span class=p>[</span><span class=n>i</span><span class=p>];</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=n>position</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></td></tr></table></div></div><p><strong>Broadcasting ：</strong> 思路就是：我输出算作比较大的数组，为了计算某一个输出的元素，我需要到输入数组中找到对应位置来进行计算。但是由于输入数组的形状比较小，而你要找的那个元素在输入数组中的位置不存在，这时候你就需要去找这个维度上，需要最小的那个元素作为你的输入，这个流程就是广播。例子：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-5-1><a class=lnlinks href=#hl-5-1>1</a>
+</span><span class=lnt id=hl-5-2><a class=lnlinks href=#hl-5-2>2</a>
+</span><span class=lnt id=hl-5-3><a class=lnlinks href=#hl-5-3>3</a>
+</span><span class=lnt id=hl-5-4><a class=lnlinks href=#hl-5-4>4</a>
+</span><span class=lnt id=hl-5-5><a class=lnlinks href=#hl-5-5>5</a>
+</span><span class=lnt id=hl-5-6><a class=lnlinks href=#hl-5-6>6</a>
+</span><span class=lnt id=hl-5-7><a class=lnlinks href=#hl-5-7>7</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>A = [[1, 2, 3],        # shape: (2, 3)
+</span></span><span class=line><span class=cl>     [4, 5, 6]]
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>B = [10, 20, 30]       # shape: (3,)  → 广播成 (2, 3)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>A + B = [[11, 22, 33],
+</span></span><span class=line><span class=cl>         [14, 25, 36]]</span></span></code></pre></td></tr></table></div></div><p>比如说 <code>A+B</code> 的 <code>[1, 2]</code> 这个位置，对应到 <code>A</code> 和 <code>B</code> 中应该是 <code>[1, 2]</code> 这个位置，<code>A</code> 中有这个位置，<code>B</code> 中没有，所以 <code>B</code> 应该去找 <code>B[0, 2] = 20</code>, 从结果上看就是 <code>B</code> 沿着第 0 个维度复制了一下，实际上是通过访存下标变化来实现。具体代码：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-6-1><a class=lnlinks href=#hl-6-1> 1</a>
+</span><span class=lnt id=hl-6-2><a class=lnlinks href=#hl-6-2> 2</a>
+</span><span class=lnt id=hl-6-3><a class=lnlinks href=#hl-6-3> 3</a>
+</span><span class=lnt id=hl-6-4><a class=lnlinks href=#hl-6-4> 4</a>
+</span><span class=lnt id=hl-6-5><a class=lnlinks href=#hl-6-5> 5</a>
+</span><span class=lnt id=hl-6-6><a class=lnlinks href=#hl-6-6> 6</a>
+</span><span class=lnt id=hl-6-7><a class=lnlinks href=#hl-6-7> 7</a>
+</span><span class=lnt id=hl-6-8><a class=lnlinks href=#hl-6-8> 8</a>
+</span><span class=lnt id=hl-6-9><a class=lnlinks href=#hl-6-9> 9</a>
+</span><span class=lnt id=hl-6-10><a class=lnlinks href=#hl-6-10>10</a>
+</span><span class=lnt id=hl-6-11><a class=lnlinks href=#hl-6-11>11</a>
+</span><span class=lnt id=hl-6-12><a class=lnlinks href=#hl-6-12>12</a>
+</span><span class=lnt id=hl-6-13><a class=lnlinks href=#hl-6-13>13</a>
+</span><span class=lnt id=hl-6-14><a class=lnlinks href=#hl-6-14>14</a>
+</span><span class=lnt id=hl-6-15><a class=lnlinks href=#hl-6-15>15</a>
+</span><span class=lnt id=hl-6-16><a class=lnlinks href=#hl-6-16>16</a>
+</span><span class=lnt id=hl-6-17><a class=lnlinks href=#hl-6-17>17</a>
+</span><span class=lnt id=hl-6-18><a class=lnlinks href=#hl-6-18>18</a>
+</span><span class=lnt id=hl-6-19><a class=lnlinks href=#hl-6-19>19</a>
+</span><span class=lnt id=hl-6-20><a class=lnlinks href=#hl-6-20>20</a>
+</span><span class=lnt id=hl-6-21><a class=lnlinks href=#hl-6-21>21</a>
+</span><span class=lnt id=hl-6-22><a class=lnlinks href=#hl-6-22>22</a>
+</span><span class=lnt id=hl-6-23><a class=lnlinks href=#hl-6-23>23</a>
+</span><span class=lnt id=hl-6-24><a class=lnlinks href=#hl-6-24>24</a>
+</span><span class=lnt id=hl-6-25><a class=lnlinks href=#hl-6-25>25</a>
+</span><span class=lnt id=hl-6-26><a class=lnlinks href=#hl-6-26>26</a>
+</span><span class=lnt id=hl-6-27><a class=lnlinks href=#hl-6-27>27</a>
+</span><span class=lnt id=hl-6-28><a class=lnlinks href=#hl-6-28>28</a>
+</span><span class=lnt id=hl-6-29><a class=lnlinks href=#hl-6-29>29</a>
+</span><span class=lnt id=hl-6-30><a class=lnlinks href=#hl-6-30>30</a>
+</span><span class=lnt id=hl-6-31><a class=lnlinks href=#hl-6-31>31</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c++ data-lang=c++><span class=line><span class=cl><span class=n>__device__</span> <span class=kt>void</span> <span class=nf>broadcast_index</span><span class=p>(</span><span class=k>const</span> <span class=kt>int</span> <span class=o>*</span><span class=n>big_index</span><span class=p>,</span> <span class=k>const</span> <span class=kt>int</span> <span class=o>*</span><span class=n>big_shape</span><span class=p>,</span> <span class=k>const</span> <span class=kt>int</span> <span class=o>*</span><span class=n>shape</span><span class=p>,</span> <span class=kt>int</span> <span class=o>*</span><span class=n>out_index</span><span class=p>,</span> <span class=kt>int</span> <span class=n>num_dims_big</span><span class=p>,</span> <span class=kt>int</span> <span class=n>num_dims</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=cm>/**
+</span></span></span><span class=line><span class=cl><span class=cm>   * Convert a big_index into big_shape to a smaller out_index into shape following broadcasting rules.
+</span></span></span><span class=line><span class=cl><span class=cm>   * In this case it may be larger or with more dimensions than the shape given.
+</span></span></span><span class=line><span class=cl><span class=cm>   * Additional dimensions may need to be mapped to 0 or removed.
+</span></span></span><span class=line><span class=cl><span class=cm>   *
+</span></span></span><span class=line><span class=cl><span class=cm>   * Args:
+</span></span></span><span class=line><span class=cl><span class=cm>   *    big_index: multidimensional index of bigger tensor
+</span></span></span><span class=line><span class=cl><span class=cm>   *    big_shape: tensor shape of bigger tensor
+</span></span></span><span class=line><span class=cl><span class=cm>   *    shape: tensor shape of smaller tensor
+</span></span></span><span class=line><span class=cl><span class=cm>   *    nums_big_dims: number of dimensions in bigger tensor
+</span></span></span><span class=line><span class=cl><span class=cm>   *    out_index: multidimensional index of smaller tensor
+</span></span></span><span class=line><span class=cl><span class=cm>   *    nums_big_dims: number of dimensions in bigger tensor
+</span></span></span><span class=line><span class=cl><span class=cm>   *    num_dims: number of dimensions in smaller tensor
+</span></span></span><span class=line><span class=cl><span class=cm>   *
+</span></span></span><span class=line><span class=cl><span class=cm>   * Returns:
+</span></span></span><span class=line><span class=cl><span class=cm>   *    None (Fills in out_index)
+</span></span></span><span class=line><span class=cl><span class=cm>   */</span>
+</span></span><span class=line><span class=cl>  <span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>num_dims</span><span class=p>;</span> <span class=o>++</span><span class=n>i</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=n>shape</span><span class=p>[</span><span class=n>i</span><span class=p>]</span> <span class=o>&gt;</span> <span class=mi>1</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=n>out_index</span><span class=p>[</span><span class=n>i</span><span class=p>]</span> <span class=o>=</span> <span class=n>big_index</span><span class=p>[</span><span class=n>i</span> <span class=o>+</span> <span class=p>(</span><span class=n>num_dims_big</span> <span class=o>-</span> <span class=n>num_dims</span><span class=p>)];</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=k>else</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=n>out_index</span><span class=p>[</span><span class=n>i</span><span class=p>]</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></td></tr></table></div></div><p><strong>例子 1：mapKernel</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-7-1><a class=lnlinks href=#hl-7-1> 1</a>
+</span><span class=lnt id=hl-7-2><a class=lnlinks href=#hl-7-2> 2</a>
+</span><span class=lnt id=hl-7-3><a class=lnlinks href=#hl-7-3> 3</a>
+</span><span class=lnt id=hl-7-4><a class=lnlinks href=#hl-7-4> 4</a>
+</span><span class=lnt id=hl-7-5><a class=lnlinks href=#hl-7-5> 5</a>
+</span><span class=lnt id=hl-7-6><a class=lnlinks href=#hl-7-6> 6</a>
+</span><span class=lnt id=hl-7-7><a class=lnlinks href=#hl-7-7> 7</a>
+</span><span class=lnt id=hl-7-8><a class=lnlinks href=#hl-7-8> 8</a>
+</span><span class=lnt id=hl-7-9><a class=lnlinks href=#hl-7-9> 9</a>
+</span><span class=lnt id=hl-7-10><a class=lnlinks href=#hl-7-10>10</a>
+</span><span class=lnt id=hl-7-11><a class=lnlinks href=#hl-7-11>11</a>
+</span><span class=lnt id=hl-7-12><a class=lnlinks href=#hl-7-12>12</a>
+</span><span class=lnt id=hl-7-13><a class=lnlinks href=#hl-7-13>13</a>
+</span><span class=lnt id=hl-7-14><a class=lnlinks href=#hl-7-14>14</a>
+</span><span class=lnt id=hl-7-15><a class=lnlinks href=#hl-7-15>15</a>
+</span><span class=lnt id=hl-7-16><a class=lnlinks href=#hl-7-16>16</a>
+</span><span class=lnt id=hl-7-17><a class=lnlinks href=#hl-7-17>17</a>
+</span><span class=lnt id=hl-7-18><a class=lnlinks href=#hl-7-18>18</a>
+</span><span class=lnt id=hl-7-19><a class=lnlinks href=#hl-7-19>19</a>
+</span><span class=lnt id=hl-7-20><a class=lnlinks href=#hl-7-20>20</a>
+</span><span class=lnt id=hl-7-21><a class=lnlinks href=#hl-7-21>21</a>
+</span><span class=lnt id=hl-7-22><a class=lnlinks href=#hl-7-22>22</a>
+</span><span class=lnt id=hl-7-23><a class=lnlinks href=#hl-7-23>23</a>
+</span><span class=lnt id=hl-7-24><a class=lnlinks href=#hl-7-24>24</a>
+</span><span class=lnt id=hl-7-25><a class=lnlinks href=#hl-7-25>25</a>
+</span><span class=lnt id=hl-7-26><a class=lnlinks href=#hl-7-26>26</a>
+</span><span class=lnt id=hl-7-27><a class=lnlinks href=#hl-7-27>27</a>
+</span><span class=lnt id=hl-7-28><a class=lnlinks href=#hl-7-28>28</a>
+</span><span class=lnt id=hl-7-29><a class=lnlinks href=#hl-7-29>29</a>
+</span><span class=lnt id=hl-7-30><a class=lnlinks href=#hl-7-30>30</a>
+</span><span class=lnt id=hl-7-31><a class=lnlinks href=#hl-7-31>31</a>
+</span><span class=lnt id=hl-7-32><a class=lnlinks href=#hl-7-32>32</a>
+</span><span class=lnt id=hl-7-33><a class=lnlinks href=#hl-7-33>33</a>
+</span><span class=lnt id=hl-7-34><a class=lnlinks href=#hl-7-34>34</a>
+</span><span class=lnt id=hl-7-35><a class=lnlinks href=#hl-7-35>35</a>
+</span><span class=lnt id=hl-7-36><a class=lnlinks href=#hl-7-36>36</a>
+</span><span class=lnt id=hl-7-37><a class=lnlinks href=#hl-7-37>37</a>
+</span><span class=lnt id=hl-7-38><a class=lnlinks href=#hl-7-38>38</a>
+</span><span class=lnt id=hl-7-39><a class=lnlinks href=#hl-7-39>39</a>
+</span><span class=lnt id=hl-7-40><a class=lnlinks href=#hl-7-40>40</a>
+</span><span class=lnt id=hl-7-41><a class=lnlinks href=#hl-7-41>41</a>
+</span><span class=lnt id=hl-7-42><a class=lnlinks href=#hl-7-42>42</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c++ data-lang=c++><span class=line><span class=cl><span class=n>__global__</span> <span class=kt>void</span> <span class=nf>mapKernel</span><span class=p>(</span> <span class=kt>float</span> <span class=o>*</span><span class=n>out</span><span class=p>,</span> <span class=kt>int</span> <span class=o>*</span><span class=n>out_shape</span><span class=p>,</span> <span class=kt>int</span> <span class=o>*</span><span class=n>out_strides</span><span class=p>,</span> <span class=kt>int</span> <span class=n>out_size</span><span class=p>,</span> <span class=kt>float</span> <span class=o>*</span><span class=n>in_storage</span><span class=p>,</span> <span class=kt>int</span> <span class=o>*</span><span class=n>in_shape</span><span class=p>,</span> <span class=kt>int</span> <span class=o>*</span><span class=n>in_strides</span><span class=p>,</span> <span class=kt>int</span> <span class=n>shape_size</span><span class=p>,</span> <span class=kt>int</span> <span class=n>fn_id</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=cm>/**
+</span></span></span><span class=line><span class=cl><span class=cm>   * Map function. Apply a unary function to each element of the input array and store the result in the output array.
+</span></span></span><span class=line><span class=cl><span class=cm>   * Optimization: Parallelize over the elements of the output array.
+</span></span></span><span class=line><span class=cl><span class=cm>   *
+</span></span></span><span class=line><span class=cl><span class=cm>   * You may find the following functions useful:
+</span></span></span><span class=line><span class=cl><span class=cm>   * - index_to_position: converts an index to a position in a compact array
+</span></span></span><span class=line><span class=cl><span class=cm>   * - to_index: converts a position to an index in a multidimensional array
+</span></span></span><span class=line><span class=cl><span class=cm>   * - broadcast_index: converts an index in a smaller array to an index in a larger array
+</span></span></span><span class=line><span class=cl><span class=cm>   *
+</span></span></span><span class=line><span class=cl><span class=cm>   * Args:
+</span></span></span><span class=line><span class=cl><span class=cm>   *  out: compact 1D array of size out_size to write the output to
+</span></span></span><span class=line><span class=cl><span class=cm>   *  out_shape: shape of the output array
+</span></span></span><span class=line><span class=cl><span class=cm>   *  out_strides: strides of the output array
+</span></span></span><span class=line><span class=cl><span class=cm>   *  out_size: size of the output array
+</span></span></span><span class=line><span class=cl><span class=cm>   *  in_storage: compact 1D array of size in_size
+</span></span></span><span class=line><span class=cl><span class=cm>   *  in_shape: shape of the input array
+</span></span></span><span class=line><span class=cl><span class=cm>   *  in_strides: strides of the input array
+</span></span></span><span class=line><span class=cl><span class=cm>   *  shape_size: number of dimensions in the input and output arrays, assume dimensions are the same
+</span></span></span><span class=line><span class=cl><span class=cm>   *  fn_id: id of the function to apply to each element of the input array
+</span></span></span><span class=line><span class=cl><span class=cm>   *
+</span></span></span><span class=line><span class=cl><span class=cm>   * Returns:
+</span></span></span><span class=line><span class=cl><span class=cm>   *  None (Fills in out array)
+</span></span></span><span class=line><span class=cl><span class=cm>   */</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=kt>int</span> <span class=n>out_index</span><span class=p>[</span><span class=n>MAX_DIMS</span><span class=p>];</span>
+</span></span><span class=line><span class=cl>  <span class=kt>int</span> <span class=n>in_index</span><span class=p>[</span><span class=n>MAX_DIMS</span><span class=p>];</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>  <span class=kt>int</span> <span class=n>global_id</span> <span class=o>=</span> <span class=n>blockIdx</span><span class=p>.</span><span class=n>x</span> <span class=o>*</span> <span class=n>blockDim</span><span class=p>.</span><span class=n>x</span> <span class=o>+</span> <span class=n>threadIdx</span><span class=p>.</span><span class=n>x</span><span class=p>;</span> <span class=c1>//  计算这个 thread 的 global id，对应的就是 out 中的元素位置。注意 out 是实际存储的数组，是一维的
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl>  <span class=c1>// 排除多余的 threads
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=k>if</span> <span class=p>(</span><span class=n>global_id</span> <span class=o>&gt;=</span> <span class=n>out_size</span><span class=p>)</span> <span class=k>return</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=n>to_index</span><span class=p>(</span><span class=n>global_id</span><span class=p>,</span> <span class=n>out_shape</span><span class=p>,</span> <span class=n>out_index</span><span class=p>,</span> <span class=n>shape_size</span><span class=p>);</span>  <span class=c1>// 将 1 dim 映射到 2dim
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=n>broadcast_index</span><span class=p>(</span><span class=n>out_index</span><span class=p>,</span> <span class=n>out_shape</span><span class=p>,</span> <span class=n>in_shape</span><span class=p>,</span> <span class=n>in_index</span><span class=p>,</span> <span class=n>shape_size</span><span class=p>,</span> <span class=n>shape_size</span><span class=p>);</span> <span class=c1>// 广播一下， in_index 就是我们要从输入数组中找的位置，是一个 二维的位置
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl>  <span class=kt>int</span> <span class=n>in_pos</span> <span class=o>=</span> <span class=n>index_to_position</span><span class=p>(</span><span class=n>in_index</span><span class=p>,</span> <span class=n>in_strides</span><span class=p>,</span> <span class=n>shape_size</span><span class=p>);</span> <span class=c1>// 实际输入的 1 dim 中的位置
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kt>int</span> <span class=n>out_pos</span> <span class=o>=</span> <span class=n>index_to_position</span><span class=p>(</span><span class=n>out_index</span><span class=p>,</span> <span class=n>out_strides</span><span class=p>,</span> <span class=n>shape_size</span><span class=p>);</span> <span class=c1>// 实际输出的 1 dim 中的位置
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl>  <span class=n>out</span><span class=p>[</span><span class=n>out_pos</span><span class=p>]</span> <span class=o>=</span> <span class=n>fn</span><span class=p>(</span><span class=n>fn_id</span><span class=p>,</span> <span class=n>in_storage</span><span class=p>[</span><span class=n>in_pos</span><span class=p>]);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></td></tr></table></div></div><p><strong>例子 2：zipKernel</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-8-1><a class=lnlinks href=#hl-8-1> 1</a>
+</span><span class=lnt id=hl-8-2><a class=lnlinks href=#hl-8-2> 2</a>
+</span><span class=lnt id=hl-8-3><a class=lnlinks href=#hl-8-3> 3</a>
+</span><span class=lnt id=hl-8-4><a class=lnlinks href=#hl-8-4> 4</a>
+</span><span class=lnt id=hl-8-5><a class=lnlinks href=#hl-8-5> 5</a>
+</span><span class=lnt id=hl-8-6><a class=lnlinks href=#hl-8-6> 6</a>
+</span><span class=lnt id=hl-8-7><a class=lnlinks href=#hl-8-7> 7</a>
+</span><span class=lnt id=hl-8-8><a class=lnlinks href=#hl-8-8> 8</a>
+</span><span class=lnt id=hl-8-9><a class=lnlinks href=#hl-8-9> 9</a>
+</span><span class=lnt id=hl-8-10><a class=lnlinks href=#hl-8-10>10</a>
+</span><span class=lnt id=hl-8-11><a class=lnlinks href=#hl-8-11>11</a>
+</span><span class=lnt id=hl-8-12><a class=lnlinks href=#hl-8-12>12</a>
+</span><span class=lnt id=hl-8-13><a class=lnlinks href=#hl-8-13>13</a>
+</span><span class=lnt id=hl-8-14><a class=lnlinks href=#hl-8-14>14</a>
+</span><span class=lnt id=hl-8-15><a class=lnlinks href=#hl-8-15>15</a>
+</span><span class=lnt id=hl-8-16><a class=lnlinks href=#hl-8-16>16</a>
+</span><span class=lnt id=hl-8-17><a class=lnlinks href=#hl-8-17>17</a>
+</span><span class=lnt id=hl-8-18><a class=lnlinks href=#hl-8-18>18</a>
+</span><span class=lnt id=hl-8-19><a class=lnlinks href=#hl-8-19>19</a>
+</span><span class=lnt id=hl-8-20><a class=lnlinks href=#hl-8-20>20</a>
+</span><span class=lnt id=hl-8-21><a class=lnlinks href=#hl-8-21>21</a>
+</span><span class=lnt id=hl-8-22><a class=lnlinks href=#hl-8-22>22</a>
+</span><span class=lnt id=hl-8-23><a class=lnlinks href=#hl-8-23>23</a>
+</span><span class=lnt id=hl-8-24><a class=lnlinks href=#hl-8-24>24</a>
+</span><span class=lnt id=hl-8-25><a class=lnlinks href=#hl-8-25>25</a>
+</span><span class=lnt id=hl-8-26><a class=lnlinks href=#hl-8-26>26</a>
+</span><span class=lnt id=hl-8-27><a class=lnlinks href=#hl-8-27>27</a>
+</span><span class=lnt id=hl-8-28><a class=lnlinks href=#hl-8-28>28</a>
+</span><span class=lnt id=hl-8-29><a class=lnlinks href=#hl-8-29>29</a>
+</span><span class=lnt id=hl-8-30><a class=lnlinks href=#hl-8-30>30</a>
+</span><span class=lnt id=hl-8-31><a class=lnlinks href=#hl-8-31>31</a>
+</span><span class=lnt id=hl-8-32><a class=lnlinks href=#hl-8-32>32</a>
+</span><span class=lnt id=hl-8-33><a class=lnlinks href=#hl-8-33>33</a>
+</span><span class=lnt id=hl-8-34><a class=lnlinks href=#hl-8-34>34</a>
+</span><span class=lnt id=hl-8-35><a class=lnlinks href=#hl-8-35>35</a>
+</span><span class=lnt id=hl-8-36><a class=lnlinks href=#hl-8-36>36</a>
+</span><span class=lnt id=hl-8-37><a class=lnlinks href=#hl-8-37>37</a>
+</span><span class=lnt id=hl-8-38><a class=lnlinks href=#hl-8-38>38</a>
+</span><span class=lnt id=hl-8-39><a class=lnlinks href=#hl-8-39>39</a>
+</span><span class=lnt id=hl-8-40><a class=lnlinks href=#hl-8-40>40</a>
+</span><span class=lnt id=hl-8-41><a class=lnlinks href=#hl-8-41>41</a>
+</span><span class=lnt id=hl-8-42><a class=lnlinks href=#hl-8-42>42</a>
+</span><span class=lnt id=hl-8-43><a class=lnlinks href=#hl-8-43>43</a>
+</span><span class=lnt id=hl-8-44><a class=lnlinks href=#hl-8-44>44</a>
+</span><span class=lnt id=hl-8-45><a class=lnlinks href=#hl-8-45>45</a>
+</span><span class=lnt id=hl-8-46><a class=lnlinks href=#hl-8-46>46</a>
+</span><span class=lnt id=hl-8-47><a class=lnlinks href=#hl-8-47>47</a>
+</span><span class=lnt id=hl-8-48><a class=lnlinks href=#hl-8-48>48</a>
+</span><span class=lnt id=hl-8-49><a class=lnlinks href=#hl-8-49>49</a>
+</span><span class=lnt id=hl-8-50><a class=lnlinks href=#hl-8-50>50</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c++ data-lang=c++><span class=line><span class=cl><span class=n>__global__</span> <span class=kt>void</span> <span class=nf>zipKernel</span><span class=p>(</span> <span class=kt>float</span> <span class=o>*</span><span class=n>out</span><span class=p>,</span> <span class=kt>int</span> <span class=o>*</span><span class=n>out_shape</span><span class=p>,</span> <span class=kt>int</span> <span class=o>*</span><span class=n>out_strides</span><span class=p>,</span> <span class=kt>int</span> <span class=n>out_size</span><span class=p>,</span> <span class=kt>int</span> <span class=n>out_shape_size</span><span class=p>,</span> <span class=kt>float</span> <span class=o>*</span><span class=n>a_storage</span><span class=p>,</span> <span class=kt>int</span> <span class=o>*</span><span class=n>a_shape</span><span class=p>,</span> <span class=kt>int</span> <span class=o>*</span><span class=n>a_strides</span><span class=p>,</span> <span class=kt>int</span> <span class=n>a_shape_size</span><span class=p>,</span> <span class=kt>float</span> <span class=o>*</span><span class=n>b_storage</span><span class=p>,</span> <span class=kt>int</span> <span class=o>*</span><span class=n>b_shape</span><span class=p>,</span> <span class=kt>int</span> <span class=o>*</span><span class=n>b_strides</span><span class=p>,</span> <span class=kt>int</span> <span class=n>b_shape_size</span><span class=p>,</span> <span class=kt>int</span> <span class=n>fn_id</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=cm>/**
+</span></span></span><span class=line><span class=cl><span class=cm>   * Zip function. Apply a binary function to elements of the input array a &amp; b and store the result in the output array.
+</span></span></span><span class=line><span class=cl><span class=cm>   * Optimization: Parallelize over the elements of the output array.
+</span></span></span><span class=line><span class=cl><span class=cm>   *
+</span></span></span><span class=line><span class=cl><span class=cm>   * You may find the following functions useful:
+</span></span></span><span class=line><span class=cl><span class=cm>   * - index_to_position: converts an index to a position in a compact array
+</span></span></span><span class=line><span class=cl><span class=cm>   * - to_index: converts a position to an index in a multidimensional array
+</span></span></span><span class=line><span class=cl><span class=cm>   * - broadcast_index: converts an index in a smaller array to an index in a larger array
+</span></span></span><span class=line><span class=cl><span class=cm>   *
+</span></span></span><span class=line><span class=cl><span class=cm>   * Args:
+</span></span></span><span class=line><span class=cl><span class=cm>   *  out: compact 1D array of size out_size to write the output to
+</span></span></span><span class=line><span class=cl><span class=cm>   *  out_shape: shape of the output array
+</span></span></span><span class=line><span class=cl><span class=cm>   *  out_strides: strides of the output array
+</span></span></span><span class=line><span class=cl><span class=cm>   *  out_size: size of the output array
+</span></span></span><span class=line><span class=cl><span class=cm>   *  out_shape_size: number of dimensions in the output array
+</span></span></span><span class=line><span class=cl><span class=cm>   *  a_storage: compact 1D array of size in_size
+</span></span></span><span class=line><span class=cl><span class=cm>   *  a_shape: shape of the input array
+</span></span></span><span class=line><span class=cl><span class=cm>   *  a_strides: strides of the input array
+</span></span></span><span class=line><span class=cl><span class=cm>   *  a_shape_size: number of dimensions in the input array
+</span></span></span><span class=line><span class=cl><span class=cm>   *  b_storage: compact 1D array of size in_size
+</span></span></span><span class=line><span class=cl><span class=cm>   *  b_shape: shape of the input array
+</span></span></span><span class=line><span class=cl><span class=cm>   *  b_strides: strides of the input array
+</span></span></span><span class=line><span class=cl><span class=cm>   *  b_shape_size: number of dimensions in the input array
+</span></span></span><span class=line><span class=cl><span class=cm>   *  fn_id: id of the function to apply to each element of the a &amp; b array
+</span></span></span><span class=line><span class=cl><span class=cm>   *
+</span></span></span><span class=line><span class=cl><span class=cm>   *
+</span></span></span><span class=line><span class=cl><span class=cm>   * Returns:
+</span></span></span><span class=line><span class=cl><span class=cm>   *  None (Fills in out array)
+</span></span></span><span class=line><span class=cl><span class=cm>   */</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=kt>int</span> <span class=n>out_index</span><span class=p>[</span><span class=n>MAX_DIMS</span><span class=p>];</span>
+</span></span><span class=line><span class=cl>  <span class=kt>int</span> <span class=n>a_index</span><span class=p>[</span><span class=n>MAX_DIMS</span><span class=p>];</span>
+</span></span><span class=line><span class=cl>  <span class=kt>int</span> <span class=n>b_index</span><span class=p>[</span><span class=n>MAX_DIMS</span><span class=p>];</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=kt>int</span> <span class=n>global_id</span> <span class=o>=</span> <span class=n>blockIdx</span><span class=p>.</span><span class=n>x</span> <span class=o>*</span> <span class=n>blockDim</span><span class=p>.</span><span class=n>x</span> <span class=o>+</span> <span class=n>threadIdx</span><span class=p>.</span><span class=n>x</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>if</span> <span class=p>(</span><span class=n>global_id</span> <span class=o>&gt;=</span> <span class=n>out_size</span><span class=p>)</span> <span class=k>return</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=n>to_index</span><span class=p>(</span><span class=n>global_id</span><span class=p>,</span> <span class=n>out_shape</span><span class=p>,</span> <span class=n>out_index</span><span class=p>,</span> <span class=n>out_shape_size</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>  <span class=n>broadcast_index</span><span class=p>(</span><span class=n>out_index</span><span class=p>,</span> <span class=n>out_shape</span><span class=p>,</span> <span class=n>a_shape</span><span class=p>,</span> <span class=n>a_index</span><span class=p>,</span> <span class=n>out_shape_size</span><span class=p>,</span> <span class=n>a_shape_size</span><span class=p>);</span> <span class=c1>// 计算输入位置
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=n>broadcast_index</span><span class=p>(</span><span class=n>out_index</span><span class=p>,</span> <span class=n>out_shape</span><span class=p>,</span> <span class=n>b_shape</span><span class=p>,</span> <span class=n>b_index</span><span class=p>,</span> <span class=n>out_shape_size</span><span class=p>,</span> <span class=n>b_shape_size</span><span class=p>);</span> <span class=c1>// 计算输入位置
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl>  <span class=kt>int</span> <span class=n>a_pos</span> <span class=o>=</span> <span class=n>index_to_position</span><span class=p>(</span><span class=n>a_index</span><span class=p>,</span> <span class=n>a_strides</span><span class=p>,</span> <span class=n>a_shape_size</span><span class=p>);</span>  <span class=c1>// 实际输入的 1 dim 中的位置
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kt>int</span> <span class=n>b_pos</span> <span class=o>=</span> <span class=n>index_to_position</span><span class=p>(</span><span class=n>b_index</span><span class=p>,</span> <span class=n>b_strides</span><span class=p>,</span> <span class=n>b_shape_size</span><span class=p>);</span>  <span class=c1>// 实际输入的 1 dim 中的位置
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kt>int</span> <span class=n>out_pos</span> <span class=o>=</span> <span class=n>index_to_position</span><span class=p>(</span><span class=n>out_index</span><span class=p>,</span> <span class=n>out_strides</span><span class=p>,</span> <span class=n>out_shape_size</span><span class=p>);</span>  <span class=c1>// 实际输出的 1 dim 中的位置
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl>  <span class=n>out</span><span class=p>[</span><span class=n>out_pos</span><span class=p>]</span> <span class=o>=</span> <span class=n>fn</span><span class=p>(</span><span class=n>fn_id</span><span class=p>,</span> <span class=n>a_storage</span><span class=p>[</span><span class=n>a_pos</span><span class=p>],</span> <span class=n>b_storage</span><span class=p>[</span><span class=n>b_pos</span><span class=p>]);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></td></tr></table></div></div><p><strong>例子 3: reduceKernel</strong></p><figure><img src=https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/20260119160414429.png alt="Reduce operation" width=400><figcaption><p>Reduce operation</p></figcaption></figure><p>第一种方式是针对一个输出位置，循环原数组中的对应位置，得到最终结果。也就是说一个 thread 对应一个输出。比如说图中 15 这个位置，对应 1 5 9 三个位置。在kernel 中需要进行循环，不断累积结果，最终输出到 15 这个位置。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-9-1><a class=lnlinks href=#hl-9-1> 1</a>
+</span><span class=lnt id=hl-9-2><a class=lnlinks href=#hl-9-2> 2</a>
+</span><span class=lnt id=hl-9-3><a class=lnlinks href=#hl-9-3> 3</a>
+</span><span class=lnt id=hl-9-4><a class=lnlinks href=#hl-9-4> 4</a>
+</span><span class=lnt id=hl-9-5><a class=lnlinks href=#hl-9-5> 5</a>
+</span><span class=lnt id=hl-9-6><a class=lnlinks href=#hl-9-6> 6</a>
+</span><span class=lnt id=hl-9-7><a class=lnlinks href=#hl-9-7> 7</a>
+</span><span class=lnt id=hl-9-8><a class=lnlinks href=#hl-9-8> 8</a>
+</span><span class=lnt id=hl-9-9><a class=lnlinks href=#hl-9-9> 9</a>
+</span><span class=lnt id=hl-9-10><a class=lnlinks href=#hl-9-10>10</a>
+</span><span class=lnt id=hl-9-11><a class=lnlinks href=#hl-9-11>11</a>
+</span><span class=lnt id=hl-9-12><a class=lnlinks href=#hl-9-12>12</a>
+</span><span class=lnt id=hl-9-13><a class=lnlinks href=#hl-9-13>13</a>
+</span><span class=lnt id=hl-9-14><a class=lnlinks href=#hl-9-14>14</a>
+</span><span class=lnt id=hl-9-15><a class=lnlinks href=#hl-9-15>15</a>
+</span><span class=lnt id=hl-9-16><a class=lnlinks href=#hl-9-16>16</a>
+</span><span class=lnt id=hl-9-17><a class=lnlinks href=#hl-9-17>17</a>
+</span><span class=lnt id=hl-9-18><a class=lnlinks href=#hl-9-18>18</a>
+</span><span class=lnt id=hl-9-19><a class=lnlinks href=#hl-9-19>19</a>
+</span><span class=lnt id=hl-9-20><a class=lnlinks href=#hl-9-20>20</a>
+</span><span class=lnt id=hl-9-21><a class=lnlinks href=#hl-9-21>21</a>
+</span><span class=lnt id=hl-9-22><a class=lnlinks href=#hl-9-22>22</a>
+</span><span class=lnt id=hl-9-23><a class=lnlinks href=#hl-9-23>23</a>
+</span><span class=lnt id=hl-9-24><a class=lnlinks href=#hl-9-24>24</a>
+</span><span class=lnt id=hl-9-25><a class=lnlinks href=#hl-9-25>25</a>
+</span><span class=lnt id=hl-9-26><a class=lnlinks href=#hl-9-26>26</a>
+</span><span class=lnt id=hl-9-27><a class=lnlinks href=#hl-9-27>27</a>
+</span><span class=lnt id=hl-9-28><a class=lnlinks href=#hl-9-28>28</a>
+</span><span class=lnt id=hl-9-29><a class=lnlinks href=#hl-9-29>29</a>
+</span><span class=lnt id=hl-9-30><a class=lnlinks href=#hl-9-30>30</a>
+</span><span class=lnt id=hl-9-31><a class=lnlinks href=#hl-9-31>31</a>
+</span><span class=lnt id=hl-9-32><a class=lnlinks href=#hl-9-32>32</a>
+</span><span class=lnt id=hl-9-33><a class=lnlinks href=#hl-9-33>33</a>
+</span><span class=lnt id=hl-9-34><a class=lnlinks href=#hl-9-34>34</a>
+</span><span class=lnt id=hl-9-35><a class=lnlinks href=#hl-9-35>35</a>
+</span><span class=lnt id=hl-9-36><a class=lnlinks href=#hl-9-36>36</a>
+</span><span class=lnt id=hl-9-37><a class=lnlinks href=#hl-9-37>37</a>
+</span><span class=lnt id=hl-9-38><a class=lnlinks href=#hl-9-38>38</a>
+</span><span class=lnt id=hl-9-39><a class=lnlinks href=#hl-9-39>39</a>
+</span><span class=lnt id=hl-9-40><a class=lnlinks href=#hl-9-40>40</a>
+</span><span class=lnt id=hl-9-41><a class=lnlinks href=#hl-9-41>41</a>
+</span><span class=lnt id=hl-9-42><a class=lnlinks href=#hl-9-42>42</a>
+</span><span class=lnt id=hl-9-43><a class=lnlinks href=#hl-9-43>43</a>
+</span><span class=lnt id=hl-9-44><a class=lnlinks href=#hl-9-44>44</a>
+</span><span class=lnt id=hl-9-45><a class=lnlinks href=#hl-9-45>45</a>
+</span><span class=lnt id=hl-9-46><a class=lnlinks href=#hl-9-46>46</a>
+</span><span class=lnt id=hl-9-47><a class=lnlinks href=#hl-9-47>47</a>
+</span><span class=lnt id=hl-9-48><a class=lnlinks href=#hl-9-48>48</a>
+</span><span class=lnt id=hl-9-49><a class=lnlinks href=#hl-9-49>49</a>
+</span><span class=lnt id=hl-9-50><a class=lnlinks href=#hl-9-50>50</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c++ data-lang=c++><span class=line><span class=cl><span class=n>__global__</span> <span class=kt>void</span> <span class=nf>reduceKernel</span><span class=p>(</span> <span class=kt>float</span> <span class=o>*</span><span class=n>out</span><span class=p>,</span> <span class=kt>int</span> <span class=o>*</span><span class=n>out_shape</span><span class=p>,</span> <span class=kt>int</span> <span class=o>*</span><span class=n>out_strides</span><span class=p>,</span> <span class=kt>int</span> <span class=n>out_size</span><span class=p>,</span> <span class=kt>float</span> <span class=o>*</span><span class=n>a_storage</span><span class=p>,</span> <span class=kt>int</span> <span class=o>*</span><span class=n>a_shape</span><span class=p>,</span> <span class=kt>int</span> <span class=o>*</span><span class=n>a_strides</span><span class=p>,</span> <span class=kt>int</span> <span class=n>reduce_dim</span><span class=p>,</span> <span class=kt>float</span> <span class=n>reduce_value</span><span class=p>,</span> <span class=kt>int</span> <span class=n>shape_size</span><span class=p>,</span> <span class=kt>int</span> <span class=n>fn_id</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=cm>/**
+</span></span></span><span class=line><span class=cl><span class=cm>   * Reduce function. Apply a reduce function to elements of the input array a and store the result in the output array.
+</span></span></span><span class=line><span class=cl><span class=cm>   * Optimization:
+</span></span></span><span class=line><span class=cl><span class=cm>   * Parallelize over the reduction operation. Each kernel performs one reduction.
+</span></span></span><span class=line><span class=cl><span class=cm>   * e.g. a = [[1, 2, 3], [4, 5, 6]], kernel0 computes reduce([1, 2, 3]), kernel1 computes reduce([4, 5, 6]).
+</span></span></span><span class=line><span class=cl><span class=cm>   *
+</span></span></span><span class=line><span class=cl><span class=cm>   * You may find the following functions useful:
+</span></span></span><span class=line><span class=cl><span class=cm>   * - index_to_position: converts an index to a position in a compact array
+</span></span></span><span class=line><span class=cl><span class=cm>   * - to_index: converts a position to an index in a multidimensional array
+</span></span></span><span class=line><span class=cl><span class=cm>   *
+</span></span></span><span class=line><span class=cl><span class=cm>   * Args:
+</span></span></span><span class=line><span class=cl><span class=cm>   *  out: compact 1D array of size out_size to write the output to
+</span></span></span><span class=line><span class=cl><span class=cm>   *  out_shape: shape of the output array
+</span></span></span><span class=line><span class=cl><span class=cm>   *  out_strides: strides of the output array
+</span></span></span><span class=line><span class=cl><span class=cm>   *  out_size: size of the output array
+</span></span></span><span class=line><span class=cl><span class=cm>   *  a_storage: compact 1D array of size in_size
+</span></span></span><span class=line><span class=cl><span class=cm>   *  a_shape: shape of the input array
+</span></span></span><span class=line><span class=cl><span class=cm>   *  a_strides: strides of the input array
+</span></span></span><span class=line><span class=cl><span class=cm>   *  reduce_dim: dimension to reduce on
+</span></span></span><span class=line><span class=cl><span class=cm>   *  reduce_value: initial value for the reduction
+</span></span></span><span class=line><span class=cl><span class=cm>   *  shape_size: number of dimensions in the input &amp; output array, assert dimensions are the same
+</span></span></span><span class=line><span class=cl><span class=cm>   *  fn_id: id of the reduce function, currently only support add, multiply, and max
+</span></span></span><span class=line><span class=cl><span class=cm>   *
+</span></span></span><span class=line><span class=cl><span class=cm>   *
+</span></span></span><span class=line><span class=cl><span class=cm>   * Returns:
+</span></span></span><span class=line><span class=cl><span class=cm>   *  None (Fills in out array)
+</span></span></span><span class=line><span class=cl><span class=cm>   */</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=n>__shared__</span> <span class=kt>double</span> <span class=n>cache</span><span class=p>[</span><span class=n>BLOCK_DIM</span><span class=p>];</span> <span class=c1>// Uncomment this line if you want to use shared memory to store partial results
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kt>int</span> <span class=n>out_index</span><span class=p>[</span><span class=n>MAX_DIMS</span><span class=p>];</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=kt>int</span> <span class=n>global_id</span> <span class=o>=</span> <span class=n>blockDim</span><span class=p>.</span><span class=n>x</span> <span class=o>*</span> <span class=n>blockIdx</span><span class=p>.</span><span class=n>x</span> <span class=o>+</span> <span class=n>threadIdx</span><span class=p>.</span><span class=n>x</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>if</span> <span class=p>(</span><span class=n>global_id</span> <span class=o>&gt;=</span> <span class=n>out_size</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=n>to_index</span><span class=p>(</span><span class=n>global_id</span><span class=p>,</span> <span class=n>out_shape</span><span class=p>,</span> <span class=n>out_index</span><span class=p>,</span> <span class=n>shape_size</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>  <span class=kt>int</span> <span class=n>out_pos</span> <span class=o>=</span> <span class=n>index_to_position</span><span class=p>(</span><span class=n>out_index</span><span class=p>,</span> <span class=n>out_strides</span><span class=p>,</span> <span class=n>shape_size</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=kt>int</span> <span class=n>reduce_size</span> <span class=o>=</span> <span class=n>a_shape</span><span class=p>[</span><span class=n>reduce_dim</span><span class=p>];</span>
+</span></span><span class=line><span class=cl>  <span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>reduce_size</span><span class=p>;</span> <span class=o>++</span><span class=n>i</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=n>out_index</span><span class=p>[</span><span class=n>reduce_dim</span><span class=p>]</span> <span class=o>=</span> <span class=n>i</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>a_pos</span> <span class=o>=</span> <span class=n>index_to_position</span><span class=p>(</span><span class=n>out_index</span><span class=p>,</span> <span class=n>a_strides</span><span class=p>,</span> <span class=n>shape_size</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=n>reduce_value</span> <span class=o>=</span> <span class=n>fn</span><span class=p>(</span><span class=n>fn_id</span><span class=p>,</span> <span class=n>reduce_value</span><span class=p>,</span> <span class=n>a_storage</span><span class=p>[</span><span class=n>a_pos</span><span class=p>]);</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl>  <span class=n>out</span><span class=p>[</span><span class=n>out_pos</span><span class=p>]</span> <span class=o>=</span> <span class=n>reduce_value</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></td></tr></table></div></div><p>另一种算法是针对这个累求结果的过程（上述实现中的循环过程）进行优化，如下图：</p><figure><img src=https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/20260119160603306.png alt="Parallel reduction" width=400><figcaption><p>Parallel reduction</p></figcaption></figure><p>每一段进行并行计算，最后再merge起来。这时候我们就不能一个 thread 处理一个输出位置了。这里的想法是：对于每一行的并行过程，我们使用的是一个 block 当中的不同thread 来并行完成。每个 step 选择一部分的 thread 完成操作，经过同步之后进行到下一个 step。最后第一个位置就是整个数组的累求和。数组存储就用 shared_memory 进行存储。这个 thread id 正好对应的是数组的下标，也算是一种设计。</p><blockquote><p>累求和这个表述意义就是 a1 + a2 + &mldr; +a_n 或者 a1 * a2 * &mldr; * a_n 或者 &mldr;.，就是对所有元素的一种描述。想不出其他词了&mldr;.</p></blockquote><p>下边的实现其实是一个折中版本：考虑到 <code>blockDim</code> 的限制，如果要 reduce 的那一个维度巨长无比，甚至超出了 1024 （block 里边线程数量最大值），那我就先按照第一版的写法，手动计算，直到整个数组缩小到了 <code>blockDim</code> 以内。比如说：<code>blockDim = 8</code>，但是我有 16 个要 reduce 的元素，那我就先 <code>a[0] += a[16]; a[1] += a[17]</code>，最后只要计算 <code>a[0: 16]</code> 就可以。具体实现：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-10-1><a class=lnlinks href=#hl-10-1> 1</a>
+</span><span class=lnt id=hl-10-2><a class=lnlinks href=#hl-10-2> 2</a>
+</span><span class=lnt id=hl-10-3><a class=lnlinks href=#hl-10-3> 3</a>
+</span><span class=lnt id=hl-10-4><a class=lnlinks href=#hl-10-4> 4</a>
+</span><span class=lnt id=hl-10-5><a class=lnlinks href=#hl-10-5> 5</a>
+</span><span class=lnt id=hl-10-6><a class=lnlinks href=#hl-10-6> 6</a>
+</span><span class=lnt id=hl-10-7><a class=lnlinks href=#hl-10-7> 7</a>
+</span><span class=lnt id=hl-10-8><a class=lnlinks href=#hl-10-8> 8</a>
+</span><span class=lnt id=hl-10-9><a class=lnlinks href=#hl-10-9> 9</a>
+</span><span class=lnt id=hl-10-10><a class=lnlinks href=#hl-10-10>10</a>
+</span><span class=lnt id=hl-10-11><a class=lnlinks href=#hl-10-11>11</a>
+</span><span class=lnt id=hl-10-12><a class=lnlinks href=#hl-10-12>12</a>
+</span><span class=lnt id=hl-10-13><a class=lnlinks href=#hl-10-13>13</a>
+</span><span class=lnt id=hl-10-14><a class=lnlinks href=#hl-10-14>14</a>
+</span><span class=lnt id=hl-10-15><a class=lnlinks href=#hl-10-15>15</a>
+</span><span class=lnt id=hl-10-16><a class=lnlinks href=#hl-10-16>16</a>
+</span><span class=lnt id=hl-10-17><a class=lnlinks href=#hl-10-17>17</a>
+</span><span class=lnt id=hl-10-18><a class=lnlinks href=#hl-10-18>18</a>
+</span><span class=lnt id=hl-10-19><a class=lnlinks href=#hl-10-19>19</a>
+</span><span class=lnt id=hl-10-20><a class=lnlinks href=#hl-10-20>20</a>
+</span><span class=lnt id=hl-10-21><a class=lnlinks href=#hl-10-21>21</a>
+</span><span class=lnt id=hl-10-22><a class=lnlinks href=#hl-10-22>22</a>
+</span><span class=lnt id=hl-10-23><a class=lnlinks href=#hl-10-23>23</a>
+</span><span class=lnt id=hl-10-24><a class=lnlinks href=#hl-10-24>24</a>
+</span><span class=lnt id=hl-10-25><a class=lnlinks href=#hl-10-25>25</a>
+</span><span class=lnt id=hl-10-26><a class=lnlinks href=#hl-10-26>26</a>
+</span><span class=lnt id=hl-10-27><a class=lnlinks href=#hl-10-27>27</a>
+</span><span class=lnt id=hl-10-28><a class=lnlinks href=#hl-10-28>28</a>
+</span><span class=lnt id=hl-10-29><a class=lnlinks href=#hl-10-29>29</a>
+</span><span class=lnt id=hl-10-30><a class=lnlinks href=#hl-10-30>30</a>
+</span><span class=lnt id=hl-10-31><a class=lnlinks href=#hl-10-31>31</a>
+</span><span class=lnt id=hl-10-32><a class=lnlinks href=#hl-10-32>32</a>
+</span><span class=lnt id=hl-10-33><a class=lnlinks href=#hl-10-33>33</a>
+</span><span class=lnt id=hl-10-34><a class=lnlinks href=#hl-10-34>34</a>
+</span><span class=lnt id=hl-10-35><a class=lnlinks href=#hl-10-35>35</a>
+</span><span class=lnt id=hl-10-36><a class=lnlinks href=#hl-10-36>36</a>
+</span><span class=lnt id=hl-10-37><a class=lnlinks href=#hl-10-37>37</a>
+</span><span class=lnt id=hl-10-38><a class=lnlinks href=#hl-10-38>38</a>
+</span><span class=lnt id=hl-10-39><a class=lnlinks href=#hl-10-39>39</a>
+</span><span class=lnt id=hl-10-40><a class=lnlinks href=#hl-10-40>40</a>
+</span><span class=lnt id=hl-10-41><a class=lnlinks href=#hl-10-41>41</a>
+</span><span class=lnt id=hl-10-42><a class=lnlinks href=#hl-10-42>42</a>
+</span><span class=lnt id=hl-10-43><a class=lnlinks href=#hl-10-43>43</a>
+</span><span class=lnt id=hl-10-44><a class=lnlinks href=#hl-10-44>44</a>
+</span><span class=lnt id=hl-10-45><a class=lnlinks href=#hl-10-45>45</a>
+</span><span class=lnt id=hl-10-46><a class=lnlinks href=#hl-10-46>46</a>
+</span><span class=lnt id=hl-10-47><a class=lnlinks href=#hl-10-47>47</a>
+</span><span class=lnt id=hl-10-48><a class=lnlinks href=#hl-10-48>48</a>
+</span><span class=lnt id=hl-10-49><a class=lnlinks href=#hl-10-49>49</a>
+</span><span class=lnt id=hl-10-50><a class=lnlinks href=#hl-10-50>50</a>
+</span><span class=lnt id=hl-10-51><a class=lnlinks href=#hl-10-51>51</a>
+</span><span class=lnt id=hl-10-52><a class=lnlinks href=#hl-10-52>52</a>
+</span><span class=lnt id=hl-10-53><a class=lnlinks href=#hl-10-53>53</a>
+</span><span class=lnt id=hl-10-54><a class=lnlinks href=#hl-10-54>54</a>
+</span><span class=lnt id=hl-10-55><a class=lnlinks href=#hl-10-55>55</a>
+</span><span class=lnt id=hl-10-56><a class=lnlinks href=#hl-10-56>56</a>
+</span><span class=lnt id=hl-10-57><a class=lnlinks href=#hl-10-57>57</a>
+</span><span class=lnt id=hl-10-58><a class=lnlinks href=#hl-10-58>58</a>
+</span><span class=lnt id=hl-10-59><a class=lnlinks href=#hl-10-59>59</a>
+</span><span class=lnt id=hl-10-60><a class=lnlinks href=#hl-10-60>60</a>
+</span><span class=lnt id=hl-10-61><a class=lnlinks href=#hl-10-61>61</a>
+</span><span class=lnt id=hl-10-62><a class=lnlinks href=#hl-10-62>62</a>
+</span><span class=lnt id=hl-10-63><a class=lnlinks href=#hl-10-63>63</a>
+</span><span class=lnt id=hl-10-64><a class=lnlinks href=#hl-10-64>64</a>
+</span><span class=lnt id=hl-10-65><a class=lnlinks href=#hl-10-65>65</a>
+</span><span class=lnt id=hl-10-66><a class=lnlinks href=#hl-10-66>66</a>
+</span><span class=lnt id=hl-10-67><a class=lnlinks href=#hl-10-67>67</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c++ data-lang=c++><span class=line><span class=cl><span class=n>__global__</span> <span class=kt>void</span> <span class=nf>reduceKernel</span><span class=p>(</span> <span class=kt>float</span> <span class=o>*</span><span class=n>out</span><span class=p>,</span> <span class=kt>int</span> <span class=o>*</span><span class=n>out_shape</span><span class=p>,</span> <span class=kt>int</span> <span class=o>*</span><span class=n>out_strides</span><span class=p>,</span> <span class=kt>int</span> <span class=n>out_size</span><span class=p>,</span> <span class=kt>float</span> <span class=o>*</span><span class=n>a_storage</span><span class=p>,</span> <span class=kt>int</span> <span class=o>*</span><span class=n>a_shape</span><span class=p>,</span> <span class=kt>int</span> <span class=o>*</span><span class=n>a_strides</span><span class=p>,</span> <span class=kt>int</span> <span class=n>reduce_dim</span><span class=p>,</span> <span class=kt>float</span> <span class=n>reduce_value</span><span class=p>,</span> <span class=kt>int</span> <span class=n>shape_size</span><span class=p>,</span> <span class=kt>int</span> <span class=n>fn_id</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=cm>/**
+</span></span></span><span class=line><span class=cl><span class=cm>   * Reduce function. Apply a reduce function to elements of the input array a and store the result in the output array.
+</span></span></span><span class=line><span class=cl><span class=cm>   * Optimization:
+</span></span></span><span class=line><span class=cl><span class=cm>   * Parallelize over the reduction operation. Each kernel performs one reduction.
+</span></span></span><span class=line><span class=cl><span class=cm>   * e.g. a = [[1, 2, 3], [4, 5, 6]], kernel0 computes reduce([1, 2, 3]), kernel1 computes reduce([4, 5, 6]).
+</span></span></span><span class=line><span class=cl><span class=cm>   *
+</span></span></span><span class=line><span class=cl><span class=cm>   * You may find the following functions useful:
+</span></span></span><span class=line><span class=cl><span class=cm>   * - index_to_position: converts an index to a position in a compact array
+</span></span></span><span class=line><span class=cl><span class=cm>   * - to_index: converts a position to an index in a multidimensional array
+</span></span></span><span class=line><span class=cl><span class=cm>   *
+</span></span></span><span class=line><span class=cl><span class=cm>   * Args:
+</span></span></span><span class=line><span class=cl><span class=cm>   *  out: compact 1D array of size out_size to write the output to
+</span></span></span><span class=line><span class=cl><span class=cm>   *  out_shape: shape of the output array
+</span></span></span><span class=line><span class=cl><span class=cm>   *  out_strides: strides of the output array
+</span></span></span><span class=line><span class=cl><span class=cm>   *  out_size: size of the output array
+</span></span></span><span class=line><span class=cl><span class=cm>   *  a_storage: compact 1D array of size in_size
+</span></span></span><span class=line><span class=cl><span class=cm>   *  a_shape: shape of the input array
+</span></span></span><span class=line><span class=cl><span class=cm>   *  a_strides: strides of the input array
+</span></span></span><span class=line><span class=cl><span class=cm>   *  reduce_dim: dimension to reduce on
+</span></span></span><span class=line><span class=cl><span class=cm>   *  reduce_value: initial value for the reduction
+</span></span></span><span class=line><span class=cl><span class=cm>   *  shape_size: number of dimensions in the input &amp; output array, assert dimensions are the same
+</span></span></span><span class=line><span class=cl><span class=cm>   *  fn_id: id of the reduce function, currently only support add, multiply, and max
+</span></span></span><span class=line><span class=cl><span class=cm>   *
+</span></span></span><span class=line><span class=cl><span class=cm>   *
+</span></span></span><span class=line><span class=cl><span class=cm>   * Returns:
+</span></span></span><span class=line><span class=cl><span class=cm>   *  None (Fills in out array)
+</span></span></span><span class=line><span class=cl><span class=cm>   */</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=n>__shared__</span> <span class=kt>double</span> <span class=n>cache</span><span class=p>[</span><span class=n>BLOCK_DIM</span><span class=p>];</span> 
+</span></span><span class=line><span class=cl>  <span class=kt>int</span> <span class=n>out_index</span><span class=p>[</span><span class=n>MAX_DIMS</span><span class=p>];</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=kt>int</span> <span class=n>tid</span> <span class=o>=</span> <span class=n>threadIdx</span><span class=p>.</span><span class=n>x</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=kt>int</span> <span class=n>out_id</span> <span class=o>=</span> <span class=n>blockIdx</span><span class=p>.</span><span class=n>x</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=k>if</span> <span class=p>(</span><span class=n>out_id</span> <span class=o>&gt;=</span> <span class=n>out_size</span><span class=p>)</span> <span class=k>return</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>//out pos
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=n>to_index</span><span class=p>(</span><span class=n>out_id</span><span class=p>,</span> <span class=n>out_shape</span><span class=p>,</span> <span class=n>out_index</span><span class=p>,</span> <span class=n>shape_size</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>  <span class=kt>int</span> <span class=n>out_pos</span> <span class=o>=</span> <span class=n>index_to_position</span><span class=p>(</span><span class=n>out_index</span><span class=p>,</span> <span class=n>out_strides</span><span class=p>,</span> <span class=n>shape_size</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>  <span class=kt>int</span> <span class=n>reduce_size</span> <span class=o>=</span> <span class=n>a_shape</span><span class=p>[</span><span class=n>reduce_dim</span><span class=p>];</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>// the number of threads in a block is restricted to 32. Therefore,
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=c1>// we have to add some elements before thread-level parallelization.
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=c1>// We are doing this because the tid will be exploited if a_shape[reduce_dim]
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=c1>// is greater than blockDim.
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kt>float</span> <span class=n>local_acc</span> <span class=o>=</span> <span class=n>reduce_value</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>tid</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>reduce_size</span><span class=p>;</span> <span class=n>i</span> <span class=o>+=</span> <span class=n>blockDim</span><span class=p>.</span><span class=n>x</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=n>out_index</span><span class=p>[</span><span class=n>reduce_dim</span><span class=p>]</span> <span class=o>=</span> <span class=n>i</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>a_pos</span> <span class=o>=</span> <span class=n>index_to_position</span><span class=p>(</span><span class=n>out_index</span><span class=p>,</span> <span class=n>a_strides</span><span class=p>,</span> <span class=n>shape_size</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=n>local_acc</span> <span class=o>=</span> <span class=n>fn</span><span class=p>(</span><span class=n>fn_id</span><span class=p>,</span> <span class=n>local_acc</span><span class=p>,</span> <span class=n>a_storage</span><span class=p>[</span><span class=n>a_pos</span><span class=p>]);</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=n>cache</span><span class=p>[</span><span class=n>tid</span><span class=p>]</span> <span class=o>=</span> <span class=n>local_acc</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=n>__syncthreads</span><span class=p>();</span>  <span class=c1>// 等待所有元素在 shared memory 中加载好
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl>  <span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>s</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span> <span class=n>s</span> <span class=o>&lt;</span> <span class=n>blockDim</span><span class=p>.</span><span class=n>x</span><span class=p>;</span> <span class=n>s</span> <span class=o>*=</span> <span class=mi>2</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=n>tid</span> <span class=o>%</span> <span class=p>(</span><span class=mi>2</span> <span class=o>*</span> <span class=n>s</span><span class=p>)</span> <span class=o>==</span> <span class=mi>0</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=n>cache</span><span class=p>[</span><span class=n>tid</span><span class=p>]</span> <span class=o>=</span> <span class=n>fn</span><span class=p>(</span><span class=n>fn_id</span><span class=p>,</span> <span class=n>cache</span><span class=p>[</span><span class=n>tid</span><span class=p>],</span> <span class=n>cache</span><span class=p>[</span><span class=n>tid</span> <span class=o>+</span> <span class=n>s</span><span class=p>]);</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=n>__syncthreads</span><span class=p>();</span>  <span class=c1>// 等待这一层 (step) 的所有 thread 操作完毕
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=p>}</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>  <span class=k>if</span> <span class=p>(</span><span class=n>tid</span> <span class=o>==</span> <span class=mi>0</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=n>out</span><span class=p>[</span><span class=n>out_pos</span><span class=p>]</span> <span class=o>=</span> <span class=n>cache</span><span class=p>[</span><span class=n>tid</span><span class=p>];</span>  <span class=c1>// 第一个元素就是最后的答案
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></td></tr></table></div></div><p><strong>例子 4: MatrixMultiplyKernel：</strong></p><p>这里我们跳过 <em>一个 thread 负责一个 out 位置</em> 的写法，直接实现 <strong>Tiling</strong> 的矩阵乘法。传统写法里边，输出矩阵 C 的一个 out 的位置对应的是输入矩阵 A 的一行，以及输入矩阵 B 的一列。那么传统的写法里边就是：一个 thread 负责一个 C 矩阵的位置，找到输入矩阵 A 和 B 对应的行和列，串行乘积累积和。但是每次 kernel 想要加载行列到 SM 的时候，其实是在访问 global_memory，并且由于每一行和列都要计算多次，实际上需要多次从 global_memory 中加载对应的行列，造成时间浪费。</p><p>那么应该怎么进行优化？Tiling 的想法是：首先我们让一个 block 负责一个 tile 的输出，让 threads 负责 tile 中的一个元素的计算。假设这个输出的 tile 的大小是 3 * 3，那么一共有 9 个 threads 参与了这个 tile 的运算。跟这个 tile 有关的所有 A 和 B 中的 tile 应该是对应行列的 tiles (见下图中的绿色与蓝色矩形)。而最终输出矩阵中的 tile 结果（紫色）就是如图下方所示的加和。我们沿着 K 维度遍历两个输入矩阵中的 tiles，让对应位置的 tile 做乘积和，结果加到最终的输出矩阵 C 对应的 tile 中即可。这个过程宏观上可以表述为（以下边的图片为例）：</p><ol><li>初始化 kernel 中的临时 tile_1, tile_2 (均在 shared_memory)</li><li>将 A 中浅绿色 tile 加载到 tile_1 中</li><li>将 B 中浅蓝色 tile 加载到 tile_2 中</li><li>做乘积和，将对应位置结果加在 C 的紫色 tile 中</li><li>将 A 中深绿色 tile 加载到 tile_1 中</li><li>将 B 中深蓝色 tile 加载到 tile_2 中</li><li>做乘积和，将对应位置结果加在 C 的紫色 tile 中 -> 得到最终结果</li></ol><p>这样做首先不需要多次访问 global_memory，只需要一次加载好需要的两个 tile 到 shared_memory 中，然后访问的是 shared_memory 进行计算，节省时间。</p><figure><img src=https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/20260119210246116.png alt="Tiling Matrix Multiplication" width=400><figcaption><p>Tiling Matrix Multiplication</p></figcaption></figure><p><em>(图片来自 <a href=https://cnugteren.github.io/tutorial/pages/page1.html title="Tutorial: OpenCL SGEMM tuning for Kepler" rel="noopener external nofollow noreferrer" target=_blank class=exturl>Tutorial: OpenCL SGEMM tuning for Kepler</a>
+)</em></p><p>在实现上，threads 在 kernel 里的行为分成两部分：第一部分是将数据从 global_memory 搬到 shared_memory；第二部分是针对 tile 中的某个位置进行计算。具体来说针对一个 threads，有以下步骤：</p><p>for <code>num_tiles</code>:</p><ol><li>初始化 kernel 中的临时 tile_1, tile_2 (均在 shared_memory)</li><li>本 threads 将 A 对应位置的 tile 中的某一个位置的数据从 global_memory 搬运到 tile_1</li><li>本 threads 将 B 对应位置的 tile 中的某一个位置的数据从 global_memory 搬运到 tile_2</li><li>等待所有 9 个 threads 把两个 tile 的数据全部搬运完 (因为计算的时候是要用到整行整列的，所以要同步)</li><li>for tile_length:<ol><li>计算乘积和，将结果加到 C 矩阵中，本 threads 对应的输出位置上</li></ol></li><li>等待所有 9 个 threads 的计算完成 （避免不同轮之间的 tile shared_memory 读写混乱）</li></ol><p>实际上，我们使用 <code>TILE_SIZE = 32</code>, 这样一个 tile 需要的 threads 数量就是一个 block 中含有的 threads 的最大值，最大化利用率。</p><p>具体实现：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-11-1><a class=lnlinks href=#hl-11-1> 1</a>
+</span><span class=lnt id=hl-11-2><a class=lnlinks href=#hl-11-2> 2</a>
+</span><span class=lnt id=hl-11-3><a class=lnlinks href=#hl-11-3> 3</a>
+</span><span class=lnt id=hl-11-4><a class=lnlinks href=#hl-11-4> 4</a>
+</span><span class=lnt id=hl-11-5><a class=lnlinks href=#hl-11-5> 5</a>
+</span><span class=lnt id=hl-11-6><a class=lnlinks href=#hl-11-6> 6</a>
+</span><span class=lnt id=hl-11-7><a class=lnlinks href=#hl-11-7> 7</a>
+</span><span class=lnt id=hl-11-8><a class=lnlinks href=#hl-11-8> 8</a>
+</span><span class=lnt id=hl-11-9><a class=lnlinks href=#hl-11-9> 9</a>
+</span><span class=lnt id=hl-11-10><a class=lnlinks href=#hl-11-10>10</a>
+</span><span class=lnt id=hl-11-11><a class=lnlinks href=#hl-11-11>11</a>
+</span><span class=lnt id=hl-11-12><a class=lnlinks href=#hl-11-12>12</a>
+</span><span class=lnt id=hl-11-13><a class=lnlinks href=#hl-11-13>13</a>
+</span><span class=lnt id=hl-11-14><a class=lnlinks href=#hl-11-14>14</a>
+</span><span class=lnt id=hl-11-15><a class=lnlinks href=#hl-11-15>15</a>
+</span><span class=lnt id=hl-11-16><a class=lnlinks href=#hl-11-16>16</a>
+</span><span class=lnt id=hl-11-17><a class=lnlinks href=#hl-11-17>17</a>
+</span><span class=lnt id=hl-11-18><a class=lnlinks href=#hl-11-18>18</a>
+</span><span class=lnt id=hl-11-19><a class=lnlinks href=#hl-11-19>19</a>
+</span><span class=lnt id=hl-11-20><a class=lnlinks href=#hl-11-20>20</a>
+</span><span class=lnt id=hl-11-21><a class=lnlinks href=#hl-11-21>21</a>
+</span><span class=lnt id=hl-11-22><a class=lnlinks href=#hl-11-22>22</a>
+</span><span class=lnt id=hl-11-23><a class=lnlinks href=#hl-11-23>23</a>
+</span><span class=lnt id=hl-11-24><a class=lnlinks href=#hl-11-24>24</a>
+</span><span class=lnt id=hl-11-25><a class=lnlinks href=#hl-11-25>25</a>
+</span><span class=lnt id=hl-11-26><a class=lnlinks href=#hl-11-26>26</a>
+</span><span class=lnt id=hl-11-27><a class=lnlinks href=#hl-11-27>27</a>
+</span><span class=lnt id=hl-11-28><a class=lnlinks href=#hl-11-28>28</a>
+</span><span class=lnt id=hl-11-29><a class=lnlinks href=#hl-11-29>29</a>
+</span><span class=lnt id=hl-11-30><a class=lnlinks href=#hl-11-30>30</a>
+</span><span class=lnt id=hl-11-31><a class=lnlinks href=#hl-11-31>31</a>
+</span><span class=lnt id=hl-11-32><a class=lnlinks href=#hl-11-32>32</a>
+</span><span class=lnt id=hl-11-33><a class=lnlinks href=#hl-11-33>33</a>
+</span><span class=lnt id=hl-11-34><a class=lnlinks href=#hl-11-34>34</a>
+</span><span class=lnt id=hl-11-35><a class=lnlinks href=#hl-11-35>35</a>
+</span><span class=lnt id=hl-11-36><a class=lnlinks href=#hl-11-36>36</a>
+</span><span class=lnt id=hl-11-37><a class=lnlinks href=#hl-11-37>37</a>
+</span><span class=lnt id=hl-11-38><a class=lnlinks href=#hl-11-38>38</a>
+</span><span class=lnt id=hl-11-39><a class=lnlinks href=#hl-11-39>39</a>
+</span><span class=lnt id=hl-11-40><a class=lnlinks href=#hl-11-40>40</a>
+</span><span class=lnt id=hl-11-41><a class=lnlinks href=#hl-11-41>41</a>
+</span><span class=lnt id=hl-11-42><a class=lnlinks href=#hl-11-42>42</a>
+</span><span class=lnt id=hl-11-43><a class=lnlinks href=#hl-11-43>43</a>
+</span><span class=lnt id=hl-11-44><a class=lnlinks href=#hl-11-44>44</a>
+</span><span class=lnt id=hl-11-45><a class=lnlinks href=#hl-11-45>45</a>
+</span><span class=lnt id=hl-11-46><a class=lnlinks href=#hl-11-46>46</a>
+</span><span class=lnt id=hl-11-47><a class=lnlinks href=#hl-11-47>47</a>
+</span><span class=lnt id=hl-11-48><a class=lnlinks href=#hl-11-48>48</a>
+</span><span class=lnt id=hl-11-49><a class=lnlinks href=#hl-11-49>49</a>
+</span><span class=lnt id=hl-11-50><a class=lnlinks href=#hl-11-50>50</a>
+</span><span class=lnt id=hl-11-51><a class=lnlinks href=#hl-11-51>51</a>
+</span><span class=lnt id=hl-11-52><a class=lnlinks href=#hl-11-52>52</a>
+</span><span class=lnt id=hl-11-53><a class=lnlinks href=#hl-11-53>53</a>
+</span><span class=lnt id=hl-11-54><a class=lnlinks href=#hl-11-54>54</a>
+</span><span class=lnt id=hl-11-55><a class=lnlinks href=#hl-11-55>55</a>
+</span><span class=lnt id=hl-11-56><a class=lnlinks href=#hl-11-56>56</a>
+</span><span class=lnt id=hl-11-57><a class=lnlinks href=#hl-11-57>57</a>
+</span><span class=lnt id=hl-11-58><a class=lnlinks href=#hl-11-58>58</a>
+</span><span class=lnt id=hl-11-59><a class=lnlinks href=#hl-11-59>59</a>
+</span><span class=lnt id=hl-11-60><a class=lnlinks href=#hl-11-60>60</a>
+</span><span class=lnt id=hl-11-61><a class=lnlinks href=#hl-11-61>61</a>
+</span><span class=lnt id=hl-11-62><a class=lnlinks href=#hl-11-62>62</a>
+</span><span class=lnt id=hl-11-63><a class=lnlinks href=#hl-11-63>63</a>
+</span><span class=lnt id=hl-11-64><a class=lnlinks href=#hl-11-64>64</a>
+</span><span class=lnt id=hl-11-65><a class=lnlinks href=#hl-11-65>65</a>
+</span><span class=lnt id=hl-11-66><a class=lnlinks href=#hl-11-66>66</a>
+</span><span class=lnt id=hl-11-67><a class=lnlinks href=#hl-11-67>67</a>
+</span><span class=lnt id=hl-11-68><a class=lnlinks href=#hl-11-68>68</a>
+</span><span class=lnt id=hl-11-69><a class=lnlinks href=#hl-11-69>69</a>
+</span><span class=lnt id=hl-11-70><a class=lnlinks href=#hl-11-70>70</a>
+</span><span class=lnt id=hl-11-71><a class=lnlinks href=#hl-11-71>71</a>
+</span><span class=lnt id=hl-11-72><a class=lnlinks href=#hl-11-72>72</a>
+</span><span class=lnt id=hl-11-73><a class=lnlinks href=#hl-11-73>73</a>
+</span><span class=lnt id=hl-11-74><a class=lnlinks href=#hl-11-74>74</a>
+</span><span class=lnt id=hl-11-75><a class=lnlinks href=#hl-11-75>75</a>
+</span><span class=lnt id=hl-11-76><a class=lnlinks href=#hl-11-76>76</a>
+</span><span class=lnt id=hl-11-77><a class=lnlinks href=#hl-11-77>77</a>
+</span><span class=lnt id=hl-11-78><a class=lnlinks href=#hl-11-78>78</a>
+</span><span class=lnt id=hl-11-79><a class=lnlinks href=#hl-11-79>79</a>
+</span><span class=lnt id=hl-11-80><a class=lnlinks href=#hl-11-80>80</a>
+</span><span class=lnt id=hl-11-81><a class=lnlinks href=#hl-11-81>81</a>
+</span><span class=lnt id=hl-11-82><a class=lnlinks href=#hl-11-82>82</a>
+</span><span class=lnt id=hl-11-83><a class=lnlinks href=#hl-11-83>83</a>
+</span><span class=lnt id=hl-11-84><a class=lnlinks href=#hl-11-84>84</a>
+</span><span class=lnt id=hl-11-85><a class=lnlinks href=#hl-11-85>85</a>
+</span><span class=lnt id=hl-11-86><a class=lnlinks href=#hl-11-86>86</a>
+</span><span class=lnt id=hl-11-87><a class=lnlinks href=#hl-11-87>87</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c++ data-lang=c++><span class=line><span class=cl><span class=n>__global__</span> <span class=kt>void</span> <span class=nf>MatrixMultiplyKernel</span><span class=p>(</span> <span class=kt>float</span> <span class=o>*</span><span class=n>out</span><span class=p>,</span> <span class=k>const</span> <span class=kt>int</span> <span class=o>*</span><span class=n>out_shape</span><span class=p>,</span> <span class=k>const</span> <span class=kt>int</span> <span class=o>*</span><span class=n>out_strides</span><span class=p>,</span> <span class=kt>float</span> <span class=o>*</span><span class=n>a_storage</span><span class=p>,</span> <span class=k>const</span> <span class=kt>int</span> <span class=o>*</span><span class=n>a_shape</span><span class=p>,</span> <span class=k>const</span> <span class=kt>int</span> <span class=o>*</span><span class=n>a_strides</span><span class=p>,</span> <span class=kt>float</span> <span class=o>*</span><span class=n>b_storage</span><span class=p>,</span> <span class=k>const</span> <span class=kt>int</span> <span class=o>*</span><span class=n>b_shape</span><span class=p>,</span> <span class=k>const</span> <span class=kt>int</span> <span class=o>*</span><span class=n>b_strides</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=cm>/**
+</span></span></span><span class=line><span class=cl><span class=cm>   * Multiply two (compact) matrices into an output (also comapct) matrix. Matrix a and b are both in a batch
+</span></span></span><span class=line><span class=cl><span class=cm>   * format, with shape [batch_size, m, n], [batch_size, n, p].
+</span></span></span><span class=line><span class=cl><span class=cm>   * Requirements:
+</span></span></span><span class=line><span class=cl><span class=cm>   * - All data must be first moved to shared memory.
+</span></span></span><span class=line><span class=cl><span class=cm>   * - Only read each cell in a and b once.
+</span></span></span><span class=line><span class=cl><span class=cm>   * - Only write to global memory once per kernel.
+</span></span></span><span class=line><span class=cl><span class=cm>   * There is guarantee that a_shape[0] == b_shape[0], a_shape[2] == b_shape[1],
+</span></span></span><span class=line><span class=cl><span class=cm>   * and out_shape[0] == a_shape[0], out_shape[1] == b_shape[1]
+</span></span></span><span class=line><span class=cl><span class=cm>   *
+</span></span></span><span class=line><span class=cl><span class=cm>   * Args:
+</span></span></span><span class=line><span class=cl><span class=cm>   *   out: compact 1D array of size batch_size x m x p to write the output to
+</span></span></span><span class=line><span class=cl><span class=cm>   *   out_shape: shape of the output array
+</span></span></span><span class=line><span class=cl><span class=cm>   *   out_strides: strides of the output array
+</span></span></span><span class=line><span class=cl><span class=cm>   *   a_storage: compact 1D array of size batch_size x m x n
+</span></span></span><span class=line><span class=cl><span class=cm>   *   a_shape: shape of the a array
+</span></span></span><span class=line><span class=cl><span class=cm>   *   a_strides: strides of the a array
+</span></span></span><span class=line><span class=cl><span class=cm>   *   b_storage: compact 1D array of size batch_size x n x p
+</span></span></span><span class=line><span class=cl><span class=cm>   *   b_shape: shape of the b array
+</span></span></span><span class=line><span class=cl><span class=cm>   *   b_strides: strides of the b array
+</span></span></span><span class=line><span class=cl><span class=cm>   *
+</span></span></span><span class=line><span class=cl><span class=cm>   * Returns:
+</span></span></span><span class=line><span class=cl><span class=cm>   *   None (Fills in out array)
+</span></span></span><span class=line><span class=cl><span class=cm>   */</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=n>__shared__</span> <span class=kt>float</span> <span class=n>a_shared</span><span class=p>[</span><span class=n>TILE</span><span class=p>][</span><span class=n>TILE</span><span class=p>];</span>  <span class=c1>// TILE == 32
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=n>__shared__</span> <span class=kt>float</span> <span class=n>b_shared</span><span class=p>[</span><span class=n>TILE</span><span class=p>][</span><span class=n>TILE</span><span class=p>];</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=kt>int</span> <span class=n>batch</span> <span class=o>=</span> <span class=n>blockIdx</span><span class=p>.</span><span class=n>z</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=kt>int</span> <span class=n>a_batch_stride</span> <span class=o>=</span> <span class=n>a_shape</span><span class=p>[</span><span class=mi>0</span><span class=p>]</span> <span class=o>&gt;</span> <span class=mi>1</span> <span class=o>?</span> <span class=n>a_strides</span><span class=p>[</span><span class=mi>0</span><span class=p>]</span> <span class=o>:</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=kt>int</span> <span class=n>b_batch_stride</span> <span class=o>=</span> <span class=n>b_shape</span><span class=p>[</span><span class=mi>0</span><span class=p>]</span> <span class=o>&gt;</span> <span class=mi>1</span> <span class=o>?</span> <span class=n>b_strides</span><span class=p>[</span><span class=mi>0</span><span class=p>]</span> <span class=o>:</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=kt>int</span> <span class=n>m</span> <span class=o>=</span> <span class=n>a_shape</span><span class=p>[</span><span class=mi>1</span><span class=p>];</span>
+</span></span><span class=line><span class=cl>  <span class=kt>int</span> <span class=n>n</span> <span class=o>=</span> <span class=n>a_shape</span><span class=p>[</span><span class=mi>2</span><span class=p>];</span>
+</span></span><span class=line><span class=cl>  <span class=kt>int</span> <span class=n>p</span> <span class=o>=</span> <span class=n>b_shape</span><span class=p>[</span><span class=mi>2</span><span class=p>];</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=kt>int</span> <span class=n>row</span> <span class=o>=</span> <span class=n>blockIdx</span><span class=p>.</span><span class=n>x</span> <span class=o>*</span> <span class=n>TILE</span> <span class=o>+</span> <span class=n>threadIdx</span><span class=p>.</span><span class=n>x</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=kt>int</span> <span class=n>col</span> <span class=o>=</span> <span class=n>blockIdx</span><span class=p>.</span><span class=n>y</span> <span class=o>*</span> <span class=n>TILE</span> <span class=o>+</span> <span class=n>threadIdx</span><span class=p>.</span><span class=n>y</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=kt>int</span> <span class=n>a_index</span><span class=p>[</span><span class=mi>3</span><span class=p>]</span> <span class=o>=</span> <span class=p>{</span><span class=n>batch</span><span class=p>,</span> <span class=n>row</span><span class=p>,</span> <span class=mi>0</span><span class=p>};</span>
+</span></span><span class=line><span class=cl>  <span class=kt>int</span> <span class=n>b_index</span><span class=p>[</span><span class=mi>3</span><span class=p>]</span> <span class=o>=</span> <span class=p>{</span><span class=n>batch</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=n>col</span><span class=p>};</span>
+</span></span><span class=line><span class=cl>  <span class=kt>int</span> <span class=n>a_pos</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=kt>int</span> <span class=n>b_pos</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=kt>float</span> <span class=n>acc</span> <span class=o>=</span> <span class=mf>0.0f</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=kt>int</span> <span class=n>a_strides_local</span><span class=p>[</span><span class=mi>3</span><span class=p>]</span> <span class=o>=</span> <span class=p>{</span><span class=n>a_batch_stride</span><span class=p>,</span> <span class=n>a_strides</span><span class=p>[</span><span class=mi>1</span><span class=p>],</span> <span class=n>a_strides</span><span class=p>[</span><span class=mi>2</span><span class=p>]};</span>
+</span></span><span class=line><span class=cl>  <span class=kt>int</span> <span class=n>b_strides_local</span><span class=p>[</span><span class=mi>3</span><span class=p>]</span> <span class=o>=</span> <span class=p>{</span><span class=n>b_batch_stride</span><span class=p>,</span> <span class=n>b_strides</span><span class=p>[</span><span class=mi>1</span><span class=p>],</span> <span class=n>b_strides</span><span class=p>[</span><span class=mi>2</span><span class=p>]};</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=kt>int</span> <span class=n>num_tiles</span> <span class=o>=</span> <span class=p>(</span><span class=n>n</span> <span class=o>+</span> <span class=n>TILE</span> <span class=o>-</span> <span class=mi>1</span><span class=p>)</span> <span class=o>/</span> <span class=n>TILE</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>num_tiles</span><span class=p>;</span> <span class=o>++</span><span class=n>i</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=c1>// load elements for A and B
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kt>int</span> <span class=n>a_col</span> <span class=o>=</span> <span class=n>i</span> <span class=o>*</span> <span class=n>TILE</span> <span class=o>+</span> <span class=n>threadIdx</span><span class=p>.</span><span class=n>y</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=n>a_index</span><span class=p>[</span><span class=mi>2</span><span class=p>]</span> <span class=o>=</span> <span class=n>a_col</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=n>row</span> <span class=o>&lt;</span> <span class=n>m</span> <span class=o>&amp;&amp;</span> <span class=n>a_col</span> <span class=o>&lt;</span> <span class=n>n</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=n>a_pos</span> <span class=o>=</span> <span class=n>index_to_position</span><span class=p>(</span><span class=n>a_index</span><span class=p>,</span> <span class=n>a_strides_local</span><span class=p>,</span> <span class=mi>3</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>      <span class=n>a_shared</span><span class=p>[</span><span class=n>threadIdx</span><span class=p>.</span><span class=n>x</span><span class=p>][</span><span class=n>threadIdx</span><span class=p>.</span><span class=n>y</span><span class=p>]</span> <span class=o>=</span> <span class=n>a_storage</span><span class=p>[</span><span class=n>a_pos</span><span class=p>];</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=n>a_shared</span><span class=p>[</span><span class=n>threadIdx</span><span class=p>.</span><span class=n>x</span><span class=p>][</span><span class=n>threadIdx</span><span class=p>.</span><span class=n>y</span><span class=p>]</span> <span class=o>=</span> <span class=mf>0.0f</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>b_row</span> <span class=o>=</span> <span class=n>i</span> <span class=o>*</span> <span class=n>TILE</span> <span class=o>+</span> <span class=n>threadIdx</span><span class=p>.</span><span class=n>x</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=n>b_index</span><span class=p>[</span><span class=mi>1</span><span class=p>]</span> <span class=o>=</span> <span class=n>b_row</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=n>b_row</span> <span class=o>&lt;</span> <span class=n>n</span> <span class=o>&amp;&amp;</span> <span class=n>col</span> <span class=o>&lt;</span> <span class=n>p</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=n>b_pos</span> <span class=o>=</span> <span class=n>index_to_position</span><span class=p>(</span><span class=n>b_index</span><span class=p>,</span> <span class=n>b_strides_local</span><span class=p>,</span> <span class=mi>3</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>      <span class=n>b_shared</span><span class=p>[</span><span class=n>threadIdx</span><span class=p>.</span><span class=n>x</span><span class=p>][</span><span class=n>threadIdx</span><span class=p>.</span><span class=n>y</span><span class=p>]</span> <span class=o>=</span> <span class=n>b_storage</span><span class=p>[</span><span class=n>b_pos</span><span class=p>];</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=n>b_shared</span><span class=p>[</span><span class=n>threadIdx</span><span class=p>.</span><span class=n>x</span><span class=p>][</span><span class=n>threadIdx</span><span class=p>.</span><span class=n>y</span><span class=p>]</span> <span class=o>=</span> <span class=mf>0.0f</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>__syncthreads</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// Calculation for C
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>k</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=n>k</span> <span class=o>&lt;</span> <span class=n>TILE</span><span class=p>;</span> <span class=o>++</span><span class=n>k</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=n>acc</span> <span class=o>+=</span> <span class=n>a_shared</span><span class=p>[</span><span class=n>threadIdx</span><span class=p>.</span><span class=n>x</span><span class=p>][</span><span class=n>k</span><span class=p>]</span> <span class=o>*</span> <span class=n>b_shared</span><span class=p>[</span><span class=n>k</span><span class=p>][</span><span class=n>threadIdx</span><span class=p>.</span><span class=n>y</span><span class=p>];</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=n>__syncthreads</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>if</span> <span class=p>(</span><span class=n>row</span> <span class=o>&lt;</span> <span class=n>m</span> <span class=o>&amp;&amp;</span> <span class=n>col</span> <span class=o>&lt;</span> <span class=n>p</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>out_index</span><span class=p>[</span><span class=mi>3</span><span class=p>]</span> <span class=o>=</span> <span class=p>{</span><span class=n>batch</span><span class=p>,</span> <span class=n>row</span><span class=p>,</span> <span class=n>col</span><span class=p>};</span>
+</span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>out_pos</span> <span class=o>=</span> <span class=n>index_to_position</span><span class=p>(</span><span class=n>out_index</span><span class=p>,</span> <span class=n>out_strides</span><span class=p>,</span> <span class=mi>3</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=n>out</span><span class=p>[</span><span class=n>out_pos</span><span class=p>]</span> <span class=o>=</span> <span class=n>acc</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></td></tr></table></div></div><p>这里有几个小点需要注意一下：</p><ol><li><code>num_tiles</code> 的计算：我们其实要计算的应该是 $\lceil K / TILE ,\rceil$ 由于 C++ 是下取整，我们可以进行等价变形： $\lceil K / TILE ,\rceil = \lfloor (K + TILE - 1) / TILE \rfloor$</li><li>边界检查：在边界的 tile 往往会访问到数组之外，我们需要做边界检查，然后把边界之外的数字赋值成 <code>0.0f</code>。不用 if/else，而是把越界元素写成 0，是为了保持 warp 内所有 threads 行为一致，避免 divergence，同时保证数学正确性。</li></ol><h3 id=python-使用-kernel>Python 使用 Kernel
+<a class=header-anchor href=#python-%e4%bd%bf%e7%94%a8-kernel></a></h3><p><strong>nvcc compilation</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-12-1><a class=lnlinks href=#hl-12-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>nvcc -o minitorch/cuda_kernels/combine.so --shared src/combine.cu -Xcompiler -fPIC</span></span></code></pre></td></tr></table></div></div><p><strong>参数说明</strong></p><table><thead><tr><th>参数</th><th>含义</th></tr></thead><tbody><tr><td><code>nvcc</code></td><td>NVIDIA CUDA 编译器</td></tr><tr><td><code>-o &lt;path></code></td><td>指定输出文件路径</td></tr><tr><td><code>--shared</code></td><td>编译成共享库（.so），而非可执行文件</td></tr><tr><td><code>src/combine.cu</code></td><td>CUDA 源代码文件</td></tr><tr><td><code>-Xcompiler</code></td><td>将后续参数传递给 C++ 编译器</td></tr><tr><td><code>-fPIC</code></td><td>Position Independent Code，生成位置无关代码（动态库必需）</td></tr></tbody></table><p><strong>编译流程</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-13-1><a class=lnlinks href=#hl-13-1>1</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>.cu 源码 → nvcc 编译 → .so 共享库 → Python ctypes 加载 → 调用 CUDA 函数</span></span></code></pre></td></tr></table></div></div><p><strong>注意事项</strong></p><ul><li><code>.so</code> = Shared Object，Linux 下的动态链接库</li><li>每次修改 <code>.cu</code> 文件后都需要重新编译</li><li><code>-fPIC</code> 是生成动态库的必要参数，否则无法被正确加载</li></ul><p><strong>Python 调用 kernel 完成运算：</strong> 先用 <code>nvcc</code> 编译好动态链接库 （<code>.so</code>），python 加载这个库，绑定签名，执行调用：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-14-1><a class=lnlinks href=#hl-14-1> 1</a>
+</span><span class=lnt id=hl-14-2><a class=lnlinks href=#hl-14-2> 2</a>
+</span><span class=lnt id=hl-14-3><a class=lnlinks href=#hl-14-3> 3</a>
+</span><span class=lnt id=hl-14-4><a class=lnlinks href=#hl-14-4> 4</a>
+</span><span class=lnt id=hl-14-5><a class=lnlinks href=#hl-14-5> 5</a>
+</span><span class=lnt id=hl-14-6><a class=lnlinks href=#hl-14-6> 6</a>
+</span><span class=lnt id=hl-14-7><a class=lnlinks href=#hl-14-7> 7</a>
+</span><span class=lnt id=hl-14-8><a class=lnlinks href=#hl-14-8> 8</a>
+</span><span class=lnt id=hl-14-9><a class=lnlinks href=#hl-14-9> 9</a>
+</span><span class=lnt id=hl-14-10><a class=lnlinks href=#hl-14-10>10</a>
+</span><span class=lnt id=hl-14-11><a class=lnlinks href=#hl-14-11>11</a>
+</span><span class=lnt id=hl-14-12><a class=lnlinks href=#hl-14-12>12</a>
+</span><span class=lnt id=hl-14-13><a class=lnlinks href=#hl-14-13>13</a>
+</span><span class=lnt id=hl-14-14><a class=lnlinks href=#hl-14-14>14</a>
+</span><span class=lnt id=hl-14-15><a class=lnlinks href=#hl-14-15>15</a>
+</span><span class=lnt id=hl-14-16><a class=lnlinks href=#hl-14-16>16</a>
+</span><span class=lnt id=hl-14-17><a class=lnlinks href=#hl-14-17>17</a>
+</span><span class=lnt id=hl-14-18><a class=lnlinks href=#hl-14-18>18</a>
+</span><span class=lnt id=hl-14-19><a class=lnlinks href=#hl-14-19>19</a>
+</span><span class=lnt id=hl-14-20><a class=lnlinks href=#hl-14-20>20</a>
+</span><span class=lnt id=hl-14-21><a class=lnlinks href=#hl-14-21>21</a>
+</span><span class=lnt id=hl-14-22><a class=lnlinks href=#hl-14-22>22</a>
+</span><span class=lnt id=hl-14-23><a class=lnlinks href=#hl-14-23>23</a>
+</span><span class=lnt id=hl-14-24><a class=lnlinks href=#hl-14-24>24</a>
+</span><span class=lnt id=hl-14-25><a class=lnlinks href=#hl-14-25>25</a>
+</span><span class=lnt id=hl-14-26><a class=lnlinks href=#hl-14-26>26</a>
+</span><span class=lnt id=hl-14-27><a class=lnlinks href=#hl-14-27>27</a>
+</span><span class=lnt id=hl-14-28><a class=lnlinks href=#hl-14-28>28</a>
+</span><span class=lnt id=hl-14-29><a class=lnlinks href=#hl-14-29>29</a>
+</span><span class=lnt id=hl-14-30><a class=lnlinks href=#hl-14-30>30</a>
+</span><span class=lnt id=hl-14-31><a class=lnlinks href=#hl-14-31>31</a>
+</span><span class=lnt id=hl-14-32><a class=lnlinks href=#hl-14-32>32</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=kn>import</span> <span class=nn>ctypes</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>numpy</span> <span class=k>as</span> <span class=nn>np</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>lib</span> <span class=o>=</span> <span class=n>ctypes</span><span class=o>.</span><span class=n>CDLL</span><span class=p>(</span><span class=s2>&#34;path/to/your.so&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>datatype</span> <span class=o>=</span> <span class=n>np</span><span class=o>.</span><span class=n>float32</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 1) 绑定签名</span>
+</span></span><span class=line><span class=cl><span class=n>lib</span><span class=o>.</span><span class=n>yourKernel</span><span class=o>.</span><span class=n>argtypes</span> <span class=o>=</span> <span class=p>[</span>
+</span></span><span class=line><span class=cl>    <span class=n>np</span><span class=o>.</span><span class=n>ctypeslib</span><span class=o>.</span><span class=n>ndpointer</span><span class=p>(</span><span class=n>dtype</span><span class=o>=</span><span class=n>datatype</span><span class=p>,</span> <span class=n>ndim</span><span class=o>=</span><span class=mi>1</span><span class=p>,</span> <span class=n>flags</span><span class=o>=</span><span class=s2>&#34;C_CONTIGUOUS&#34;</span><span class=p>),</span>  <span class=c1># out_storage</span>
+</span></span><span class=line><span class=cl>    <span class=n>np</span><span class=o>.</span><span class=n>ctypeslib</span><span class=o>.</span><span class=n>ndpointer</span><span class=p>(</span><span class=n>dtype</span><span class=o>=</span><span class=n>np</span><span class=o>.</span><span class=n>int32</span><span class=p>,</span> <span class=n>ndim</span><span class=o>=</span><span class=mi>1</span><span class=p>,</span> <span class=n>flags</span><span class=o>=</span><span class=s2>&#34;C_CONTIGUOUS&#34;</span><span class=p>),</span>  <span class=c1># out_shape</span>
+</span></span><span class=line><span class=cl>    <span class=n>np</span><span class=o>.</span><span class=n>ctypeslib</span><span class=o>.</span><span class=n>ndpointer</span><span class=p>(</span><span class=n>dtype</span><span class=o>=</span><span class=n>np</span><span class=o>.</span><span class=n>int32</span><span class=p>,</span> <span class=n>ndim</span><span class=o>=</span><span class=mi>1</span><span class=p>,</span> <span class=n>flags</span><span class=o>=</span><span class=s2>&#34;C_CONTIGUOUS&#34;</span><span class=p>),</span>  <span class=c1># out_strides</span>
+</span></span><span class=line><span class=cl>    <span class=n>ctypes</span><span class=o>.</span><span class=n>c_int</span><span class=p>,</span>                                                         <span class=c1># out_size</span>
+</span></span><span class=line><span class=cl>    <span class=n>np</span><span class=o>.</span><span class=n>ctypeslib</span><span class=o>.</span><span class=n>ndpointer</span><span class=p>(</span><span class=n>dtype</span><span class=o>=</span><span class=n>datatype</span><span class=p>,</span> <span class=n>ndim</span><span class=o>=</span><span class=mi>1</span><span class=p>,</span> <span class=n>flags</span><span class=o>=</span><span class=s2>&#34;C_CONTIGUOUS&#34;</span><span class=p>),</span>  <span class=c1># in_storage</span>
+</span></span><span class=line><span class=cl>    <span class=n>np</span><span class=o>.</span><span class=n>ctypeslib</span><span class=o>.</span><span class=n>ndpointer</span><span class=p>(</span><span class=n>dtype</span><span class=o>=</span><span class=n>np</span><span class=o>.</span><span class=n>int32</span><span class=p>,</span> <span class=n>ndim</span><span class=o>=</span><span class=mi>1</span><span class=p>,</span> <span class=n>flags</span><span class=o>=</span><span class=s2>&#34;C_CONTIGUOUS&#34;</span><span class=p>),</span>  <span class=c1># in_shape</span>
+</span></span><span class=line><span class=cl>    <span class=n>np</span><span class=o>.</span><span class=n>ctypeslib</span><span class=o>.</span><span class=n>ndpointer</span><span class=p>(</span><span class=n>dtype</span><span class=o>=</span><span class=n>np</span><span class=o>.</span><span class=n>int32</span><span class=p>,</span> <span class=n>ndim</span><span class=o>=</span><span class=mi>1</span><span class=p>,</span> <span class=n>flags</span><span class=o>=</span><span class=s2>&#34;C_CONTIGUOUS&#34;</span><span class=p>),</span>  <span class=c1># in_strides</span>
+</span></span><span class=line><span class=cl>    <span class=n>ctypes</span><span class=o>.</span><span class=n>c_int</span><span class=p>,</span>                                                         <span class=c1># in_size</span>
+</span></span><span class=line><span class=cl>    <span class=c1># ... other args</span>
+</span></span><span class=line><span class=cl><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=n>lib</span><span class=o>.</span><span class=n>yourKernel</span><span class=o>.</span><span class=n>restype</span> <span class=o>=</span> <span class=kc>None</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 2) 调用（把底层 buffer/shape/strides 塞进去）</span>
+</span></span><span class=line><span class=cl><span class=n>lib</span><span class=o>.</span><span class=n>yourKernel</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=n>out_storage</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=n>out_shape</span><span class=o>.</span><span class=n>astype</span><span class=p>(</span><span class=n>np</span><span class=o>.</span><span class=n>int32</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>    <span class=n>out_strides</span><span class=o>.</span><span class=n>astype</span><span class=p>(</span><span class=n>np</span><span class=o>.</span><span class=n>int32</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>    <span class=n>out_size</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=n>in_storage</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=n>in_shape</span><span class=o>.</span><span class=n>astype</span><span class=p>(</span><span class=n>np</span><span class=o>.</span><span class=n>int32</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>    <span class=n>in_strides</span><span class=o>.</span><span class=n>astype</span><span class=p>(</span><span class=n>np</span><span class=o>.</span><span class=n>int32</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>    <span class=n>in_size</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=c1># ... other args</span>
+</span></span><span class=line><span class=cl><span class=p>)</span></span></span></code></pre></td></tr></table></div></div><h3 id=一些拓展资料>一些拓展资料
+<a class=header-anchor href=#%e4%b8%80%e4%ba%9b%e6%8b%93%e5%b1%95%e8%b5%84%e6%96%99></a></h3><ul><li><a href=https://docs.nvidia.com/cuda/cuda-c-programming-guide/# title="cuda 13.0 以前的 guide" rel="noopener external nofollow noreferrer" target=_blank class=exturl>cuda 13.0 以前的 guide</a></li><li><a href=https://docs.nvidia.com/cuda/cuda-programming-guide/ title="cuda 13.0 以后的 guide" rel="noopener external nofollow noreferrer" target=_blank class=exturl>cuda 13.0 以后的 guide</a></li><li><a href=https://cnugteren.github.io/tutorial/pages/page1.html title="Tutorial: OpenCL SGEMM tuning for Kepler" rel="noopener external nofollow noreferrer" target=_blank class=exturl>Tutorial: OpenCL SGEMM tuning for Kepler</a></li></ul><blockquote><p>cuda 现在转向 cuTile 编程，好像类似于 <code>triton</code> 的想法，把 thread 底层的调用封装起来了</p></blockquote></div><footer class=post-footer><div class=post-tags><a href=/tags/cuda/>cuda
+</a><a href=/tags/kernel/>kernel
+</a><a href=/tags/llm/>llm
+</a><a href=/tags/system/>system</a></div><hr><div class=post-nav><div class="post-nav-next post-nav-item"></div><div class="post-nav-prev post-nav-item"><a href=/learning/music/%E4%BA%94%E7%BA%BF%E8%B0%B1%E6%B8%B2%E6%9F%93/ rel=prev title=五线谱渲染>五线谱渲染
+<i class="fa fa-chevron-right"></i></a></div></div></footer></article></div></div></main><footer class=footer><div class=footer-inner><div id=i18n-translate class=i18n-translate><i class="fa fa-language"></i><div id=lang-select class=lang-select><div id=lang-selected class=selected-option><span class="flag-icon flag-icon-en-us"></span>
+<span class=selected-language>English</span>
+<i class="fa fa-chevron-down"></i></div><div id=lang-options class=lang-options><div class=lang-option lang-code=en-us lang-name=English lang-url=/learning/llm/gpu-kernel-%E5%9F%BA%E7%A1%80/><span class="flag-icon flag-icon-en-us"></span>
+<span class=lang-name>English</span></div></div></div></div><div class=copyright>&copy;
+<span itemprop=copyrightYear>2026
+</span><span class=with-love><i class="fa fa-heart"></i>
+</span><span class=author itemprop=copyrightHolder>NexT Theme</span></div></div></footer><script class=next-config data-name=page type=application/json>{"clipboard":{"js":{"alias":"clipboard","file":"dist/clipboard.min.js","name":"clipboard.js","version":"2.0.11"}},"comments":false,"expired":false,"isHome":false,"isPage":true,"path":"gpu-kernel-%E5%9F%BA%E7%A1%80","permalink":"https://nozom1466.github.io/learning/llm/gpu-kernel-%E5%9F%BA%E7%A1%80/","title":"GPU Kernel 基础","toc":true,"waline":{"commentcnt":{"alias":"@waline/client","alias_name":"waline","file":"dist/comment.js","name":"comment","version":"2.15.8"}}}</script><script type=text/javascript src=https://nozom1466.github.io/js/3rd/animejs/3.2.2/anime.min.js crossorigin=anonymous defer></script><script type=text/javascript src=https://nozom1466.github.io/js/3rd/viewerjs/1.11.6/viewer.min.js crossorigin=anonymous defer></script><script class=next-config data-name=main type=application/json>{"bookmark":{"color":"#222","enable":false,"save":"manual"},"copybtn":true,"darkmode":true,"hostname":"https://nozom1466.github.io/","i18n":{"ds_day":" Day Ago","ds_days":" Day ","ds_hour":" Hour Ago","ds_hours":" Hour ","ds_just":"Just","ds_min":" Min Ago","ds_mins":" Min","ds_month":" Month Ago","ds_years":" Year ","empty":"We didn't find any results for the search: ${query}","hits":"${hits} results found","hits_time":"${hits} results found in ${time} ms","placeholder":"Searching..."},"isMultiLang":true,"lang":"en-US","lazyload":false,"localSearch":{"enable":true,"limit":1e3,"path":"/searchindexes.xml","preload":false,"topnperarticle":-1,"trigger":"auto","unescape":false},"motion":{"async":true,"enable":false,"transition":{"collheader":"slideInRight","postblock":"fadeIn","postbody":"fadeInDown","postheader":"fadeInDown","sidebar":"fadeInUp"}},"postmeta":{"comments":{"enable":true,"plugin":"waline"},"views":{"enable":false,"plugin":"busuanzi"}},"root":"/","scheme":"Mist","share":{"addtoany":{"js":"https://static.addtoany.com/menu/page.js","locale":"zh-CN","num":8},"enable":false},"sidebar":{"display":"post","offset":12,"padding":18,"position":"left","width":256},"vendor":{"plugins":"local","router":{"name":"local","type":"modern","url":"https://nozom1466.github.io/js/3rd"}},"version":"4.8.3","waline":{"cfg":{"emoji":false,"imguploader":false,"placeholder":"请文明发言哟 ヾ(≧▽≦*)o","reaction":true,"reactiontext":["点赞","踩一下","得意","不屑","尴尬","睡觉"],"reactiontitle":"你认为这篇文章怎么样？","requiredmeta":["nick","mail"],"serverurl":null,"sofa":"快来发表你的意见吧 (≧∀≦)ゞ","wordlimit":200},"css":{"alias":"@waline/client","file":"dist/waline.css","name":"waline","version":"2.15.8"},"js":{"alias":"@waline/client","file":"dist/waline.js","name":"waline","version":"2.15.8"}}}</script><script type=text/javascript src="/js/main.min.js?=1768879224" defer></script><script type=text/javascript src="/js/clipboard.min.js?=1768879224" defer></script><script>document.addEventListener("DOMContentLoaded",function(){var n=document.getElementById("header-toggle-theme"),e=document.getElementById("header-theme-icon-dark"),t=document.getElementById("header-theme-icon-light");function s(){var n=document.documentElement.getAttribute("data-theme");n==="dark"?(e&&(e.style.display="none"),t&&(t.style.display="inline")):(e&&(e.style.display="inline"),t&&(t.style.display="none"))}s(),n&&n.addEventListener("click",function(){var e=document.documentElement.getAttribute("data-theme");window.theme.toggle(e==="dark"?"light":"dark"),setTimeout(s,10)})})</script></body></html>
