@@ -24,6 +24,9 @@
   max-width: 300px;
   padding: 20px 15px 20px 20px;
   margin-top: 70px;
+  top: auto !important;
+  bottom: 20px !important;
+  transform: none !important;
 }
 
 .pswp__dynamic-caption--below {

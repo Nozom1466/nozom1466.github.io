@@ -70,7 +70,7 @@ int y = blockIdx.y * blockDim.y + threadIdx.y;
 
 ### Kernel 编写的概念与例子
 
-就是注意普通写法就是一个 thread 处理一个 out 元素位置，并行就是多个 thread 处理一个 out 元素位置。并且在一个 kernel 中，thread 既可以扮演搬运数据角色，也可以扮演计算的角色，而且可以
+就是注意普通写法就是一个 thread 处理一个 out 元素位置，并行就是多个 thread 处理一个 out 元素位置。并且在一个 kernel 中，thread 既可以扮演搬运数据角色，也可以扮演计算的角色。
 
 **映射关系：*一维存储数组* 与 *高维概念数组*  的映射关系：** 简单来说，在 kernel 看来你所谓的二维、三维等等数组其实全都以 **1维** 的形式来存储。也就是说在 kernel 中，你需要手动进行 *一维存储数组* 与 *高维概念数组* 之间的映射。比如说，一个二维数组的映射关系：
 
@@ -562,7 +562,7 @@ __global__ void MatrixMultiplyKernel( float *out, const int *out_shape, const in
 
 这里有几个小点需要注意一下：
 
-1. `num_tiles` 的计算：我们其实要计算的应该是 $\lceil K / TILE \,\rceil$ 由于 C++ 是下取整，我们可以进行等价变形： $\lceil K / TILE \,\rceil = \lfloor (K + TILE - 1) / TILE \rfloor$
+1. `num_tiles` 的计算：我们其实要计算的应该是 $\lceil K / TILE \rceil$ 由于 C++ 是下取整，我们可以进行等价变形： $\lceil K / TILE \rceil = \lfloor (K + TILE - 1) / TILE \rfloor$
 2. 边界检查：在边界的 tile 往往会访问到数组之外，我们需要做边界检查，然后把边界之外的数字赋值成 `0.0f`。不用 if/else，而是把越界元素写成 0，是为了保持 warp 内所有 threads 行为一致，避免 divergence，同时保证数学正确性。
 
 

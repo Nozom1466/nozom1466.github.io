@@ -29,10 +29,11 @@
   line-height: 1.6 !important;
 }
 
-/* Vertically center aside caption */
+/* Position aside caption at bottom right */
 .pswp__dynamic-caption--aside {
-  top: 50% !important;
-  transform: translateY(-50%) !important;
+  top: auto !important;
+  bottom: 20px !important;
+  transform: none !important;
   margin-top: 0 !important;
 }
 

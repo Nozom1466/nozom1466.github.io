@@ -820,7 +820,7 @@ params:
   # 注意这里全局配置，意味着所有页面都会加载数学公式脚本
   # Math Formulas Render Support, options: mathjax, katex
   # Warning: It's global settings then will load scripts in every page.
-  #math: mathjax
+  math: mathjax
 
   # TODO
   # FancyBox is a tool that offers a nice and elegant way 
