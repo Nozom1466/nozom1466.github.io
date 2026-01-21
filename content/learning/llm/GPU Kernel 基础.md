@@ -13,6 +13,7 @@ showtoc: false
 draft: false
 tags: ['cuda', 'kernel', 'llm', 'system']
 categories:
+math: mathjax
 ---
 
 
