@@ -1,5 +1,5 @@
 ---
-title: 響け！ユーフォニアム3
+title: 響け！ユーフォニアム3 - TV
 cover: https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/eupho3-1.webp
 rating: 0.5
 library_tags:
