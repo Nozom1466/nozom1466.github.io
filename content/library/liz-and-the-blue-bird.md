@@ -7,9 +7,9 @@ library_tags:
 date: 2018-04-21
 summary: 我的白月光 QAQ
 creators:
-  1_director: 山田尚子
-  2_screenplay: 吉田玲子
-  3_music: 牛尾憲輔
+  1_director: 山田 尚子
+  2_screenplay: 吉田 玲子
+  3_music: 牛尾 憲輔
   3_producer: 京都アニメーション
 ---
 

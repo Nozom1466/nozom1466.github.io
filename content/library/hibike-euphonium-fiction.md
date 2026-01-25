@@ -7,7 +7,7 @@ library_tags:
 date: 2025-12-28
 summary: 对我来说是有记忆和情感重量的轻小说
 creators:
-  1_author: 武田绫乃
+  1_author: 武田 绫乃
 ---
 
 转自我的微信读书：

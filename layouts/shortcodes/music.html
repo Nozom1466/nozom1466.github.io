@@ -5,6 +5,7 @@
 <music-placeholder 
   data-theme="{{ $theme }}"
   data-loop="{{ $loop }}"
+  data-volume="{{ .Get "volume" | default "1" }}"
   {{ with .Get "id" }} data-id="{{ . }}" {{ end }}
   {{ with .Get "server" }} data-server="{{ . }}" {{ end }}
   {{ with .Get "type" }} data-type="{{ . }}" {{ end }}
@@ -17,7 +18,6 @@
   {{ with .Get "mini" }} data-mini="{{ . }}" {{ end }}
   {{ with .Get "autoplay" }} data-autoplay="{{ . }}" {{ end }}
   {{ with .Get "order" }} data-order="{{ . }}" {{ end }}
-  {{ with .Get "volume" }} data-volume="{{ . }}" {{ end }}
   {{ with .Get "mutex" }} data-mutex="{{ . }}" {{ end }}
   {{ with .Get "list-folded" }} data-list-folded="{{ . }}" {{ end }}
   {{ with .Get "list-max-height" }} data-list-max-height="{{ . }}px" {{ end }}
