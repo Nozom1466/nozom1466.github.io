@@ -7,7 +7,7 @@ library_tags:
 date: 2025-12-28
 summary: 骤升骤降的智力电梯中，查理高登与世界进行了关于尊严、亲情、爱情、人性的探讨。
 creators:
-  1_author: Daniel Keyes
+  1_author: Daniel Keyes 
 ---
 
 
