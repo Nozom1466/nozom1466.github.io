@@ -105,6 +105,11 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     width: 100% !important;
   }
   
+  /* Center post summary on mobile */
+  .post-body {
+    text-align: center !important;
+  }
+  
   /* Add spacing to header toggle and search icons */
   .site-nav-toggle {
     padding-left: 0.5rem !important;
@@ -385,5 +390,19 @@ li > code {
   /* Add top spacing for main content on mobile */
   .main-inner.posts-expand .post-block:first-of-type {
     padding-top: 2rem !important;
+  }
+}
+
+/* iPad size: show only icons in header menu */
+@media (min-width: 767px) and (max-width: 1200px) {
+  .menu-item > a {
+    font-size: 0 !important;
+  }
+  .menu-item > a > i {
+    font-size: 16px !important;
+    margin-right: 0 !important;
+  }
+  .menu-item > a > .badge {
+    display: none !important;
   }
 }
