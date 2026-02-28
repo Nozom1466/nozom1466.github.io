@@ -105,9 +105,12 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     width: 100% !important;
   }
   
-  /* Center post summary on mobile */
-  .post-body {
-    text-align: center !important;
+  /* Left-align post title and meta on mobile index */
+  .posts-expand.index .post-header {
+    text-align: left !important;
+  }
+  .posts-expand.index .post-meta {
+    justify-content: flex-start !important;
   }
   
   /* Add spacing to header toggle and search icons */
@@ -118,11 +121,31 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
   .site-nav-right {
     padding-right: 0.5rem !important;
   }
+
+  /* Increase spacing between post blocks on mobile */
+  .posts-expand .post-block:not(:first-of-type) {
+    margin-top: 60px !important;
+  }
 }
 
 /* Hide logo lines in site title */
 .logo-line {
   display: none !important;
+}
+
+/* Increase heading margin-top in post body */
+.post-body h1,
+.post-body h2,
+.post-body h3,
+.post-body h4,
+.post-body h5,
+.post-body h6 {
+  margin-top: 3.5em !important;
+}
+
+/* Left-align post body text */
+.post-body {
+  text-align: left !important;
 }
 
 /* Hide end line tip completely */

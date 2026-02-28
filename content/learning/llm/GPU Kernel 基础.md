@@ -18,8 +18,7 @@ math: mathjax
 
 
 这个 GPU 编程搞的非常头疼，主要原因是涉及到 thread 并行以及不了解 cuda 运行的主要流程。
-
-代码参考:  [llmsys assignment 1 official codebase](https://github.com/llmsystem/llmsys_hw1)
+(代码参考:  [llmsys assignment 1 official codebase](https://github.com/llmsystem/llmsys_hw1))
 
 
 
