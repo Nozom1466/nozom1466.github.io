@@ -15,7 +15,7 @@ creators:
 {{< music url="https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/love-letter-small-happiness.mp4" name="Small Happiness" artist="Remedios" cover="https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/love-letter-ost.jpg" >}}
 
 
-二四年十月份欣赏的第一部岩井俊二导演的作品，有幸在二五年年中又遇到了情书上映三十周年重映，在大荧幕上又重新重温了一遍。
+二四年十月份欣赏的第一部岩井俊二导演的作品，有幸在二五年年中又遇到了情书上映三十周年重映，在大荧幕上又重温了一遍。
 
 影院不大，前来观影的人似乎也不是很多，根据观影刚刚开始时大家讨论的内容，大多数人都是看过几遍之后又来到这里的。当然我也是其中一员。
 
