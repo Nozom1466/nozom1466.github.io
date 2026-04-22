@@ -15,14 +15,14 @@
 baseURL: https://nozom1466.github.io/
 # 站点标题
 # Website title
-title: Fries on the pier
+title: 码头薯条小店
 # 主题名称
 # Theme name
 theme: hugo-theme-next
 # 站点默认的语言和代码
 # Default language & code for website
-defaultContentLanguage: en-us
-languageCode: en-US
+defaultContentLanguage: zh-cn
+languageCode: zh-CN
 # 多语言配置
 # Multi-language settings
 languages:
@@ -30,7 +30,34 @@ languages:
     languageCode: zh-CN
     languageDirection: ltr
     languageName: "简体中文"
-    weight: 1    
+    weight: 1
+    menus:
+      main:
+        - identifier: home
+          name: 首页
+          pageRef: /
+          pre: home
+          weight: 1
+        - identifier: archives
+          name: 归档
+          pageRef: /archives
+          pre: archive
+          weight: 2
+        - identifier: tags
+          name: 标签
+          pageRef: /tags
+          pre: tags
+          weight: 3
+        - identifier: gallery
+          name: 展廊
+          pageRef: /gallery
+          pre: image
+          weight: 4
+        - identifier: library
+          name: 书馆
+          pageRef: /library
+          pre: book
+          weight: 5
   en-us:
     languageCode: en-US
     languageDirection: ltr
@@ -285,7 +312,7 @@ params:
   menuSets:
     icons: true
     transition: true
-    badges: true
+    badges: false
 
 
   # ---------------------------------------------------------------

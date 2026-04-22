@@ -1,6 +1,6 @@
 ---
-title: Gallery
-description: Photo gallery
+title: 展廊
+description: 摄影展廊
 date: 2024-12-17
 params:
   remote_images:

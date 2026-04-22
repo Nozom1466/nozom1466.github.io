@@ -1,0 +1,77 @@
+<aside class="toc-float" data-toc="float" data-pinned="false">
+  <div class="toc-float-inner" data-toc-bars=""></div>
+  <div class="toc-float-panel">
+    <nav class="toc toc-notion" aria-label="目录"></nav>
+  </div>
+</aside>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+(function () {
+  var aside = document.querySelector('.toc-float');
+  if (!aside) return;
+
+  if (window.innerWidth <= 768) {
+    aside.parentNode.removeChild(aside);
+    return;
+  }
+
+  var barsContainer = aside.querySelector('[data-toc-bars]');
+  var nav = aside.querySelector('.toc');
+  var postBody = document.querySelector('.post-body');
+  if (!postBody) { aside.style.display = 'none'; return; }
+
+  var headings = Array.from(postBody.querySelectorAll('h2, h3, h4'));
+  if (headings.length < 2) { aside.style.display = 'none'; return; }
+
+  headings.forEach(function (h) {
+    var level = parseInt(h.tagName[1]);
+
+    var bar = document.createElement('div');
+    bar.className = 'toc-n-bar';
+    bar.dataset.level = level;
+    barsContainer.appendChild(bar);
+
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.title = h.textContent.trim();
+    a.className = 'toc-n-item';
+    a.dataset.level = level;
+    a.textContent = h.textContent.trim();
+    nav.appendChild(a);
+  });
+
+  var headingTops = [];
+  var bars = barsContainer.querySelectorAll('.toc-n-bar');
+  var links = nav.querySelectorAll('.toc-n-item');
+  var currentIndex = -1;
+
+  function updateHeadingTops() {
+    headingTops = headings.map(function (h) {
+      return h.getBoundingClientRect().top + window.scrollY;
+    });
+  }
+
+  function updateActive() {
+    var scrollY = window.scrollY + 120;
+    var active = -1;
+    for (var i = 0; i < headingTops.length; i++) {
+      if (scrollY >= headingTops[i]) active = i;
+    }
+    if (active === currentIndex) return;
+    currentIndex = active;
+    bars.forEach(function (bar, i) {
+      bar.setAttribute('aria-current', i === active ? 'true' : 'false');
+    });
+    links.forEach(function (link, i) {
+      link.setAttribute('aria-current', i === active ? 'true' : 'false');
+    });
+  }
+
+  updateHeadingTops();
+  updateActive();
+  window.addEventListener('scroll', updateActive, { passive: true });
+  window.addEventListener('resize', function () { updateHeadingTops(); updateActive(); });
+})();
+});
+</script>

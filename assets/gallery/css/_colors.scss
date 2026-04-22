@@ -7,15 +7,15 @@
   --text-1-light: #555;
   --text-2-light: #999;
   --border-light: #ddd;
-  --header-bg-light: #f5f5f5;
-  
+  --header-bg-light: #ffffff;
+
   /* Dark mode colors - matching hugo-theme-next */
   --surface-1-dark: #282828;
   --surface-2-dark: #333;
   --text-1-dark: #ccc;
   --text-2-dark: #999;
   --border-dark: #555;
-  --header-bg-dark: #333333;
+  --header-bg-dark: #282828;
   
   /* Default to dark */
   --surface-1: var(--surface-1-dark);

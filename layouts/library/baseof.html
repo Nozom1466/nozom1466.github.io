@@ -33,6 +33,11 @@
         text-decoration: none;
         color: var(--text-1);
         margin: 0;
+        border-bottom: none;
+        padding-bottom: 4px;
+      }
+      .library-header-nav a:hover {
+        border-bottom: 2px solid currentColor;
       }
       .library-header-nav a i {
         margin-right: 0.3em;
@@ -97,14 +102,14 @@
     </style>
     <header class="library-header">
       <a href="{{ "/" | relURL }}" class="library-header-title">
-        Fries Library
+        码头薯条小店
       </a>
       <button class="library-hamburger" onclick="document.querySelector('.library-header-nav').classList.toggle('open')">
         <i class="fa fa-bars"></i>
       </button>
       <nav class="library-header-nav">
-        <a href="{{ "/" | relURL }}"><i class="fa fa-home"></i>Home</a>
-        <a href="{{ "/gallery" | relURL }}"><i class="fa fa-image"></i>Gallery</a>
+        <a href="{{ "/" | relURL }}"><i class="fa fa-home"></i>首页</a>
+        <a href="{{ "/gallery" | relURL }}"><i class="fa fa-image"></i>展廊</a>
         <button id="toggle-theme" title="Toggle theme">
           <i class="fa fa-moon" id="theme-icon-dark" style="display: none;"></i>
           <i class="fa fa-sun" id="theme-icon-light" style="display: none;"></i>
