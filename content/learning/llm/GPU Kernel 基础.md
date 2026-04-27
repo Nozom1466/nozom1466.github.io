@@ -458,7 +458,7 @@ __global__ void reduceKernel( float *out, int *out_shape, int *out_strides, int 
 在实现上，threads 在 kernel 里的行为分成两部分：第一部分是将数据从 global_memory 搬到 shared_memory；第二部分是针对 tile 中的某个位置进行计算。具体来说针对一个 threads，有以下步骤：
 
 for `num_tiles`: 
-1. 初始化 kernel 中的临时 tile_1, tile_2 (均在 shared_memory)
+1. 初始化 kernel 中的临时 tile_1, tile_2, 均在 shared_memory
 2. 本 threads 将 A 对应位置的 tile 中的某一个位置的数据从 global_memory 搬运到 tile_1
 3. 本 threads 将 B 对应位置的 tile 中的某一个位置的数据从 global_memory 搬运到 tile_2
 4. 等待所有 9 个 threads 把两个 tile 的数据全部搬运完 (因为计算的时候是要用到整行整列的，所以要同步)

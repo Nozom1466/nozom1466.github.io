@@ -162,6 +162,16 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
   /* display: none; */
 }
 
+/* Post title underline: left to right */
+.posts-expand .post-title-link::before {
+  transform-origin: left !important;
+}
+
+/* Slightly reduce body font size */
+body {
+  font-size: 0.94em !important;
+}
+
 /* Pagination styles */
 .pagination {
   border-top: none !important;
@@ -550,4 +560,10 @@ header.header {
 
 .menu-item-theme a:hover {
   border-bottom: none !important;
+}
+
+@media (max-width: 767px) {
+  .main-inner {
+    padding-bottom: 3rem !important;
+  }
 }

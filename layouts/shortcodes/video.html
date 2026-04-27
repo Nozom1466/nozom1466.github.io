@@ -1,0 +1,8 @@
+{{ $width := .Get "width" | default "700" }}
+{{ $caption := .Get "caption" }}
+<figure style="margin:1em auto;max-width:{{ $width }}px;">
+  <video controls style="width:100%;display:block;">
+    <source src="{{ .Get "src" }}" type="{{ .Get "type" | default "video/mp4" }}">
+  </video>
+  {{ with $caption }}<figcaption style="text-align:center;font-size:0.85em;color:var(--quote-color,#888);margin-top:0.4em;">{{ . }}</figcaption>{{ end }}
+</figure>

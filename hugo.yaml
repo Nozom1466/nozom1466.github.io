@@ -240,7 +240,7 @@ params:
 
   # 开启暗模式
   # Dark Mode
-  darkmode: true
+  darkmode: false
 
 
   # 站点基本信息

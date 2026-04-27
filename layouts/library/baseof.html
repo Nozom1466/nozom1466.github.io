@@ -1,5 +1,5 @@
-<!doctype html>
-{{- $theme := .Params.theme | default "dark" }}
+﻿<!doctype html>
+{{- $theme := .Params.theme | default "light" }}
 <html data-theme="{{- if (eq $theme "light") -}}light{{- else -}}dark{{- end -}}" lang="{{- site.LanguageCode | default "en" -}}">
   {{ partial "library-theme/head.html" . }}
   <body style="margin: 0;">
@@ -102,14 +102,14 @@
     </style>
     <header class="library-header">
       <a href="{{ "/" | relURL }}" class="library-header-title">
-        码头薯条小店
+        鐮佸ご钖潯灏忓簵
       </a>
       <button class="library-hamburger" onclick="document.querySelector('.library-header-nav').classList.toggle('open')">
         <i class="fa fa-bars"></i>
       </button>
       <nav class="library-header-nav">
-        <a href="{{ "/" | relURL }}"><i class="fa fa-home"></i>首页</a>
-        <a href="{{ "/gallery" | relURL }}"><i class="fa fa-image"></i>展廊</a>
+        <a href="{{ "/" | relURL }}"><i class="fa fa-home"></i>棣栭〉</a>
+        <a href="{{ "/gallery" | relURL }}"><i class="fa fa-image"></i>灞曞粖</a>
         <button id="toggle-theme" title="Toggle theme">
           <i class="fa fa-moon" id="theme-icon-dark" style="display: none;"></i>
           <i class="fa fa-sun" id="theme-icon-light" style="display: none;"></i>
@@ -230,7 +230,7 @@
         } else if (numRating > i - 1) {
           fillPercent = (numRating - (i - 1)) * 100;
         }
-        starsHtml += '<span class="star" style="--ratio: ' + fillPercent + '%">★</span>';
+        starsHtml += '<span class="star" style="--ratio: ' + fillPercent + '%">鈽?/span>';
       }
       return '<span class="star-rating">' + starsHtml + ' <span class="rating-number">' + numRating.toFixed(1) + '/5.0</span></span>';
     }

@@ -4192,53 +4192,6 @@ ul.breadcrumb li:last-child {
   font-size: 1.35em;
 }
 
-@media (prefers-color-scheme: dark) {
-  .tag-cloud-0 {
-    border-bottom-color: #555555;
-    color: #555555;
-  }
-  .tag-cloud-1 {
-    border-bottom-color: #646464;
-    color: #646464;
-  }
-  .tag-cloud-2 {
-    border-bottom-color: #747474;
-    color: #747474;
-  }
-  .tag-cloud-3 {
-    border-bottom-color: #838383;
-    color: #838383;
-  }
-  .tag-cloud-4 {
-    border-bottom-color: #929292;
-    color: #929292;
-  }
-  .tag-cloud-5 {
-    border-bottom-color: #a2a2a2;
-    color: #a2a2a2;
-  }
-  .tag-cloud-6 {
-    border-bottom-color: #b1b1b1;
-    color: #b1b1b1;
-  }
-  .tag-cloud-7 {
-    border-bottom-color: silver;
-    color: silver;
-  }
-  .tag-cloud-8 {
-    border-bottom-color: #cfcfcf;
-    color: #cfcfcf;
-  }
-  .tag-cloud-9 {
-    border-bottom-color: #dfdfdf;
-    color: #dfdfdf;
-  }
-  .tag-cloud-10 {
-    border-bottom-color: #eeeeee;
-    color: #eeeeee;
-  }
-}
-
 .flinks-block .flinks-header {
   text-align: center;
   font-weight: bold;
@@ -4894,7 +4847,7 @@ hr {
 }
 
 .links-of-author a::before, .links-of-social a::before {
-  background: #25d28f;
+  background: #2b96b1;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);

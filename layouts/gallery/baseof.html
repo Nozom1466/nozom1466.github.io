@@ -1,5 +1,5 @@
 <!doctype html>
-{{- $theme := .Params.theme | default "dark" }}
+{{- $theme := .Params.theme | default "light" }}
 <html data-theme="{{- if (eq $theme "light") -}}light{{- else -}}dark{{- end -}}" lang="{{- site.LanguageCode | default "en" -}}">
   {{ partial "gallery-theme/head.html" . }}
   <body style="margin: 0;">
