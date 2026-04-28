@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 {{- $theme := .Params.theme | default "light" }}
 <html data-theme="{{- if (eq $theme "light") -}}light{{- else -}}dark{{- end -}}" lang="{{- site.LanguageCode | default "en" -}}">
   {{ partial "library-theme/head.html" . }}
@@ -63,7 +63,7 @@
         color: var(--text-1);
         font-size: 1.2em;
       }
-      
+
       @media (max-width: 767px) {
         .library-header {
           flex-wrap: wrap;
@@ -102,14 +102,14 @@
     </style>
     <header class="library-header">
       <a href="{{ "/" | relURL }}" class="library-header-title">
-        鐮佸ご钖潯灏忓簵
+        码头薯条小店
       </a>
       <button class="library-hamburger" onclick="document.querySelector('.library-header-nav').classList.toggle('open')">
         <i class="fa fa-bars"></i>
       </button>
       <nav class="library-header-nav">
-        <a href="{{ "/" | relURL }}"><i class="fa fa-home"></i>棣栭〉</a>
-        <a href="{{ "/gallery" | relURL }}"><i class="fa fa-image"></i>灞曞粖</a>
+        <a href="{{ "/" | relURL }}"><i class="fa fa-home"></i>首页</a>
+        <a href="{{ "/gallery" | relURL }}"><i class="fa fa-image"></i>展廊</a>
         <button id="toggle-theme" title="Toggle theme">
           <i class="fa fa-moon" id="theme-icon-dark" style="display: none;"></i>
           <i class="fa fa-sun" id="theme-icon-light" style="display: none;"></i>
@@ -119,7 +119,7 @@
     <main style="max-width: none; width: 100%; padding: 0; box-sizing: border-box;">
       {{ block "main" . }}{{ end }}
     </main>
-    
+
     {{/* Popup Modal for book details */}}
     <div id="library-popup" class="library-popup-overlay" style="display: none;">
       <div class="library-popup-container">
@@ -139,7 +139,7 @@
         </div>
       </div>
     </div>
-    
+
     <script>
     (function() {
       // Local storage helper with expiry
@@ -194,7 +194,7 @@
             document.documentElement.setAttribute('data-theme', localState);
           }
           this.updateIcons(currentTheme);
-          
+
           // Listen for system theme changes
           window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(evt) {
             if (!localDB.get('theme')) {
@@ -207,7 +207,7 @@
       // Initialize on DOM ready
       document.addEventListener('DOMContentLoaded', function() {
         theme.init();
-        
+
         // Toggle button click handler
         document.getElementById('toggle-theme').addEventListener('click', function() {
           const currentTheme = document.documentElement.getAttribute('data-theme');
@@ -215,13 +215,12 @@
         });
       });
     })();
-    
+
     // Popup functions
     function renderStarRating(rating) {
-      // Ensure rating is between 0 and 5
       let numRating = parseFloat(rating) || 0;
       numRating = Math.max(0, Math.min(5, numRating));
-      
+
       let starsHtml = '';
       for (let i = 1; i <= 5; i++) {
         let fillPercent = 0;
@@ -230,11 +229,11 @@
         } else if (numRating > i - 1) {
           fillPercent = (numRating - (i - 1)) * 100;
         }
-        starsHtml += '<span class="star" style="--ratio: ' + fillPercent + '%">鈽?/span>';
+        starsHtml += '<span class="star" style="--ratio: ' + fillPercent + '%">★</span>';
       }
       return '<span class="star-rating">' + starsHtml + ' <span class="rating-number">' + numRating.toFixed(1) + '/5.0</span></span>';
     }
-    
+
     function openLibraryPopup(card) {
       const popup = document.getElementById('library-popup');
       const cover = card.getAttribute('data-cover');
@@ -244,10 +243,10 @@
       const tags = card.getAttribute('data-tags');
       const summary = card.getAttribute('data-summary');
       const reviewId = card.getAttribute('data-review-id');
-      
+
       document.getElementById('popup-cover').src = cover;
       document.getElementById('popup-title').textContent = title;
-      
+
       // Creators (JSON key-value pairs)
       const creatorsEl = document.getElementById('popup-creators');
       if (creators) {
@@ -255,7 +254,6 @@
           const creatorsObj = JSON.parse(creators);
           let creatorsHtml = '';
           for (const [role, name] of Object.entries(creatorsObj)) {
-            // Remove number prefix like "1_" from role and capitalize first letter
             const cleanRole = role.replace(/^[0-9]+_/, '');
             const displayRole = cleanRole.charAt(0).toUpperCase() + cleanRole.slice(1);
             creatorsHtml += '<p class="popup-creator"><span class="creator-role">' + displayRole + ':</span> ' + name + '</p>';
@@ -267,10 +265,10 @@
       } else {
         creatorsEl.innerHTML = '';
       }
-      
+
       // Rating with stars
       document.getElementById('popup-rating').innerHTML = renderStarRating(rating);
-      
+
       // Tags
       const tagsEl = document.getElementById('popup-tags');
       if (tags) {
@@ -279,11 +277,10 @@
       } else {
         tagsEl.innerHTML = '';
       }
-      
+
       // Summary
       const summaryEl = document.getElementById('popup-summary');
       if (summary) {
-        // Convert \n to <br> for line breaks
         const formattedSummary = summary.replace(/\\n/g, '<br>').replace(/\n/g, '<br>');
         summaryEl.innerHTML = '<p>' + formattedSummary + '</p>';
         summaryEl.style.display = 'block';
@@ -291,26 +288,25 @@
         summaryEl.innerHTML = '';
         summaryEl.style.display = 'none';
       }
-      
+
       // Load review content
       const reviewEl = document.getElementById('popup-review');
       const reviewContent = document.getElementById('review-' + reviewId);
       if (reviewContent) {
         reviewEl.innerHTML = reviewContent.innerHTML;
-        
-        // Convert music-placeholder to APlayer directly (not meting-js to avoid issues)
+
         reviewEl.querySelectorAll('music-placeholder').forEach(function(placeholder) {
           const container = document.createElement('div');
           container.className = 'aplayer-container';
           placeholder.replaceWith(container);
-          
+
           const url = placeholder.getAttribute('data-url');
           const name = placeholder.getAttribute('data-name') || 'Audio';
           const artist = placeholder.getAttribute('data-artist') || 'Unknown';
           const cover = placeholder.getAttribute('data-cover') || '';
           const theme = placeholder.getAttribute('data-theme') || '#448aff';
           const loop = placeholder.getAttribute('data-loop') || 'none';
-          
+
           const ap = new APlayer({
             container: container,
             audio: [{
@@ -324,25 +320,23 @@
             volume: 0.7,
             mutex: true
           });
-          
-          // Store player instance for cleanup
+
           if (!window.libraryAPlayers) window.libraryAPlayers = [];
           window.libraryAPlayers.push(ap);
         });
       } else {
         reviewEl.innerHTML = '<p>No review yet.</p>';
       }
-      
+
       popup.style.display = 'flex';
       document.body.style.overflow = 'hidden';
     }
-    
+
     function closeLibraryPopup() {
       const popup = document.getElementById('library-popup');
       popup.style.display = 'none';
       document.body.style.overflow = '';
-      
-      // Destroy all APlayer instances
+
       if (window.libraryAPlayers) {
         window.libraryAPlayers.forEach(function(ap) {
           ap.destroy();
@@ -350,14 +344,14 @@
         window.libraryAPlayers = [];
       }
     }
-    
+
     // Close on overlay click
     document.addEventListener('click', function(e) {
       if (e.target.classList.contains('library-popup-overlay')) {
         closeLibraryPopup();
       }
     });
-    
+
     // Close on ESC key
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') {
