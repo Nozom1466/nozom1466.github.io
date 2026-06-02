@@ -245,7 +245,10 @@
         console.warn('Audio error:', error);
       });
     } else {
-      document.getElementById('{{ $id }}-audio').innerHTML = '<p style="color: #999;">您的浏览器不支持音频播放</p>';
+      var noAudioMsg = document.createElement('p');
+      noAudioMsg.style.color = '#999';
+      noAudioMsg.textContent = '您的浏览器不支持音频播放';
+      document.getElementById('{{ $id }}-audio').appendChild(noAudioMsg);
     }
     {{ end }}
   })();
