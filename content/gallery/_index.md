@@ -13,4 +13,7 @@ params:
     - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/IMG_3523.jpg"
       title: "从樱花树走向河岸旁"
       tags: ["tongji", "warm", "sunshine"]
+    - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/IMG_8224.JPG"
+      title: "描金的大地"
+      tags: ["gold"]
 ---
