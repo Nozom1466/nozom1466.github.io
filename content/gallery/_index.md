@@ -34,4 +34,10 @@ params:
     - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/gallery-img-6745-keihan-railway.JPG"
       title: "京阪电车"
       tags: ["blue", "japan"]
+    - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/gallery-img-6616-station.JPG"
+      title: "车站"
+      tags: ["japan", "yellow"]
+    - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/gallery-tongji-star-trails.jpg"
+      title: "星轨-同济艺传楼"
+      tags: ["blue", "star"]
 ---
