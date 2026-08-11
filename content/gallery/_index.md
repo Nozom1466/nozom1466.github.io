@@ -40,4 +40,16 @@ params:
     - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/gallery-tongji-star-trails.jpg"
       title: "星轨-同济艺传楼"
       tags: ["blue", "star"]
+    - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/gallery-img-3209-jiading-campus-store.jpg"
+      title: "嘉定校园超市"
+      tags: ["tongji", "yellow"]
+    - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/gallery-img-3399-jiading-cherry-blossoms.jpg"
+      title: "嘉定樱花"
+      tags: ["pink", "tongji"]
+    - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/gallery-img-3502-jiading-library-top-floor.JPG"
+      title: "嘉定图书馆顶层"
+      tags: ["orange", "tongji"]
+    - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/gallery-img-8921-question.jpg"
+      title: "？"
+      tags: ["tongji", "white"]
 ---
