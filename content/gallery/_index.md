@@ -52,4 +52,13 @@ params:
     - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/gallery-img-8921-question.jpg"
       title: "？"
       tags: ["tongji", "white"]
+    - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/gallery-img-2302-power-pole.jpg"
+      title: "我是新手，我爱电线杆！"
+      tags: ["blue", "pittsburgh"]
+    - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/gallery-img-2143-moon.jpg"
+      title: "月亮"
+      tags: ["blue", "moon"]
+    - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/gallery-img-2129-moon-moon.jpg"
+      title: "月亮月亮"
+      tags: ["blue", "moon"]
 ---
