@@ -61,4 +61,10 @@ params:
     - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/gallery-img-2129-moon-moon.jpg"
       title: "月亮月亮"
       tags: ["blue", "moon"]
+    - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/gallery-img-0113-distortion.jpg"
+      title: "失真"
+      tags: ["blue", "japan"]
+    - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/gallery-img-9318-wuhou-shrine.jpg"
+      title: "成都武侯祠"
+      tags: ["arch", "red"]
 ---
