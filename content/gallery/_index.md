@@ -67,4 +67,7 @@ params:
     - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/gallery-img-9318-wuhou-shrine.jpg"
       title: "成都武侯祠"
       tags: ["arch", "red"]
+    - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/gallery-yellowstone-milky-way-v3.jpg"
+      title: "黄石公园银河"
+      tags: ["dark", "star"]
 ---
