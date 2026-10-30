@@ -15,13 +15,13 @@ params:
       subject: landscape
       locations: ["上海"]
       color: "blue"
-      year: ""
+      year: "2022"
     - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/IMG_3523.jpg"
       title: "从樱花树走向河岸旁"
       subject: documentary
       locations: ["上海"]
       color: "yellow"
-      year: ""
+      year: "2024"
     - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/IMG_8224.JPG"
       title: "描金的大地"
       subject: landscape
@@ -93,7 +93,7 @@ params:
       subject: architecture
       locations: ["上海"]
       color: "orange"
-      year: ""
+      year: "2024"
     - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/gallery-img-8921-question.jpg"
       title: "？"
       subject: experimental
@@ -135,5 +135,5 @@ params:
       subject: landscape
       locations: []
       color: "blue"
-      year: ""
+      year: "2026"
 ---
