@@ -1,0 +1,20 @@
+{
+  "subjects": [
+    {"value": "architecture", "label": "建筑 · Architecture"},
+    {"value": "landscape", "label": "风景 · Landscape"},
+    {"value": "animal", "label": "动物 · Animal"},
+    {"value": "documentary", "label": "人文纪实 · Documentary"},
+    {"value": "portrait", "label": "人像 · Portrait"},
+    {"value": "still-life", "label": "静物 · Still Life"},
+    {"value": "experimental", "label": "实验 · Experimental"}
+  ],
+  "colors": [
+    {"value": "red", "label": "红"},
+    {"value": "orange", "label": "橙"},
+    {"value": "yellow", "label": "黄"},
+    {"value": "green", "label": "绿"},
+    {"value": "blue", "label": "蓝"},
+    {"value": "black", "label": "黑"},
+    {"value": "white", "label": "白"}
+  ]
+}

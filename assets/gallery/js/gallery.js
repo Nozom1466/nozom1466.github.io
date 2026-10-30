@@ -1,5 +1,6 @@
 import justifiedLayout from "./justified-layout.js";
 import * as params from "@params";
+import { setupFilters } from "./filters.js";
 
 const gallery = document.getElementById("gallery");
 
@@ -7,17 +8,13 @@ if (gallery) {
   let containerWidth = 0;
   const allItems = gallery.querySelectorAll(".gallery-item");
 
-  // Apply tag filtering BEFORE first layout
-  const urlParams = new URLSearchParams(window.location.search);
-  const currentTag = urlParams.get('tag');
-  if (currentTag) {
-    allItems.forEach(item => {
-      const itemTags = (item.getAttribute('data-tags') || '').split(',');
-      if (!itemTags.includes(currentTag)) {
-        item.classList.add('tag-hidden');
-        item.style.display = 'none';
-      }
-    });
+  let layoutVersion = 0;
+  const dimensionCache = new WeakMap();
+  setupFilters(allItems, () => updateGallery(true));
+
+  function finishLoading() {
+    const loading = document.getElementById("gallery-loading");
+    if (loading) loading.style.display = "none";
   }
 
   function getVisibleItems() {
@@ -26,7 +23,8 @@ if (gallery) {
 
   // Load image and get natural dimensions
   function loadImageDimensions(item) {
-    return new Promise((resolve) => {
+    if (dimensionCache.has(item)) return dimensionCache.get(item);
+    const promise = new Promise((resolve) => {
       // Get original image URL from parent <a> element's data-pswp-src
       const originalSrc = item.getAttribute('data-pswp-src') || item.href;
       
@@ -37,23 +35,32 @@ if (gallery) {
       }
 
       const tempImg = new Image();
+      const timeout = setTimeout(() => {
+        resolve({ width: 1200, height: 800 });
+        dimensionCache.delete(item);
+      }, 15000);
       tempImg.onload = function() {
+        clearTimeout(timeout);
         resolve({
           width: this.naturalWidth,
           height: this.naturalHeight
         });
       };
       tempImg.onerror = function() {
+        clearTimeout(timeout);
         // Fallback on error
         resolve({ width: 1200, height: 800 });
       };
       tempImg.src = originalSrc;
     });
+    dimensionCache.set(item, promise);
+    return promise;
   }
 
   async function updateGallery(force) {
     if (!force && containerWidth === gallery.getBoundingClientRect().width) return;
     containerWidth = gallery.getBoundingClientRect().width;
+    const version = ++layoutVersion;
 
     const visibleItems = getVisibleItems();
     
@@ -68,6 +75,8 @@ if (gallery) {
 
     if (visibleItems.length === 0) {
       gallery.style.height = "100px";
+      gallery.style.visibility = "";
+      finishLoading();
       return;
     }
 
@@ -96,6 +105,7 @@ if (gallery) {
     });
 
     const dimensions = await Promise.all(dimensionsPromises);
+    if (version !== layoutVersion) return;
     const aspectRatios = dimensions.map(d => d.width / d.height);
 
     visibleItems.forEach((item) => {
@@ -124,6 +134,7 @@ if (gallery) {
     gallery.style.position = "relative";
     gallery.style.height = layout.containerHeight + "px";
     gallery.style.visibility = "";
+    finishLoading();
   }
 
   // Expose updateGallery globally for tag filtering

@@ -9,6 +9,7 @@
     {{/* First, handle remote images from front matter params.remote_images */}}
     {{ with .Params.remote_images }}
       {{ range . }}
+        {{ partial "gallery-theme/validate-metadata.html" . }}
         {{ $tags := .tags | default slice }}
         {{ $originalUrl := .url }}
         {{/* Extract filename from URL if name is not provided */}}
@@ -40,6 +41,10 @@
           "height" (.height | default 800)
           "Params" .params
           "Tags" $tags
+          "Subject" .subject
+          "Locations" .locations
+          "Color" (.color | default "")
+          "Year" (.year | default "")
         ) }}
       {{ end }}
     {{ end }}
@@ -91,7 +96,7 @@
         {{ range $titleLines }}
           {{ $formattedTitle = printf "%s<p>%s</p>" $formattedTitle . }}
         {{ end }}
-        <a class="gallery-item" href="{{ $fullUrl }}" data-pswp-src="{{ $fullUrl }}" data-pswp-width="{{ $width }}" data-pswp-height="{{ $height }}" data-pswp-target="{{ .Name | urlize }}" data-tags="{{ $tagsStr }}" title="{{ .Title }}" data-caption="{{ $formattedTitle }}" itemscope itemtype="https://schema.org/ImageObject" style="aspect-ratio: {{ $aspectRatio }}">
+        <a class="gallery-item" href="{{ $fullUrl }}" data-pswp-src="{{ $fullUrl }}" data-pswp-width="{{ $width }}" data-pswp-height="{{ $height }}" data-pswp-target="{{ .Name | urlize }}" data-tags="{{ $tagsStr }}" data-subject="{{ .Subject }}" data-locations="{{ .Locations | jsonify }}" data-color="{{ .Color }}" data-year="{{ .Year }}" title="{{ .Title }}" data-caption="{{ $formattedTitle }}" itemscope itemtype="https://schema.org/ImageObject" style="aspect-ratio: {{ $aspectRatio }}">
           <figure style="background-color: #ccc; aspect-ratio: {{ $aspectRatio }}">
             <img class="lazyload" width="{{ $width }}" height="{{ $height }}" data-src="{{ $thumbnailUrl }}" alt="{{ .Title }}" />
           </figure>

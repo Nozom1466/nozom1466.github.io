@@ -1,0 +1,11 @@
+{{ $subjects := slice }}
+{{ range site.Data.gallery_taxonomy.subjects }}{{ $subjects = $subjects | append .value }}{{ end }}
+{{ $colors := slice }}
+{{ range site.Data.gallery_taxonomy.colors }}{{ $colors = $colors | append .value }}{{ end }}
+{{ if not (in $subjects .subject) }}{{ errorf "Gallery %s: invalid subject %v" .url .subject }}{{ end }}
+{{ with .color }}{{ if not (in $colors .) }}{{ errorf "Gallery: invalid color %s" . }}{{ end }}{{ end }}
+{{ if not (reflect.IsSlice .locations) }}{{ errorf "Gallery %s: locations must be a list" .url }}{{ end }}
+{{ range .locations }}{{ if not (strings.TrimSpace .) }}{{ errorf "Gallery: empty city name" }}{{ end }}{{ end }}
+{{ with .year }}
+  {{ if not (findRE "^[12][0-9]{3}$" (string .)) }}{{ errorf "Gallery: invalid year %v" . }}{{ end }}
+{{ end }}

@@ -1,74 +1,44 @@
 {{ define "main" }}
-  {{/* Collect all unique tags and count images per tag */}}
-  {{ $allTags := slice }}
-  {{ $tagCounts := dict }}
-  {{ $totalCount := 0 }}
-  {{ with .Params.remote_images }}
-    {{ $totalCount = len . }}
-    {{ range . }}
-      {{ with .tags }}
-        {{ range . }}
-          {{ if not (in $allTags .) }}
-            {{ $allTags = $allTags | append . }}
-            {{ $tagCounts = merge $tagCounts (dict . 1) }}
-          {{ else }}
-            {{ $currentCount := index $tagCounts . }}
-            {{ $tagCounts = merge $tagCounts (dict . (add $currentCount 1)) }}
-          {{ end }}
-        {{ end }}
-      {{ end }}
-    {{ end }}
+  {{ $taxonomy := site.Data.gallery_taxonomy }}
+  {{ $cities := slice }}
+  {{ $years := slice }}
+  {{ range .Params.remote_images }}
+    {{ range .locations }}{{ $cities = $cities | append . }}{{ end }}
+    {{ with .year }}{{ $years = $years | append (string .) }}{{ end }}
   {{ end }}
-  {{ $allTags = sort $allTags }}
-  
-  {{/* Tag navigation bar */}}
-  <nav class="tag-filter" style="padding: 1rem 2rem; text-align: center; background: var(--surface-1);">
-    <a href="{{ .Permalink }}" class="tag-link" data-tag="all" style="display: inline-block; margin: 0.25rem; padding: 0.3rem 0.8rem; border: 1px solid var(--text-1); border-radius: 8px; background: transparent; text-decoration: none; color: var(--text-1);">All({{ $totalCount }})</a>
-    {{ range $allTags }}
-      {{ $count := index $tagCounts . }}
-      <a href="{{ $.Permalink }}?tag={{ . }}" class="tag-link" data-tag="{{ . }}" style="display: inline-block; margin: 0.25rem; padding: 0.3rem 0.8rem; border: 1px solid var(--text-1); border-radius: 8px; background: transparent; text-decoration: none; color: var(--text-1);">{{ . }}({{ $count }})</a>
-    {{ end }}
-  </nav>
-  
-  {{/* Waterfall gallery */}}
+  <form class="gallery-filters" id="gallery-filters" aria-label="筛选照片">
+    <label>主题
+      <select name="subject">
+        <option value="">全部主题</option>
+        {{ range $taxonomy.subjects }}<option value="{{ .value }}">{{ .label }}</option>{{ end }}
+      </select>
+    </label>
+    <label>地点
+      <select name="location">
+        <option value="">全部地点</option>
+        {{ range sort (uniq $cities) }}<option value="{{ . }}">{{ . }}</option>{{ end }}
+        <option value="unknown">待补地点</option>
+      </select>
+    </label>
+    <label>颜色
+      <select name="color">
+        <option value="">全部颜色</option>
+        {{ range $taxonomy.colors }}<option value="{{ .value }}">{{ .label }}</option>{{ end }}
+        <option value="unknown">未标颜色</option>
+      </select>
+    </label>
+    <label>年份
+      <select name="year">
+        <option value="">全部年份</option>
+        {{ range sort (uniq $years) "value" "desc" }}<option value="{{ . }}">{{ . }}</option>{{ end }}
+        <option value="unknown">待补年份</option>
+      </select>
+    </label>
+    <div class="gallery-filter-summary">
+      <output id="gallery-count" aria-live="polite"></output>
+      <button type="reset">重置</button>
+    </div>
+  </form>
+  <p id="gallery-empty" hidden>没有符合这些条件的照片，请调整筛选条件。</p>
   {{ partial "gallery-theme/gallery.html" . }}
-  
-  {{/* Tag filtering JavaScript based on URL parameter */}}
-  <script>
-  (function() {
-    document.addEventListener('DOMContentLoaded', function() {
-      const urlParams = new URLSearchParams(window.location.search);
-      const currentTag = urlParams.get('tag');
-      const galleryItems = document.querySelectorAll('.gallery-item');
-      const tagLinks = document.querySelectorAll('.tag-link');
-      
-      // Highlight active tag link using CSS class for proper theme switching
-      tagLinks.forEach(function(link) {
-        const linkTag = link.getAttribute('data-tag');
-        if ((currentTag && linkTag === currentTag) || (!currentTag && linkTag === 'all')) {
-          link.classList.add('active');
-        }
-      });
-      
-      // Filter gallery items by adding/removing tag-hidden class
-      let visibleCount = 0;
-      galleryItems.forEach(function(item) {
-        const itemTags = (item.getAttribute('data-tags') || '').split(',');
-        if (!currentTag || itemTags.includes(currentTag)) {
-          item.classList.remove('tag-hidden');
-          visibleCount++;
-        } else {
-          item.classList.add('tag-hidden');
-        }
-      });
-      
-      // Trigger layout recalculation after filtering
-      setTimeout(function() {
-        if (typeof window.updateGalleryLayout === 'function') {
-          window.updateGalleryLayout();
-        }
-      }, 50);
-    });
-  })();
-  </script>
 {{ end }}

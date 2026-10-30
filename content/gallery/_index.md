@@ -6,68 +6,134 @@ params:
   remote_images:
     - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/DSC_5024.jpg"
       title: "冬天温暖的背影"
-      tags: ["japan", "warm", "yellow"]
+      subject: documentary
+      locations: []
+      color: "yellow"
+      year: "2025"
     - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/moon.jpg"
       title: "大一暑假的月牙\n周五傍晚蓝调时刻\n学子超市前"
-      tags: ["tongji", "cold", "blue"]
+      subject: landscape
+      locations: ["上海"]
+      color: "blue"
+      year: ""
     - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/IMG_3523.jpg"
       title: "从樱花树走向河岸旁"
-      tags: ["tongji", "warm", "sunshine"]
+      subject: documentary
+      locations: ["上海"]
+      color: "yellow"
+      year: ""
     - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/IMG_8224.JPG"
       title: "描金的大地"
-      tags: ["gold"]
+      subject: landscape
+      locations: []
+      color: "yellow"
+      year: "2025"
     - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/gallery-img-1668-pittsburgh-snow.jpg"
       title: "匹兹堡雪天"
-      tags: ["pittsburgh", "white"]
+      subject: documentary
+      locations: ["匹兹堡"]
+      color: "white"
+      year: "2026"
     - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/gallery-img-2186-claim-the-sky.jpg"
       title: "向天空宣誓主权！"
-      tags: ["blue", "sky"]
+      subject: landscape
+      locations: []
+      color: "blue"
+      year: "2026"
     - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/gallery-img-1699-snow-again.jpg"
       title: "又是大雪"
-      tags: ["snow", "white"]
+      subject: documentary
+      locations: []
+      color: "white"
+      year: "2026"
     - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/gallery-img-9026-slim-west-lake-black-swans.jpg"
       title: "瘦西湖黑天鹅"
-      tags: ["black"]
+      subject: animal
+      locations: ["扬州"]
+      color: "black"
+      year: "2025"
     - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/gallery-img-7181-lines.JPG"
       title: "线条"
-      tags: ["black"]
+      subject: architecture
+      locations: []
+      color: "black"
+      year: "2025"
     - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/gallery-img-6745-keihan-railway.JPG"
       title: "京阪电车"
-      tags: ["blue", "japan"]
+      subject: architecture
+      locations: []
+      color: "blue"
+      year: "2025"
     - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/gallery-img-6616-station.JPG"
       title: "车站"
-      tags: ["japan", "yellow"]
+      subject: documentary
+      locations: []
+      color: "yellow"
+      year: "2025"
     - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/gallery-tongji-star-trails.jpg"
       title: "星轨-同济艺传楼"
-      tags: ["blue", "star"]
+      subject: landscape
+      locations: ["上海"]
+      color: "blue"
+      year: "2024"
     - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/gallery-img-3209-jiading-campus-store.jpg"
       title: "嘉定校园超市"
-      tags: ["tongji", "yellow"]
+      subject: still-life
+      locations: ["上海"]
+      color: "yellow"
+      year: "2024"
     - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/gallery-img-3399-jiading-cherry-blossoms.jpg"
       title: "嘉定樱花"
-      tags: ["pink", "tongji"]
+      subject: landscape
+      locations: ["上海"]
+      color: ""
+      year: "2024"
     - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/gallery-img-3502-jiading-library-top-floor.JPG"
       title: "嘉定图书馆顶层"
-      tags: ["orange", "tongji"]
+      subject: architecture
+      locations: ["上海"]
+      color: "orange"
+      year: ""
     - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/gallery-img-8921-question.jpg"
       title: "？"
-      tags: ["tongji", "white"]
+      subject: experimental
+      locations: ["上海"]
+      color: "white"
+      year: "2023"
     - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/gallery-img-2302-power-pole.jpg"
       title: "我是新手，我爱电线杆！"
-      tags: ["blue", "pittsburgh"]
+      subject: architecture
+      locations: ["匹兹堡"]
+      color: "blue"
+      year: "2026"
     - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/gallery-img-2143-moon.jpg"
       title: "月亮"
-      tags: ["blue", "moon"]
+      subject: landscape
+      locations: []
+      color: "blue"
+      year: "2026"
     - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/gallery-img-2129-moon-moon.jpg"
       title: "月亮月亮"
-      tags: ["blue", "moon"]
+      subject: landscape
+      locations: []
+      color: "blue"
+      year: "2026"
     - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/gallery-img-0113-distortion.jpg"
       title: "失真"
-      tags: ["blue", "japan"]
+      subject: experimental
+      locations: []
+      color: "blue"
+      year: "2025"
     - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/gallery-img-9318-wuhou-shrine.jpg"
       title: "成都武侯祠"
-      tags: ["arch", "red"]
+      subject: architecture
+      locations: ["成都"]
+      color: "red"
+      year: "2025"
     - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/gallery-yellowstone-milky-way-v3.jpg"
       title: "黄石公园银河"
-      tags: ["dark", "star"]
+      subject: landscape
+      locations: []
+      color: "blue"
+      year: ""
 ---

@@ -55,7 +55,7 @@ if (gallery) {
   });
 
   lightbox.on("close", () => {
-    history.replaceState("", document.title, window.location.pathname);
+    history.replaceState("", document.title, window.location.pathname + window.location.search);
   });
 
   new PhotoSwipeDynamicCaption(lightbox, {
