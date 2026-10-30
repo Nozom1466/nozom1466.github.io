@@ -9,27 +9,27 @@
   <form class="gallery-filters" id="gallery-filters" aria-label="筛选照片">
     <label>
       <select name="subject" aria-label="主题">
-        <option value="">全部主题</option>
+        <option value="">主题</option>
         {{ range $taxonomy.subjects }}<option value="{{ .value }}">{{ .label }}</option>{{ end }}
       </select>
     </label>
     <label>
       <select name="location" aria-label="地点">
-        <option value="">全部地点</option>
+        <option value="">地点</option>
         {{ range sort (uniq $cities) }}<option value="{{ . }}">{{ . }}</option>{{ end }}
         <option value="unknown">待补地点</option>
       </select>
     </label>
     <label>
       <select name="color" aria-label="颜色">
-        <option value="">全部颜色</option>
+        <option value="">颜色</option>
         {{ range $taxonomy.colors }}<option value="{{ .value }}">{{ .label }}</option>{{ end }}
         <option value="unknown">未标颜色</option>
       </select>
     </label>
     <label>
       <select name="year" aria-label="年份">
-        <option value="">全部年份</option>
+        <option value="">年份</option>
         {{ range sort (uniq $years) "value" "desc" }}<option value="{{ . }}">{{ . }}</option>{{ end }}
         <option value="unknown">待补年份</option>
       </select>
