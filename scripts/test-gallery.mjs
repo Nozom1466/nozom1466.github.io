@@ -46,4 +46,6 @@ for (const key of ["subject", "location", "color", "year"]) assert(new RegExp('n
 assert.equal((html.match(/data-subject=/g) || []).length, 22);
 assert.equal((html.match(/data-locations=/g) || []).length, 22);
 assert(!html.includes('class="tag-link"'));
+assert(!/<label>\s*(主题|地点|颜色|年份)/.test(html));
+for (const label of ["主题", "地点", "颜色", "年份"]) assert(html.includes("aria-label=" + label) || html.includes('aria-label="' + label + '"'));
 console.log("Gallery tests passed: filtering, multiple cities, missing fields, URL restore, reset, empty state, 22 rendered photos.");
