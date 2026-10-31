@@ -54,7 +54,7 @@ function inline(part, media=null) {
     const e = part.embed;
     if (e.image) {
       const published=media?.[e.image];
-      const safeAsset=url=>typeof url==='string'&&/^\/(?!\/)[\w/.-]+$/.test(url)&&!url.includes('..');
+      const safeAsset=url=>typeof url==='string'&&!url.includes('..')&&(/^\/(?!\/)[\w/.-]+$/.test(url)||/^https:\/\/snapnote-test-1316371247\.cos\.ap-shanghai\.myqcloud\.com\/SnapNote_Sync\/resources\/[\w.-]+\.(jpe?g|png|webp|gif)$/i.test(url));
       const src=media===null?mediaPath(e.image):safeAsset(published?.original)?published.original:null;
       const thumbnail=media===null?src+'?thumbnail=1':safeAsset(published?.thumbnail)?published.thumbnail:null;
       return src&&thumbnail ? `<button class="photo" data-image="${escapeHTML(src)}" aria-label="放大图片"><img src="${escapeHTML(thumbnail)}" alt="笔记图片" loading="lazy" decoding="async"><span>查看大图 ↗</span></button>` : '<span class="unsupported">图片路径不受支持</span>';

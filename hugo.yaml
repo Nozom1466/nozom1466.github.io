@@ -230,6 +230,7 @@ minify:
 # Configure Settings for Hugo NexT theme
 #-----------------------------------------
 params:
+  momentsFeedMode: cos
   # 需要显示文章的部分，即content目录下的文件夹名称
   # Sections for show in home & archive page 
   # and it's folder name which under content

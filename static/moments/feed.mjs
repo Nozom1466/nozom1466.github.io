@@ -1,5 +1,7 @@
-// Static publication and the local live COS preview share the same UI.
+import {createCosFeed} from './cos-feed.mjs';
+// COS direct reading, static snapshots and the local preview share the UI.
 export function createFeed({mode='static',base='/moments-feed/',fetcher=fetch}={}){
+  if(mode==='cos')return createCosFeed({fetcher});
   let manifest=null;
   async function read(url){
     const response=await fetcher(url,{cache:'no-store'});

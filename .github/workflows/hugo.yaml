@@ -4,9 +4,6 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
-  schedule:
-    # Every 15 minutes, avoiding the top of the hour (UTC).
-    - cron: '7,22,37,52 * * * *'
 
 permissions:
   contents: read
@@ -26,8 +23,6 @@ jobs:
     permissions:
       contents: read
       pages: read
-    outputs:
-      deploy: ${{ steps.sync.outputs.deploy }}
     env:
       HUGO_VERSION: 0.152.0
     steps:
@@ -41,60 +36,26 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '24'
-          cache: npm
-          cache-dependency-path: scripts/moments-sync/package-lock.json
-      - name: Install sync dependencies
-        run: npm ci --prefix scripts/moments-sync
-      - name: Check renderer and static sync
+      - name: Check Moments renderer and COS reader
         run: |
           node scripts/moments-render.test.mjs
-          npm test --prefix scripts/moments-sync
+          node --test scripts/moments-cos.test.mjs
       - name: Read Pages configuration
         id: pages
         uses: actions/configure-pages@v5
-      - name: Restore public sync cache
-        id: cache
-        uses: actions/cache/restore@v4
-        with:
-          path: .moments-cache
-          key: moments-public-v1-${{ runner.os }}-${{ github.run_id }}-${{ github.run_attempt }}
-          restore-keys: |
-            moments-public-v1-${{ runner.os }}-
-      - name: Read public Moments from COS
-        id: sync
-        env:
-          COS_SECRET_ID: ${{ secrets.COS_SECRET_ID }}
-          COS_SECRET_KEY: ${{ secrets.COS_SECRET_KEY }}
-          MOMENTS_SITE_URL: ${{ steps.pages.outputs.base_url }}
-        run: node scripts/moments-sync/cli.mjs
-      - name: Save public sync cache
-        if: steps.sync.outputs.cache_changed == 'true'
-        uses: actions/cache/save@v4
-        with:
-          path: .moments-cache
-          key: ${{ steps.cache.outputs.cache-primary-key }}
       - name: Install Hugo CLI
-        if: steps.sync.outputs.deploy == 'true'
         run: |
           wget -O "${{ runner.temp }}/hugo.deb" "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb"
           sudo dpkg -i "${{ runner.temp }}/hugo.deb"
       - name: Build with Hugo
-        if: steps.sync.outputs.deploy == 'true'
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
           TZ: America/Los_Angeles
         run: hugo --gc --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
-      - name: Add public Moments data
-        if: steps.sync.outputs.deploy == 'true'
-        env:
-          EXPORT_DIR: ${{ steps.sync.outputs.export_dir }}
-        run: |
-          mkdir -p public/moments-feed
-          cp -a "$EXPORT_DIR/." public/moments-feed/
-          touch public/.nojekyll
+      - name: Disable Jekyll processing
+        run: touch public/.nojekyll
       - name: Upload Pages artifact
-        if: steps.sync.outputs.deploy == 'true'
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
@@ -102,7 +63,6 @@ jobs:
 
   deploy:
     needs: build
-    if: needs.build.outputs.deploy == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
