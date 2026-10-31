@@ -252,13 +252,18 @@
       if (creators) {
         try {
           const creatorsObj = JSON.parse(creators);
-          let creatorsHtml = '';
+          creatorsEl.replaceChildren();
           for (const [role, name] of Object.entries(creatorsObj)) {
             const cleanRole = role.replace(/^[0-9]+_/, '');
             const displayRole = cleanRole.charAt(0).toUpperCase() + cleanRole.slice(1);
-            creatorsHtml += '<p class="popup-creator"><span class="creator-role">' + displayRole + ':</span> ' + name + '</p>';
+            const row = document.createElement('p');
+            row.className = 'popup-creator';
+            const label = document.createElement('span');
+            label.className = 'creator-role';
+            label.textContent = displayRole + ':';
+            row.append(label, document.createTextNode(' ' + name));
+            creatorsEl.append(row);
           }
-          creatorsEl.innerHTML = creatorsHtml;
         } catch(e) {
           creatorsEl.innerHTML = '';
         }
@@ -272,8 +277,13 @@
       // Tags
       const tagsEl = document.getElementById('popup-tags');
       if (tags) {
-        const tagList = tags.split(',').map(t => '<span class="popup-tag">' + t.trim() + '</span>').join('');
-        tagsEl.innerHTML = tagList;
+        tagsEl.replaceChildren();
+        tags.split(',').forEach(t => {
+          const label = document.createElement('span');
+          label.className = 'popup-tag';
+          label.textContent = t.trim();
+          tagsEl.append(label);
+        });
       } else {
         tagsEl.innerHTML = '';
       }

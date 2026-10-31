@@ -2,7 +2,7 @@
 
 ## 工作方式
 
-手机闪念完成 S3 同步后，网页刷新直接检查 COS 的 `SnapNote_Sync/index_shards/`。没有 `blog` 标签的笔记默认进入此刻，不要求添加 `threads`；归档、锁定、删除的记录仍不展示。不启动 GitHub Actions，不需要云函数，不在网页中放置密钥。正式 blog 文章另由每 30 分钟定时任务生成，见 `snapnote-blog/README.md`。
+手机闪念完成 S3 同步后，网页刷新直接检查 COS 的 `SnapNote_Sync/index_shards/`。没有 `blog` 或 `review` 标签的笔记默认进入此刻，不要求添加 `threads`；归档、锁定、删除的记录仍不展示。不启动 GitHub Actions，不需要云函数，不在网页中放置密钥。正式 blog 文章和 review 书馆评价另由每 30 分钟定时任务生成，见 `snapnote-blog/README.md`。
 
 分片索引的行格式为 `[uuid, deleted, lastModifiedMs, vectorClock, revisionId]`。正文通过索引指定的不可变版本读取，不通过列举全部正文猜测最新版本。列表按索引的最近修改时间排列，卡片日期显示正文的创建时间。同一 UUID 冲突时优先最新修改时间；同时间优先删除标记，再以版本 ID 确定顺序。这不是闪念多设备冲突合并算法。
 

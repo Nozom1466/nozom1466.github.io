@@ -3,6 +3,8 @@ import {writeFile,readFile} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import {COS_ORIGIN,parseShard,publicNote} from '../../static/moments/cos-feed.mjs';
 import {convertArticle} from './convert.mjs';
+import {convertReview} from './review.mjs';
+import {channelOf} from '../../static/moments/channels.mjs';
 const id=process.argv[2];
 if(!/^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i.test(id||''))throw Error('需要指定笔记 UUID');
 async function read(path,max=4*1024*1024){
@@ -24,9 +26,10 @@ for(let page=0;page<10;page++){
 if(!entry||entry.deleted)throw Error('没有找到有效笔记');
 const body=await read('/SnapNote_Sync/notes/'+id+'__'+entry.revision+'.json',2*1024*1024);
 if(!publicNote(body,entry))throw Error('笔记不可展示');
-const article=convertArticle(JSON.parse(body));
+const raw=JSON.parse(body);
+const article=channelOf(raw)==='review'?convertReview(raw):convertArticle(raw);
 for(const src of article.images){const r=await fetch(src+'?check='+Date.now(),{headers:{Range:'bytes=0-63'},signal:AbortSignal.timeout(20000)});await r.body?.cancel();if(!r.ok)throw Error('配图未同步完整：'+r.status);}
-const target=new URL('../../content/ideas/'+article.filename,import.meta.url);
+const target=new URL('../../content/'+(article.section||'ideas')+'/'+article.filename,import.meta.url);
 try{const old=await readFile(target,'utf8');if(!old.includes('"snapnote_uuid": "'+id+'"'))throw Error('目标位置已有非同步文章，停止覆盖');}catch(e){if(e.code!=='ENOENT')throw e;}
 await writeFile(target,article.source);
 console.log(JSON.stringify({title:article.title,images:article.images.length,draft:true,path:fileURLToPath(target)}));

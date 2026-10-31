@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {createCosFeed,parseShard,publicNote,COS_ORIGIN} from '../static/moments/cos-feed.mjs';
 import {renderContent} from '../static/moments/render.mjs';
-import {BLOG_TAG,THREADS_TAG} from '../static/moments/channels.mjs';
+import {BLOG_TAG,THREADS_TAG,REVIEW_TAG,channelOf} from '../static/moments/channels.mjs';
 
 const id=i=>`00000000-0000-4000-8000-${String(i).padStart(12,'0')}`;
 const rev='a'.repeat(32),rev2='b'.repeat(32);
@@ -15,9 +15,10 @@ test('notes default to threads; blog wins if both channel labels are set',()=>{
   for(const tags of [[],undefined,['unrelated-label'],[THREADS_TAG]]){
     raw.tagUuids=tags;assert.ok(publicNote(JSON.stringify(raw),entry,'threads'));
   }
-  for(const tags of [[BLOG_TAG],[BLOG_TAG,THREADS_TAG]]){
+  for(const tags of [[BLOG_TAG],[BLOG_TAG,THREADS_TAG],[REVIEW_TAG],[REVIEW_TAG,THREADS_TAG],[REVIEW_TAG,BLOG_TAG]]){
     raw.tagUuids=tags;assert.equal(publicNote(JSON.stringify(raw),entry,'threads'),null);
   }
+  assert.equal(channelOf({tagUuids:[REVIEW_TAG,BLOG_TAG,THREADS_TAG]}),'review');
   raw.tagUuids=[];
   for(const field of ['isLocked','isArchived','hasMarkDeleted']){
     raw.note[field]=true;assert.equal(publicNote(JSON.stringify(raw),entry,'threads'),null);raw.note[field]=false;

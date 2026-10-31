@@ -4,7 +4,7 @@ import {mkdtemp,writeFile,readFile,readdir,rm} from 'node:fs/promises';
 import {tmpdir} from 'node:os';
 import path from 'node:path';
 import {collectArticles,writeArticles,needsDeployment} from './sync.mjs';
-import {BLOG_TAG,THREADS_TAG} from '../../static/moments/channels.mjs';
+import {BLOG_TAG,THREADS_TAG,REVIEW_TAG} from '../../static/moments/channels.mjs';
 const id=i=>`00000000-0000-4000-8000-${String(i).padStart(12,'0')}`,rev='a'.repeat(32);
 function fixture(){
   const rows=[1,2,3].map(i=>[id(i),0,1700000000000+i,{},rev]);
@@ -50,6 +50,13 @@ test('drafts skip unfinished media; publishing and retracting updates the snapsh
   const draft=await collectArticles(f);assert.equal(draft.articles.length,0);assert.notEqual(draft.digest,published.digest);
   f.records[id(1)].note.content=[{insert:'标题\ndraft: false\n正文\n'}];
   const ready=await collectArticles(f);assert.equal(ready.articles.length,1);assert.equal(ready.articles[0].filename,published.articles[0].filename);
+});
+test('review notes are generated into library and excluded when drafted',async()=>{
+  const f=fixture();f.records[id(2)].tagUuids=[REVIEW_TAG];
+  f.records[id(2)].note.content=[{insert:'书名\nrating: 4.6\ncover:\n'},{insert:{image:'cover.jpg'}},{insert:'\nsummary: 摘要\n\n评价\n'}];
+  const original=f.fetcher;f.fetcher=url=>new URL(url).pathname.includes('/resources/')?Promise.resolve(new Response('image',{headers:{'content-type':'image/jpeg'}})):original(url);
+  const published=await collectArticles(f);assert.equal(published.articles.length,2);assert.equal(published.articles.filter(a=>a.section==='library').length,1);
+  f.records[id(2)].note.content=[{insert:'书名\ndraft: true\n'}];const hidden=await collectArticles(f);assert.equal(hidden.articles.length,1);assert.notEqual(hidden.digest,published.digest);
 });
 test('writes/removes only owned generated files and never overwrites a hand-written collision',async()=>{
   const dir=await mkdtemp(path.join(tmpdir(),'snapnote-sync-test-'));

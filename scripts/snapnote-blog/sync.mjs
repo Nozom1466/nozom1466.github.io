@@ -5,6 +5,7 @@ import path from 'node:path';
 import {COS_ORIGIN,parseShard,publicNote} from '../../static/moments/cos-feed.mjs';
 import {channelOf} from '../../static/moments/channels.mjs';
 import {convertArticle} from './convert.mjs';
+import {convertReview} from './review.mjs';
 
 const uuid=/^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i;
 export async function collectArticles({fetcher=fetch}={}){
@@ -36,8 +37,9 @@ export async function collectArticles({fetcher=fetch}={}){
       if(text.startsWith('SNENC1'))throw Error('存在加密笔记，无法确认分类，停止同步');
       const raw=JSON.parse(text);
       // Validate even non-blog records so a partial response cannot remove articles.
-      if(!publicNote(text,entry)||channelOf(raw)!=='blog')continue;
-      const article=convertArticle(raw,{draft:false,skipDrafts:true});
+      const channel=channelOf(raw);
+      if(!publicNote(text,entry)||!['blog','review'].includes(channel))continue;
+      const article=channel==='review'?convertReview(raw,{draft:false,skipDrafts:true}):convertArticle(raw,{draft:false,skipDrafts:true});
       if(article)articles.push(article);
     }
   }));
@@ -46,7 +48,7 @@ export async function collectArticles({fetcher=fetch}={}){
     const r=await fetcher(src+'?check='+Date.now(),{headers:{Range:'bytes=0-63'},signal:AbortSignal.timeout(20000)});
     const ok=r.ok&&/^image\//i.test(r.headers.get('content-type')||'');await r.body?.cancel();if(!ok)throw Error('配图尚未就绪，保留线上内容');
   }
-  const digest=createHash('sha256').update(JSON.stringify(articles.map(a=>[a.filename,a.source]))).digest('hex');
+  const digest=createHash('sha256').update(JSON.stringify(articles.map(a=>[a.section||'ideas',a.filename,a.source]))).digest('hex');
   return {articles,digest,ids:articles.map(a=>a.filename.slice(9,-3)),indexedIds:[...latest.keys()]};
 }
 
@@ -78,7 +80,8 @@ async function main(){
     else if(r.status!==404)throw Error('无法检查线上版本，停止部署');
     if(published?.ids.some(id=>!snapshot.indexedIds.includes(id)))throw Error('已发布文章缺少索引记录，停止自动撤稿，请检查云端同步');
   }
-  await writeArticles(snapshot.articles,path.join(root,'content/ideas'));
+  await writeArticles(snapshot.articles.filter(a=>a.section!=='library'),path.join(root,'content/ideas'));
+  await writeArticles(snapshot.articles.filter(a=>a.section==='library'),path.join(root,'content/library'));
   const commit=process.env.GITHUB_SHA||'local';
   const changed=needsDeployment(snapshot,published,commit);
   await writeFile(path.join(root,'static/snapnote-version.json'),JSON.stringify({schema:1,digest:snapshot.digest,commit,ids:snapshot.ids}));

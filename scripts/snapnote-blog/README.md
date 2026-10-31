@@ -1,6 +1,6 @@
 # 闪念博客：自动发布
 
-`blog` 与 `threads` 标签 ID 在 `static/moments/channels.mjs` 中配置，依据用户截图和同步笔记确认。双标签时 blog 优先；没有 blog 标签的笔记默认进入此刻，不必显式添加 threads（包括未分类或仅有其他标签的记录）。归档、锁定、删除的笔记仍不展示。标签改名不影响 ID，删除重建标签需重新确认。
+`review`、`blog` 与 `threads` 标签 ID 在 `static/moments/channels.mjs` 中配置，依据用户截图和同步笔记确认。分类优先级为 review > blog > threads；没有 review 或 blog 标签的笔记默认进入此刻，不必显式添加 threads（包括未分类或仅有其他标签的记录）。归档、锁定、删除的笔记仍不展示。标签改名不影响 ID，删除重建标签需重新确认。
 
 `blog` 标签的笔记默认发布，不需要额外的「发布」标签；标题后填写 `draft: true` 则不发布，写完改为 `draft: false`。未填写 draft 时保留原有发布行为。Blog 草稿不会进入 Threads。已发布文章改为草稿、移除 blog、归档、锁定或删除后，下次成功同步会撤下对应文章。不确定分类的加密记录、读取失败、已发布内容的图片缺失会停止部署，保留线上版本；已发布文章完全消失于索引（无删除记录）也会停止自动撤稿，需要检查同步完整性。
 
@@ -19,13 +19,33 @@ summary: 一个月北宇治复原计划中的建模体验与局限。
 这里开始写正文。
 ```
 
-`draft:` 和 labels、summary 一样放在标题后、正文前，顺序不限；值只接受 true/false，不区分大小写，空值、拼写错误或重复字段会停止同步，避免误发布。草稿在发布转换和图片检查前排除，不会因未完成的附件阻挡其他文章发布。此字段仅控制 blog，Threads 不解析它。草稿仍存储在当前公开读取的 COS 中，不是私密存储。
+`draft:` 和 labels、summary 一样放在标题后、正文前，顺序不限；值只接受 true/false，不区分大小写，空值、拼写错误或重复字段会停止同步，避免误发布。草稿在正文转换和图片检查前排除；仍需要第一行作品名称。此字段控制 blog 和 review，Threads 不解析它。草稿仍存储在当前公开读取的 COS 中，不是私密存储。
 
 在图片后下一非空行写 `caption: 教师办公室的参考图`。说明显示在图片下方，也作为替代文字；连续多张图片后的一行图注只属于紧邻的最后一张。没有图注不显示占位文字。普通正文中的同类文字不自动改成图注。英文关键字不区分大小写；旧写法 `标签：`、`图注：` 保留兼容。
 
 正文、段落、粗体、斜体、链接、标题、简单列表、引用及 COS 原图会保留。尚不支持的附件、表格等停止转换，不静默丢弃。图片当前引用闪念 COS 资源，不额外上传 PicGo。删除云端附件会影响旧文章，不应单独清理仍在使用的图片。
 
 ## 同步和部署
+
+### 独立书馆评价
+
+在闪念选择原生 `review` 标签，不需要添加 blog。第一非空行写书名或片名（普通文字或标题均可），之后写元数据，再写正文。例如：
+
+```text
+经营未来
+draft: false
+rating: 4.6
+author: 李明博
+labels: book
+summary: 从穷小子到总统
+cover:
+```
+
+在 `cover:` 下一行直接粘贴封面，后面继续写正文。也可填写现有两个 COS 空间的图片 HTTPS 链接；未指定 cover 时取第一张图片作为封面。封面不重复出现在正文里。正文配图仍支持下一行 `caption:`。
+
+`rating` 为 0–5；`labels` 对应书馆筛选标签，省略时为 book（常用 book、film、anime、game）。`summary`、`draft` 行为同博客；`date` 可指定 YYYY-MM-DD，`status` 支持 Reading、Completed、Not Started。创作者字段支持 author、director、screenplay、writer、original、translator、developer、publisher、producer、music、composer、artwork、cinematographer、character。音频、视频附件暂不支持自动转换，原有手写评价与音乐 shortcode 不受影响。
+
+review 生成到 `content/library/snapnote-<UUID>.md`，不进入博客首页或此刻。与 blog 使用同一自动同步任务，修改、撤稿和草稿规则相同；不会修改原有手写书评。
 
 执行 `node scripts/snapnote-blog/sync.mjs` 从最新索引生成全部 blog 文章到 `content/ideas/snapnote-<UUID>.md`，以 UUID 固定文章地址。只保存展示字段，不保存设备或 OCR 信息。读取、转换及配图检查全部成功后才写入生成文件；不会覆盖没有同步标记的手写文章。线上更新不会自动提交文章到 Git；COS 是闪念文章的编辑来源，每次构建重新生成。
 

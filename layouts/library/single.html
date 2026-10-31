@@ -4,7 +4,13 @@
       <img src="{{ .Params.cover }}" alt="{{ .Title }}" class="library-single-cover" />
       <div class="library-single-meta">
         <h1>{{ .Title }}</h1>
-        <p class="author">{{ .Params.author }}</p>
+        {{ with .Params.creators }}
+          {{ range $role, $name := . }}
+            <p class="author">{{ replaceRE "^[0-9]+_" "" $role | title }}: {{ $name }}</p>
+          {{ end }}
+        {{ else }}
+          {{ with .Params.author }}<p class="author">{{ . }}</p>{{ end }}
+        {{ end }}
         {{ with .Params.status }}
           {{ $statusClass := "status-not-started" }}
           {{ if eq . "Completed" }}{{ $statusClass = "status-completed" }}{{ end }}
