@@ -44,6 +44,13 @@ test('missing image aborts instead of publishing a broken article',async()=>{
   const original=f.fetcher;f.fetcher=url=>new URL(url).pathname.includes('/resources/')?Promise.resolve(new Response('',{status:404})):original(url);
   await assert.rejects(()=>collectArticles(f),/配图/);
 });
+test('drafts skip unfinished media; publishing and retracting updates the snapshot',async()=>{
+  const f=fixture(),published=await collectArticles(f);
+  f.records[id(1)].note.content=[{insert:'标题\ndraft: true\n未完成\n'},{insert:{video:'unfinished.mp4'}},{insert:'\n'}];
+  const draft=await collectArticles(f);assert.equal(draft.articles.length,0);assert.notEqual(draft.digest,published.digest);
+  f.records[id(1)].note.content=[{insert:'标题\ndraft: false\n正文\n'}];
+  const ready=await collectArticles(f);assert.equal(ready.articles.length,1);assert.equal(ready.articles[0].filename,published.articles[0].filename);
+});
 test('writes/removes only owned generated files and never overwrites a hand-written collision',async()=>{
   const dir=await mkdtemp(path.join(tmpdir(),'snapnote-sync-test-'));
   try{

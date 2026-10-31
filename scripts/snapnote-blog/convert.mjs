@@ -3,7 +3,7 @@ import {channelOf} from '../../static/moments/channels.mjs';
 import {COS_ORIGIN} from '../../static/moments/cos-feed.mjs';
 
 const escape = value => escapeHTML(value).replaceAll('{','&#123;').replaceAll('}','&#125;');
-export function convertArticle(raw,{draft=true}={}) {
+export function convertArticle(raw,{draft=true,skipDrafts=false}={}) {
   const n=raw.note;
   if(!n || !/^[a-f0-9-]{36}$/i.test(n.uuid))throw Error('笔记 ID 无效');
   if(channelOf(raw)!=='blog'||n.hasMarkDeleted||n.isLocked||n.isArchived||raw.stateVector?.deleted)throw Error('不是可预览的 blog 笔记');
@@ -14,24 +14,32 @@ export function convertArticle(raw,{draft=true}={}) {
   const title=first.parts.map(p=>p.text||'').join('').trim();
   if(!title)throw Error('文章标题为空');
   const plain=line=>line.parts.map(p=>p.text||'').join('').trim();
-  let tags=[],customSummary='';const metadata=new Set();
+  let tags=[],customSummary='',noteDraft=false;const metadata=new Set();
   while(lines.length){
     const line=lines[0];
     if(line.parts.some(p=>p.embed)||Object.keys(line.attrs).length)break;
     const value=plain(line);
     if(!value){lines.shift();continue;}
-    const match=value.match(/^(labels|标签|summary)\s*[：:]\s*(.*)$/i);
+    const match=value.match(/^(labels|标签|summary|draft)\s*[：:]\s*(.*)$/i);
     if(!match)break;
-    const key=match[1].toLowerCase()==='summary'?'summary':'labels';
+    const key=match[1]==='标签'?'labels':match[1].toLowerCase();
     if(metadata.has(key))throw Error(`文章 ${key} 重复，请只填写一行`);
     metadata.add(key);
-    if(key==='summary')customSummary=match[2].trim();
+    if(key==='draft'){
+      const value=match[2].trim().toLowerCase();
+      if(!['true','false'].includes(value))throw Error('draft 必须填写 true 或 false');
+      noteDraft=value==='true';
+    }
+    else if(key==='summary')customSummary=match[2].trim();
     else{
       tags=[...new Set(match[2].split(/[,，、]/).map(t=>t.trim()).filter(Boolean))];
       if(tags.length>20||tags.some(t=>t.length>60||/[<>{}\r\n]/.test(t)))throw Error('文章标签格式无效');
     }
     lines.shift();
   }
+  // Unfinished drafts may contain incomplete media or unsupported blocks.
+  // Exclude them before converting/checking attachments during publication.
+  if(skipDrafts&&noteDraft)return null;
   const images=[];
   function inline(part){
     if(part.embed)throw Error('正文包含尚未适配的附件或公式，停止转换');
@@ -83,6 +91,6 @@ export function convertArticle(raw,{draft=true}={}) {
   close();
   const text=summaryParts.join(' ').replace(/\s+/g,' ').trim();
   const summary=customSummary||(Array.from(text).slice(0,100).join('')+(Array.from(text).length>100?'…':''));
-  const front={title,date:new Date(n.createdAtMs).toISOString(),lastmod:new Date(n.updatedAtMs??n.createdAtMs).toISOString(),slug:'snapnote-'+n.uuid,summary:escape(summary),draft,showtoc:false,tags,snapnote_uuid:n.uuid,snapnote_revision:raw.revisionId};
+  const front={title,date:new Date(n.createdAtMs).toISOString(),lastmod:new Date(n.updatedAtMs??n.createdAtMs).toISOString(),slug:'snapnote-'+n.uuid,summary:escape(summary),draft:draft||noteDraft,showtoc:false,tags,snapnote_uuid:n.uuid,snapnote_revision:raw.revisionId};
   return {title,images,source:JSON.stringify(front,null,2)+'\n\n'+blocks.join('\n\n')+'\n',filename:'snapnote-'+n.uuid+'.md'};
 }

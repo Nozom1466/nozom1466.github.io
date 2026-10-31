@@ -37,7 +37,8 @@ export async function collectArticles({fetcher=fetch}={}){
       const raw=JSON.parse(text);
       // Validate even non-blog records so a partial response cannot remove articles.
       if(!publicNote(text,entry)||channelOf(raw)!=='blog')continue;
-      articles.push(convertArticle(raw,{draft:false}));
+      const article=convertArticle(raw,{draft:false,skipDrafts:true});
+      if(article)articles.push(article);
     }
   }));
   articles.sort((a,b)=>a.filename.localeCompare(b.filename));

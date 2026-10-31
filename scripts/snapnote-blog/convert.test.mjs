@@ -56,3 +56,23 @@ test('custom summary is escaped, not truncated, and duplicate metadata fails',()
   assert.ok(front.summary.includes('&lt;script&gt;'));assert.ok(!a.source.includes('{{<'));assert.ok(front.summary.endsWith('长'.repeat(120)));
   r.note.content.splice(3,0,{insert:'summary: 重复\n'});assert.throws(()=>convertArticle(r),/重复/);
 });
+
+test('draft metadata hides blog posts, false publishes and preview stays a draft',()=>{
+  for(const value of ['true','TRUE','false']){
+    const r=record();r.note.content.splice(2,0,{insert:`labels: AI\nDRAFT: ${value}\nsummary: 摘要\n`});
+    const expected=value.toLowerCase()==='true';
+    const a=convertArticle(r,{draft:false});
+    assert.equal(JSON.parse(a.source.split('\n\n')[0]).draft,expected);
+    assert.ok(!a.source.includes('DRAFT:'));
+    assert.equal(convertArticle(r,{draft:false,skipDrafts:true})===null,expected);
+    assert.equal(JSON.parse(convertArticle(r).source.split('\n\n')[0]).draft,true);
+  }
+});
+test('invalid or repeated draft fails instead of publishing; body text is not metadata',()=>{
+  for(const value of ['', 'yes','flase','true\ndraft: false']){
+    const r=record();r.note.content.splice(2,0,{insert:`draft: ${value}\n`});
+    assert.throws(()=>convertArticle(r,{draft:false,skipDrafts:true}),/draft/);
+  }
+  const r=record();r.note.content.push({insert:'draft: true\n'});
+  const a=convertArticle(r,{draft:false,skipDrafts:true});assert.ok(a.source.includes('<p>draft: true</p>'));
+});
