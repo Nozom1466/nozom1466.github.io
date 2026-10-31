@@ -21,17 +21,18 @@ test('does not execute HTML or Hugo shortcodes from note text',()=>{
   assert.ok(a.source.includes('&lt;script&gt;'));
 });
 
-test('publishes blog tags and pairs captions with the preceding image',()=>{
-  const r=record();r.note.content.splice(2,0,{insert:'标签：Blender, AI，随笔, AI\n\n'});
-  r.note.content.push({insert:'图注：教师办公室 <参考图>\n后续正文\n'});
+for(const [labels,caption] of [['labels:','caption:'],['Labels:','CAPTION:'],['标签：','图注：']])
+test(`publishes tags and captions with ${labels} / ${caption}`,()=>{
+  const r=record();r.note.content.splice(2,0,{insert:`${labels} Blender, AI，随笔, AI\n\n`});
+  r.note.content.push({insert:`${caption} 教师办公室 <参考图>\n后续正文\n`});
   const a=convertArticle(r,{draft:false});
   const front=JSON.parse(a.source.split('\n\n')[0]);
   assert.equal(front.draft,false);assert.deepEqual(front.tags,['Blender','AI','随笔']);
   assert.ok(a.source.includes('<figcaption'));assert.ok(a.source.includes('教师办公室 &lt;参考图&gt;'));
-  assert.ok(!a.source.includes('标签：'));assert.ok(!a.source.includes('图注：'));
+  assert.ok(!a.source.includes(labels));assert.ok(!a.source.includes(caption));
   assert.ok(a.source.includes('<p>后续正文</p>'));assert.ok(!front.summary.includes('教师办公室'));
 });
 test('a caption not immediately following an image stays ordinary text',()=>{
-  const r=record();r.note.content.push({insert:'普通段落\n图注：这不是配图说明\n'});
-  const a=convertArticle(r);assert.ok(!a.source.includes('<figcaption'));assert.ok(a.source.includes('<p>图注：这不是配图说明</p>'));
+  const r=record();r.note.content.push({insert:'普通段落\ncaption: 这不是配图说明\n'});
+  const a=convertArticle(r);assert.ok(!a.source.includes('<figcaption'));assert.ok(a.source.includes('<p>caption: 这不是配图说明</p>'));
 });

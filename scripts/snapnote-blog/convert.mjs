@@ -16,7 +16,7 @@ export function convertArticle(raw,{draft=true}={}) {
   const plain=line=>line.parts.map(p=>p.text||'').join('').trim();
   while(lines.length&&!plain(lines[0])&&!lines[0].parts.some(p=>p.embed))lines.shift();
   let tags=[];
-  const tagLine=lines[0]&&!lines[0].parts.some(p=>p.embed)&&plain(lines[0]).match(/^标签[：:]\s*(.*)$/);
+  const tagLine=lines[0]&&!lines[0].parts.some(p=>p.embed)&&plain(lines[0]).match(/^(?:labels|标签)\s*[：:]\s*(.*)$/i);
   if(tagLine){
     tags=[...new Set(tagLine[1].split(/[,，、]/).map(t=>t.trim()).filter(Boolean))];
     if(tags.length>20||tags.some(t=>t.length>60||/[<>{}\r\n]/.test(t)))throw Error('文章标签格式无效');
@@ -51,7 +51,7 @@ export function convertArticle(raw,{draft=true}={}) {
           flush();let caption='';
           if(j===parts.length-1){
             let next=i+1;while(next<lines.length&&!plain(lines[next])&&!lines[next].parts.some(p=>p.embed))next++;
-            const match=lines[next]&&!lines[next].parts.some(p=>p.embed)&&plain(lines[next]).match(/^图注[：:]\s*(.+)$/);
+            const match=lines[next]&&!lines[next].parts.some(p=>p.embed)&&plain(lines[next]).match(/^(?:caption|图注)\s*[：:]\s*(.+)$/i);
             if(match){caption=match[1];i=next;}
           }
           blocks.push(image(p,caption));

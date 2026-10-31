@@ -9,11 +9,18 @@ const rev='a'.repeat(32),rev2='b'.repeat(32);
 const row=(i,deleted=0,version=rev)=>[id(i),deleted,1700000000000+i,{},version];
 const record=(i,version=rev)=>({revisionId:version,tagUuids:[THREADS_TAG],note:{uuid:id(i),createdAtMs:1700000000000+i,content:[{insert:'正文\n'},{insert:{image:'photo.jpg'}}],deviceId:'not-for-rendering'}});
 
-test('only threads are shown; blog wins if both channel labels are set',()=>{
+test('notes default to threads; blog wins if both channel labels are set',()=>{
   const entry=parseShard([row(1)])[0],raw=record(1);
   assert.ok(publicNote(JSON.stringify(raw),entry,'threads'));
-  for(const tags of [[],[BLOG_TAG],[BLOG_TAG,THREADS_TAG]]){
+  for(const tags of [[],undefined,['unrelated-label'],[THREADS_TAG]]){
+    raw.tagUuids=tags;assert.ok(publicNote(JSON.stringify(raw),entry,'threads'));
+  }
+  for(const tags of [[BLOG_TAG],[BLOG_TAG,THREADS_TAG]]){
     raw.tagUuids=tags;assert.equal(publicNote(JSON.stringify(raw),entry,'threads'),null);
+  }
+  raw.tagUuids=[];
+  for(const field of ['isLocked','isArchived','hasMarkDeleted']){
+    raw.note[field]=true;assert.equal(publicNote(JSON.stringify(raw),entry,'threads'),null);raw.note[field]=false;
   }
 });
 function fixture(count=45){
