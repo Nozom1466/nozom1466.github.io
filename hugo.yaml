@@ -58,6 +58,11 @@ languages:
           pageRef: /library
           pre: book
           weight: 5
+        - identifier: moments
+          name: 此刻
+          pageRef: /moments
+          pre: moments
+          weight: 6
   en-us:
     languageCode: en-US
     languageDirection: ltr
@@ -90,6 +95,11 @@ languages:
           pageRef: /library
           pre: book
           weight: 5
+        - identifier: moments
+          name: 此刻
+          url: /moments/
+          pre: moments
+          weight: 6
     params:
       yearFormat: "2006"
       # Gallery settings

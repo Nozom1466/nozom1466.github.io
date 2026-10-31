@@ -6,7 +6,7 @@
     {{ $active := $curP.IsMenuCurrent .Menu . }}
     <li class="menu-item menu-item-{{ .Identifier }}">
       <a href="{{ .URL | relLangURL }}" class="{{ if .HasChildren }}menus-parent{{ end }}{{if $active }} menu-item-active{{ end }}" rel="section">
-        {{ if $ms.icons }}<i class="fa fa-{{ .Pre }}"></i>{{ end }}{{ .Name }}
+        {{ if $ms.icons }}{{ if eq .Identifier "moments" }}{{ partial "moments-icon.html" . }}{{ else }}<i class="fa fa-{{ .Pre }}"></i>{{ end }}{{ end }}{{ .Name }}
         {{ if .HasChildren }}<span class="menu-item-shrink-icon"><i class="fa fa-angle-right"></i></span>{{ end }}
         {{ if and $ms.badges (eq .Identifier "archives") }}
           <span class="badge">{{ $.Scratch.Get "postsCount" }}</span>

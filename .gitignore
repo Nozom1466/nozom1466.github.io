@@ -1,0 +1,4 @@
+# Generated Moments data and dependencies never belong in source control.
+/.moments-cache/
+/public/moments-feed/
+/scripts/moments-sync/node_modules/

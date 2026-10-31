@@ -1,0 +1,92 @@
+/* Inherit the site's typography and theme. All feed styles are scoped. */
+.moments-page{padding-top:24px!important}
+#moments{--moment-paper:#fff;--moment-line:#e8e8e8;--moment-soft:#f5f5f5;--moment-muted:#999;--moment-callout:#fbf6ed;max-width:900px;margin:0 auto;padding:0 20px 48px;font-family:inherit;font-size:16px;line-height:2}
+html[data-theme=dark] #moments{--moment-paper:#282828;--moment-line:#414141;--moment-soft:#333;--moment-muted:#999;--moment-callout:#38332b}
+#moments *{box-sizing:border-box}
+#moments button{font:inherit;color:inherit;cursor:pointer}
+#moments button:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+#moments .moments-toolbar{display:flex;justify-content:flex-end;margin-bottom:12px}
+#moments-refresh{display:grid;place-items:center;width:32px;height:32px;border:0;border-radius:50%;background:transparent;color:var(--moment-muted)!important}
+#moments-refresh:hover{background:var(--moment-soft)}
+#moments-refresh:disabled{opacity:.5;cursor:wait}
+#moments-refresh:disabled svg{animation:moment-spin 1s linear infinite}
+@keyframes moment-spin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){#moments-refresh:disabled svg{animation:none}}
+#moments-status{font-size:12px;color:var(--moment-muted)}
+#moments-status:not(:empty){margin-bottom:20px;padding:12px;background:var(--moment-soft)}
+#moments .moments-page-button{display:block;margin:12px auto;padding:8px 20px;min-height:44px;border:0;border-bottom:1px solid var(--moment-line);background:transparent;font-size:13px;color:var(--moment-muted)}
+#moments .moments-page-button[hidden],#moments-end[hidden]{display:none}
+#moments-end{text-align:center;font-size:12px;color:var(--moment-muted);margin:20px 0}
+#moments-sentinel{height:1px}
+#moments .moment-entry{display:grid;grid-template-columns:52px minmax(0,1fr);gap:18px;margin-bottom:24px}
+#moments .moment-date{display:flex;flex-direction:column;align-items:flex-start;text-align:left;font-size:11px;color:var(--moment-muted);line-height:1.8}
+#moments .moment-day{font-size:28px;line-height:1.2;color:var(--text-color,#555)}
+#moments .moment-date::after{content:'';width:1px;flex:1;min-height:0;background:var(--moment-line);margin-top:12px}
+#moments .moment-card{position:relative;min-width:0;background:var(--moment-paper);border:1px solid var(--moment-line);border-radius:3px;padding:18px 24px}
+#moments .moment-time{float:right;position:relative;z-index:1;margin:0 0 2px 14px;font-size:11px;line-height:32px;color:var(--moment-muted)}
+#moments .moment-card::after{content:'';display:block;clear:both}
+#moments .content{font:inherit;overflow-wrap:anywhere}
+#moments .line{min-height:1em}
+#moments .blank{line-height:.6;min-height:.6em}
+#moments .photo{display:block;position:relative;clear:both;width:168px;height:168px;max-width:100%;aspect-ratio:1;padding:0;border:0;background:var(--moment-soft);margin:10px 0;overflow:hidden;border-radius:3px;line-height:0}
+#moments .photo-grid{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:10px;clear:both;width:100%;max-width:524px;margin:14px auto}
+#moments .photo-grid[data-columns="2"]{max-width:346px}
+#moments .photo-grid[data-columns="1"]{max-width:168px}
+#moments .photo-grid .photo{flex:0 0 auto;clear:none;width:calc((100% - 20px)/3);max-width:168px;height:auto;aspect-ratio:1;margin:0}
+#moments .photo-grid[data-columns="2"] .photo{width:calc((100% - 10px)/2)}
+#moments .photo-grid[data-columns="1"] .photo{width:168px;max-width:100%}
+#moments .photo-grid .image-error{display:grid;place-items:center;min-width:0;width:calc((100% - 20px)/3);aspect-ratio:1;background:var(--moment-soft);text-align:center}
+#moments .photo img{display:block;margin:0;padding:0;border:0;width:100%;height:100%;max-width:100%;object-fit:cover}
+#moments .photo>span{position:absolute;bottom:7px;right:7px;padding:4px 7px;background:#0008;color:#fff;font-size:10px;line-height:1.4;opacity:0}
+#moments .photo:hover>span,#moments .photo:focus-visible>span{opacity:1}
+#moments .expand-text{display:block;clear:both;margin:10px 0 0;padding:0;border:0;border-bottom:1px solid var(--moment-line);background:transparent;font-size:13px}
+#moments .table-scroll{clear:both;overflow-x:auto;margin:16px 0}
+#moments table{border-collapse:collapse;width:100%;min-width:240px;font-size:13px}
+#moments td{border:1px solid var(--moment-line);padding:7px 14px;min-width:80px}
+#moments tr:nth-child(2n){background:var(--moment-soft)}
+#moments .todo{display:flex;align-items:center;gap:9px;margin:8px 0}
+#moments .todo input{accent-color:#777;width:15px;height:15px}
+#moments .callout{display:flex;clear:both;gap:12px;border-left:2px solid #c9b48c;background:var(--moment-callout);padding:12px 16px;margin:12px 0}
+#moments .formula{display:inline-block;padding:8px 0}
+#moments blockquote{border-left:2px solid var(--moment-line);padding-left:16px}
+#moments code{background:var(--moment-soft);padding:2px 5px}
+#moments h1,#moments h2,#moments h3{font-family:inherit;font-size:22px;font-weight:500;letter-spacing:0}
+#moments .unsupported,#moments .image-error{font-size:12px;color:#a35f41}
+#moments-lightbox{padding:20px;max-width:calc(100vw - 112px);max-height:calc(100dvh - 48px);overflow:visible;border:1px solid var(--moment-line);border-radius:4px;background:var(--moment-paper);color:inherit;outline:none}
+#moments-lightbox::backdrop{background:#000c}
+#moments-lightbox img{display:block;width:auto;height:auto;max-width:min(85vw,calc(100vw - 154px));max-height:calc(100dvh - 90px);object-fit:contain;margin:0}
+#moments #moments-close{position:absolute;right:-44px;top:0;display:grid;place-items:center;width:36px;height:36px;padding:0;border:0;border-radius:50%;background:var(--moment-soft);color:var(--text-color,#555);line-height:1;transition:background-color .18s ease,color .18s ease,opacity .18s ease}
+#moments #moments-close:hover,#moments #moments-close:focus-visible{background:var(--text-color,#555);color:var(--moment-paper)}
+@media(hover:hover) and (pointer:fine){
+  #moments #moments-close{opacity:0;pointer-events:none}
+  #moments-lightbox:hover #moments-close,#moments #moments-close:focus-visible{opacity:1;pointer-events:auto}
+  /* Bridge the gap so the button remains reachable from the image. */
+  #moments-lightbox::before{content:'';position:absolute;left:100%;top:0;bottom:0;width:52px;pointer-events:none}
+  #moments-lightbox:hover::before{pointer-events:auto}
+}
+@media(prefers-reduced-motion:reduce){#moments #moments-close{transition:none}}
+@media(max-width:700px){#moments{padding:0 4px 32px}#moments .moment-entry{grid-template-columns:36px minmax(0,1fr);gap:10px}#moments .moment-card{padding:14px 16px}#moments .moment-day{font-size:24px}#moments .photo{width:140px;height:140px}#moments .moment-time{font-size:10px;margin-left:10px}}
+@media(max-width:600px){
+  .moments-page{padding-top:8px!important}
+  #moments{padding:0 12px 28px;font-size:15px;line-height:1.9}
+  #moments .moments-toolbar{margin-bottom:4px}
+  #moments-refresh{width:44px;height:44px}
+  #moments .moment-entry{display:block;margin-bottom:22px}
+  #moments .moment-date{flex-direction:row;align-items:baseline;gap:7px;margin:0 2px 8px;font-size:12px}
+  #moments .moment-day{font-size:20px}
+  #moments .moment-date::after{display:none}
+  #moments .moment-card{padding:12px 14px;border-radius:5px}
+  #moments .moment-time{font-size:11px;line-height:28.5px;margin-left:10px}
+  #moments .photo-grid{gap:6px;margin:12px auto;max-width:444px}
+  #moments .photo-grid[data-columns="2"]{max-width:294px}
+  #moments .photo-grid[data-columns="1"]{max-width:144px}
+  #moments .photo-grid .photo{width:calc((100% - 12px)/3);max-width:144px;height:auto;border-radius:3px}
+  #moments .photo-grid[data-columns="2"] .photo{width:calc((100% - 6px)/2)}
+  #moments .photo-grid[data-columns="1"] .photo{width:144px;max-width:100%}
+  #moments .photo-grid .image-error{width:calc((100% - 12px)/3)}
+  #moments .expand-text{min-height:44px;margin-top:4px;border:0}
+  #moments .callout{padding:10px;gap:8px}
+  #moments-lightbox{max-width:calc(100vw - 128px);max-height:calc(100dvh - 24px);padding:12px}
+  #moments-lightbox img{max-width:calc(100vw - 154px);max-height:calc(100dvh - 50px)}
+  #moments #moments-close{width:44px;height:44px;top:0;right:-52px}
+}

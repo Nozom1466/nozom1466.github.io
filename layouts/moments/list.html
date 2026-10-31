@@ -1,0 +1,18 @@
+{{ define "title" }}此刻 - {{ .Site.Title }}{{ end }}
+{{ define "main_inner_class" }}moments-page{{ end }}
+{{ define "main" }}
+<link rel="stylesheet" href="{{ "moments/moments.css" | relURL }}">
+<link rel="stylesheet" href="{{ "moments/vendor/katex/katex.min.css" | relURL }}">
+<script defer src="{{ "moments/vendor/katex/katex.min.js" | relURL }}"></script>
+<section id="moments" aria-label="此刻时间线" data-feed-mode="{{ if hugo.IsServer }}live{{ else }}static{{ end }}" data-feed-base="{{ "moments-feed/" | relURL }}">
+  <div class="moments-toolbar"><button id="moments-refresh" type="button" aria-label="刷新此刻" title="刷新"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 7v5h-5M4 17v-5h5M6.1 7a7 7 0 0 1 11.6-1L20 9M4 15l2.3 3A7 7 0 0 0 17.9 17"/></svg></button></div>
+  <div id="moments-status" role="status" aria-live="polite"></div>
+  <button id="moments-newer" class="moments-page-button" type="button" hidden>加载较新记录</button>
+  <div id="moments-timeline"></div>
+  <div id="moments-sentinel" aria-hidden="true"></div>
+  <button id="moments-more" class="moments-page-button" type="button" hidden>加载更多</button>
+  <p id="moments-end" hidden>已到最早的记录</p>
+  <dialog id="moments-lightbox" aria-label="图片大图" tabindex="-1"><button id="moments-close" type="button" aria-label="关闭大图" title="关闭"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button><img alt="笔记图片大图"></dialog>
+</section>
+<script type="module" src="{{ "moments/app.mjs" | relURL }}"></script>
+{{ end }}
