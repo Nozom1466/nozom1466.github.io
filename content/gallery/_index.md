@@ -136,4 +136,16 @@ params:
       locations: []
       color: "blue"
       year: "2026"
+    - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/DSC_6434.jpg"
+      title: "银河"
+      subject: landscape
+      locations: []
+      color: "black"
+      year: "2026"
+    - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/DSC_8005.jpg"
+      title: "日照金山"
+      subject: landscape
+      locations: []
+      color: "blue"
+      year: "2026"
 ---

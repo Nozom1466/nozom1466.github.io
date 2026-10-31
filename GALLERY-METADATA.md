@@ -30,4 +30,11 @@
 
 四维筛选取交集；地点列表中任一城市匹配即可。空字段有单独的“待补/未标”选项。支持重置、网址分享、刷新、前进后退；大图关闭后保留筛选条件。
 
-本地构建到 .gallery-preview 后，运行 node scripts/test-gallery.mjs，验证筛选逻辑及生成的 22 张照片。
+本地构建到 .gallery-preview 后，运行 node scripts/test-gallery.mjs，验证筛选逻辑及照片数量。也可通过首个参数指定构建后的 gallery/index.html 路径；数量与源文件自动核对。
+
+## 2026-10-31 新增
+
+从 OneDrive 的 Blog Inbox/Gallery 添加两张原图，共 24 张；通过 PicGo 上传，未再次压缩。
+
+- DSC_6434.jpg：XMP 标题“银河”，主题 landscape，颜色 black，城市留空。EXIF 为 2025-01-01 08:00:05，疑似初始时间；用户确认实际拍摄年份为 2026，以用户确认为准。
+- DSC_8005.jpg：XMP 标题“日照金山”，主题 landscape，颜色 blue，城市留空。EXIF 拍摄时间为 2026-10-14，年份 2026。
