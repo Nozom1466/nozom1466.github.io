@@ -27,7 +27,8 @@ html[data-theme=dark] #moments{--moment-paper:#282828;--moment-line:#414141;--mo
 #moments .moment-card::after{content:'';display:block;clear:both}
 #moments .content{font:inherit;overflow-wrap:anywhere}
 #moments .line{min-height:1em}
-#moments .blank{line-height:.6;min-height:.6em}
+#moments .line:not(.blank)+.line:not(.blank){margin-top:.65em}
+#moments .blank{line-height:1;min-height:1em}
 #moments .photo{display:block;position:relative;clear:both;width:168px;height:168px;max-width:100%;aspect-ratio:1;padding:0;border:0;background:var(--moment-soft);margin:10px 0;overflow:hidden;border-radius:3px;line-height:0}
 #moments .photo-grid{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:10px;clear:both;width:100%;max-width:524px;margin:14px 0}
 #moments .photo-grid[data-columns="2"]{max-width:346px}
