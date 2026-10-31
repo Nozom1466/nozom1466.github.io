@@ -2,7 +2,7 @@
 
 ## 工作方式
 
-手机闪念完成 S3 同步后，网页刷新直接检查 COS 的 `SnapNote_Sync/index_shards/`。不启动 GitHub Actions，不需要云函数，不在网页中放置密钥。
+手机闪念完成 S3 同步后，网页刷新直接检查 COS 的 `SnapNote_Sync/index_shards/`。此刻只展示带 `threads` 标签且不带 `blog` 标签的记录。不启动 GitHub Actions，不需要云函数，不在网页中放置密钥。正式 blog 文章另由每 30 分钟定时任务生成，见 `snapnote-blog/README.md`。
 
 分片索引的行格式为 `[uuid, deleted, lastModifiedMs, vectorClock, revisionId]`。正文通过索引指定的不可变版本读取，不通过列举全部正文猜测最新版本。列表按索引的最近修改时间排列，卡片日期显示正文的创建时间。同一 UUID 冲突时优先最新修改时间；同时间优先删除标记，再以版本 ID 确定顺序。这不是闪念多设备冲突合并算法。
 
@@ -20,6 +20,6 @@ CORS 来源：`https://nozom1466.github.io`，本地验证可添加 `http://127.
 
 测试：`node --test scripts/moments-cos.test.mjs` 和 `node scripts/moments-render.test.mjs`。
 
-Hugo 参数 `momentsFeedMode` 为 `cos`。工作流仅在推送或手动运行时构建博客，不再定时同步，不再读取 COS secrets。旧快照脚本保留作参考，未启用。加密索引分片跳过，其内记录不可展示；没有在浏览器内尝试解密。
+Hugo 参数 `momentsFeedMode` 为 `cos`。工作流在推送或手动运行时构建博客，也定时检查 blog 文章变化；不读取 COS secrets，不再定时生成此刻快照。旧快照脚本保留作参考，未启用。加密索引分片跳过，其内记录不可展示；没有在浏览器内尝试解密。
 
 手机尚未完成上传、COS 列表短暂不一致或网络缓存均可能导致延迟；读取失败时显示错误，不把失败当作“暂无记录”。视频、音频等未支持内容保持原有提示，不宣称已适配。

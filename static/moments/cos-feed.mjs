@@ -1,4 +1,5 @@
 import {parseLines} from './render.mjs';
+import {channelOf} from './channels.mjs';
 export const COS_ORIGIN='https://snapnote-test-1316371247.cos.ap-shanghai.myqcloud.com';
 const PREFIX='SnapNote_Sync/', SHARDS=PREFIX+'index_shards/';
 const uuid=/^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i;
@@ -21,12 +22,13 @@ export function parseShard(rows){
   });
 }
 
-export function publicNote(text,entry){
+export function publicNote(text,entry,channel=null){
   if(text.startsWith('SNENC1'))return null;
   let raw;try{raw=JSON.parse(text);}catch{throw Error('笔记尚未同步完整，请稍后刷新。');}
   const n=raw.note;
   if(!n||n.uuid!==entry.id||raw.revisionId&&raw.revisionId!==entry.revision)throw Error('笔记版本不一致，请稍后刷新。');
   if(n.hasMarkDeleted||n.isLocked||n.isArchived||raw.stateVector?.deleted)return null;
+  if(channel && channelOf(raw)!==channel)return null;
   if(!Number.isFinite(n.createdAtMs)||!Number.isFinite(new Date(n.createdAtMs).getTime()))throw Error('笔记日期无效。');
   const ops=typeof n.content==='string'?JSON.parse(n.content):n.content;parseLines(ops);
   const allowed=['code','bold','italic','strike','underline','link','table','table-row','list','callout','callout-emoji','blockquote','header'];
@@ -84,7 +86,7 @@ export function createCosFeed({fetcher=fetch,parseXML=parseListing,now=Date.now}
   async function note(entry){
     const key=entry.id+'__'+entry.revision;
     if(bodies.has(key)){const value=bodies.get(key);bodies.delete(key);bodies.set(key,value);return value.record;}
-    const text=await read(COS_ORIGIN+'/'+PREFIX+'notes/'+key+'.json',2*1024*1024),record=publicNote(text,entry);
+    const text=await read(COS_ORIGIN+'/'+PREFIX+'notes/'+key+'.json',2*1024*1024),record=publicNote(text,entry,'threads');
     const size=record?new TextEncoder().encode(JSON.stringify(record)).length:16;
     bodies.set(key,{record,size});bodyBytes+=size;
     while(bodies.size>100||bodyBytes>16*1024*1024){const first=bodies.keys().next().value;bodyBytes-=bodies.get(first).size;bodies.delete(first);}return record;

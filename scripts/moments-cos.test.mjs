@@ -2,11 +2,20 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {createCosFeed,parseShard,publicNote,COS_ORIGIN} from '../static/moments/cos-feed.mjs';
 import {renderContent} from '../static/moments/render.mjs';
+import {BLOG_TAG,THREADS_TAG} from '../static/moments/channels.mjs';
 
 const id=i=>`00000000-0000-4000-8000-${String(i).padStart(12,'0')}`;
 const rev='a'.repeat(32),rev2='b'.repeat(32);
 const row=(i,deleted=0,version=rev)=>[id(i),deleted,1700000000000+i,{},version];
-const record=(i,version=rev)=>({revisionId:version,note:{uuid:id(i),createdAtMs:1700000000000+i,content:[{insert:'正文\n'},{insert:{image:'photo.jpg'}}],deviceId:'not-for-rendering'}});
+const record=(i,version=rev)=>({revisionId:version,tagUuids:[THREADS_TAG],note:{uuid:id(i),createdAtMs:1700000000000+i,content:[{insert:'正文\n'},{insert:{image:'photo.jpg'}}],deviceId:'not-for-rendering'}});
+
+test('only threads are shown; blog wins if both channel labels are set',()=>{
+  const entry=parseShard([row(1)])[0],raw=record(1);
+  assert.ok(publicNote(JSON.stringify(raw),entry,'threads'));
+  for(const tags of [[],[BLOG_TAG],[BLOG_TAG,THREADS_TAG]]){
+    raw.tagUuids=tags;assert.equal(publicNote(JSON.stringify(raw),entry,'threads'),null);
+  }
+});
 function fixture(count=45){
   let rows=Array.from({length:count},(_,i)=>row(i+1)),etag='v1',clock=10000,fail=false;
   const calls=[];
