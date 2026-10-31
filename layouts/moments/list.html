@@ -1,7 +1,7 @@
 {{ define "title" }}此刻 - {{ .Site.Title }}{{ end }}
 {{ define "main_inner_class" }}moments-page{{ end }}
 {{ define "main" }}
-<link rel="stylesheet" href="{{ "moments/moments.css" | relURL }}">
+<link rel="stylesheet" href="{{ "moments/moments.css" | relURL }}?v={{ readFile "static/moments/moments.css" | md5 }}">
 <link rel="stylesheet" href="{{ "moments/vendor/katex/katex.min.css" | relURL }}">
 <script defer src="{{ "moments/vendor/katex/katex.min.js" | relURL }}"></script>
 <section id="moments" aria-label="此刻时间线" data-feed-mode="{{ .Site.Params.momentsFeedMode | default (cond hugo.IsServer "live" "static") }}" data-feed-base="{{ "moments-feed/" | relURL }}">

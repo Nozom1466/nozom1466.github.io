@@ -57,7 +57,7 @@ function inline(part, media=null) {
       const safeAsset=url=>typeof url==='string'&&!url.includes('..')&&(/^\/(?!\/)[\w/.-]+$/.test(url)||/^https:\/\/snapnote-test-1316371247\.cos\.ap-shanghai\.myqcloud\.com\/SnapNote_Sync\/resources\/[\w.-]+\.(jpe?g|png|webp|gif)$/i.test(url));
       const src=media===null?mediaPath(e.image):safeAsset(published?.original)?published.original:null;
       const thumbnail=media===null?src+'?thumbnail=1':safeAsset(published?.thumbnail)?published.thumbnail:null;
-      return src&&thumbnail ? `<button class="photo" data-image="${escapeHTML(src)}" aria-label="放大图片"><img src="${escapeHTML(thumbnail)}" alt="笔记图片" loading="lazy" decoding="async"><span>查看大图 ↗</span></button>` : '<span class="unsupported">图片路径不受支持</span>';
+      return src&&thumbnail ? `<button class="photo" data-image="${escapeHTML(src)}" aria-label="放大图片"><img src="${escapeHTML(thumbnail)}" alt="笔记图片" loading="lazy" decoding="async"><span class="photo-zoom" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5M10.5 7.5v6M7.5 10.5h6"/></svg></span></button>` : '<span class="unsupported">图片路径不受支持</span>';
     }
     if (e.formula) return `<span class="formula" data-formula="${escapeHTML(e.formula)}">${escapeHTML(e.formula)}</span>`;
     return `<span class="unsupported">暂不支持的内容：${escapeHTML(Object.keys(e).join(', '))}</span>`;

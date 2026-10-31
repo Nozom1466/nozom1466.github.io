@@ -5,6 +5,8 @@ for(const count of [1,2,3,4,5,6,7,9]){
   const html=renderContent(Array.from({length:count},(_,i)=>[picture(i),{insert:'\n\n'}]).flat());
   assert.equal((html.match(/class="photo-grid"/g)||[]).length,1);
   assert.equal((html.match(/class="photo"/g)||[]).length,count);
+  assert.equal((html.match(/class="photo-zoom"/g)||[]).length,count);
+  assert.ok(!html.includes('查看大图'));
   assert.ok(html.includes(`data-columns="${Math.min(count,3)}"`));
   for(let i=1;i<count;i++)assert.ok(html.indexOf(`photo-${i-1}.jpg`)<html.indexOf(`photo-${i}.jpg`));
 }
