@@ -36,3 +36,23 @@ test('a caption not immediately following an image stays ordinary text',()=>{
   const r=record();r.note.content.push({insert:'普通段落\ncaption: 这不是配图说明\n'});
   const a=convertArticle(r);assert.ok(!a.source.includes('<figcaption'));assert.ok(a.source.includes('<p>caption: 这不是配图说明</p>'));
 });
+
+for(const header of ['summary: 自定义摘要\nlabels: AI, 随笔\n','labels: AI, 随笔\n\nSUMMARY：自定义摘要\n'])
+test(`custom summary and labels work in either order: ${header.split('\n')[0]}`,()=>{
+  const r=record();r.note.content.splice(2,0,{insert:header});
+  const a=convertArticle(r),[meta,body]=a.source.split(/\n\n(.*)/s),front=JSON.parse(meta);
+  assert.equal(front.summary,'自定义摘要');assert.deepEqual(front.tags,['AI','随笔']);
+  assert.ok(!body.includes('自定义摘要'));assert.ok(!body.includes('labels:'));assert.ok(body.includes('<p>第一段</p>'));
+});
+test('empty summary falls back; summary in normal body is not consumed',()=>{
+  const r=record();r.note.content.splice(2,0,{insert:'summary: \n'});r.note.content.push({insert:'summary: 正文文字\n'});
+  const a=convertArticle(r),front=JSON.parse(a.source.split('\n\n')[0]);
+  assert.ok(front.summary.startsWith('第一段'));assert.ok(a.source.includes('<p>summary: 正文文字</p>'));
+});
+test('custom summary is escaped, not truncated, and duplicate metadata fails',()=>{
+  const r=record();const summary='<script> {{< unsafe >}} '+ '长'.repeat(120);
+  r.note.content.splice(2,0,{insert:'summary: '+summary+'\n'});
+  const a=convertArticle(r),front=JSON.parse(a.source.split('\n\n')[0]);
+  assert.ok(front.summary.includes('&lt;script&gt;'));assert.ok(!a.source.includes('{{<'));assert.ok(front.summary.endsWith('长'.repeat(120)));
+  r.note.content.splice(3,0,{insert:'summary: 重复\n'});assert.throws(()=>convertArticle(r),/重复/);
+});

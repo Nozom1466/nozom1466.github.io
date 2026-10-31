@@ -14,12 +14,22 @@ export function convertArticle(raw,{draft=true}={}) {
   const title=first.parts.map(p=>p.text||'').join('').trim();
   if(!title)throw Error('文章标题为空');
   const plain=line=>line.parts.map(p=>p.text||'').join('').trim();
-  while(lines.length&&!plain(lines[0])&&!lines[0].parts.some(p=>p.embed))lines.shift();
-  let tags=[];
-  const tagLine=lines[0]&&!lines[0].parts.some(p=>p.embed)&&plain(lines[0]).match(/^(?:labels|标签)\s*[：:]\s*(.*)$/i);
-  if(tagLine){
-    tags=[...new Set(tagLine[1].split(/[,，、]/).map(t=>t.trim()).filter(Boolean))];
-    if(tags.length>20||tags.some(t=>t.length>60||/[<>{}\r\n]/.test(t)))throw Error('文章标签格式无效');
+  let tags=[],customSummary='';const metadata=new Set();
+  while(lines.length){
+    const line=lines[0];
+    if(line.parts.some(p=>p.embed)||Object.keys(line.attrs).length)break;
+    const value=plain(line);
+    if(!value){lines.shift();continue;}
+    const match=value.match(/^(labels|标签|summary)\s*[：:]\s*(.*)$/i);
+    if(!match)break;
+    const key=match[1].toLowerCase()==='summary'?'summary':'labels';
+    if(metadata.has(key))throw Error(`文章 ${key} 重复，请只填写一行`);
+    metadata.add(key);
+    if(key==='summary')customSummary=match[2].trim();
+    else{
+      tags=[...new Set(match[2].split(/[,，、]/).map(t=>t.trim()).filter(Boolean))];
+      if(tags.length>20||tags.some(t=>t.length>60||/[<>{}\r\n]/.test(t)))throw Error('文章标签格式无效');
+    }
     lines.shift();
   }
   const images=[];
@@ -72,7 +82,7 @@ export function convertArticle(raw,{draft=true}={}) {
   }
   close();
   const text=summaryParts.join(' ').replace(/\s+/g,' ').trim();
-  const summary=Array.from(text).slice(0,100).join('')+(Array.from(text).length>100?'…':'');
+  const summary=customSummary||(Array.from(text).slice(0,100).join('')+(Array.from(text).length>100?'…':''));
   const front={title,date:new Date(n.createdAtMs).toISOString(),lastmod:new Date(n.updatedAtMs??n.createdAtMs).toISOString(),slug:'snapnote-'+n.uuid,summary:escape(summary),draft,showtoc:false,tags,snapnote_uuid:n.uuid,snapnote_revision:raw.revisionId};
   return {title,images,source:JSON.stringify(front,null,2)+'\n\n'+blocks.join('\n\n')+'\n',filename:'snapnote-'+n.uuid+'.md'};
 }
