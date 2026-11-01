@@ -148,4 +148,34 @@ params:
       locations: []
       color: "blue"
       year: "2026"
+    - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/DSC_4091.JPG"
+      title: ""
+      subject: documentary
+      locations: []
+      color: "red"
+      year: "2025"
+    - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/DSC_8869.JPG"
+      title: ""
+      subject: portrait
+      locations: []
+      color: ""
+      year: "2026"
+    - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/DSC_8911.JPG"
+      title: ""
+      subject: animal
+      locations: []
+      color: "black"
+      year: "2026"
+    - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/DSC_9405.JPG"
+      title: ""
+      subject: documentary
+      locations: []
+      color: "black"
+      year: "2026"
+    - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/DSCF4067.JPG"
+      title: ""
+      subject: landscape
+      locations: []
+      color: "blue"
+      year: "2026"
 ---

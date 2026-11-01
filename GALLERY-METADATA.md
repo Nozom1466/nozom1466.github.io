@@ -38,3 +38,13 @@
 
 - DSC_6434.jpg：XMP 标题“银河”，主题 landscape，颜色 black，城市留空。EXIF 为 2025-01-01 08:00:05，疑似初始时间；用户确认实际拍摄年份为 2026，以用户确认为准。
 - DSC_8005.jpg：XMP 标题“日照金山”，主题 landscape，颜色 blue，城市留空。EXIF 拍摄时间为 2026-10-14，年份 2026。
+
+## 2026-11-01 新增
+
+从 OneDrive 的 Blog Inbox/Gallery 添加 5 张原图，共 29 张，经 PicGo 上传，未额外压缩。均无标题、说明、城市和 GPS 元数据，标题与城市留空。年份取 EXIF DateTimeOriginal，与 XMP 拍摄时间一致；不使用 2026-11-01 的导出时间。主题、颜色根据画面填写：
+
+- DSC_4091.JPG：雪地红衣行人，documentary / red，拍摄时间 2025-12-15，年份 2025。
+- DSC_8869.JPG：雾中持三脚架的人像，portrait，画面偏灰紫，颜色留空，拍摄时间 2026-10-14。
+- DSC_8911.JPG：树枝上的黑色鸟，animal / black，拍摄时间 2026-10-14。
+- DSC_9405.JPG：暮色中的三人剪影，documentary / black，拍摄时间 2026-10-15。
+- DSCF4067.JPG：雪山与水面倒影，landscape / blue，拍摄时间 2026-10-15。
