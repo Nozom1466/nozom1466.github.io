@@ -3,7 +3,7 @@
 每张照片使用四个分类字段，不再使用自由文本 tags。图片地址和排序不变。2026-11-01 按用户要求删除全部照片标题/说明，并关闭展廊的图注和悬停文字；以后上传不再导入这些文字。下方历史记录中的标题仅用于核对原照片，不再展示。
 
 - subject：必填，且只选一个：architecture、landscape、animal、documentary、portrait、still-life、experimental。
-- locations：城市名称列表，例如 ["上海"]；可以多个。无可靠资料时为 []，不把国家、公园或时区当作城市。
+- locations：优先使用城市名称列表，例如 ["上海"]；可以多个。无可靠资料时为 []，不根据国家、公园或时区猜测城市。用户明确指定的地点可直接使用：2026-11-01 用户确认本批 8 张均为黄石，记录为 ["黄石公园"]。
 - color：可选一个主色，固定为 red、orange、yellow、green、blue、black、white。没有明确主色则为 ""，不强行将粉色归为红色。
 - year：拍摄年份字符串，例如 "2025"。优先使用 EXIF DateTimeOriginal / XMP DateCreated，不使用导出日期。缺失或可疑值暂填 ""。
 
@@ -48,3 +48,16 @@
 - DSC_8911.JPG：树枝上的黑色鸟，animal / green，拍摄时间 2026-10-14。颜色按用户确认改为绿色。
 - DSC_9405.JPG：暮色中的三人剪影，documentary / black，拍摄时间 2026-10-15。
 - DSCF4067.JPG：雪山与水面倒影，landscape / blue，拍摄时间 2026-10-15。
+
+## 2026-11-01 第二批新增
+
+从 OneDrive 的 Blog Inbox/Gallery 添加 8 张原图，共 37 张。通过 PicGo 上传，未额外压缩，逐张核对图床文件与本地原图的 SHA-256 完全一致。年份均取 EXIF/XMP 拍摄时间 2026-10-14，城市/GPS 元数据缺失；用户确认本批均为黄石，地点统一为“黄石公园”。不添加标题或说明，主题与颜色按画面填写：
+
+- DSC_8321.JPG：landscape / yellow。
+- DSC_8484.JPG：landscape / blue。
+- DSC_8515.JPG：landscape / blue。
+- DSC_8521.JPG：landscape / blue。
+- DSC_8690.JPG：animal / blue。
+- DSC_8815.JPG：animal / blue。
+- DSC_8865.JPG：experimental，颜色留空。
+- DSC_8983.JPG：documentary / yellow。

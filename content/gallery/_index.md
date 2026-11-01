@@ -149,4 +149,44 @@ params:
       locations: []
       color: "blue"
       year: "2026"
+    - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/DSC_8321.JPG"
+      subject: landscape
+      locations: ["黄石公园"]
+      color: "yellow"
+      year: "2026"
+    - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/DSC_8484.JPG"
+      subject: landscape
+      locations: ["黄石公园"]
+      color: "blue"
+      year: "2026"
+    - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/DSC_8515.JPG"
+      subject: landscape
+      locations: ["黄石公园"]
+      color: "blue"
+      year: "2026"
+    - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/DSC_8521.JPG"
+      subject: landscape
+      locations: ["黄石公园"]
+      color: "blue"
+      year: "2026"
+    - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/DSC_8690.JPG"
+      subject: animal
+      locations: ["黄石公园"]
+      color: "blue"
+      year: "2026"
+    - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/DSC_8815.JPG"
+      subject: animal
+      locations: ["黄石公园"]
+      color: "blue"
+      year: "2026"
+    - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/DSC_8865.JPG"
+      subject: experimental
+      locations: ["黄石公园"]
+      color: ""
+      year: "2026"
+    - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/DSC_8983.JPG"
+      subject: documentary
+      locations: ["黄石公园"]
+      color: "yellow"
+      year: "2026"
 ---
