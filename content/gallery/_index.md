@@ -164,7 +164,7 @@ params:
       title: ""
       subject: animal
       locations: []
-      color: "black"
+      color: "green"
       year: "2026"
     - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/DSC_9405.JPG"
       title: ""

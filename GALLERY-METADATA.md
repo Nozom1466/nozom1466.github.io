@@ -45,6 +45,6 @@
 
 - DSC_4091.JPG：雪地红衣行人，documentary / red，拍摄时间 2025-12-15，年份 2025。
 - DSC_8869.JPG：雾中持三脚架的人像，portrait，画面偏灰紫，颜色留空，拍摄时间 2026-10-14。
-- DSC_8911.JPG：树枝上的黑色鸟，animal / black，拍摄时间 2026-10-14。
+- DSC_8911.JPG：树枝上的黑色鸟，animal / green，拍摄时间 2026-10-14。颜色按用户确认改为绿色。
 - DSC_9405.JPG：暮色中的三人剪影，documentary / black，拍摄时间 2026-10-15。
 - DSCF4067.JPG：雪山与水面倒影，landscape / blue，拍摄时间 2026-10-15。
