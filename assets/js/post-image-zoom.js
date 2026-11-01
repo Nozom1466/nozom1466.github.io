@@ -6,16 +6,11 @@
     if (!dialog) {
       dialog = document.createElement('dialog');
       dialog.id = 'post-image-zoom';
-      dialog.setAttribute('aria-label', '图片大图');
-      const button = document.createElement('button');
-      button.type = 'button';
-      button.setAttribute('aria-label', '关闭大图');
-      button.textContent = '×';
+      dialog.setAttribute('aria-label', '图片大图，点击空白区域或按 Esc 关闭');
       largeImage = document.createElement('img');
-      dialog.append(button, largeImage);
+      dialog.append(largeImage);
       document.body.append(dialog);
-      button.addEventListener('click', close);
-      dialog.addEventListener('click', event => { if (event.target === dialog || event.target === largeImage) close(); });
+      dialog.addEventListener('click', event => { if (event.target === dialog) close(); });
       dialog.addEventListener('close', () => {
         document.body.style.overflow = previousOverflow;
         largeImage.removeAttribute('src');
