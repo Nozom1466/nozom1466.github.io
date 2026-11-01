@@ -43,12 +43,19 @@ assert.equal(layouts, 3);
 const source = readFileSync(new URL("../content/gallery/_index.md", import.meta.url), "utf8");
 const expected = (source.match(/^\s+- url:/gm) || []).length;
 assert(expected > 0);
+assert(!/^      title:/m.test(source), 'Gallery photo captions must not be stored');
 const html = readFileSync(process.argv[2] || new URL("../.gallery-preview/gallery/index.html", import.meta.url), "utf8");
 assert.equal((html.match(/class=["']?gallery-item[\s"'>]/g) || []).length, expected);
 for (const key of ["subject", "location", "color", "year"]) assert(new RegExp('name=["\x27]?' + key + '[\\s"\x27>]').test(html));
 assert.equal((html.match(/data-subject=/g) || []).length, expected);
 assert.equal((html.match(/data-locations=/g) || []).length, expected);
 assert(!html.includes('class="tag-link"'));
+assert(!html.includes('data-caption='), 'Gallery must not render photo captions');
+for (const anchor of html.matchAll(/<a\s[^>]*class=["']?gallery-item[\s"'>][^>]*>/g)) {
+  assert(!/\stitle=/.test(anchor[0]), 'Gallery must not show caption tooltips');
+}
+const lightbox = readFileSync(new URL('../assets/gallery/js/lightbox.js', import.meta.url), 'utf8');
+assert(!lightbox.includes('PhotoSwipeDynamicCaption'), 'Gallery caption overlay must remain disabled');
 assert(!/<label>\s*(主题|地点|颜色|年份)/.test(html));
 for (const label of ["主题", "地点", "颜色", "年份"]) assert(html.includes("aria-label=" + label) || html.includes('aria-label="' + label + '"'));
 console.log(`Gallery tests passed: filtering, multiple cities, missing fields, URL restore, reset, empty state, ${expected} rendered photos.`);
