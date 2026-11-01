@@ -1,5 +1,7 @@
 {{ partialCached "head/script/global.html" . }}
 {{ partial "head/script/plugins.html" . }}
+{{ $imageZoomCSS := resources.Get "css/post-image-zoom.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $imageZoomCSS.RelPermalink }}">
 
 {{/* Custom script for header theme toggle button */}}
 <script>

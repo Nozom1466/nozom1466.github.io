@@ -1,0 +1,25 @@
+.post-body img:not(.no-lightbox) { cursor: zoom-in; }
+#post-image-zoom {
+  position: fixed;
+  inset: 0;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 48px 20px 20px;
+  border: 0;
+  background: transparent;
+  overflow: hidden;
+}
+#post-image-zoom[open] { display: flex; align-items: center; justify-content: center; }
+#post-image-zoom::backdrop { background: rgba(0, 0, 0, .78); }
+#post-image-zoom img { display: block; max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; cursor: zoom-out; }
+#post-image-zoom button {
+  position: absolute; right: max(12px, env(safe-area-inset-right)); top: max(8px, env(safe-area-inset-top));
+  width: 36px; height: 36px; padding: 0; border: 0; border-radius: 50%;
+  background: rgba(255,255,255,.12); color: #eee; font: 28px/36px sans-serif; cursor: pointer;
+}
+#post-image-zoom button:hover, #post-image-zoom button:focus-visible { background: rgba(255,255,255,.3); color: #fff; }
+@media (max-width: 600px) { #post-image-zoom { padding: 52px 8px 16px; } }
