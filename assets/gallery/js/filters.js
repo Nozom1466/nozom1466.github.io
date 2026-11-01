@@ -34,7 +34,6 @@ export function setupFilters(items, onChange) {
       item.style.display = visible ? "" : "none";
       if (visible) count++;
     });
-    document.getElementById("gallery-count").textContent = count + " / " + items.length + " 张";
     document.getElementById("gallery-empty").hidden = count !== 0;
   }
   function updateURL() {

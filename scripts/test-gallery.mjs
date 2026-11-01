@@ -17,8 +17,8 @@ const controls = Object.entries({
 }).map(([name, values]) => ({ name, value: "", options: values.map(value => ({value})) }));
 const handlers = {};
 const form = { elements: { namedItem: name => controls.find(c => c.name === name) }, addEventListener: (name, fn) => { handlers[name] = fn; } };
-const count = {}, empty = {}, events = {};
-globalThis.document = { getElementById: id => ({ "gallery-filters": form, "gallery-count": count, "gallery-empty": empty })[id] };
+const empty = {}, events = {};
+globalThis.document = { getElementById: id => ({ "gallery-filters": form, "gallery-empty": empty })[id] };
 globalThis.location = new URL("https://example.test/gallery/?subject=architecture&location=成都");
 globalThis.history = { pushState: (_, __, url) => { globalThis.location = new URL(url); } };
 globalThis.window = { addEventListener: (name, fn) => { events[name] = fn; } };
@@ -26,7 +26,7 @@ const item = { dataset: { ...photo, locations: JSON.stringify(photo.locations) }
 let layouts = 0;
 setupFilters([item], () => layouts++);
 assert(!item.hidden);
-assert.equal(count.textContent, "1 / 1 张");
+assert.equal(empty.hidden, true);
 controls.find(c => c.name === "subject").value = "animal";
 handlers.change();
 assert(item.hidden);
@@ -51,6 +51,11 @@ assert.equal((html.match(/data-subject=/g) || []).length, expected);
 assert.equal((html.match(/data-locations=/g) || []).length, expected);
 assert(!html.includes('class="tag-link"'));
 assert(!html.includes('data-caption='), 'Gallery must not render photo captions');
+assert(!html.includes('gallery-count'), 'Gallery must not render a photo count');
+assert(!html.includes('gallery-filter-summary'), 'Gallery must not reserve a summary row');
+assert(!/<button\b[^>]*type=["']?reset[\s"'>]/.test(html), 'Gallery must not render a reset button');
+const css = readFileSync(new URL('../assets/gallery/css/custom.css', import.meta.url), 'utf8');
+assert(/\.gallery-filters \.filter-trigger\s*\{\s*font-weight:\s*600;/.test(css), 'Gallery filter labels must use semibold text');
 for (const anchor of html.matchAll(/<a\s[^>]*class=["']?gallery-item[\s"'>][^>]*>/g)) {
   assert(!/\stitle=/.test(anchor[0]), 'Gallery must not show caption tooltips');
 }
