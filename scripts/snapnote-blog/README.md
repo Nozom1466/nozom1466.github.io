@@ -43,7 +43,25 @@ cover:
 
 在 `cover:` 下一行直接粘贴封面，后面继续写正文。也可填写现有两个 COS 空间的图片 HTTPS 链接；未指定 cover 时取第一张图片作为封面。封面不重复出现在正文里。正文配图仍支持下一行 `caption:`。
 
-`rating` 为 0–5；`labels` 对应书馆筛选标签，省略时为 book（常用 book、film、anime、game）。`summary`、`draft` 行为同博客；`date` 可指定 YYYY-MM-DD，`status` 支持 Reading、Completed、Not Started。创作者字段支持 author、director、screenplay、writer、original、translator、developer、publisher、producer、music、composer、artwork、cinematographer、character。音频、视频附件暂不支持自动转换，原有手写评价与音乐 shortcode 不受影响。
+`rating` 为 0–5；`labels` 对应书馆筛选标签，省略时为 book（常用 book、film、anime、game）。`summary`、`draft` 行为同博客；`date` 可指定 YYYY-MM-DD，`status` 支持 Reading、Completed、Not Started。创作者字段支持 author、director、screenplay、writer、original、translator、developer、publisher、producer、music、composer、artwork、cinematographer、character。`music:` / `composer:` 只是配乐作者署名，播放器使用下方独立的 `audio:` 格式。视频附件仍不支持自动转换，原有手写评价与音乐 shortcode 不受影响。
+
+### Review 正文音乐
+
+在正文需要播放器的位置按顺序填写（方括号是插入附件的操作提示，不要输入）：
+
+```text
+audio: Cornfield Chase
+artist: Hans Zimmer
+[插入 MP3 附件]
+audio_cover:
+[插入专辑封面图片]
+```
+
+`audio` 填曲名，必填；`artist` 和 `audio_cover` 可省略。音频及图片各占一行，允许空行。多首音乐重复这一组。字段不区分大小写，支持中英文冒号，请用普通段落而非代码块或列表。音频支持 MP3/M4A/OGG/WAV；也可以在附件位置单独粘贴现有 COS 音频直链，音乐封面可写成 `audio_cover: https://…/album.jpg`。不支持 Spotify / Apple Music 等分享页代替音频文件。
+
+每组转换为书馆已有的封面音乐播放器，不重复展示附件，不进入自动摘要。`cover:` 是作品封面，`audio_cover:` 是歌曲封面，不能互相替代；推荐显式写 `cover:`。音乐格式仅在 review 生效，blog 和 threads 不作同样转换。音频/封面缺失、格式不支持或同步未完成会停止部署，保留线上版本；写作时请先用 `draft: true`。
+
+附件解析支持 audio 文件名、file/attachment 的资源路径对象以及 COS 直链；若客户端导出的附件结构不同，会报错而不是猜测资源。首次使用应以真实手机附件验证。
 
 review 生成到 `content/library/snapnote-<UUID>.md`，不进入博客首页或此刻。与 blog 使用同一自动同步任务，修改、撤稿和草稿规则相同；不会修改原有手写书评。
 

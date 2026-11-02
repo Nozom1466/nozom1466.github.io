@@ -1,9 +1,10 @@
 import {parseLines,escapeHTML,safeLink} from '../../static/moments/render.mjs';
 import {channelOf} from '../../static/moments/channels.mjs';
 import {COS_ORIGIN} from '../../static/moments/cos-feed.mjs';
+import {parseAudioBlock} from './audio.mjs';
 
 const escape = value => escapeHTML(value).replaceAll('{','&#123;').replaceAll('}','&#125;');
-export function convertArticle(raw,{draft=true,skipDrafts=false}={}) {
+export function convertArticle(raw,{draft=true,skipDrafts=false,allowAudio=false}={}) {
   const n=raw.note;
   if(!n || !/^[a-f0-9-]{36}$/i.test(n.uuid))throw Error('笔记 ID 无效');
   if(channelOf(raw)!=='blog'||n.hasMarkDeleted||n.isLocked||n.isArchived||raw.stateVector?.deleted)throw Error('不是可预览的 blog 笔记');
@@ -40,7 +41,7 @@ export function convertArticle(raw,{draft=true,skipDrafts=false}={}) {
   // Unfinished drafts may contain incomplete media or unsupported blocks.
   // Exclude them before converting/checking attachments during publication.
   if(skipDrafts&&noteDraft)return null;
-  const images=[];
+  const images=[],audios=[];
   function inline(part){
     if(part.embed)throw Error('正文包含尚未适配的附件或公式，停止转换');
     const a=part.attrs;let text=escape(part.text);
@@ -58,6 +59,12 @@ export function convertArticle(raw,{draft=true,skipDrafts=false}={}) {
   const close=()=>{if(list){blocks.push(`</${list}>`);list=null;}};
   const summaryParts=[];
   for(let i=0;i<lines.length;i++){
+    const music=allowAudio&&parseAudioBlock(lines,i);
+    if(music){
+      close();blocks.push(music.html);audios.push(music.url);
+      if(music.cover)images.push(music.cover);
+      i=music.end;continue;
+    }
     const {parts,attrs:a}=lines[i];
     if(a.table||a.callout||a['code-block']||a.indent)throw Error('此富文本格式尚未适配，停止转换');
     if(parts.some(p=>p.embed)){
@@ -92,5 +99,5 @@ export function convertArticle(raw,{draft=true,skipDrafts=false}={}) {
   const text=summaryParts.join(' ').replace(/\s+/g,' ').trim();
   const summary=customSummary||(Array.from(text).slice(0,100).join('')+(Array.from(text).length>100?'…':''));
   const front={title,date:new Date(n.createdAtMs).toISOString(),lastmod:new Date(n.updatedAtMs??n.createdAtMs).toISOString(),slug:'snapnote-'+n.uuid,summary:escape(summary),draft:draft||noteDraft,showtoc:false,tags,snapnote_uuid:n.uuid,snapnote_revision:raw.revisionId};
-  return {title,images,source:JSON.stringify(front,null,2)+'\n\n'+blocks.join('\n\n')+'\n',filename:'snapnote-'+n.uuid+'.md'};
+  return {title,images,audios,source:JSON.stringify(front,null,2)+'\n\n'+blocks.join('\n\n')+'\n',filename:'snapnote-'+n.uuid+'.md'};
 }

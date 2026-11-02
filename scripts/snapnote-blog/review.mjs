@@ -2,6 +2,7 @@ import {parseLines,safeLink} from '../../static/moments/render.mjs';
 import {BLOG_TAG,channelOf} from '../../static/moments/channels.mjs';
 import {COS_ORIGIN} from '../../static/moments/cos-feed.mjs';
 import {convertArticle} from './convert.mjs';
+import {parseAudioBlock} from './audio.mjs';
 
 const roles=['author','director','screenplay','writer','original','translator','developer','publisher','producer','music','composer','artwork','cinematographer','character'];
 const keys=new Set(['draft','labels','summary','rating','cover','date','status',...roles]);
@@ -50,6 +51,8 @@ export function convertReview(raw,{draft=true,skipDrafts=false}={}){
   if(!cover){
     // Without a URL, consume the first image as the cover, not a duplicate body image.
     for(let i=0;i<lines.length&&!cover;i++){
+      const music=parseAudioBlock(lines,i);
+      if(music){i=music.end;continue;}
       const index=lines[i].parts.findIndex(p=>p.embed?.image);
       if(index>=0){cover=imageURL(lines[i].parts[index].embed.image);lines[i].parts.splice(index,1);}
     }
@@ -58,7 +61,7 @@ export function convertReview(raw,{draft=true,skipDrafts=false}={}){
   const ops=[{insert:title+'\n'}];
   for(const key of ['draft','labels','summary'])if(metadata.has(key))ops.push({insert:key+': '+metadata.get(key)+'\n'});
   for(const line of lines){for(const p of line.parts)ops.push({insert:p.embed||p.text,attributes:p.attrs});ops.push({insert:'\n',attributes:line.attrs});}
-  const article=convertArticle({...raw,tagUuids:[BLOG_TAG],note:{...n,content:ops}},{draft,skipDrafts});
+  const article=convertArticle({...raw,tagUuids:[BLOG_TAG],note:{...n,content:ops}},{draft,skipDrafts,allowAudio:true});
   if(!article)return null;
   const end=article.source.indexOf('\n\n'),front=JSON.parse(article.source.slice(0,end)),body=article.source.slice(end);
   front.cover=cover;front.library_tags=front.tags.length?front.tags:['book'];delete front.tags;

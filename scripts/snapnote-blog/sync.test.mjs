@@ -69,3 +69,23 @@ test('writes/removes only owned generated files and never overwrites a hand-writ
     assert.equal(await readFile(path.join(dir,a.articles[0].filename),'utf8'),'user-owned');
   }finally{await rm(dir,{recursive:true});}
 });
+
+test('music resources are validated and failure prevents publication',async()=>{
+  const f=fixture();f.records[id(2)].tagUuids=[REVIEW_TAG];
+  f.records[id(2)].note.content=[{insert:'电影\ncover:\n'},{insert:{image:'cover.jpg'}},
+    {insert:'\naudio: 曲名\nartist: 作者\n'},{insert:{audio:'song.mp3'}},
+    {insert:'\naudio_cover:\n'},{insert:{image:'album.jpg'}},{insert:'\n'}];
+  const original=f.fetcher;let audioStatus=200,audioType='audio/mpeg',calls=0;
+  f.fetcher=async(url,options)=>{
+    if(new URL(url).pathname.endsWith('.mp3')){
+      calls++;assert.equal(options.headers.Range,'bytes=0-63');
+      return new Response('audio',{status:audioStatus,headers:{'content-type':audioType}});
+    }
+    if(new URL(url).pathname.includes('/resources/'))return new Response('image',{headers:{'content-type':'image/jpeg'}});
+    return original(url);
+  };
+  const snapshot=await collectArticles(f);assert.equal(snapshot.articles.length,2);assert.equal(calls,1);
+  audioStatus=404;await assert.rejects(()=>collectArticles(f),/音乐附件/);
+  audioStatus=200;audioType='text/html';await assert.rejects(()=>collectArticles(f),/音乐附件/);
+  audioType='application/octet-stream';assert.equal((await collectArticles(f)).articles.length,2);
+});

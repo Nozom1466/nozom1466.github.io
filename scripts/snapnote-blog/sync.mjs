@@ -48,6 +48,12 @@ export async function collectArticles({fetcher=fetch}={}){
     const r=await fetcher(src+'?check='+Date.now(),{headers:{Range:'bytes=0-63'},signal:AbortSignal.timeout(20000)});
     const ok=r.ok&&/^image\//i.test(r.headers.get('content-type')||'');await r.body?.cancel();if(!ok)throw Error('配图尚未就绪，保留线上内容');
   }
+  for(const src of new Set(articles.flatMap(a=>a.audios||[]))){
+    const r=await fetcher(src+'?check='+Date.now(),{headers:{Range:'bytes=0-63'},signal:AbortSignal.timeout(20000)});
+    const type=(r.headers.get('content-type')||'').split(';')[0].trim();
+    const ok=r.ok&&(/^(audio\/|application\/octet-stream$)/i.test(type)||type==='video/mp4'&&/\.m4a$/i.test(src));
+    await r.body?.cancel();if(!ok)throw Error('音乐附件尚未就绪或不是音频，保留线上内容');
+  }
   const digest=createHash('sha256').update(JSON.stringify(articles.map(a=>[a.section||'ideas',a.filename,a.source]))).digest('hex');
   return {articles,digest,ids:articles.map(a=>a.filename.slice(9,-3)),indexedIds:[...latest.keys()]};
 }
