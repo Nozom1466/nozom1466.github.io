@@ -45,7 +45,7 @@ cover:
 
 `rating` 为 0–5；`labels` 对应书馆筛选标签，省略时为 book（常用 book、film、anime、game）。`summary`、`draft` 行为同博客；`date` 可指定 YYYY-MM-DD，`status` 支持 Reading、Completed、Not Started。创作者字段支持 author、director、screenplay、writer、original、translator、developer、publisher、producer、music、composer、artwork、cinematographer、character。`music:` / `composer:` 只是配乐作者署名，播放器使用下方独立的 `audio:` 格式。视频附件仍不支持自动转换，原有手写评价与音乐 shortcode 不受影响。
 
-### Review 正文音乐
+### Blog / Review 正文音乐
 
 在正文需要播放器的位置按顺序填写（方括号是插入附件的操作提示，不要输入）：
 
@@ -59,7 +59,7 @@ audio_cover:
 
 `audio` 填曲名，必填；`artist` 和 `audio_cover` 可省略。音频及图片各占一行，允许空行。多首音乐重复这一组。字段不区分大小写，支持中英文冒号，请用普通段落而非代码块或列表。音频支持 MP3/M4A/OGG/WAV；也可以在附件位置单独粘贴现有 COS 音频直链，音乐封面可写成 `audio_cover: https://…/album.jpg`。不支持 Spotify / Apple Music 等分享页代替音频文件。
 
-每组转换为书馆已有的封面音乐播放器，不重复展示附件，不进入自动摘要。`cover:` 是作品封面，`audio_cover:` 是歌曲封面，不能互相替代；推荐显式写 `cover:`。音乐格式仅在 review 生效，blog 和 threads 不作同样转换。音频/封面缺失、格式不支持或同步未完成会停止部署，保留线上版本；写作时请先用 `draft: true`。
+每组转换为带封面的音乐播放器，不重复展示附件，不进入自动摘要。Blog 与 Review 使用同一格式，可插入多首；Threads 不作同样转换。Review 的 `cover:` 是作品封面，`audio_cover:` 是歌曲封面，不能互相替代；Review 推荐显式写 `cover:`，Blog 无需此字段。音频/封面缺失、格式不支持或同步未完成会停止部署，保留线上版本；写作时请先用 `draft: true`。Blog 仅在有音乐时加载播放器，不自动播放；离开文章时停止播放。播放器加载失败时保留浏览器原生音频控件。
 
 附件解析支持 audio 文件名、file/attachment 的资源路径对象以及 COS 直链；若客户端导出的附件结构不同，会报错而不是猜测资源。首次使用应以真实手机附件验证。
 

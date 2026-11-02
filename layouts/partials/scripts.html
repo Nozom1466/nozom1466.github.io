@@ -2,6 +2,8 @@
 {{ partial "head/script/plugins.html" . }}
 {{ $imageZoomCSS := resources.Get "css/post-image-zoom.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $imageZoomCSS.RelPermalink }}">
+{{ $postMusicCSS := resources.Get "css/post-music.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $postMusicCSS.RelPermalink }}">
 
 {{/* Custom script for header theme toggle button */}}
 <script>

@@ -88,4 +88,11 @@ test('music resources are validated and failure prevents publication',async()=>{
   audioStatus=404;await assert.rejects(()=>collectArticles(f),/音乐附件/);
   audioStatus=200;audioType='text/html';await assert.rejects(()=>collectArticles(f),/音乐附件/);
   audioType='application/octet-stream';assert.equal((await collectArticles(f)).articles.length,2);
+  f.records[id(2)].tagUuids=[BLOG_TAG];
+  f.records[id(2)].note.content=[{insert:'音乐文章\nlabels: 音乐\naudio: 曲名\n'},
+    {insert:{audio:'song.mp3'}},{insert:'\naudio_cover:\n'},{insert:{image:'album.jpg'}},{insert:'\n'}];
+  const blogs=await collectArticles(f);assert.equal(blogs.articles.length,2);
+  assert.equal(blogs.articles.filter(a=>a.section==='library').length,0);
+  assert.equal(blogs.articles.flatMap(a=>a.audios).length,1);
+  audioStatus=404;await assert.rejects(()=>collectArticles(f),/音乐附件/);
 });

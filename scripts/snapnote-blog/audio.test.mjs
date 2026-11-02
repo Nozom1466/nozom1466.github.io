@@ -1,7 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {convertReview} from './review.mjs';
-import {REVIEW_TAG} from '../../static/moments/channels.mjs';
+import {convertArticle} from './convert.mjs';
+import {readFileSync} from 'node:fs';
+import {REVIEW_TAG,BLOG_TAG} from '../../static/moments/channels.mjs';
 import {resourceURL} from './audio.mjs';
 
 const music=(source={audio:'song.mp3'}, name='曲名')=>[
@@ -67,4 +69,29 @@ test('draft skips unfinished music and music creator field remains separate',()=
   assert.equal(convertReview(r,{draft:false,skipDrafts:true}),null);
   const ready=record();ready.note.content[0].insert='电影\nmusic: 配乐作者\ncover:\n';
   assert.equal(JSON.parse(convertReview(ready).source.split('\n\n')[0]).creators['1_music'],'配乐作者');
+});
+
+test('blog renders multiple tracks using the same blocks as review and retains captions',()=>{
+  const r=record();r.tagUuids=[BLOG_TAG];
+  r.note.content=[{insert:'音乐文章\nlabels: 电影, 音乐\nsummary: 原声推荐\ndraft: false\n正文\n'},
+    ...music(),...music({file:{path:'second.m4a'}},'第二首'),
+    {insert:{image:'scene.jpg'}},{insert:'\ncaption: 剧照\n'}];
+  const a=convertArticle(r,{draft:false});
+  assert.equal(a.audios.length,2);assert.equal(a.images.length,3);
+  assert.equal((a.source.match(/<music-placeholder/g)||[]).length,2);
+  assert.ok(a.source.includes('<figcaption'));assert.ok(a.source.includes('剧照'));
+  const f=JSON.parse(a.source.split('\n\n')[0]);assert.equal(f.summary,'原声推荐');assert.equal(f.draft,false);
+  assert.deepEqual(f.tags,['电影','音乐']);assert.equal(f.cover,undefined);
+  r.note.content=[{insert:'未完成\ndraft: true\naudio: 待填写\n'}];
+  assert.equal(convertArticle(r,{draft:false,skipDrafts:true}),null);
+});
+
+test('existing Interstellar audio and artwork convert unchanged in a blog',()=>{
+  const text=readFileSync(new URL('../../content/library/Interstellar.md',import.meta.url),'utf8');
+  const shortcode=text.match(/\{\{< music ([\s\S]*?) >\}\}/)[1];
+  const d=Object.fromEntries([...shortcode.matchAll(/(\w+)="([^"]*)"/g)].map(m=>[m[1],m[2]]));
+  const r=record();r.tagUuids=[BLOG_TAG];
+  r.note.content=[{insert:`原声测试\naudio: ${d.name}\nartist: ${d.artist}\n${d.url}\naudio_cover: ${d.cover}\n`}];
+  const a=convertArticle(r);assert.deepEqual(a.audios,[d.url]);assert.deepEqual(a.images,[d.cover]);
+  assert.ok(a.source.includes('data-name="Cornfield Chase"'));assert.ok(a.source.includes('data-artist="Hans Zimmer"'));
 });

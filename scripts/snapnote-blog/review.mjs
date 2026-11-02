@@ -61,7 +61,7 @@ export function convertReview(raw,{draft=true,skipDrafts=false}={}){
   const ops=[{insert:title+'\n'}];
   for(const key of ['draft','labels','summary'])if(metadata.has(key))ops.push({insert:key+': '+metadata.get(key)+'\n'});
   for(const line of lines){for(const p of line.parts)ops.push({insert:p.embed||p.text,attributes:p.attrs});ops.push({insert:'\n',attributes:line.attrs});}
-  const article=convertArticle({...raw,tagUuids:[BLOG_TAG],note:{...n,content:ops}},{draft,skipDrafts,allowAudio:true});
+  const article=convertArticle({...raw,tagUuids:[BLOG_TAG],note:{...n,content:ops}},{draft,skipDrafts});
   if(!article)return null;
   const end=article.source.indexOf('\n\n'),front=JSON.parse(article.source.slice(0,end)),body=article.source.slice(end);
   front.cover=cover;front.library_tags=front.tags.length?front.tags:['book'];delete front.tags;

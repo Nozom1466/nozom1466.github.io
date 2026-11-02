@@ -1,0 +1,9 @@
+.post-body .post-music { margin: 1.5em 0; }
+.post-body .post-music.aplayer { font-family: inherit; }
+.post-body .post-music .aplayer-title { font-size: 15px; }
+.post-body .post-music .aplayer-volume-wrap { display: none; }
+.post-body .post-music audio { display: block; width: 100%; }
+.post-body .post-music > img { object-fit: cover; margin: 0; }
+[data-theme="dark"] .post-body .post-music.aplayer { background: #252525; color: #ddd; }
+[data-theme="dark"] .post-body .post-music .aplayer-author,
+[data-theme="dark"] .post-body .post-music .aplayer-time { color: #aaa; }

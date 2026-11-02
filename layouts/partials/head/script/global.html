@@ -14,7 +14,8 @@
 {{ $utils := resources.Get "js/utils.js" }}
 {{ $boot := resources.Get "js/next-boot.js" }}
 {{ $imageZoom := resources.Get "js/post-image-zoom.js" }}
-{{ $nextjs := slice $config $utils $imageZoom $boot }}
+{{ $postMusic := resources.Get "js/post-music.js" }}
+{{ $nextjs := slice $config $utils $imageZoom $postMusic $boot }}
 
 {{/* Animation scripts */}}
 {{ if .Site.Params.motion.enable }}

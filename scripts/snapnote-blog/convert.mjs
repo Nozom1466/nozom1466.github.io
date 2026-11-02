@@ -4,7 +4,7 @@ import {COS_ORIGIN} from '../../static/moments/cos-feed.mjs';
 import {parseAudioBlock} from './audio.mjs';
 
 const escape = value => escapeHTML(value).replaceAll('{','&#123;').replaceAll('}','&#125;');
-export function convertArticle(raw,{draft=true,skipDrafts=false,allowAudio=false}={}) {
+export function convertArticle(raw,{draft=true,skipDrafts=false}={}) {
   const n=raw.note;
   if(!n || !/^[a-f0-9-]{36}$/i.test(n.uuid))throw Error('笔记 ID 无效');
   if(channelOf(raw)!=='blog'||n.hasMarkDeleted||n.isLocked||n.isArchived||raw.stateVector?.deleted)throw Error('不是可预览的 blog 笔记');
@@ -59,7 +59,7 @@ export function convertArticle(raw,{draft=true,skipDrafts=false,allowAudio=false
   const close=()=>{if(list){blocks.push(`</${list}>`);list=null;}};
   const summaryParts=[];
   for(let i=0;i<lines.length;i++){
-    const music=allowAudio&&parseAudioBlock(lines,i);
+    const music=parseAudioBlock(lines,i);
     if(music){
       close();blocks.push(music.html);audios.push(music.url);
       if(music.cover)images.push(music.cover);
