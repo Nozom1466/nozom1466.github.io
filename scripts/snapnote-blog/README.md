@@ -1,5 +1,7 @@
 # 闪念博客：自动发布
 
+手机写作可直接参考根目录的 [写作模板与字段速查](../../WRITING-TEMPLATES.md)，包含 Blog、Review、Threads、音乐和 Gallery 上传说明。
+
 `review`、`blog` 与 `threads` 标签 ID 在 `static/moments/channels.mjs` 中配置，依据用户截图和同步笔记确认。分类优先级为 review > blog > threads；没有 review 或 blog 标签的笔记默认进入此刻，不必显式添加 threads（包括未分类或仅有其他标签的记录）。归档、锁定、删除的笔记仍不展示。标签改名不影响 ID，删除重建标签需重新确认。
 
 `blog` 标签的笔记默认发布，不需要额外的「发布」标签；标题后填写 `draft: true` 则不发布，写完改为 `draft: false`。未填写 draft 时保留原有发布行为。Blog 草稿不会进入 Threads。已发布文章改为草稿、移除 blog、归档、锁定或删除后，下次成功同步会撤下对应文章。不确定分类的加密记录、读取失败、已发布内容的图片缺失会停止部署，保留线上版本；已发布文章完全消失于索引（无删除记录）也会停止自动撤稿，需要检查同步完整性。
