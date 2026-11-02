@@ -61,3 +61,19 @@
 - DSC_8815.JPG：animal / blue。
 - DSC_8865.JPG：experimental，颜色留空。
 - DSC_8983.JPG：documentary / yellow。
+
+## 2026-11-02 新增
+
+从 OneDrive 的 Blog Inbox/Gallery 添加 9 张照片，共 46 张。通过 PicGo 上传，逐张验证图床文件和本地文件 SHA-256 一致，未再次压缩。用户确认本批地点均为“黄石公园”；不添加标题、说明或手填尺寸。
+
+- DSC_7833.JPG：斜穿画面的银河，landscape / black；EXIF 为 2025-01-01 08:00:35，疑似相机初始时间，年份暂留空。
+- DSC_7854.JPG：云缝中的星空，landscape，颜色留空；EXIF 为 2025-01-01 08:00:33，年份暂留空。
+- DSC_9122.jpg：星空下的树，landscape / blue，2026。
+- DSC_9139.jpg：星空下的汽车，documentary / orange，2026。
+- DSC_9165.JPG：河边野牛，animal / blue，2026。
+- DSC_9223.JPG：山前草地与木堆，landscape / blue，2026。
+- DSC_9270.JPG：瀑布前戴帽子的人像，portrait / black，2026。
+- DSC_9275.JPG：瀑布与树林，landscape / green，2026。
+- MilkyWay_24frames_v3_银河色彩增强-1.jpg：星空下被照亮的树，landscape / blue，2026；画面不同于原有银河照片，作为新照片添加。
+
+以上有明确年份的 7 张均采用 EXIF DateTimeOriginal（2026-10-15）。DSC_7854、DSC_9223、DSC_9270、DSC_9275 的带“ 1”文件与对应文件 SHA-256 相同，跳过重复副本，保留本地文件。IMG_5700.jpg（秋树下行人）按用户要求排除，不发布，本地文件已移到回收站，可恢复。该图在用户提出排除前已上传 COS，但没有加入正式网站，COS 副本未删除。
