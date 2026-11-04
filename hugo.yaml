@@ -1125,7 +1125,7 @@ params:
   localSearch:
     # 是否开启搜索功能
     # Enable search function
-    enable: true
+    enable: false
     # 搜索索引文件路径
     # Indexes file path for search
     path: /searchindexes.xml

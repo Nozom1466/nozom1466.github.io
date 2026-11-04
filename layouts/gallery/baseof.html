@@ -15,6 +15,7 @@
         min-height: auto;
       }
       .gallery-header-title {
+        white-space: nowrap;
         font-size: 1.2em;
         font-weight: bold;
         text-decoration: none;
@@ -24,7 +25,7 @@
       }
       .gallery-header-nav {
         display: flex;
-        gap: 2rem;
+        gap: 1.5rem;
         align-items: center;
         margin: 0;
       }
@@ -33,10 +34,12 @@
         text-decoration: none;
         color: var(--text-1);
         margin: 0;
-        border-bottom: none;
+        border-bottom: 2px solid transparent;
+        white-space: nowrap;
         padding-bottom: 4px;
       }
-      .gallery-header-nav a:hover {
+      .gallery-header-nav a:hover,
+      .gallery-header-nav a[aria-current="page"] {
         border-bottom: 2px solid currentColor;
       }
       .gallery-header-nav a i {
@@ -64,7 +67,7 @@
         font-size: 1.2em;
       }
       
-      @media (max-width: 767px) {
+      @media (max-width: 1023px) {
         .gallery-header {
           flex-wrap: wrap;
           padding: 0.4em 1rem;
@@ -102,15 +105,14 @@
     </style>
     <header class="gallery-header">
       <a href="{{ "/" | relURL }}" class="gallery-header-title">
-        码头薯条小店
+        {{ .Site.Title }}
       </a>
-      <button class="gallery-hamburger" onclick="document.querySelector('.gallery-header-nav').classList.toggle('open')">
+      <button class="gallery-hamburger" aria-label="展开导航" aria-controls="gallery-navigation" aria-expanded="false" onclick="const open = document.getElementById('gallery-navigation').classList.toggle('open'); this.setAttribute('aria-expanded', open)">
         <i class="fa fa-bars"></i>
       </button>
-      <nav class="gallery-header-nav">
-        <a href="{{ "/" | relURL }}"><i class="fa fa-home"></i>首页</a>
-        <a href="{{ "/library" | relURL }}"><i class="fa fa-book"></i>书馆</a>
-        <button id="toggle-theme" title="Toggle theme">
+      <nav class="gallery-header-nav" id="gallery-navigation" aria-label="主导航">
+        {{ partial "header/section-menu-links.html" . }}
+        <button id="toggle-theme" title="切换主题" aria-label="切换主题">
           <i class="fa fa-moon" id="theme-icon-dark" style="display: none;"></i>
           <i class="fa fa-sun" id="theme-icon-light" style="display: none;"></i>
         </button>

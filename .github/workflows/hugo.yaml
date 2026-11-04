@@ -64,6 +64,9 @@ jobs:
           HUGO_ENVIRONMENT: production
           TZ: America/Los_Angeles
         run: hugo --gc --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+      - name: Check site navigation
+        if: github.event_name != 'schedule' || steps.sync.outputs.changed == 'true'
+        run: node scripts/test-navigation.mjs public
       - name: Disable Jekyll processing
         if: github.event_name != 'schedule' || steps.sync.outputs.changed == 'true'
         run: touch public/.nojekyll

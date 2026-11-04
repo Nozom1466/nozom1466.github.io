@@ -1,0 +1,12 @@
+{{- $page := . -}}
+{{- range .Site.Menus.main -}}
+  {{- $active := or ($page.IsMenuCurrent .Menu .) ($page.HasMenuCurrent .Menu .) (eq $page.Section .Identifier) -}}
+  <a href="{{ .URL | relLangURL }}"{{ if $active }} aria-current="page"{{ end }}>
+    {{- if eq .Identifier "moments" -}}
+      {{- partial "moments-icon.html" . -}}
+    {{- else -}}
+      <i class="fa fa-{{ .Pre }}" aria-hidden="true"></i>
+    {{- end -}}
+    {{- .Name -}}
+  </a>
+{{- end -}}
