@@ -15,7 +15,7 @@ const updates={
  'crossing-chishui':{source:'https://m.1905.com/m/film/61026.shtml',heading:'四渡赤水',releaseYear:1983,fields:{导演:'蔡继渭、谷德显',编剧:'黎明、王昊、王愿坚、李传弟'},image:'https://image13.m1905.cn/uploadfile/2012/0601/20120601110137598.jpg'},
  'blitz-brigade':{coverSource:'https://www.carlvaudrin.com/music.php',image:'https://www.carlvaudrin.com/img/music/blitz_brigade.jpg'},
  'brawl-stars':{coverSource:'https://www.imdb.com/title/tt9480088/',image:'https://m.media-amazon.com/images/M/MV5BMzVkNDFkNjEtZDE1OC00MTJmLWIxNjQtYWM1MWQxNThiODI0XkEyXkFqcGc%40._V1_.jpg'},
- 'running-man':{coverSource:'https://sports.khan.co.kr/article/202404150000013',image:'https://images.khan.co.kr/article/2024/04/15/news-p.v1.20240414.db4acbb57fb64421bb63e36131051214.png'},
+ 'running-man':{coverSource:'https://ent.ifeng.com/a/20161025/42707170_0.shtml',image:'https://p2.ifengimg.com/a/2016_44/33ee04b73e96cbd_size382_w560_h630.jpg'},
  'passengers':{coverSource:'https://www.impawards.com/2016/passengers.html',image:'https://www.impawards.com/2016/posters/passengers.jpg'},
  '13-hours':{coverSource:'https://www.impawards.com/2016/thirteen_hours_the_secret_soldiers_of_benghazi.html',image:'https://www.impawards.com/2016/posters/thirteen_hours_the_secret_soldiers_of_benghazi.jpg'},
 };

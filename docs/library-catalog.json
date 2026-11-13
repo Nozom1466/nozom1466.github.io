@@ -2218,14 +2218,14 @@
     },
     "cover": "/library-covers/running-man.webp",
     "coverDimensions": {
-      "width": 1000,
-      "height": 1411
+      "width": 560,
+      "height": 630
     },
-    "coverSource": "https://sports.khan.co.kr/article/202404150000013",
-    "coverOriginal": "https://images.khan.co.kr/article/2024/04/15/news-p.v1.20240414.db4acbb57fb64421bb63e36131051214.png",
+    "coverSource": "https://ent.ifeng.com/a/20161025/42707170_0.shtml",
+    "coverOriginal": "https://p2.ifengimg.com/a/2016_44/33ee04b73e96cbd_size382_w560_h630.jpg",
     "sources": [
       "https://en.wikipedia.org/wiki/Running_Man_(TV_program)",
-      "https://sports.khan.co.kr/article/202404150000013"
+      "https://ent.ifeng.com/a/20161025/42707170_0.shtml"
     ],
     "researched": "2026-11-13"
   },
