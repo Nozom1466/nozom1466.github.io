@@ -99,7 +99,8 @@ totto-chan|窗边的小豆豆|Totto-Chan: The Little Girl at the Window
 namiya-store|解忧杂货店|The Miracles of the Namiya General Store
 `);
 add('game', `
-gta-chinatown|侠盗猎车手：血战唐人街|Grand Theft Auto: Chinatown Wars
+gta-vice-city|侠盗猎车手：罪恶都市|Grand Theft Auto: Vice City
+gta-iii|侠盗猎车手 III|Grand Theft Auto III
 gta-san-andreas|侠盗猎车手：圣安地列斯|Grand Theft Auto: San Andreas
 polytopia|低模之战|The Battle of Polytopia
 league-of-legends|英雄联盟|League of Legends

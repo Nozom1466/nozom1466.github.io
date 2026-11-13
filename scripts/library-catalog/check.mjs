@@ -12,6 +12,8 @@ assert.equal(catalog.filter(x=>/^expendables/.test(x.slug)).length,2);
 assert.equal(catalog.filter(x=>/^star-wars-/.test(x.slug)).length,3);
 assert(catalog.some(x=>x.slug==='blitz-brigade'));
 const removed=['kaguya-1-cn','kaguya-2-cn','kaguya-3-cn','qin-2','qin-3','qin-4','qin-5','qin-6','lvxing-2','lvxing-3','our-lvxing-1','earth-lvxing-3','earth-lvxing-4','earth-lvxing-5','earth-lvxing-6'];
+removed.push('gta-chinatown');
+for(const slug of ['gta-vice-city','gta-iii','gta-san-andreas'])assert.equal(catalog.filter(x=>x.slug===slug).length,1);
 for(const slug of removed){
  assert(!catalog.some(x=>x.slug===slug),slug+': removed from catalog');
  await assert.rejects(stat(new URL(`../../content/library/${slug}.md`,import.meta.url)),{code:'ENOENT'});

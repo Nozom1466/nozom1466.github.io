@@ -3,6 +3,8 @@ import {readFile,writeFile} from 'node:fs/promises';
 import {load} from 'cheerio';
 import works from './works.mjs';
 const updates={
+ 'gta-iii':{coverSource:'https://www.stephenbliss.com/rockstar-games',image:'https://images.squarespace-cdn.com/content/v1/5441c4e5e4b07b71baeb625d/1419996736413-V8JXB0T47OLGK1NVUSVM/GTA3+FOB.+USA.+2002.jpg'},
+ 'gta-vice-city':{coverSource:'https://www.stephenbliss.com/rockstar-games',image:'https://images.squarespace-cdn.com/content/v1/5441c4e5e4b07b71baeb625d/1419996771632-934CRFOK8NCCIKPZY771/GTAVC+FOB.+USA.+2003.jpg'},
  'shouwang-de-juli':{source:'https://search.megbook.com.tw/mall/detail.jsp?proID=3004011',heading:'守望的距离',releaseYear:2017,fields:{作者:'周国平',出版社:'浙江人民出版社',ISBN:'9787213079634'},image:'http://img.megbook.hk/upload/mall/productImages/17/20/9787213079634.jpg'},
  'mr-six':{source:'https://m.1905.com/m/film/2224190.shtml',heading:'老炮儿',releaseYear:2015,fields:{导演:'管虎',编剧:'管虎、董润年',制片商:'华谊兄弟'},image:'https://image13.m1905.cn/mdb/uploadfile/2015/1210/20151210111542997820.jpg'},
  'zhao-wen-dao':{source:'https://book.douban.com/subject/30312029/',heading:'朝闻道',releaseYear:2018,fields:{作者:'刘慈欣',出版社:'长江文艺出版社',ISBN:'9787570204403'},image:'https://img3.doubanio.com/view/subject/l/public/s29855723.jpg'},
@@ -10,7 +12,6 @@ const updates={
  'huaihai-campaign':{source:'https://m.1905.com/m/film/1929545.shtml',heading:'大决战之淮海战役',date:'1991-08-01',fields:{导演:'李俊、蔡继渭、韦廉、杨光远',编剧:'李平分、史超、王军'},image:'https://image14.m1905.cn/uploadfile/2012/0605/20120605040151243.jpg'},
  'pingjin-campaign':{source:'https://m.1905.com/m/film/1929546.shtml',heading:'大决战之平津战役',date:'1992-01-01',fields:{导演:'李俊、蔡继渭、杨光远、韦廉',编剧:'李平分、史超、王军'},image:'https://image13.m1905.cn/mdb/uploadfile/2024/0515/20240515094758441822.jpg'},
  'crossing-chishui':{source:'https://m.1905.com/m/film/61026.shtml',heading:'四渡赤水',releaseYear:1983,fields:{导演:'蔡继渭、谷德显',编剧:'黎明、王昊、王愿坚、李传弟'},image:'https://image13.m1905.cn/uploadfile/2012/0601/20120601110137598.jpg'},
- 'gta-chinatown':{coverSource:'https://support.rockstargames.com/request/reddeadredemption2',image:'https://images.ctfassets.net/18izrhn535ym/7K2Lckd6oHN9oFXXGESPdy/509ed917c40b850004c71d0c3c18c3ea/GTA_CW_FOB.jpg'},
  'blitz-brigade':{coverSource:'https://www.carlvaudrin.com/music.php',image:'https://www.carlvaudrin.com/img/music/blitz_brigade.jpg'},
  'brawl-stars':{coverSource:'https://www.imdb.com/title/tt9480088/',image:'https://m.media-amazon.com/images/M/MV5BMzVkNDFkNjEtZDE1OC00MTJmLWIxNjQtYWM1MWQxNThiODI0XkEyXkFqcGc%40._V1_.jpg'},
  'running-man':{coverSource:'https://sports.khan.co.kr/article/202404150000013',image:'https://images.khan.co.kr/article/2024/04/15/news-p.v1.20240414.db4acbb57fb64421bb63e36131051214.png'},

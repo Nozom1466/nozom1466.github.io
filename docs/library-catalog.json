@@ -2044,26 +2044,50 @@
     "researched": "2026-11-13"
   },
   {
-    "slug": "gta-chinatown",
-    "title": "侠盗猎车手：血战唐人街",
+    "slug": "gta-vice-city",
+    "title": "侠盗猎车手：罪恶都市",
     "category": "game",
-    "releaseYear": 2009,
+    "releaseYear": 2002,
     "creators": {
-      "1_developer": "Rockstar Leeds, Rockstar North",
+      "1_developer": "Rockstar North",
       "2_publisher": "Rockstar Games",
-      "3_writer": "Dan Houser, David Bland"
+      "3_writer": "Dan Houser, James Worrall",
+      "4_music": "Lex Horton"
     },
-    "cover": "/library-covers/gta-chinatown.webp",
+    "cover": "/library-covers/gta-vice-city.webp",
     "coverDimensions": {
-      "width": 1280,
-      "height": 1600
+      "width": 795,
+      "height": 1125
     },
-    "coverSource": "https://support.rockstargames.com/request/reddeadredemption2",
-    "coverOriginal": "https://images.ctfassets.net/18izrhn535ym/7K2Lckd6oHN9oFXXGESPdy/509ed917c40b850004c71d0c3c18c3ea/GTA_CW_FOB.jpg",
+    "coverSource": "https://www.stephenbliss.com/rockstar-games",
+    "coverOriginal": "https://images.squarespace-cdn.com/content/v1/5441c4e5e4b07b71baeb625d/1419996771632-934CRFOK8NCCIKPZY771/GTAVC+FOB.+USA.+2003.jpg",
     "sources": [
-      "https://en.wikipedia.org/wiki/Grand_Theft_Auto%3A_Chinatown_Wars",
-      "https://support.rockstargames.com/request/reddeadredemption2",
-      "http://www.rockstargames.com/chinatownwars/"
+      "https://en.wikipedia.org/wiki/Grand_Theft_Auto%3A_Vice_City",
+      "https://www.stephenbliss.com/rockstar-games"
+    ],
+    "researched": "2026-11-13"
+  },
+  {
+    "slug": "gta-iii",
+    "title": "侠盗猎车手 III",
+    "category": "game",
+    "releaseYear": 2001,
+    "creators": {
+      "1_developer": "DMA Design",
+      "2_publisher": "Rockstar Games",
+      "3_writer": "James Worrall, Paul Kurowski, Dan Houser",
+      "4_music": "Craig Conner, Stuart Ross"
+    },
+    "cover": "/library-covers/gta-iii.webp",
+    "coverDimensions": {
+      "width": 795,
+      "height": 1125
+    },
+    "coverSource": "https://www.stephenbliss.com/rockstar-games",
+    "coverOriginal": "https://images.squarespace-cdn.com/content/v1/5441c4e5e4b07b71baeb625d/1419996736413-V8JXB0T47OLGK1NVUSVM/GTA3+FOB.+USA.+2002.jpg",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Grand_Theft_Auto_III",
+      "https://www.stephenbliss.com/rockstar-games"
     ],
     "researched": "2026-11-13"
   },
