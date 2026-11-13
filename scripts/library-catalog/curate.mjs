@@ -3,6 +3,9 @@ import {readFile,writeFile} from 'node:fs/promises';
 import {load} from 'cheerio';
 import works from './works.mjs';
 const updates={
+ 'mr-six':{source:'https://m.1905.com/m/film/2224190.shtml',heading:'老炮儿',releaseYear:2015,fields:{导演:'管虎',编剧:'管虎、董润年',制片商:'华谊兄弟'},image:'https://image13.m1905.cn/mdb/uploadfile/2015/1210/20151210111542997820.jpg'},
+ 'zhao-wen-dao':{source:'https://book.douban.com/subject/30312029/',heading:'朝闻道',releaseYear:2018,fields:{作者:'刘慈欣',出版社:'长江文艺出版社',ISBN:'9787570204403'},image:'https://img3.doubanio.com/view/subject/l/public/s29855723.jpg'},
+ 'ball-lightning':{source:'https://item.xhsd.com/items/1010000100501769',heading:'球状闪电',releaseYear:2005,fields:{作者:'刘慈欣',出版社:'四川科学技术出版社',ISBN:'9787536455382'},image:'https://img2.xinhuashudian.com/bookbasepic/C/00029/75364553800810554-fm.jpg'},
  'huaihai-campaign':{source:'https://m.1905.com/m/film/1929545.shtml',heading:'大决战之淮海战役',date:'1991-08-01',fields:{导演:'李俊、蔡继渭、韦廉、杨光远',编剧:'李平分、史超、王军'},image:'https://image14.m1905.cn/uploadfile/2012/0605/20120605040151243.jpg'},
  'pingjin-campaign':{source:'https://m.1905.com/m/film/1929546.shtml',heading:'大决战之平津战役',date:'1992-01-01',fields:{导演:'李俊、蔡继渭、杨光远、韦廉',编剧:'李平分、史超、王军'},image:'https://image13.m1905.cn/mdb/uploadfile/2024/0515/20240515094758441822.jpg'},
  'crossing-chishui':{source:'https://m.1905.com/m/film/61026.shtml',heading:'四渡赤水',releaseYear:1983,fields:{导演:'蔡继渭、谷德显',编剧:'黎明、王昊、王愿坚、李传弟'},image:'https://image13.m1905.cn/uploadfile/2012/0601/20120601110137598.jpg'},
@@ -13,7 +16,9 @@ const updates={
  'passengers':{coverSource:'https://www.impawards.com/2016/passengers.html',image:'https://www.impawards.com/2016/posters/passengers.jpg'},
  '13-hours':{coverSource:'https://www.impawards.com/2016/thirteen_hours_the_secret_soldiers_of_benghazi.html',image:'https://www.impawards.com/2016/posters/thirteen_hours_the_secret_soldiers_of_benghazi.jpg'},
 };
+const selected=process.argv.slice(2);
 for(const [slug,id] of [['dying-to-survive',2240923],['article-20',2257241],['taking-tiger-mountain',2214203]]){
+ if(selected.length&&!selected.includes(slug))continue;
  const url=`https://m.1905.com/m/film/${id}.shtml`;
  const r=await fetch(url,{signal:AbortSignal.timeout(20000)});if(!r.ok)throw Error(r.status);
  const $=load(await r.text());const image=$('meta[property="og:image"]').attr('content');
@@ -21,6 +26,7 @@ for(const [slug,id] of [['dying-to-survive',2240923],['article-20',2257241],['ta
  updates[slug]={coverSource:url,image};
 }
 for(const [slug,update] of Object.entries(updates)){
+ if(selected.length&&!selected.includes(slug))continue;
  const path=new URL(`./cache/${slug}.json`,import.meta.url);
  let old;try{old=JSON.parse(await readFile(path));}catch{old={...works.find(w=>w.slug===slug),retrieved:'2026-11-13'}}
  if(old.image===update.image&&old.asset)continue;

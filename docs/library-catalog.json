@@ -3986,5 +3986,67 @@
       "https://bgm.tv/subject/585012"
     ],
     "researched": "2026-11-13"
+  },
+  {
+    "slug": "mr-six",
+    "title": "老炮儿",
+    "category": "film",
+    "releaseYear": 2015,
+    "creators": {
+      "1_director": "管虎",
+      "2_writer": "管虎、董润年",
+      "3_studio": "华谊兄弟"
+    },
+    "cover": "/library-covers/mr-six.webp",
+    "coverDimensions": {
+      "width": 573,
+      "height": 800
+    },
+    "coverSource": "https://m.1905.com/m/film/2224190.shtml",
+    "coverOriginal": "https://image13.m1905.cn/mdb/uploadfile/2015/1210/20151210111542997820.jpg",
+    "sources": [
+      "https://m.1905.com/m/film/2224190.shtml"
+    ],
+    "researched": "2026-11-13"
+  },
+  {
+    "slug": "zhao-wen-dao",
+    "title": "朝闻道",
+    "category": "book",
+    "releaseYear": 2018,
+    "creators": {
+      "1_author": "刘慈欣"
+    },
+    "cover": "/library-covers/zhao-wen-dao.webp",
+    "coverDimensions": {
+      "width": 802,
+      "height": 1180
+    },
+    "coverSource": "https://book.douban.com/subject/30312029/",
+    "coverOriginal": "https://img3.doubanio.com/view/subject/l/public/s29855723.jpg",
+    "sources": [
+      "https://book.douban.com/subject/30312029/"
+    ],
+    "researched": "2026-11-13"
+  },
+  {
+    "slug": "ball-lightning",
+    "title": "球状闪电",
+    "category": "book",
+    "releaseYear": 2005,
+    "creators": {
+      "1_author": "刘慈欣"
+    },
+    "cover": "/library-covers/ball-lightning.webp",
+    "coverDimensions": {
+      "width": 600,
+      "height": 871
+    },
+    "coverSource": "https://item.xhsd.com/items/1010000100501769",
+    "coverOriginal": "https://img2.xinhuashudian.com/bookbasepic/C/00029/75364553800810554-fm.jpg",
+    "sources": [
+      "https://item.xhsd.com/items/1010000100501769"
+    ],
+    "researched": "2026-11-13"
   }
 ]

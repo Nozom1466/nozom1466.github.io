@@ -22,7 +22,9 @@ await Promise.all(Array.from({length:3},async()=>{
       if(data.asset){await writeFile(path,JSON.stringify(data,null,2)+'\n');continue;}
       let url=data.image;
       if(url.includes('upload.wikimedia.org')&&url.includes('/thumb/')) url=url.replace('/thumb/','/').replace(/\/[^/]+$/,'');
-      const r=await fetch(url,{headers:{'User-Agent':'PersonalLibraryCatalog/1.0'},signal:AbortSignal.timeout(25000)});
+      const headers={'User-Agent':'PersonalLibraryCatalog/1.0'};
+      if(data.coverSource||data.source)headers.Referer=data.coverSource||data.source;
+      const r=await fetch(url,{headers,signal:AbortSignal.timeout(25000)});
       if(!r.ok) throw Error(`${r.status} ${url}`);
       const bytes=Buffer.from(await r.arrayBuffer());
       const meta=await sharp(bytes).metadata();

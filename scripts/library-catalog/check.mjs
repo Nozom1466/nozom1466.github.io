@@ -11,6 +11,8 @@ assert.equal(catalog.filter(x=>/^conan-m/.test(x.slug)).length,29);
 assert.equal(catalog.filter(x=>/^expendables/.test(x.slug)).length,2);
 assert.equal(catalog.filter(x=>/^star-wars-/.test(x.slug)).length,3);
 assert(catalog.some(x=>x.slug==='blitz-brigade'));
+assert(!catalog.some(x=>/game-of-war/i.test(x.slug)||/Game of War/i.test(x.title)));
+for(const slug of ['mr-six','zhao-wen-dao','ball-lightning'])assert.equal(catalog.filter(x=>x.slug===slug).length,1);
 let bytes=0;
 for(const c of catalog){
  assert(c.sources.length&&c.coverOriginal&&c.coverSource,c.slug+': sources');

@@ -1,6 +1,6 @@
 # 书馆整理结果
 
-整理日期：2026-11-13。新增 163 个作品条目，保留原有作品和评价。新增条目均未填写评分、摘要或评价正文。
+整理日期：2026-11-13。新增 166 个作品条目，保留原有作品和评价。新增条目均未填写评分、摘要或评价正文。
 
 封面及资料逐条来源见 [library-catalog.json](library-catalog.json)。封面优先使用作品宣传图、正式发行封面；部分通过资料站取得，不包含生成式封面。
 
@@ -95,7 +95,7 @@
 - [四叠半时光机布鲁斯](../content/library/tatami-time-machine.md) · 2022
 - [小城日常](../content/library/city-animation.md) · 2025
 
-### 电影（47）
+### 电影（48）
 
 - [横道世之介](../content/library/yokomichi-yonosuke.md) · 2013
 - [大决战之辽沈战役](../content/library/liaoshen-campaign.md) · 1991
@@ -144,8 +144,9 @@
 - [楚门的世界](../content/library/truman-show.md) · 1998
 - [敢死队](../content/library/expendables.md) · 2010
 - [敢死队2](../content/library/expendables-2.md) · 2012
+- [老炮儿](../content/library/mr-six.md) · 2015
 
-### 书籍（8）
+### 书籍（10）
 
 - [三体](../content/library/three-body-book.md) · 2008
 - [三体Ⅱ：黑暗森林](../content/library/dark-forest.md) · 2008
@@ -155,6 +156,8 @@
 - [果壳中的宇宙](../content/library/universe-nutshell.md) · 2001
 - [窗边的小豆豆](../content/library/totto-chan.md) · 1981
 - [解忧杂货店](../content/library/namiya-store.md) · 2014
+- [朝闻道](../content/library/zhao-wen-dao.md) · 2018
+- [球状闪电](../content/library/ball-lightning.md) · 2005
 
 ### 电视剧（7）
 
@@ -192,15 +195,14 @@
 
 ## 暂未收录
 
-- 周国平散文集：蓝色封面不足以确认具体书名和版本。
-- 刘慈欣短篇集：已知包含《朝闻道》，具体选集待确认。
-- “Game of War”：具体游戏待确认。
-- “老炮儿、张艺谋那部”：片名与导演信息冲突，暂不猜测。
+- 周国平散文集：用户补充为磨铁出品、蓝色封面，具体书名仍待确认。
 - 提到雷佳音的“大明王朝／帝国”相关电影：用户要求暂缓。
 - 《辉夜大小姐》OVA 与特别篇、《秦时明月》其他番外：没有明确确认，不自动扩展。
 
 ## 版本与去重
 
+- 用户纠正“Game of War”为 Gameloft 那款游戏；不收录 Game of War，保留已确认的《闪电部队》，不重复创建。
+- 用户确认《老炮儿》并追加《球状闪电》；刘慈欣短篇集按《朝闻道》收录，选用此前给出的长江文艺版资料。
 - 《敢死队》只收录第一、二部；《闪电部队》按 Blitz Brigade 记录。
 - 《星球大战》只收录第七、八、九部。
 - 《名侦探柯南》包括 TV 和用户指定的第 1—29 部剧场版。

@@ -151,4 +151,9 @@ for(const line of bgmRows.trim().split('\n')) {
 }
 for(const [slug,title,bgm] of [
 ['lvxing-1','侣行 第一季',584982],['lvxing-2','侣行 第二季',584984],['lvxing-3','侣行 第三季',584985],['our-lvxing-1','我们的侣行 第一季',584998],['earth-lvxing-3','地球之极·侣行 第三季',585006],['earth-lvxing-4','地球之极·侣行 第四季',585008],['earth-lvxing-5','地球之极·侣行 第五季',585010],['earth-lvxing-6','地球之极·侣行 第六季',585012]]) rows.push({slug,title,bgm,category:'documentary'});
+rows.push(
+ {slug:'mr-six',title:'老炮儿',category:'film'},
+ {slug:'zhao-wen-dao',title:'朝闻道',category:'book'},
+ {slug:'ball-lightning',title:'球状闪电',category:'book'}
+);
 export default rows;
