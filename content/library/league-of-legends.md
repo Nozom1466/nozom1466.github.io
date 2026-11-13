@@ -1,5 +1,5 @@
 ---
-title: "英雄联盟"
+title: "League of Legends"
 cover: "/library-covers/league-of-legends.webp"
 library_tags:
   - game

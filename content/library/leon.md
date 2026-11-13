@@ -1,5 +1,5 @@
 ---
-title: "这个杀手不太冷"
+title: "Léon"
 cover: "/library-covers/leon.webp"
 library_tags:
   - film

@@ -1,5 +1,5 @@
 ---
-title: "星球大战8：最后的绝地武士"
+title: "Star Wars: The Last Jedi"
 cover: "/library-covers/star-wars-8.webp"
 library_tags:
   - film

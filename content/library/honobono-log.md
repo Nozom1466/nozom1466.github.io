@@ -1,5 +1,5 @@
 ---
-title: "温暖的印记"
+title: "ほのぼのログ"
 cover: "/library-covers/honobono-log.webp"
 library_tags:
   - anime

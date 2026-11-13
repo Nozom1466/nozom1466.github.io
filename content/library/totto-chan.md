@@ -1,5 +1,5 @@
 ---
-title: "窗边的小豆豆"
+title: "窓ぎわのトットちゃん"
 cover: "/library-covers/totto-chan.webp"
 library_tags:
   - book

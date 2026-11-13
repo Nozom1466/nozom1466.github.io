@@ -1,5 +1,5 @@
 ---
-title: "M16 · 名侦探柯南：第11个前锋"
+title: "M16 · 名探偵コナン 11人目のストライカー"
 cover: "/library-covers/conan-m16.webp"
 library_tags:
   - anime

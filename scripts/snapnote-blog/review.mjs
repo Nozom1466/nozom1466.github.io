@@ -3,6 +3,7 @@ import {BLOG_TAG,channelOf} from '../../static/moments/channels.mjs';
 import {COS_ORIGIN} from '../../static/moments/cos-feed.mjs';
 import {convertArticle} from './convert.mjs';
 import {parseAudioBlock} from './audio.mjs';
+import {normalizeOriginalNames} from '../library-catalog/original-names.mjs';
 
 const roles=['author','director','screenplay','writer','original','translator','developer','publisher','producer','music','composer','artwork','cinematographer','character'];
 const keys=new Set(['draft','labels','summary','rating','cover','date','status',...roles]);
@@ -78,5 +79,6 @@ export function convertReview(raw,{draft=true,skipDrafts=false}={}){
     const value=metadata.get('status'),states={reading:'Reading',completed:'Completed','not started':'Not Started'};
     if(!states[value.toLowerCase()])throw Error('status 支持 Reading、Completed、Not Started');front.status=states[value.toLowerCase()];
   }
-  return {...article,section:'library',images:[cover,...article.images],source:JSON.stringify(front,null,2)+body};
+  const normalized=normalizeOriginalNames(front);
+  return {...article,title:normalized.title,section:'library',images:[cover,...article.images],source:JSON.stringify(normalized,null,2)+body};
 }

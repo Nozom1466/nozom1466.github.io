@@ -1,5 +1,5 @@
 ---
-title: "环太平洋"
+title: "Pacific Rim"
 cover: "/library-covers/pacific-rim.webp"
 library_tags:
   - film

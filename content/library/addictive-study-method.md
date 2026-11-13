@@ -1,5 +1,5 @@
 ---
-title: 上瘾式学习：科学的自学成才法
+title: "科学的根拠に基づく最高の勉強法"
 cover: https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/addict_learning.jpg
 rating: 4.3
 library_tags:

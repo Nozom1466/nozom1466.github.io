@@ -7,7 +7,7 @@ date: 2026-11-13
 catalog_id: "article-20"
 release_year: 2024
 creators:
-  1_director: "Zhang Yimou"
-  2_writer: "Li Meng, Wang Tianyi"
-  3_studio: "Beijing Enlight Pictures, Center for Film & Television of the Supreme People's Procuratorate"
+  1_director: "张艺谋"
+  2_writer: "李萌、王天毅"
+  3_studio: "北京光线影业、最高人民检察院影视中心"
 ---

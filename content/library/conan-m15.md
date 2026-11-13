@@ -1,5 +1,5 @@
 ---
-title: "M15 · 名侦探柯南：沉默的15分钟"
+title: "M15 · 名探偵コナン 沈黙の15分"
 cover: "/library-covers/conan-m15.webp"
 library_tags:
   - anime

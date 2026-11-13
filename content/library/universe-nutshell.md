@@ -1,5 +1,5 @@
 ---
-title: "果壳中的宇宙"
+title: "The Universe in a Nutshell"
 cover: "/library-covers/universe-nutshell.webp"
 library_tags:
   - book

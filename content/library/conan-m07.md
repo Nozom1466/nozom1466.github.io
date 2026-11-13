@@ -1,5 +1,5 @@
 ---
-title: "M07 · 名侦探柯南：迷宫的十字路口"
+title: "M07 · 名探偵コナン 迷宮の十字路"
 cover: "/library-covers/conan-m07.webp"
 library_tags:
   - anime

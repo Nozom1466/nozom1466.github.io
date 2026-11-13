@@ -1,5 +1,5 @@
 ---
-title: "秒速5厘米（动画）"
+title: "秒速5センチメートル"
 cover: "/library-covers/five-centimeters-anime.webp"
 library_tags:
   - anime

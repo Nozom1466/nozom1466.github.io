@@ -1,5 +1,5 @@
 ---
-title: "轻音少女 剧场版"
+title: "映画けいおん！"
 cover: "/library-covers/k-on-movie.webp"
 library_tags:
   - anime

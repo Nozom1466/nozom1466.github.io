@@ -1,5 +1,5 @@
 ---
-title: 響け！ユーフォニアム3 - TV
+title: "響け！ユーフォニアム3"
 cover: https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/eupho3-1.webp
 rating: 0.5
 library_tags:
@@ -8,7 +8,7 @@ date: 2025-12-28
 summary: 我接受不了这样的告别...
 creators:
   1_producer: 京都アニメーション
-  2_author: 武田 绫乃
+  2_author: "武田綾乃"
 ---
 
 {{< music url="https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/azuka_solo.mp3" name="響け！ユーフォニアム(明日香 ver.)" artist="松田 彬人" cover="https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/epho_ost.jpg" >}}

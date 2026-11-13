@@ -1,5 +1,5 @@
 ---
-title: "声之形"
+title: "聲の形"
 cover: "/library-covers/silent-voice.webp"
 library_tags:
   - anime

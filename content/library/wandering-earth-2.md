@@ -7,9 +7,9 @@ date: 2026-11-13
 catalog_id: "wandering-earth-2"
 release_year: 2023
 creators:
-  1_director: "Frant Gwo"
-  2_writer: "Frant Gwo, Gong Ge'er, Yang Zhixue, Ye Ruchang"
-  3_producer: "Liu Cixin, Gong Ge'er"
-  4_music: "Roc Chen"
-  5_author: "Liu Cixin"
+  1_director: "郭帆"
+  2_writer: "郭帆、龚格尔、杨治学、叶濡畅"
+  3_producer: "刘慈欣、龚格尔"
+  4_music: "阿鲲"
+  5_author: "刘慈欣"
 ---

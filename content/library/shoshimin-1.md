@@ -1,5 +1,5 @@
 ---
-title: "小市民 第一季"
+title: "小市民シリーズ"
 cover: "/library-covers/shoshimin-1.webp"
 library_tags:
   - anime

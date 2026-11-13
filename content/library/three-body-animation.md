@@ -1,5 +1,5 @@
 ---
-title: "三体（艺画开天动画）"
+title: "三体"
 cover: "/library-covers/three-body-animation.webp"
 library_tags:
   - anime

@@ -1,5 +1,5 @@
 ---
-title: "小市民 第二季"
+title: "小市民シリーズ 第2期"
 cover: "/library-covers/shoshimin-2.webp"
 library_tags:
   - anime

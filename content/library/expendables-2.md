@@ -1,5 +1,5 @@
 ---
-title: "敢死队2"
+title: "The Expendables 2"
 cover: "/library-covers/expendables-2.webp"
 library_tags:
   - film

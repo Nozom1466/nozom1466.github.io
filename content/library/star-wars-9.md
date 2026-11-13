@@ -1,5 +1,5 @@
 ---
-title: "星球大战9：天行者崛起"
+title: "Star Wars: The Rise of Skywalker"
 cover: "/library-covers/star-wars-9.webp"
 library_tags:
   - film

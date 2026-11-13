@@ -7,8 +7,8 @@ date: 2026-11-13
 catalog_id: "lost-on-journey"
 release_year: 2010
 creators:
-  1_director: "Raymond Yip"
-  2_writer: "Liu Yiwei"
-  3_producer: "Manfred Wong"
-  4_music: "Kay Chan"
+  1_director: "叶伟民"
+  2_writer: "刘仪伟"
+  3_producer: "文隽"
+  4_music: "陈永健"
 ---

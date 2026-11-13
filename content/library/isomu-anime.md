@@ -1,5 +1,5 @@
 ---
-title: 君は放課後インソムニア
+title: "君は放課後インソムニア"
 cover: https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/resize.jpg
 rating: 4.7
 library_tags:
@@ -7,7 +7,7 @@ library_tags:
 date: 2026-05-01
 summary: 摄影佬狂喜的甜甜甜甜甜甜番！
 creators:
-  1_author: 尾城真
+  1_author: "オジロマコト"
 ---
 
 超级特别喜欢的一部校园恋爱甜番。开始看的原因就是看到这是讲述摄影部的一部番剧，而且正好有男主调试佳能拍摄星空的场景。

@@ -1,5 +1,5 @@
 ---
-title: "辉夜大小姐想让我告白－初吻不会结束－"
+title: "かぐや様は告らせたい-ファーストキッスは終わらない-"
 cover: "/library-covers/kaguya-first-kiss.webp"
 library_tags:
   - anime

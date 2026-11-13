@@ -1,5 +1,5 @@
 ---
-title: "玩具总动员2"
+title: "Toy Story 2"
 cover: "/library-covers/toy-story-2.webp"
 library_tags:
   - anime

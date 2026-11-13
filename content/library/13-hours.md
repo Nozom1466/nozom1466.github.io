@@ -1,5 +1,5 @@
 ---
-title: "危机13小时"
+title: "13 Hours: The Secret Soldiers of Benghazi"
 cover: "/library-covers/13-hours.webp"
 library_tags:
   - film

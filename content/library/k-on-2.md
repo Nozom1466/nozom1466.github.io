@@ -1,5 +1,5 @@
 ---
-title: "轻音少女 第二季"
+title: "けいおん！！"
 cover: "/library-covers/k-on-2.webp"
 library_tags:
   - anime

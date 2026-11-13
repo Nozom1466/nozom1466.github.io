@@ -1,5 +1,5 @@
 ---
-title: "M23 · 名侦探柯南：绀青之拳"
+title: "M23 · 名探偵コナン 紺青の拳"
 cover: "/library-covers/conan-m23.webp"
 library_tags:
   - anime

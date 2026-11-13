@@ -1,5 +1,5 @@
 ---
-title: "侠盗猎车手：罪恶都市"
+title: "Grand Theft Auto: Vice City"
 cover: "/library-covers/gta-vice-city.webp"
 library_tags:
   - game

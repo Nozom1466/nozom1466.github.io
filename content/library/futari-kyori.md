@@ -1,5 +1,5 @@
 ---
-title: "两人距离的概算"
+title: "ふたりの距離の概算"
 cover: "/library-covers/futari-kyori.webp"
 library_tags:
   - book

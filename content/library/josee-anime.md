@@ -1,5 +1,5 @@
 ---
-title: "乔西的虎与鱼（动画）"
+title: "ジョゼと虎と魚たち"
 cover: "/library-covers/josee-anime.webp"
 library_tags:
   - anime

@@ -1,5 +1,5 @@
 ---
-title: 秒速5厘米（真人版）
+title: "秒速5センチメートル"
 cover: https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/5-centimeters-per-second-live-action-cover.jpeg
 rating: 4.7
 library_tags:
@@ -8,8 +8,8 @@ date: 2026-08-10
 summary: 摄影师拍的电影实在是太契合我的审美！
 creators:
   1_director: 奥山由之
-  2_screenplay: 铃木史子
-  3_original: 新海诚《秒速5厘米》
+  2_screenplay: "鈴木史子"
+  3_original: "新海誠『秒速5センチメートル』"
 ---
 
 摄影师拍的电影实在是太契合我的审美！柔光高景深、多样而不繁杂的颜色、别出心裁的机位实在让人忍不住逐帧截图，结果就是两个小时的电影让我看了三个半小时然后小小失眠了一会。

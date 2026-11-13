@@ -1,5 +1,5 @@
 ---
-title: "M03 · 名侦探柯南：世纪末的魔术师"
+title: "M03 · 名探偵コナン 世紀末の魔術師"
 cover: "/library-covers/conan-m03.webp"
 library_tags:
   - anime

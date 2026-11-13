@@ -1,5 +1,5 @@
 ---
-title: "朝花夕誓"
+title: "さよならの朝に約束の花をかざろう"
 cover: "/library-covers/maquia.webp"
 library_tags:
   - anime

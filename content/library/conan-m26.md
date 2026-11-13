@@ -1,5 +1,5 @@
 ---
-title: "M26 · 名侦探柯南：黑铁的鱼影"
+title: "M26 · 名探偵コナン 黒鉄の魚影"
 cover: "/library-covers/conan-m26.webp"
 library_tags:
   - anime

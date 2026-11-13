@@ -1,5 +1,5 @@
 ---
-title: "M10 · 名侦探柯南：侦探们的镇魂歌"
+title: "M10 · 名探偵コナン 探偵たちの鎮魂歌"
 cover: "/library-covers/conan-m10.webp"
 library_tags:
   - anime

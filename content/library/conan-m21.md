@@ -1,5 +1,5 @@
 ---
-title: "M21 · 名侦探柯南：唐红的恋歌"
+title: "M21 · 名探偵コナン から紅の恋歌"
 cover: "/library-covers/conan-m21.webp"
 library_tags:
   - anime

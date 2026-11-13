@@ -1,5 +1,5 @@
 ---
-title: "M04 · 名侦探柯南：瞳孔中的暗杀者"
+title: "M04 · 名探偵コナン 瞳の中の暗殺者"
 cover: "/library-covers/conan-m04.webp"
 library_tags:
   - anime

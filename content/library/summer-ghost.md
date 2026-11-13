@@ -1,5 +1,5 @@
 ---
-title: "夏日幽灵"
+title: "サマーゴースト"
 cover: "/library-covers/summer-ghost.webp"
 library_tags:
   - anime

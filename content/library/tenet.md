@@ -1,5 +1,5 @@
 ---
-title: "信条"
+title: "Tenet"
 cover: "/library-covers/tenet.webp"
 library_tags:
   - film

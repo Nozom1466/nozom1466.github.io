@@ -1,5 +1,5 @@
 ---
-title: "紫罗兰永恒花园"
+title: "ヴァイオレット・エヴァーガーデン"
 cover: "/library-covers/violet-tv.webp"
 library_tags:
   - anime

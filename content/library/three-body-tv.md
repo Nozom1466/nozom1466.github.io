@@ -1,5 +1,5 @@
 ---
-title: "三体（电视剧）"
+title: "三体"
 cover: "/library-covers/three-body-tv.webp"
 library_tags:
   - tv

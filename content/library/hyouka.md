@@ -1,5 +1,5 @@
 ---
-title: "冰菓"
+title: "氷菓"
 cover: "/library-covers/hyouka.webp"
 library_tags:
   - anime

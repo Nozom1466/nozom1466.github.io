@@ -1,5 +1,5 @@
 ---
-title: "云之彼端，约定的地方"
+title: "雲のむこう、約束の場所"
 cover: "/library-covers/place-promised.webp"
 library_tags:
   - anime

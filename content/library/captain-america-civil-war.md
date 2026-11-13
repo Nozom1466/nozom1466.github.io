@@ -1,5 +1,5 @@
 ---
-title: "美国队长3：内战"
+title: "Captain America: Civil War"
 cover: "/library-covers/captain-america-civil-war.webp"
 library_tags:
   - film

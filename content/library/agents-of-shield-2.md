@@ -1,5 +1,5 @@
 ---
-title: "神盾局特工 第二季"
+title: "Agents of S.H.I.E.L.D. (Season 2)"
 cover: "/library-covers/agents-of-shield-2.webp"
 library_tags:
   - tv

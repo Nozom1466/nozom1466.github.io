@@ -1,5 +1,5 @@
 ---
-title: "紫罗兰永恒花园 外传：永远与自动手记人偶"
+title: "ヴァイオレット・エヴァーガーデン 外伝 - 永遠と自動手記人形 -"
 cover: "/library-covers/violet-side-story.webp"
 library_tags:
   - anime

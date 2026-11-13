@@ -1,5 +1,5 @@
 ---
-title: "小黄人大眼萌2：神偷奶爸前传"
+title: "Minions: The Rise of Gru"
 cover: "/library-covers/minions-2.webp"
 library_tags:
   - anime

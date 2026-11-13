@@ -1,5 +1,5 @@
 ---
-title: "侠盗猎车手：圣安地列斯"
+title: "Grand Theft Auto: San Andreas"
 cover: "/library-covers/gta-san-andreas.webp"
 library_tags:
   - game

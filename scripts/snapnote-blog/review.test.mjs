@@ -6,11 +6,18 @@ const record=()=>({revisionId:'a'.repeat(32),tagUuids:[REVIEW_TAG],note:{uuid:'2
 const front=a=>JSON.parse(a.source.split('\n\n')[0]);
 test('native review channel and cover marker with pasted image map to library fields',()=>{
   const r=record(),a=convertReview(r,{draft:false,skipDrafts:true}),f=front(a);
-  assert.equal(channelOf(r),'review');assert.equal(a.section,'library');assert.equal(f.title,'经营未来');
-  assert.equal(f.rating,4.6);assert.equal(f.creators['1_author'],'李明博');assert.equal(f.summary,'从穷小子到总统');
+  assert.equal(channelOf(r),'review');assert.equal(a.section,'library');assert.equal(f.title,'신화는 없다');assert.equal(a.title,f.title);
+  assert.equal(f.rating,4.6);assert.equal(f.creators['1_author'],'이명박');assert.equal(f.author,'이명박');assert.equal(f.summary,'从穷小子到总统');
   assert.deepEqual(f.library_tags,['book']);assert.equal(f.draft,false);assert.ok(f.cover.endsWith('/cover.png'));
   assert.ok(a.source.includes('<p>评价正文。</p>'));assert.ok(!a.source.includes('<figure>'));assert.equal(a.images.length,1);
   assert.ok(!a.source.includes('rating:'));assert.ok(!a.source.includes('summary:'));
+});
+test('unknown or repurposed review titles are not forced to the old work identity',()=>{
+  const r=record();r.note.uuid='11111111-1111-4111-8111-111111111111';
+  assert.equal(front(convertReview(r)).title,'经营未来');
+  r.note.uuid=record().note.uuid;r.note.content[0].insert=r.note.content[0].insert.replace('经营未来','另一本书');
+  assert.equal(front(convertReview(r)).title,'另一本书');
+  assert.equal(front(convertReview(r)).creators['1_author'],'李明博');
 });
 test('film creators, labels, date, status and body captions are retained',()=>{
   const r=record();r.note.content[0].insert='电影名\nlabels: film\nrating: 0\ndirector: 导演\nscreenplay: 编剧\ncomposer: 配乐\ndate: 2026-10-01\nstatus: Completed\ncover:\n';

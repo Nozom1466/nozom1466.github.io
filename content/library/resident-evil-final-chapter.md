@@ -1,5 +1,5 @@
 ---
-title: "生化危机：终章"
+title: "Resident Evil: The Final Chapter"
 cover: "/library-covers/resident-evil-final-chapter.webp"
 library_tags:
   - film

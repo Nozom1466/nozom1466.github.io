@@ -1,5 +1,5 @@
 ---
-title: "M17 · 名侦探柯南：绝海的侦探"
+title: "M17 · 名探偵コナン 絶海の探偵"
 cover: "/library-covers/conan-m17.webp"
 library_tags:
   - anime
@@ -11,5 +11,5 @@ creators:
   2_author: "青山剛昌"
   3_writer: "櫻井武晴"
   4_studio: "トムス・エンタテインメント、V1Studio"
-  5_music: "Katsuo Ono, Masakazu Yokoyama"
+  5_music: "大野克夫、横山克"
 ---

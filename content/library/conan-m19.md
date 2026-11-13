@@ -1,5 +1,5 @@
 ---
-title: "M19 · 名侦探柯南：业火的向日葵"
+title: "M19 · 名探偵コナン 業火の向日葵"
 cover: "/library-covers/conan-m19.webp"
 library_tags:
   - anime

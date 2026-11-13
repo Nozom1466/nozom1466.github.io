@@ -1,5 +1,5 @@
 ---
-title: 響け！ユーフォニアム2 - TV
+title: "響け！ユーフォニアム2"
 cover: https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/Sound_Euphonium_2_promo.webp
 rating: 5.0
 library_tags:
@@ -8,7 +8,7 @@ date: 2020-03-01
 summary: 从此宇治是我的第二故乡。
 creators:
   1_producer: 京都アニメーション
-  2_author: 武田 绫乃
+  2_author: "武田綾乃"
 ---
 
 如果让我选一部最喜欢番剧，那我不会有丝毫犹豫的将会脱口而出 *吹响吧！上低音号* TV 第二部。

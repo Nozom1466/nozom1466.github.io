@@ -1,5 +1,5 @@
 ---
-title: "四叠半时光机布鲁斯"
+title: "四畳半タイムマシンブルース"
 cover: "/library-covers/tatami-time-machine.webp"
 library_tags:
   - anime

@@ -1,5 +1,5 @@
 ---
-title: "荒野乱斗"
+title: "Brawl Stars"
 cover: "/library-covers/brawl-stars.webp"
 library_tags:
   - game

@@ -1,5 +1,5 @@
 ---
-title: "最后一封信"
+title: "ラストレター"
 cover: "/library-covers/last-letter.webp"
 library_tags:
   - film
@@ -7,9 +7,9 @@ date: 2026-11-13
 catalog_id: "last-letter"
 release_year: 2020
 creators:
-  1_director: "Shunji Iwai"
-  2_writer: "Shunji Iwai"
-  3_producer: "Aki Mizuno"
-  4_music: "Takeshi Kobayashi"
-  5_author: "Shunji Iwai"
+  1_director: "岩井俊二"
+  2_writer: "岩井俊二"
+  3_producer: "水野昌"
+  4_music: "小林武史"
+  5_author: "岩井俊二"
 ---

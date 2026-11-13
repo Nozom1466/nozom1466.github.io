@@ -1,5 +1,5 @@
 ---
-title: "M01 · 名侦探柯南：引爆摩天楼"
+title: "M01 · 名探偵コナン 時計じかけの摩天楼"
 cover: "/library-covers/conan-m01.webp"
 library_tags:
   - anime

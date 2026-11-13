@@ -1,5 +1,5 @@
 ---
-title: "迟来的翅膀"
+title: "いまさら翼といわれても"
 cover: "/library-covers/imasara-tsubasa.webp"
 library_tags:
   - book

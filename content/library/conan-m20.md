@@ -1,5 +1,5 @@
 ---
-title: "M20 · 名侦探柯南：纯黑的噩梦"
+title: "M20 · 名探偵コナン 純黒の悪夢"
 cover: "/library-covers/conan-m20.webp"
 library_tags:
   - anime

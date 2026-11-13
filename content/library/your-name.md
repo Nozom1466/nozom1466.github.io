@@ -1,5 +1,5 @@
 ---
-title: "你的名字。"
+title: "君の名は。"
 cover: "/library-covers/your-name.webp"
 library_tags:
   - anime

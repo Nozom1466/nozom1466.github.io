@@ -1,5 +1,5 @@
 ---
-title: 幸福之路
+title: "The Conquest of Happiness"
 cover: https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/road-to-happiness.jpg
 rating: 5.0
 library_tags:

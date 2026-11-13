@@ -1,5 +1,5 @@
 ---
-title: "月色真美"
+title: "月がきれい"
 cover: "/library-covers/tsuki-ga-kirei.webp"
 library_tags:
   - anime

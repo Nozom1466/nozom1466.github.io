@@ -1,5 +1,5 @@
 ---
-title: "M12 · 名侦探柯南：战栗的乐谱"
+title: "M12 · 名探偵コナン 戦慄の楽譜"
 cover: "/library-covers/conan-m12.webp"
 library_tags:
   - anime

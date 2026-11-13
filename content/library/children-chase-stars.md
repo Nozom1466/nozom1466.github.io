@@ -1,5 +1,5 @@
 ---
-title: "追逐繁星的孩子"
+title: "星を追う子ども"
 cover: "/library-covers/children-chase-stars.webp"
 library_tags:
   - anime

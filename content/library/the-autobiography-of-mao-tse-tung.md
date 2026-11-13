@@ -1,5 +1,5 @@
 ---
-title: 毛泽东自传
+title: "The Autobiography of Mao Tse-tung"
 cover: https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/s3921008.jpg
 rating: 4.6
 library_tags:

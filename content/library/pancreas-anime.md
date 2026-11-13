@@ -1,5 +1,5 @@
 ---
-title: "我想吃掉你的胰脏（动画）"
+title: "君の膵臓をたべたい"
 cover: "/library-covers/pancreas-anime.webp"
 library_tags:
   - anime

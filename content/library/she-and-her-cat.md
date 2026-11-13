@@ -1,5 +1,5 @@
 ---
-title: "她和她的猫（新海诚短片）"
+title: "彼女と彼女の猫"
 cover: "/library-covers/she-and-her-cat.webp"
 library_tags:
   - anime

@@ -1,5 +1,5 @@
 ---
-title: "创：战纪"
+title: "TRON: Legacy"
 cover: "/library-covers/tron-legacy.webp"
 library_tags:
   - film

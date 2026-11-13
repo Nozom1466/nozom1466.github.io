@@ -6,9 +6,10 @@ import sharp from 'sharp';
 import vm from 'node:vm';
 const catalog=JSON.parse(await readFile(new URL('../../docs/library-catalog.json',import.meta.url)));
 assert.equal(new Set(catalog.map(x=>x.slug)).size,catalog.length);
-assert.equal(new Set(catalog.map(x=>x.title)).size,catalog.length);
+// Original names can be shared by a novel, TV show and animated adaptation.
+assert.equal(new Set(catalog.map(x=>x.category+'|'+x.title)).size,catalog.length);
 assert.equal(catalog.filter(x=>/^conan-m/.test(x.slug)).length,29);
-for(const c of catalog.filter(x=>/^conan-m/.test(x.slug)))assert(c.title.startsWith(`M${c.slug.slice(-2)} · 名侦探柯南：`),c.slug+': movie number');
+for(const c of catalog.filter(x=>/^conan-m/.test(x.slug)))assert(c.title.startsWith(`M${c.slug.slice(-2)} · 名探偵コナン `),c.slug+': movie number');
 assert.equal(catalog.filter(x=>/^expendables/.test(x.slug)).length,2);
 assert.equal(catalog.filter(x=>/^star-wars-/.test(x.slug)).length,3);
 assert(catalog.some(x=>x.slug==='blitz-brigade'));
@@ -54,6 +55,8 @@ if(process.argv[2]){
   const card=$(`[data-review-id="${c.slug}"]`);
   assert.equal(card.length,1,c.slug+': rendered once');
   assert.equal(card.attr('data-rating'),'');assert.equal(card.find('.library-card-rating').length,0);
+  assert.equal(card.attr('data-title'),c.title);
+  assert.equal(card.find('.library-card-title').text().trim(),c.title);
   assert.equal(card.find('img').attr('src'),c.cover);
   assert.equal(card.attr('data-tags'),c.category);
   assert.deepEqual(JSON.parse(card.attr('data-creators')),c.creators);

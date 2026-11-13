@@ -1,5 +1,5 @@
 ---
-title: "肖申克的救赎"
+title: "The Shawshank Redemption"
 cover: "/library-covers/shawshank-redemption.webp"
 library_tags:
   - film

@@ -1,6 +1,7 @@
 // Produce a reviewable, source-linked catalog. No personal ratings or reviews are inferred.
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import works from './works.mjs';
+import {originalNames,normalizeOriginalNames} from './original-names.mjs';
 const catalog=[];
 function fields(d){return Object.fromEntries(Object.entries(d.fields||{}).map(([k,v])=>[k.replace(/\s+/g,' ').toLowerCase(),v]));}
 for(const w of works){
@@ -70,7 +71,8 @@ for(const w of works){
  if(official&&/^https?:\/\/\S+$/.test(official))sources.push(official);
  const releaseText=d.releaseYear||get('released','release dates','release date','release','publication date','上映日期')||d.date||d.coverSubject?.date;
  const year=Number(String(releaseText||'').match(/\b(19\d{2}|20\d{2})\b/)?.[1])||null;
- catalog.push({slug:w.slug,title:w.title,category:w.category,releaseYear:year,creators,cover:d.asset||null,coverDimensions:d.imageDimensions,coverSource:d.coverSource||d.imagePage||d.source,coverOriginal:d.imageOriginal||d.image,sources:[...new Set(sources.filter(Boolean))],researched:'2026-11-13'});
+ sources.push(...originalNames[w.slug]?.sources||[]);
+ catalog.push(normalizeOriginalNames({slug:w.slug,title:w.title,category:w.category,releaseYear:year,creators,cover:d.asset||null,coverDimensions:d.imageDimensions,coverSource:d.coverSource||d.imagePage||d.source,coverOriginal:d.imageOriginal||d.image,sources:[...new Set(sources.filter(Boolean))],researched:'2026-11-13'},w.slug));
 }
 await mkdir(new URL('../../docs/',import.meta.url),{recursive:true});
 await writeFile(new URL('../../docs/library-catalog.json',import.meta.url),JSON.stringify(catalog,null,2)+'\n');

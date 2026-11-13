@@ -1,5 +1,5 @@
 ---
-title: "花束般的恋爱"
+title: "花束みたいな恋をした"
 cover: "/library-covers/we-made-a-beautiful-bouquet.webp"
 library_tags:
   - film

@@ -1,5 +1,5 @@
 ---
-title: "星球大战7：原力觉醒"
+title: "Star Wars: The Force Awakens"
 cover: "/library-covers/star-wars-7.webp"
 library_tags:
   - film

@@ -1,5 +1,5 @@
 ---
-title: "你的颜色"
+title: "きみの色"
 cover: "/library-covers/colors-within.webp"
 library_tags:
   - anime

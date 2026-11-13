@@ -1,5 +1,5 @@
 ---
-title: "兄弟连"
+title: "Band of Brothers"
 cover: "/library-covers/band-of-brothers.webp"
 library_tags:
   - tv

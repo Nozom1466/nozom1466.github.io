@@ -1,5 +1,5 @@
 ---
-title: "蓦然回首"
+title: "ルックバック"
 cover: "/library-covers/look-back.webp"
 library_tags:
   - anime
@@ -11,5 +11,5 @@ creators:
   2_author: "藤本タツキ"
   3_writer: "押山清高"
   4_studio: "Studio DURIAN"
-  5_music: "Haruka Nakamura"
+  5_music: "haruka nakamura"
 ---

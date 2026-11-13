@@ -1,5 +1,5 @@
 ---
-title: "X战警：逆转未来"
+title: "X-Men: Days of Future Past"
 cover: "/library-covers/x-men-days-of-future-past.webp"
 library_tags:
   - film

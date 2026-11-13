@@ -1,5 +1,5 @@
 ---
-title: "余命十年"
+title: "余命10年"
 cover: "/library-covers/last-ten-years.webp"
 library_tags:
   - film

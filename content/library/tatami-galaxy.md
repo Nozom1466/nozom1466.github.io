@@ -1,5 +1,5 @@
 ---
-title: "四叠半神话大系"
+title: "四畳半神話大系"
 cover: "/library-covers/tatami-galaxy.webp"
 library_tags:
   - anime

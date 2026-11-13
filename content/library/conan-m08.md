@@ -1,5 +1,5 @@
 ---
-title: "M08 · 名侦探柯南：银翼的魔术师"
+title: "M08 · 名探偵コナン 銀翼の奇術師"
 cover: "/library-covers/conan-m08.webp"
 library_tags:
   - anime

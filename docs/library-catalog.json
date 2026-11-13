@@ -5,11 +5,11 @@
     "category": "film",
     "releaseYear": 2013,
     "creators": {
-      "1_director": "Shuichi Okita",
-      "2_writer": "Shirō Maeda",
-      "3_producer": "Toshikazu Nishigaya, Yuki Nishimiya, Yasushi Yamazaki",
-      "4_music": "Ren Takada",
-      "5_author": "Shūichi Yoshida"
+      "1_director": "沖田修一",
+      "2_writer": "前田司郎",
+      "3_producer": "西ヶ谷寿一、西宮由貴、山崎康史",
+      "4_music": "高田漣",
+      "5_author": "吉田修一"
     },
     "cover": "/library-covers/yokomichi-yonosuke.webp",
     "coverDimensions": {
@@ -20,7 +20,8 @@
     "coverOriginal": "https://lain.bgm.tv/pic/cover/l/8e/50/132760_tgm26.jpg",
     "sources": [
       "https://en.wikipedia.org/wiki/A_Story_of_Yonosuke",
-      "https://bgm.tv/subject/132760"
+      "https://bgm.tv/subject/132760",
+      "https://eiga.com/movie/57830/"
     ],
     "researched": "2026-11-13"
   },
@@ -112,14 +113,14 @@
   },
   {
     "slug": "hana-and-alice",
-    "title": "花与爱丽丝",
+    "title": "花とアリス",
     "category": "film",
     "releaseYear": 2004,
     "creators": {
-      "1_director": "Shunji Iwai",
-      "2_writer": "Shunji Iwai",
-      "3_producer": "Shunji Iwai",
-      "4_music": "Shunji Iwai"
+      "1_director": "岩井俊二",
+      "2_writer": "岩井俊二",
+      "3_producer": "岩井俊二",
+      "4_music": "岩井俊二"
     },
     "cover": "/library-covers/hana-and-alice.webp",
     "coverDimensions": {
@@ -136,14 +137,14 @@
   },
   {
     "slug": "april-story",
-    "title": "四月物语",
+    "title": "四月物語",
     "category": "film",
     "releaseYear": 1998,
     "creators": {
-      "1_director": "Shunji Iwai",
-      "2_writer": "Shunji Iwai",
-      "3_producer": "Hidemi Satani",
-      "4_music": "Shunji Iwai"
+      "1_director": "岩井俊二",
+      "2_writer": "岩井俊二",
+      "3_producer": "佐谷秀美",
+      "4_music": "岩井俊二"
     },
     "cover": "/library-covers/april-story.webp",
     "coverDimensions": {
@@ -160,15 +161,15 @@
   },
   {
     "slug": "last-letter",
-    "title": "最后一封信",
+    "title": "ラストレター",
     "category": "film",
     "releaseYear": 2020,
     "creators": {
-      "1_director": "Shunji Iwai",
-      "2_writer": "Shunji Iwai",
-      "3_producer": "Aki Mizuno",
-      "4_music": "Takeshi Kobayashi",
-      "5_author": "Shunji Iwai"
+      "1_director": "岩井俊二",
+      "2_writer": "岩井俊二",
+      "3_producer": "水野昌",
+      "4_music": "小林武史",
+      "5_author": "岩井俊二"
     },
     "cover": "/library-covers/last-letter.webp",
     "coverDimensions": {
@@ -186,15 +187,15 @@
   },
   {
     "slug": "our-little-sister",
-    "title": "海街日记",
+    "title": "海街diary",
     "category": "film",
     "releaseYear": 2015,
     "creators": {
-      "1_director": "Hirokazu Kore-eda",
-      "2_writer": "Hirokazu Kore-eda",
-      "3_producer": "Kaoru Matsuzaki, Hijiri Taguchi",
-      "4_music": "Yoko Kanno",
-      "5_author": "Akimi Yoshida"
+      "1_director": "是枝裕和",
+      "2_writer": "是枝裕和",
+      "3_producer": "松崎薫、田口聖",
+      "4_music": "菅野よう子",
+      "5_author": "吉田秋生"
     },
     "cover": "/library-covers/our-little-sister.webp",
     "coverDimensions": {
@@ -212,7 +213,7 @@
   },
   {
     "slug": "we-made-a-beautiful-bouquet",
-    "title": "花束般的恋爱",
+    "title": "花束みたいな恋をした",
     "category": "film",
     "releaseYear": 2021,
     "creators": {
@@ -236,7 +237,7 @@
   },
   {
     "slug": "last-ten-years",
-    "title": "余命十年",
+    "title": "余命10年",
     "category": "film",
     "releaseYear": 2022,
     "creators": {
@@ -261,15 +262,15 @@
   },
   {
     "slug": "insomniacs-after-school-film",
-    "title": "放学后失眠的你（真人电影）",
+    "title": "君は放課後インソムニア",
     "category": "film",
     "releaseYear": 2023,
     "creators": {
-      "1_director": "Chihiro Ikeda",
-      "2_writer": "Izumi Takahashi, Chihiro Ikeda",
-      "3_producer": "Yusuke Terada, Kazumi Matsui, Seiya Horio, Shoichi Ishikawa, Reiko Sasaki",
-      "4_music": "Nobuaki Shinzawa",
-      "5_author": "Makoto Ojiro"
+      "1_director": "池田千尋",
+      "2_writer": "髙橋泉、池田千尋",
+      "3_producer": "寺田悠輔、松井和美、堀尾星矢、石川翔一、佐々木礼子",
+      "4_music": "信澤宣明",
+      "5_author": "オジロマコト"
     },
     "cover": "/library-covers/insomniacs-after-school-film.webp",
     "coverDimensions": {
@@ -281,13 +282,15 @@
     "sources": [
       "https://en.wikipedia.org/wiki/Insomniacs_After_School_(film)",
       "https://bgm.tv/subject/400147",
-      "http://kimisomu-movie.com/"
+      "http://kimisomu-movie.com/",
+      "https://kimisomu-movie.com/",
+      "https://www.ponycanyon.co.jp/music/PCCG000002258"
     ],
     "researched": "2026-11-13"
   },
   {
     "slug": "shawshank-redemption",
-    "title": "肖申克的救赎",
+    "title": "The Shawshank Redemption",
     "category": "film",
     "releaseYear": 1994,
     "creators": {
@@ -315,10 +318,10 @@
     "category": "film",
     "releaseYear": 2018,
     "creators": {
-      "1_director": "Wen Muye",
-      "2_writer": "Han Jianü, Zhong Wei, Wen Muye",
-      "3_producer": "Ning Hao, Xu Zheng",
-      "4_music": "Huang Chao"
+      "1_director": "文牧野",
+      "2_writer": "韩家女、钟伟、文牧野",
+      "3_producer": "宁浩、徐峥",
+      "4_music": "黄超"
     },
     "cover": "/library-covers/dying-to-survive.webp",
     "coverDimensions": {
@@ -339,11 +342,11 @@
     "category": "film",
     "releaseYear": 2019,
     "creators": {
-      "1_director": "Frant Gwo",
-      "2_writer": "Gong Ge'er, Yan Dongxu, Frant Gwo, Ye Junce, Yang Zhixue, Wu Yi, Ye Ruchang",
-      "3_producer": "Liu Cixin, Gong Ge'er",
-      "4_music": "Roc Chen, Liu Tao (additional music)",
-      "5_author": "Liu Cixin"
+      "1_director": "郭帆",
+      "2_writer": "龚格尔、严东旭、郭帆、叶俊策、杨治学、吴荑、叶濡畅",
+      "3_producer": "刘慈欣、龚格尔",
+      "4_music": "阿鲲、刘韬",
+      "5_author": "刘慈欣"
     },
     "cover": "/library-covers/wandering-earth.webp",
     "coverDimensions": {
@@ -354,7 +357,8 @@
     "coverOriginal": "https://lain.bgm.tv/pic/cover/l/25/7a/274128_293YY.jpg",
     "sources": [
       "https://en.wikipedia.org/wiki/The_Wandering_Earth",
-      "https://bgm.tv/subject/274128"
+      "https://bgm.tv/subject/274128",
+      "https://zh.wikipedia.org/wiki/流浪地球_(电影)"
     ],
     "researched": "2026-11-13"
   },
@@ -364,11 +368,11 @@
     "category": "film",
     "releaseYear": 2023,
     "creators": {
-      "1_director": "Frant Gwo",
-      "2_writer": "Frant Gwo, Gong Ge'er, Yang Zhixue, Ye Ruchang",
-      "3_producer": "Liu Cixin, Gong Ge'er",
-      "4_music": "Roc Chen",
-      "5_author": "Liu Cixin"
+      "1_director": "郭帆",
+      "2_writer": "郭帆、龚格尔、杨治学、叶濡畅",
+      "3_producer": "刘慈欣、龚格尔",
+      "4_music": "阿鲲",
+      "5_author": "刘慈欣"
     },
     "cover": "/library-covers/wandering-earth-2.webp",
     "coverDimensions": {
@@ -385,7 +389,7 @@
   },
   {
     "slug": "avengers",
-    "title": "复仇者联盟",
+    "title": "The Avengers",
     "category": "film",
     "releaseYear": 2012,
     "creators": {
@@ -410,7 +414,7 @@
   },
   {
     "slug": "avengers-age-of-ultron",
-    "title": "复仇者联盟2：奥创纪元",
+    "title": "Avengers: Age of Ultron",
     "category": "film",
     "releaseYear": 2015,
     "creators": {
@@ -435,7 +439,7 @@
   },
   {
     "slug": "avengers-infinity-war",
-    "title": "复仇者联盟3：无限战争",
+    "title": "Avengers: Infinity War",
     "category": "film",
     "releaseYear": 2018,
     "creators": {
@@ -460,7 +464,7 @@
   },
   {
     "slug": "avengers-endgame",
-    "title": "复仇者联盟4：终局之战",
+    "title": "Avengers: Endgame",
     "category": "film",
     "releaseYear": 2019,
     "creators": {
@@ -485,7 +489,7 @@
   },
   {
     "slug": "iron-man",
-    "title": "钢铁侠",
+    "title": "Iron Man",
     "category": "film",
     "releaseYear": 2008,
     "creators": {
@@ -510,7 +514,7 @@
   },
   {
     "slug": "iron-man-2",
-    "title": "钢铁侠2",
+    "title": "Iron Man 2",
     "category": "film",
     "releaseYear": 2010,
     "creators": {
@@ -535,7 +539,7 @@
   },
   {
     "slug": "iron-man-3",
-    "title": "钢铁侠3",
+    "title": "Iron Man 3",
     "category": "film",
     "releaseYear": 2013,
     "creators": {
@@ -560,7 +564,7 @@
   },
   {
     "slug": "captain-america-civil-war",
-    "title": "美国队长3：内战",
+    "title": "Captain America: Civil War",
     "category": "film",
     "releaseYear": 2016,
     "creators": {
@@ -585,14 +589,14 @@
   },
   {
     "slug": "seoul-spring",
-    "title": "首尔之春",
+    "title": "서울의 봄",
     "category": "film",
     "releaseYear": 2023,
     "creators": {
-      "1_director": "Kim Sung-su",
-      "2_writer": "Hong In-pyo, Hong Won-Chan, Lee Young-jong, Kim Sung-su",
-      "3_producer": "Kim Won-kuk",
-      "4_music": "Lee Jae-jin"
+      "1_director": "김성수",
+      "2_writer": "홍인표、홍원찬、이영종、김성수",
+      "3_producer": "김원국",
+      "4_music": "이재진"
     },
     "cover": "/library-covers/seoul-spring.webp",
     "coverDimensions": {
@@ -602,7 +606,9 @@
     "coverSource": "https://en.wikipedia.org/wiki/File:12.12-_The_Day.jpg",
     "coverOriginal": "https://thumb.wikimedia.org/wikipedia/en/thumb/f/fc/12.12-_The_Day.jpg/250px-12.12-_The_Day.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
     "sources": [
-      "https://en.wikipedia.org/wiki/12.12%3A_The_Day"
+      "https://en.wikipedia.org/wiki/12.12%3A_The_Day",
+      "https://www.koreafilm.or.kr/museum/theater/module/TI_00000078",
+      "https://news.yonsei.ac.kr/kr/people/detail?bbSeq=27493"
     ],
     "researched": "2026-11-13"
   },
@@ -612,11 +618,11 @@
     "category": "film",
     "releaseYear": 2014,
     "creators": {
-      "1_director": "Tsui Hark",
-      "2_writer": "Huang Xin, Li Yang, Tsui Hark, Wu Bing, Dong Zhe, Lin Chi-an",
-      "3_producer": "Huang Jianxin, Nansun Shi, Yu Dong",
-      "4_music": "Wu Wai-lap",
-      "5_author": "Qu Bo"
+      "1_director": "徐克",
+      "2_writer": "黄欣、李杨、徐克、吴兵、董哲、林启安",
+      "3_producer": "黄建新、施南生、于冬",
+      "4_music": "胡伟立",
+      "5_author": "曲波"
     },
     "cover": "/library-covers/taking-tiger-mountain.webp",
     "coverDimensions": {
@@ -627,13 +633,14 @@
     "coverOriginal": "https://image13.m1905.cn/uploadfile/2014/1205/20141205092022132738.jpg",
     "sources": [
       "https://en.wikipedia.org/wiki/The_Taking_of_Tiger_Mountain",
-      "https://m.1905.com/m/film/2214203.shtml"
+      "https://m.1905.com/m/film/2214203.shtml",
+      "https://cinehello.com/stream/immerse/68921"
     ],
     "researched": "2026-11-13"
   },
   {
     "slug": "pacific-rim",
-    "title": "环太平洋",
+    "title": "Pacific Rim",
     "category": "film",
     "releaseYear": 2013,
     "creators": {
@@ -658,7 +665,7 @@
   },
   {
     "slug": "resident-evil-final-chapter",
-    "title": "生化危机：终章",
+    "title": "Resident Evil: The Final Chapter",
     "category": "film",
     "releaseYear": 2016,
     "creators": {
@@ -683,7 +690,7 @@
   },
   {
     "slug": "dune-2021",
-    "title": "沙丘",
+    "title": "Dune",
     "category": "film",
     "releaseYear": 2021,
     "creators": {
@@ -708,7 +715,7 @@
   },
   {
     "slug": "star-wars-7",
-    "title": "星球大战7：原力觉醒",
+    "title": "Star Wars: The Force Awakens",
     "category": "film",
     "releaseYear": 2015,
     "creators": {
@@ -733,7 +740,7 @@
   },
   {
     "slug": "star-wars-8",
-    "title": "星球大战8：最后的绝地武士",
+    "title": "Star Wars: The Last Jedi",
     "category": "film",
     "releaseYear": 2017,
     "creators": {
@@ -758,7 +765,7 @@
   },
   {
     "slug": "star-wars-9",
-    "title": "星球大战9：天行者崛起",
+    "title": "Star Wars: The Rise of Skywalker",
     "category": "film",
     "releaseYear": 2019,
     "creators": {
@@ -787,10 +794,10 @@
     "category": "film",
     "releaseYear": 2010,
     "creators": {
-      "1_director": "Raymond Yip",
-      "2_writer": "Liu Yiwei",
-      "3_producer": "Manfred Wong",
-      "4_music": "Kay Chan"
+      "1_director": "叶伟民",
+      "2_writer": "刘仪伟",
+      "3_producer": "文隽",
+      "4_music": "陈永健"
     },
     "cover": "/library-covers/lost-on-journey.webp",
     "coverDimensions": {
@@ -800,13 +807,14 @@
     "coverSource": "https://en.wikipedia.org/wiki/File:Lost_on_Journey_poster.jpg",
     "coverOriginal": "https://thumb.wikimedia.org/wikipedia/en/thumb/b/b9/Lost_on_Journey_poster.jpg/250px-Lost_on_Journey_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
     "sources": [
-      "https://en.wikipedia.org/wiki/Lost_on_Journey"
+      "https://en.wikipedia.org/wiki/Lost_on_Journey",
+      "https://upimg.baike.so.com/doc/3287878-3463555.html"
     ],
     "researched": "2026-11-13"
   },
   {
     "slug": "x-men",
-    "title": "X战警",
+    "title": "X-Men",
     "category": "film",
     "releaseYear": 2000,
     "creators": {
@@ -831,7 +839,7 @@
   },
   {
     "slug": "x-men-days-of-future-past",
-    "title": "X战警：逆转未来",
+    "title": "X-Men: Days of Future Past",
     "category": "film",
     "releaseYear": 2014,
     "creators": {
@@ -856,7 +864,7 @@
   },
   {
     "slug": "x-men-apocalypse",
-    "title": "X战警：天启",
+    "title": "X-Men: Apocalypse",
     "category": "film",
     "releaseYear": 2016,
     "creators": {
@@ -881,7 +889,7 @@
   },
   {
     "slug": "13-hours",
-    "title": "危机13小时",
+    "title": "13 Hours: The Secret Soldiers of Benghazi",
     "category": "film",
     "releaseYear": 2016,
     "creators": {
@@ -906,7 +914,7 @@
   },
   {
     "slug": "tron-legacy",
-    "title": "创：战纪",
+    "title": "TRON: Legacy",
     "category": "film",
     "releaseYear": 2010,
     "creators": {
@@ -931,7 +939,7 @@
   },
   {
     "slug": "martian",
-    "title": "火星救援",
+    "title": "The Martian",
     "category": "film",
     "releaseYear": 2015,
     "creators": {
@@ -956,7 +964,7 @@
   },
   {
     "slug": "passengers",
-    "title": "太空旅客",
+    "title": "Passengers",
     "category": "film",
     "releaseYear": 2016,
     "creators": {
@@ -980,7 +988,7 @@
   },
   {
     "slug": "leon",
-    "title": "这个杀手不太冷",
+    "title": "Léon",
     "category": "film",
     "releaseYear": 1994,
     "creators": {
@@ -997,13 +1005,14 @@
     "coverSource": "https://en.wikipedia.org/wiki/File:Leon-poster.jpg",
     "coverOriginal": "https://upload.wikimedia.org/wikipedia/en/0/03/Leon-poster.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
     "sources": [
-      "https://en.wikipedia.org/wiki/L%C3%A9on%3A_The_Professional"
+      "https://en.wikipedia.org/wiki/L%C3%A9on%3A_The_Professional",
+      "https://www.gaumont.com/en/movie/leon"
     ],
     "researched": "2026-11-13"
   },
   {
     "slug": "inception",
-    "title": "盗梦空间",
+    "title": "Inception",
     "category": "film",
     "releaseYear": 2010,
     "creators": {
@@ -1028,7 +1037,7 @@
   },
   {
     "slug": "tenet",
-    "title": "信条",
+    "title": "Tenet",
     "category": "film",
     "releaseYear": 2020,
     "creators": {
@@ -1057,9 +1066,9 @@
     "category": "film",
     "releaseYear": 2024,
     "creators": {
-      "1_director": "Zhang Yimou",
-      "2_writer": "Li Meng, Wang Tianyi",
-      "3_studio": "Beijing Enlight Pictures, Center for Film & Television of the Supreme People's Procuratorate"
+      "1_director": "张艺谋",
+      "2_writer": "李萌、王天毅",
+      "3_studio": "北京光线影业、最高人民检察院影视中心"
     },
     "cover": "/library-covers/article-20.webp",
     "coverDimensions": {
@@ -1070,13 +1079,14 @@
     "coverOriginal": "https://image14.m1905.cn/mdb/uploadfile/2024/0112/20240112022428812336.jpg",
     "sources": [
       "https://en.wikipedia.org/wiki/Article_20",
-      "https://m.1905.com/m/film/2257241.shtml"
+      "https://m.1905.com/m/film/2257241.shtml",
+      "https://m.1905.com/m/film/starlist/2257241.shtml"
     ],
     "researched": "2026-11-13"
   },
   {
     "slug": "truman-show",
-    "title": "楚门的世界",
+    "title": "The Truman Show",
     "category": "film",
     "releaseYear": 1998,
     "creators": {
@@ -1100,7 +1110,7 @@
   },
   {
     "slug": "expendables",
-    "title": "敢死队",
+    "title": "The Expendables",
     "category": "film",
     "releaseYear": 2010,
     "creators": {
@@ -1124,7 +1134,7 @@
   },
   {
     "slug": "expendables-2",
-    "title": "敢死队2",
+    "title": "The Expendables 2",
     "category": "film",
     "releaseYear": 2012,
     "creators": {
@@ -1149,7 +1159,7 @@
   },
   {
     "slug": "three-body-tv",
-    "title": "三体（电视剧）",
+    "title": "三体",
     "category": "tv",
     "releaseYear": 2023,
     "creators": {
@@ -1173,7 +1183,7 @@
   },
   {
     "slug": "band-of-brothers",
-    "title": "兄弟连",
+    "title": "Band of Brothers",
     "category": "tv",
     "releaseYear": 2001,
     "creators": {
@@ -1197,7 +1207,7 @@
   },
   {
     "slug": "agents-of-shield-1",
-    "title": "神盾局特工 第一季",
+    "title": "Agents of S.H.I.E.L.D. (Season 1)",
     "category": "tv",
     "releaseYear": 2013,
     "creators": {
@@ -1220,7 +1230,7 @@
   },
   {
     "slug": "agents-of-shield-2",
-    "title": "神盾局特工 第二季",
+    "title": "Agents of S.H.I.E.L.D. (Season 2)",
     "category": "tv",
     "releaseYear": 2014,
     "creators": {
@@ -1243,7 +1253,7 @@
   },
   {
     "slug": "agents-of-shield-3",
-    "title": "神盾局特工 第三季",
+    "title": "Agents of S.H.I.E.L.D. (Season 3)",
     "category": "tv",
     "releaseYear": 2015,
     "creators": {
@@ -1269,9 +1279,9 @@
     "category": "tv",
     "releaseYear": 2021,
     "creators": {
-      "1_director": "Wu Bai",
-      "2_writer": "Du Liang",
-      "3_studio": "Central Political and Legal Affairs Commission, Penguin Film and Television, China Chang'an Publishing Media, Zhongguang Film and Television, Wu Yuan Culture Company"
+      "1_director": "五百",
+      "2_writer": "祖若蒙、于小千、佟睦",
+      "3_studio": "中央政法委、企鹅影视、中国长安出版传媒、中广影视、五元文化"
     },
     "cover": "/library-covers/crime-crackdown.webp",
     "coverDimensions": {
@@ -1292,9 +1302,9 @@
     "category": "tv",
     "releaseYear": 2019,
     "creators": {
-      "1_director": "Cao Dun",
-      "2_writer": "Paw Studio",
-      "3_author": "Ma Boyong"
+      "1_director": "曹盾",
+      "2_writer": "爪子工作室",
+      "3_author": "马伯庸"
     },
     "cover": "/library-covers/longest-day-in-changan.webp",
     "coverDimensions": {
@@ -1312,7 +1322,7 @@
   },
   {
     "slug": "your-name",
-    "title": "你的名字。",
+    "title": "君の名は。",
     "category": "anime",
     "releaseYear": 2016,
     "creators": {
@@ -1338,7 +1348,7 @@
   },
   {
     "slug": "look-back",
-    "title": "蓦然回首",
+    "title": "ルックバック",
     "category": "anime",
     "releaseYear": 2024,
     "creators": {
@@ -1346,7 +1356,7 @@
       "2_author": "藤本タツキ",
       "3_writer": "押山清高",
       "4_studio": "Studio DURIAN",
-      "5_music": "Haruka Nakamura"
+      "5_music": "haruka nakamura"
     },
     "cover": "/library-covers/look-back.webp",
     "coverDimensions": {
@@ -1364,7 +1374,7 @@
   },
   {
     "slug": "colors-within",
-    "title": "你的颜色",
+    "title": "きみの色",
     "category": "anime",
     "releaseYear": 2024,
     "creators": {
@@ -1389,7 +1399,7 @@
   },
   {
     "slug": "garden-of-words",
-    "title": "言叶之庭",
+    "title": "言の葉の庭",
     "category": "anime",
     "releaseYear": 2013,
     "creators": {
@@ -1415,7 +1425,7 @@
   },
   {
     "slug": "five-centimeters-anime",
-    "title": "秒速5厘米（动画）",
+    "title": "秒速5センチメートル",
     "category": "anime",
     "releaseYear": 2025,
     "creators": {
@@ -1441,7 +1451,7 @@
   },
   {
     "slug": "suzume",
-    "title": "铃芽之旅",
+    "title": "すずめの戸締まり",
     "category": "anime",
     "releaseYear": 2022,
     "creators": {
@@ -1467,7 +1477,7 @@
   },
   {
     "slug": "place-promised",
-    "title": "云之彼端，约定的地方",
+    "title": "雲のむこう、約束の場所",
     "category": "anime",
     "releaseYear": 2004,
     "creators": {
@@ -1493,7 +1503,7 @@
   },
   {
     "slug": "children-chase-stars",
-    "title": "追逐繁星的孩子",
+    "title": "星を追う子ども",
     "category": "anime",
     "releaseYear": 2011,
     "creators": {
@@ -1518,7 +1528,7 @@
   },
   {
     "slug": "she-and-her-cat",
-    "title": "她和她的猫（新海诚短片）",
+    "title": "彼女と彼女の猫",
     "category": "anime",
     "releaseYear": 1999,
     "creators": {
@@ -1543,7 +1553,7 @@
   },
   {
     "slug": "pancreas-anime",
-    "title": "我想吃掉你的胰脏（动画）",
+    "title": "君の膵臓をたべたい",
     "category": "anime",
     "releaseYear": 2018,
     "creators": {
@@ -1569,7 +1579,7 @@
   },
   {
     "slug": "summer-ghost",
-    "title": "夏日幽灵",
+    "title": "サマーゴースト",
     "category": "anime",
     "releaseYear": 2021,
     "creators": {
@@ -1594,7 +1604,7 @@
   },
   {
     "slug": "josee-anime",
-    "title": "乔西的虎与鱼（动画）",
+    "title": "ジョゼと虎と魚たち",
     "category": "anime",
     "releaseYear": 2020,
     "creators": {
@@ -1620,7 +1630,7 @@
   },
   {
     "slug": "violet-side-story",
-    "title": "紫罗兰永恒花园 外传：永远与自动手记人偶",
+    "title": "ヴァイオレット・エヴァーガーデン 外伝 - 永遠と自動手記人形 -",
     "category": "anime",
     "releaseYear": 2019,
     "creators": {
@@ -1646,7 +1656,7 @@
   },
   {
     "slug": "violet-movie",
-    "title": "紫罗兰永恒花园 剧场版",
+    "title": "劇場版 ヴァイオレット・エヴァーガーデン",
     "category": "anime",
     "releaseYear": 2020,
     "creators": {
@@ -1672,7 +1682,7 @@
   },
   {
     "slug": "k-on-movie",
-    "title": "轻音少女 剧场版",
+    "title": "映画けいおん！",
     "category": "anime",
     "releaseYear": 2014,
     "creators": {
@@ -1722,7 +1732,7 @@
   },
   {
     "slug": "toy-story",
-    "title": "玩具总动员",
+    "title": "Toy Story",
     "category": "anime",
     "releaseYear": 1995,
     "creators": {
@@ -1748,7 +1758,7 @@
   },
   {
     "slug": "toy-story-2",
-    "title": "玩具总动员2",
+    "title": "Toy Story 2",
     "category": "anime",
     "releaseYear": 1999,
     "creators": {
@@ -1774,7 +1784,7 @@
   },
   {
     "slug": "toy-story-3",
-    "title": "玩具总动员3",
+    "title": "Toy Story 3",
     "category": "anime",
     "releaseYear": 2010,
     "creators": {
@@ -1800,7 +1810,7 @@
   },
   {
     "slug": "zootopia",
-    "title": "疯狂动物城",
+    "title": "Zootopia",
     "category": "anime",
     "releaseYear": 2016,
     "creators": {
@@ -1826,7 +1836,7 @@
   },
   {
     "slug": "minions",
-    "title": "小黄人大眼萌",
+    "title": "Minions",
     "category": "anime",
     "releaseYear": 2015,
     "creators": {
@@ -1852,7 +1862,7 @@
   },
   {
     "slug": "minions-2",
-    "title": "小黄人大眼萌2：神偷奶爸前传",
+    "title": "Minions: The Rise of Gru",
     "category": "anime",
     "releaseYear": 2022,
     "creators": {
@@ -1941,7 +1951,7 @@
   },
   {
     "slug": "futari-kyori",
-    "title": "两人距离的概算",
+    "title": "ふたりの距離の概算",
     "category": "book",
     "releaseYear": 2010,
     "creators": {
@@ -1962,7 +1972,7 @@
   },
   {
     "slug": "imasara-tsubasa",
-    "title": "迟来的翅膀",
+    "title": "いまさら翼といわれても",
     "category": "book",
     "releaseYear": 2016,
     "creators": {
@@ -1983,7 +1993,7 @@
   },
   {
     "slug": "universe-nutshell",
-    "title": "果壳中的宇宙",
+    "title": "The Universe in a Nutshell",
     "category": "book",
     "releaseYear": 2001,
     "creators": {
@@ -2003,7 +2013,7 @@
   },
   {
     "slug": "totto-chan",
-    "title": "窗边的小豆豆",
+    "title": "窓ぎわのトットちゃん",
     "category": "book",
     "releaseYear": 1981,
     "creators": {
@@ -2024,7 +2034,7 @@
   },
   {
     "slug": "namiya-store",
-    "title": "解忧杂货店",
+    "title": "ナミヤ雑貨店の奇蹟",
     "category": "book",
     "releaseYear": 2014,
     "creators": {
@@ -2045,7 +2055,7 @@
   },
   {
     "slug": "gta-vice-city",
-    "title": "侠盗猎车手：罪恶都市",
+    "title": "Grand Theft Auto: Vice City",
     "category": "game",
     "releaseYear": 2002,
     "creators": {
@@ -2069,7 +2079,7 @@
   },
   {
     "slug": "gta-iii",
-    "title": "侠盗猎车手 III",
+    "title": "Grand Theft Auto III",
     "category": "game",
     "releaseYear": 2001,
     "creators": {
@@ -2093,7 +2103,7 @@
   },
   {
     "slug": "gta-san-andreas",
-    "title": "侠盗猎车手：圣安地列斯",
+    "title": "Grand Theft Auto: San Andreas",
     "category": "game",
     "releaseYear": 2004,
     "creators": {
@@ -2118,7 +2128,7 @@
   },
   {
     "slug": "polytopia",
-    "title": "低模之战",
+    "title": "The Battle of Polytopia",
     "category": "game",
     "releaseYear": 2016,
     "creators": {
@@ -2142,7 +2152,7 @@
   },
   {
     "slug": "league-of-legends",
-    "title": "英雄联盟",
+    "title": "League of Legends",
     "category": "game",
     "releaseYear": 2009,
     "creators": {
@@ -2164,7 +2174,7 @@
   },
   {
     "slug": "brawl-stars",
-    "title": "荒野乱斗",
+    "title": "Brawl Stars",
     "category": "game",
     "releaseYear": 2018,
     "creators": {
@@ -2181,13 +2191,14 @@
     "sources": [
       "https://en.wikipedia.org/wiki/Brawl_Stars",
       "https://www.imdb.com/title/tt9480088/",
-      "https://brawlstars.com/zh_cn/"
+      "https://brawlstars.com/zh_cn/",
+      "https://bgm.tv/subject/269242"
     ],
     "researched": "2026-11-13"
   },
   {
     "slug": "blitz-brigade",
-    "title": "闪电部队",
+    "title": "Blitz Brigade",
     "category": "game",
     "releaseYear": 2013,
     "creators": {
@@ -2209,11 +2220,11 @@
   },
   {
     "slug": "running-man",
-    "title": "Running Man",
+    "title": "런닝맨",
     "category": "variety",
     "releaseYear": 2010,
     "creators": {
-      "1_creator": "Nam Seung-yong, Ahn Jae-chul",
+      "1_creator": "남승용、안재철",
       "2_broadcaster": "SBS"
     },
     "cover": "/library-covers/running-man.webp",
@@ -2225,13 +2236,15 @@
     "coverOriginal": "https://p2.ifengimg.com/a/2016_44/33ee04b73e96cbd_size382_w560_h630.jpg",
     "sources": [
       "https://en.wikipedia.org/wiki/Running_Man_(TV_program)",
-      "https://ent.ifeng.com/a/20161025/42707170_0.shtml"
+      "https://ent.ifeng.com/a/20161025/42707170_0.shtml",
+      "https://bgm.tv/subject/303523",
+      "https://tv.charmy.global/series/9"
     ],
     "researched": "2026-11-13"
   },
   {
     "slug": "conan-m01",
-    "title": "M01 · 名侦探柯南：引爆摩天楼",
+    "title": "M01 · 名探偵コナン 時計じかけの摩天楼",
     "category": "anime",
     "releaseYear": 1997,
     "creators": {
@@ -2257,7 +2270,7 @@
   },
   {
     "slug": "conan-m02",
-    "title": "M02 · 名侦探柯南：第14个目标",
+    "title": "M02 · 名探偵コナン 14番目の標的",
     "category": "anime",
     "releaseYear": 1998,
     "creators": {
@@ -2283,7 +2296,7 @@
   },
   {
     "slug": "conan-m03",
-    "title": "M03 · 名侦探柯南：世纪末的魔术师",
+    "title": "M03 · 名探偵コナン 世紀末の魔術師",
     "category": "anime",
     "releaseYear": 1999,
     "creators": {
@@ -2309,7 +2322,7 @@
   },
   {
     "slug": "conan-m04",
-    "title": "M04 · 名侦探柯南：瞳孔中的暗杀者",
+    "title": "M04 · 名探偵コナン 瞳の中の暗殺者",
     "category": "anime",
     "releaseYear": 2000,
     "creators": {
@@ -2335,7 +2348,7 @@
   },
   {
     "slug": "conan-m05",
-    "title": "M05 · 名侦探柯南：通往天国的倒计时",
+    "title": "M05 · 名探偵コナン 天国へのカウントダウン",
     "category": "anime",
     "releaseYear": 2001,
     "creators": {
@@ -2361,7 +2374,7 @@
   },
   {
     "slug": "conan-m06",
-    "title": "M06 · 名侦探柯南：贝克街的亡灵",
+    "title": "M06 · 名探偵コナン ベイカー街の亡霊",
     "category": "anime",
     "releaseYear": 2002,
     "creators": {
@@ -2387,7 +2400,7 @@
   },
   {
     "slug": "conan-m07",
-    "title": "M07 · 名侦探柯南：迷宫的十字路口",
+    "title": "M07 · 名探偵コナン 迷宮の十字路",
     "category": "anime",
     "releaseYear": 2003,
     "creators": {
@@ -2413,7 +2426,7 @@
   },
   {
     "slug": "conan-m08",
-    "title": "M08 · 名侦探柯南：银翼的魔术师",
+    "title": "M08 · 名探偵コナン 銀翼の奇術師",
     "category": "anime",
     "releaseYear": 2004,
     "creators": {
@@ -2439,7 +2452,7 @@
   },
   {
     "slug": "conan-m09",
-    "title": "M09 · 名侦探柯南：水平线上的阴谋",
+    "title": "M09 · 名探偵コナン 水平線上の陰謀",
     "category": "anime",
     "releaseYear": 2005,
     "creators": {
@@ -2465,7 +2478,7 @@
   },
   {
     "slug": "conan-m10",
-    "title": "M10 · 名侦探柯南：侦探们的镇魂歌",
+    "title": "M10 · 名探偵コナン 探偵たちの鎮魂歌",
     "category": "anime",
     "releaseYear": 2006,
     "creators": {
@@ -2491,7 +2504,7 @@
   },
   {
     "slug": "conan-m11",
-    "title": "M11 · 名侦探柯南：绀碧之棺",
+    "title": "M11 · 名探偵コナン 紺碧の棺",
     "category": "anime",
     "releaseYear": 2007,
     "creators": {
@@ -2517,7 +2530,7 @@
   },
   {
     "slug": "conan-m12",
-    "title": "M12 · 名侦探柯南：战栗的乐谱",
+    "title": "M12 · 名探偵コナン 戦慄の楽譜",
     "category": "anime",
     "releaseYear": 2008,
     "creators": {
@@ -2543,7 +2556,7 @@
   },
   {
     "slug": "conan-m13",
-    "title": "M13 · 名侦探柯南：漆黑的追踪者",
+    "title": "M13 · 名探偵コナン 漆黒の追跡者",
     "category": "anime",
     "releaseYear": 2009,
     "creators": {
@@ -2569,7 +2582,7 @@
   },
   {
     "slug": "conan-m14",
-    "title": "M14 · 名侦探柯南：天空的遇难船",
+    "title": "M14 · 名探偵コナン 天空の難破船",
     "category": "anime",
     "releaseYear": 2010,
     "creators": {
@@ -2594,7 +2607,7 @@
   },
   {
     "slug": "conan-m15",
-    "title": "M15 · 名侦探柯南：沉默的15分钟",
+    "title": "M15 · 名探偵コナン 沈黙の15分",
     "category": "anime",
     "releaseYear": 2011,
     "creators": {
@@ -2620,7 +2633,7 @@
   },
   {
     "slug": "conan-m16",
-    "title": "M16 · 名侦探柯南：第11个前锋",
+    "title": "M16 · 名探偵コナン 11人目のストライカー",
     "category": "anime",
     "releaseYear": 2012,
     "creators": {
@@ -2646,7 +2659,7 @@
   },
   {
     "slug": "conan-m17",
-    "title": "M17 · 名侦探柯南：绝海的侦探",
+    "title": "M17 · 名探偵コナン 絶海の探偵",
     "category": "anime",
     "releaseYear": 2013,
     "creators": {
@@ -2654,7 +2667,7 @@
       "2_author": "青山剛昌",
       "3_writer": "櫻井武晴",
       "4_studio": "トムス・エンタテインメント、V1Studio",
-      "5_music": "Katsuo Ono, Masakazu Yokoyama"
+      "5_music": "大野克夫、横山克"
     },
     "cover": "/library-covers/conan-m17.webp",
     "coverDimensions": {
@@ -2672,7 +2685,7 @@
   },
   {
     "slug": "conan-m18",
-    "title": "M18 · 名侦探柯南：异次元的狙击手",
+    "title": "M18 · 名探偵コナン 異次元の狙撃手",
     "category": "anime",
     "releaseYear": 2014,
     "creators": {
@@ -2698,7 +2711,7 @@
   },
   {
     "slug": "conan-m19",
-    "title": "M19 · 名侦探柯南：业火的向日葵",
+    "title": "M19 · 名探偵コナン 業火の向日葵",
     "category": "anime",
     "releaseYear": 2015,
     "creators": {
@@ -2724,7 +2737,7 @@
   },
   {
     "slug": "conan-m20",
-    "title": "M20 · 名侦探柯南：纯黑的噩梦",
+    "title": "M20 · 名探偵コナン 純黒の悪夢",
     "category": "anime",
     "releaseYear": 2016,
     "creators": {
@@ -2750,7 +2763,7 @@
   },
   {
     "slug": "conan-m21",
-    "title": "M21 · 名侦探柯南：唐红的恋歌",
+    "title": "M21 · 名探偵コナン から紅の恋歌",
     "category": "anime",
     "releaseYear": 2017,
     "creators": {
@@ -2776,7 +2789,7 @@
   },
   {
     "slug": "conan-m22",
-    "title": "M22 · 名侦探柯南：零的执行人",
+    "title": "M22 · 名探偵コナン ゼロの執行人",
     "category": "anime",
     "releaseYear": 2018,
     "creators": {
@@ -2802,7 +2815,7 @@
   },
   {
     "slug": "conan-m23",
-    "title": "M23 · 名侦探柯南：绀青之拳",
+    "title": "M23 · 名探偵コナン 紺青の拳",
     "category": "anime",
     "releaseYear": 2019,
     "creators": {
@@ -2828,7 +2841,7 @@
   },
   {
     "slug": "conan-m24",
-    "title": "M24 · 名侦探柯南：绯色的子弹",
+    "title": "M24 · 名探偵コナン 緋色の弾丸",
     "category": "anime",
     "releaseYear": 2021,
     "creators": {
@@ -2854,7 +2867,7 @@
   },
   {
     "slug": "conan-m25",
-    "title": "M25 · 名侦探柯南：万圣夜的新娘",
+    "title": "M25 · 名探偵コナン ハロウィンの花嫁",
     "category": "anime",
     "releaseYear": 2022,
     "creators": {
@@ -2880,7 +2893,7 @@
   },
   {
     "slug": "conan-m26",
-    "title": "M26 · 名侦探柯南：黑铁的鱼影",
+    "title": "M26 · 名探偵コナン 黒鉄の魚影",
     "category": "anime",
     "releaseYear": 2023,
     "creators": {
@@ -2906,7 +2919,7 @@
   },
   {
     "slug": "conan-m27",
-    "title": "M27 · 名侦探柯南：百万美元的五棱星",
+    "title": "M27 · 名探偵コナン 100万ドルの五稜星",
     "category": "anime",
     "releaseYear": 2024,
     "creators": {
@@ -2932,7 +2945,7 @@
   },
   {
     "slug": "conan-m28",
-    "title": "M28 · 名侦探柯南：独眼的残像",
+    "title": "M28 · 名探偵コナン 隻眼の残像",
     "category": "anime",
     "releaseYear": 2025,
     "creators": {
@@ -2958,7 +2971,7 @@
   },
   {
     "slug": "conan-m29",
-    "title": "M29 · 名侦探柯南：高速公路的堕天使",
+    "title": "M29 · 名探偵コナン ハイウェイの堕天使",
     "category": "anime",
     "releaseYear": 2026,
     "creators": {
@@ -2984,7 +2997,7 @@
   },
   {
     "slug": "honobono-log",
-    "title": "温暖的印记",
+    "title": "ほのぼのログ",
     "category": "anime",
     "releaseYear": 2016,
     "creators": {
@@ -3008,7 +3021,7 @@
   },
   {
     "slug": "maquia",
-    "title": "朝花夕誓",
+    "title": "さよならの朝に約束の花をかざろう",
     "category": "anime",
     "releaseYear": 2018,
     "creators": {
@@ -3033,7 +3046,7 @@
   },
   {
     "slug": "silent-voice",
-    "title": "声之形",
+    "title": "聲の形",
     "category": "anime",
     "releaseYear": 2016,
     "creators": {
@@ -3058,7 +3071,7 @@
   },
   {
     "slug": "shoshimin-1",
-    "title": "小市民 第一季",
+    "title": "小市民シリーズ",
     "category": "anime",
     "releaseYear": 2024,
     "creators": {
@@ -3083,7 +3096,7 @@
   },
   {
     "slug": "shoshimin-2",
-    "title": "小市民 第二季",
+    "title": "小市民シリーズ 第2期",
     "category": "anime",
     "releaseYear": 2025,
     "creators": {
@@ -3133,7 +3146,7 @@
   },
   {
     "slug": "hyouka",
-    "title": "冰菓",
+    "title": "氷菓",
     "category": "anime",
     "releaseYear": 2012,
     "creators": {
@@ -3157,7 +3170,7 @@
   },
   {
     "slug": "kaguya-1",
-    "title": "辉夜大小姐想让我告白 第一季",
+    "title": "かぐや様は告らせたい～天才たちの恋愛頭脳戦～",
     "category": "anime",
     "releaseYear": 2019,
     "creators": {
@@ -3182,7 +3195,7 @@
   },
   {
     "slug": "kaguya-2",
-    "title": "辉夜大小姐想让我告白？ 第二季",
+    "title": "かぐや様は告らせたい?～天才たちの恋愛頭脳戦～",
     "category": "anime",
     "releaseYear": 2020,
     "creators": {
@@ -3207,7 +3220,7 @@
   },
   {
     "slug": "kaguya-3",
-    "title": "辉夜大小姐想让我告白－究极浪漫－",
+    "title": "かぐや様は告らせたい-ウルトラロマンティック-",
     "category": "anime",
     "releaseYear": 2022,
     "creators": {
@@ -3232,7 +3245,7 @@
   },
   {
     "slug": "kaguya-first-kiss",
-    "title": "辉夜大小姐想让我告白－初吻不会结束－",
+    "title": "かぐや様は告らせたい-ファーストキッスは終わらない-",
     "category": "anime",
     "releaseYear": 2022,
     "creators": {
@@ -3257,7 +3270,7 @@
   },
   {
     "slug": "frieren-1",
-    "title": "葬送的芙莉莲 第一季",
+    "title": "葬送のフリーレン",
     "category": "anime",
     "releaseYear": 2023,
     "creators": {
@@ -3282,7 +3295,7 @@
   },
   {
     "slug": "tsuki-ga-kirei",
-    "title": "月色真美",
+    "title": "月がきれい",
     "category": "anime",
     "releaseYear": 2017,
     "creators": {
@@ -3306,7 +3319,7 @@
   },
   {
     "slug": "conan-tv",
-    "title": "名侦探柯南（TV）",
+    "title": "名探偵コナン",
     "category": "anime",
     "releaseYear": 1996,
     "creators": {
@@ -3331,7 +3344,7 @@
   },
   {
     "slug": "three-body-animation",
-    "title": "三体（艺画开天动画）",
+    "title": "三体",
     "category": "anime",
     "releaseYear": 2022,
     "creators": {
@@ -3356,7 +3369,7 @@
   },
   {
     "slug": "tsuredure-children",
-    "title": "徒然喜欢你",
+    "title": "徒然チルドレン",
     "category": "anime",
     "releaseYear": 2017,
     "creators": {
@@ -3506,7 +3519,7 @@
   },
   {
     "slug": "k-on-1",
-    "title": "轻音少女 第一季",
+    "title": "けいおん！",
     "category": "anime",
     "releaseYear": 2009,
     "creators": {
@@ -3531,7 +3544,7 @@
   },
   {
     "slug": "k-on-2",
-    "title": "轻音少女 第二季",
+    "title": "けいおん！！",
     "category": "anime",
     "releaseYear": 2010,
     "creators": {
@@ -3556,7 +3569,7 @@
   },
   {
     "slug": "violet-tv",
-    "title": "紫罗兰永恒花园",
+    "title": "ヴァイオレット・エヴァーガーデン",
     "category": "anime",
     "releaseYear": 2018,
     "creators": {
@@ -3581,7 +3594,7 @@
   },
   {
     "slug": "tatami-galaxy",
-    "title": "四叠半神话大系",
+    "title": "四畳半神話大系",
     "category": "anime",
     "releaseYear": 2010,
     "creators": {
@@ -3606,7 +3619,7 @@
   },
   {
     "slug": "tatami-time-machine",
-    "title": "四叠半时光机布鲁斯",
+    "title": "四畳半タイムマシンブルース",
     "category": "anime",
     "releaseYear": 2022,
     "creators": {
@@ -3631,7 +3644,7 @@
   },
   {
     "slug": "city-animation",
-    "title": "小城日常",
+    "title": "CITY THE ANIMATION",
     "category": "anime",
     "releaseYear": 2025,
     "creators": {

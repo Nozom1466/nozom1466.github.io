@@ -1,5 +1,5 @@
 ---
-title: "解忧杂货店"
+title: "ナミヤ雑貨店の奇蹟"
 cover: "/library-covers/namiya-store.webp"
 library_tags:
   - book

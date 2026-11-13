@@ -1,5 +1,5 @@
 ---
-title: "X战警"
+title: "X-Men"
 cover: "/library-covers/x-men.webp"
 library_tags:
   - film

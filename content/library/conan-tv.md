@@ -1,5 +1,5 @@
 ---
-title: "名侦探柯南（TV）"
+title: "名探偵コナン"
 cover: "/library-covers/conan-tv.webp"
 library_tags:
   - anime

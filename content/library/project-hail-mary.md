@@ -1,5 +1,5 @@
 ---
-title: 挽救计划
+title: "Project Hail Mary"
 cover: https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/717YX5n0urL._SY522_.jpg
 rating: 4.5
 library_tags:

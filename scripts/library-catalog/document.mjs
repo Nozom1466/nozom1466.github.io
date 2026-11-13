@@ -4,6 +4,7 @@ const names={anime:'动画',film:'电影',book:'书籍',tv:'电视剧',documenta
 const lines=['# 书馆整理结果','','整理日期：2026-11-13。新增 '+catalog.length+' 个作品条目，保留原有作品和评价。新增条目均未填写评分、摘要或评价正文。','',
 '封面及资料逐条来源见 [library-catalog.json](library-catalog.json)。封面优先使用作品宣传图、正式发行封面；部分通过资料站取得，不包含生成式封面。','',
 '## 已创建条目',''];
+lines.splice(6,0,'作品标题和主创姓名使用已核对的原语言名称；保留 M01—M29 编号，原有评分、摘要和评价正文不变。原名映射和补充来源见 [original-names.json](../scripts/library-catalog/original-names.json)。闪念同步对已登记作品沿用这份映射；未知作品不自动翻译。','');
 for(const [category,label] of Object.entries(names)){
  const group=catalog.filter(x=>x.category===category);
  lines.push(`### ${label}（${group.length}）`,'');

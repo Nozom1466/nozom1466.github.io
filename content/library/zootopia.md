@@ -1,5 +1,5 @@
 ---
-title: "疯狂动物城"
+title: "Zootopia"
 cover: "/library-covers/zootopia.webp"
 library_tags:
   - anime

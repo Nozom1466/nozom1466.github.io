@@ -1,5 +1,5 @@
 ---
-title: "侠盗猎车手 III"
+title: "Grand Theft Auto III"
 cover: "/library-covers/gta-iii.webp"
 library_tags:
   - game

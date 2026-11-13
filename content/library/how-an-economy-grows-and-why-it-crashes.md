@@ -1,5 +1,5 @@
 ---
-title: 小岛经济学
+title: "How an Economy Grows and Why It Crashes"
 cover: https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/s29585484.jpg
 rating: 4.5
 library_tags:

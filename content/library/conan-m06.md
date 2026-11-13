@@ -1,5 +1,5 @@
 ---
-title: "M06 · 名侦探柯南：贝克街的亡灵"
+title: "M06 · 名探偵コナン ベイカー街の亡霊"
 cover: "/library-covers/conan-m06.webp"
 library_tags:
   - anime

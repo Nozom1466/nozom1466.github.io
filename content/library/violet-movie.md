@@ -1,5 +1,5 @@
 ---
-title: "紫罗兰永恒花园 剧场版"
+title: "劇場版 ヴァイオレット・エヴァーガーデン"
 cover: "/library-covers/violet-movie.webp"
 library_tags:
   - anime

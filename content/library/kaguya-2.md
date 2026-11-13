@@ -1,5 +1,5 @@
 ---
-title: "辉夜大小姐想让我告白？ 第二季"
+title: "かぐや様は告らせたい?～天才たちの恋愛頭脳戦～"
 cover: "/library-covers/kaguya-2.webp"
 library_tags:
   - anime

@@ -1,5 +1,5 @@
 ---
-title: "X战警：天启"
+title: "X-Men: Apocalypse"
 cover: "/library-covers/x-men-apocalypse.webp"
 library_tags:
   - film

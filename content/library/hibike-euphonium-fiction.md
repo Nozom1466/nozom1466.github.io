@@ -1,5 +1,5 @@
 ---
-title: 響け！ユーフォニアム
+title: "響け！ユーフォニアム"
 cover: https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/hibike_novel_poster.webp
 rating: 4.4
 library_tags:
@@ -7,7 +7,7 @@ library_tags:
 date: 2025-12-28
 summary: 对我来说是有记忆和情感重量的轻小说
 creators:
-  1_author: 武田 绫乃
+  1_author: "武田綾乃"
 ---
 
 转自我的微信读书：

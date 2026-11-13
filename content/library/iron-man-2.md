@@ -1,5 +1,5 @@
 ---
-title: "钢铁侠2"
+title: "Iron Man 2"
 cover: "/library-covers/iron-man-2.webp"
 library_tags:
   - film

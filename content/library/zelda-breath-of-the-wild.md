@@ -1,5 +1,5 @@
 ---
-title: ゼルダの伝説 ブレスオブザワイルド
+title: "ゼルダの伝説 ブレス オブ ザ ワイルド"
 cover: https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/sai-er-da-chuan-shuo-kuang-ye-zhi-xi-game_wmcz.jpg
 rating: 4.8
 library_tags:

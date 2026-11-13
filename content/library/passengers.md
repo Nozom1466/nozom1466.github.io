@@ -1,5 +1,5 @@
 ---
-title: "太空旅客"
+title: "Passengers"
 cover: "/library-covers/passengers.webp"
 library_tags:
   - film

@@ -1,0 +1,2091 @@
+{
+  "version": 1,
+  "works": {
+    "yokomichi-yonosuke": {
+      "title": "横道世之介",
+      "aliases": [
+        "横道世之介"
+      ],
+      "creatorNames": {
+        "Shuichi Okita": "沖田修一",
+        "Shirō Maeda": "前田司郎",
+        "Toshikazu Nishigaya, Yuki Nishimiya, Yasushi Yamazaki": "西ヶ谷寿一、西宮由貴、山崎康史",
+        "Ren Takada": "高田漣",
+        "Shūichi Yoshida": "吉田修一"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/A_Story_of_Yonosuke",
+        "https://bgm.tv/subject/132760",
+        "https://eiga.com/movie/57830/"
+      ]
+    },
+    "liaoshen-campaign": {
+      "title": "大决战之辽沈战役",
+      "aliases": [
+        "大决战之辽沈战役"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://zh.wikipedia.org/wiki/%E5%A4%A7%E5%86%B3%E6%88%98%E4%B9%8B%E8%BE%BD%E6%B2%88%E6%88%98%E5%BD%B9"
+      ]
+    },
+    "huaihai-campaign": {
+      "title": "大决战之淮海战役",
+      "aliases": [
+        "大决战之淮海战役"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://m.1905.com/m/film/1929545.shtml"
+      ]
+    },
+    "pingjin-campaign": {
+      "title": "大决战之平津战役",
+      "aliases": [
+        "大决战之平津战役"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://m.1905.com/m/film/1929546.shtml"
+      ]
+    },
+    "crossing-chishui": {
+      "title": "四渡赤水",
+      "aliases": [
+        "四渡赤水"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://m.1905.com/m/film/61026.shtml"
+      ]
+    },
+    "hana-and-alice": {
+      "title": "花とアリス",
+      "aliases": [
+        "花与爱丽丝",
+        "花とアリス"
+      ],
+      "creatorNames": {
+        "Shunji Iwai": "岩井俊二"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Hana_and_Alice",
+        "https://bgm.tv/subject/6701"
+      ]
+    },
+    "april-story": {
+      "title": "四月物語",
+      "aliases": [
+        "四月物语",
+        "四月物語"
+      ],
+      "creatorNames": {
+        "Shunji Iwai": "岩井俊二",
+        "Hidemi Satani": "佐谷秀美"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/April_Story",
+        "https://bgm.tv/subject/12978"
+      ]
+    },
+    "last-letter": {
+      "title": "ラストレター",
+      "aliases": [
+        "最后一封信",
+        "ラストレター"
+      ],
+      "creatorNames": {
+        "Shunji Iwai": "岩井俊二",
+        "Aki Mizuno": "水野昌",
+        "Takeshi Kobayashi": "小林武史"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Last_Letter_(2020_film)",
+        "https://bgm.tv/subject/276137"
+      ]
+    },
+    "our-little-sister": {
+      "title": "海街diary",
+      "aliases": [
+        "海街日记",
+        "海街diary"
+      ],
+      "creatorNames": {
+        "Hirokazu Kore-eda": "是枝裕和",
+        "Kaoru Matsuzaki, Hijiri Taguchi": "松崎薫、田口聖",
+        "Yoko Kanno": "菅野よう子",
+        "Akimi Yoshida": "吉田秋生"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Our_Little_Sister",
+        "https://bgm.tv/subject/105045"
+      ]
+    },
+    "we-made-a-beautiful-bouquet": {
+      "title": "花束みたいな恋をした",
+      "aliases": [
+        "花束般的恋爱",
+        "花束みたいな恋をした"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://bgm.tv/subject/328957",
+        "https://bgm.tv/subject/328957"
+      ]
+    },
+    "last-ten-years": {
+      "title": "余命10年",
+      "aliases": [
+        "余命十年",
+        "余命10年"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://bgm.tv/subject/363788",
+        "https://bgm.tv/subject/363788"
+      ]
+    },
+    "insomniacs-after-school-film": {
+      "title": "君は放課後インソムニア",
+      "aliases": [
+        "放学后失眠的你（真人电影）",
+        "君は放課後インソムニア"
+      ],
+      "creatorNames": {
+        "Chihiro Ikeda": "池田千尋",
+        "Izumi Takahashi, Chihiro Ikeda": "髙橋泉、池田千尋",
+        "Yusuke Terada, Kazumi Matsui, Seiya Horio, Shoichi Ishikawa, Reiko Sasaki": "寺田悠輔、松井和美、堀尾星矢、石川翔一、佐々木礼子",
+        "Nobuaki Shinzawa": "信澤宣明",
+        "Makoto Ojiro": "オジロマコト"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Insomniacs_After_School_(film)",
+        "https://bgm.tv/subject/400147",
+        "https://kimisomu-movie.com/",
+        "https://www.ponycanyon.co.jp/music/PCCG000002258"
+      ]
+    },
+    "shawshank-redemption": {
+      "title": "The Shawshank Redemption",
+      "aliases": [
+        "肖申克的救赎",
+        "The Shawshank Redemption"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/The_Shawshank_Redemption"
+      ]
+    },
+    "dying-to-survive": {
+      "title": "我不是药神",
+      "aliases": [
+        "我不是药神"
+      ],
+      "creatorNames": {
+        "Wen Muye": "文牧野",
+        "Han Jianü, Zhong Wei, Wen Muye": "韩家女、钟伟、文牧野",
+        "Ning Hao, Xu Zheng": "宁浩、徐峥",
+        "Huang Chao": "黄超"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Dying_to_Survive"
+      ]
+    },
+    "wandering-earth": {
+      "title": "流浪地球",
+      "aliases": [
+        "流浪地球"
+      ],
+      "creatorNames": {
+        "Frant Gwo": "郭帆",
+        "Gong Ge'er, Yan Dongxu, Frant Gwo, Ye Junce, Yang Zhixue, Wu Yi, Ye Ruchang": "龚格尔、严东旭、郭帆、叶俊策、杨治学、吴荑、叶濡畅",
+        "Liu Cixin, Gong Ge'er": "刘慈欣、龚格尔",
+        "Roc Chen, Liu Tao (additional music)": "阿鲲、刘韬",
+        "Liu Cixin": "刘慈欣"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/The_Wandering_Earth",
+        "https://bgm.tv/subject/274128",
+        "https://zh.wikipedia.org/wiki/流浪地球_(电影)"
+      ]
+    },
+    "wandering-earth-2": {
+      "title": "流浪地球2",
+      "aliases": [
+        "流浪地球2"
+      ],
+      "creatorNames": {
+        "Frant Gwo": "郭帆",
+        "Frant Gwo, Gong Ge'er, Yang Zhixue, Ye Ruchang": "郭帆、龚格尔、杨治学、叶濡畅",
+        "Liu Cixin, Gong Ge'er": "刘慈欣、龚格尔",
+        "Roc Chen": "阿鲲",
+        "Liu Cixin": "刘慈欣"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/The_Wandering_Earth_2",
+        "https://bgm.tv/subject/320871"
+      ]
+    },
+    "avengers": {
+      "title": "The Avengers",
+      "aliases": [
+        "复仇者联盟",
+        "The Avengers"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/The_Avengers_(2012_film)",
+        "https://bgm.tv/subject/39162"
+      ]
+    },
+    "avengers-age-of-ultron": {
+      "title": "Avengers: Age of Ultron",
+      "aliases": [
+        "复仇者联盟2：奥创纪元",
+        "Avengers: Age of Ultron"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Avengers%3A_Age_of_Ultron",
+        "https://bgm.tv/subject/117644"
+      ]
+    },
+    "avengers-infinity-war": {
+      "title": "Avengers: Infinity War",
+      "aliases": [
+        "复仇者联盟3：无限战争",
+        "Avengers: Infinity War"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Avengers%3A_Infinity_War",
+        "https://bgm.tv/subject/133240"
+      ]
+    },
+    "avengers-endgame": {
+      "title": "Avengers: Endgame",
+      "aliases": [
+        "复仇者联盟4：终局之战",
+        "Avengers: Endgame"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Avengers%3A_Endgame",
+        "https://bgm.tv/subject/133243"
+      ]
+    },
+    "iron-man": {
+      "title": "Iron Man",
+      "aliases": [
+        "钢铁侠",
+        "Iron Man"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Iron_Man_(2008_film)",
+        "https://bgm.tv/subject/43276"
+      ]
+    },
+    "iron-man-2": {
+      "title": "Iron Man 2",
+      "aliases": [
+        "钢铁侠2",
+        "Iron Man 2"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Iron_Man_2",
+        "https://bgm.tv/subject/60563"
+      ]
+    },
+    "iron-man-3": {
+      "title": "Iron Man 3",
+      "aliases": [
+        "钢铁侠3",
+        "Iron Man 3"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Iron_Man_3",
+        "https://bgm.tv/subject/81300"
+      ]
+    },
+    "captain-america-civil-war": {
+      "title": "Captain America: Civil War",
+      "aliases": [
+        "美国队长3：内战",
+        "Captain America: Civil War"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Captain_America%3A_Civil_War",
+        "https://bgm.tv/subject/133233"
+      ]
+    },
+    "seoul-spring": {
+      "title": "서울의 봄",
+      "aliases": [
+        "首尔之春",
+        "서울의 봄"
+      ],
+      "creatorNames": {
+        "Kim Sung-su": "김성수",
+        "Hong In-pyo, Hong Won-Chan, Lee Young-jong, Kim Sung-su": "홍인표、홍원찬、이영종、김성수",
+        "Kim Won-kuk": "김원국",
+        "Lee Jae-jin": "이재진"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/12.12%3A_The_Day",
+        "https://www.koreafilm.or.kr/museum/theater/module/TI_00000078",
+        "https://news.yonsei.ac.kr/kr/people/detail?bbSeq=27493"
+      ]
+    },
+    "taking-tiger-mountain": {
+      "title": "智取威虎山",
+      "aliases": [
+        "智取威虎山"
+      ],
+      "creatorNames": {
+        "Tsui Hark": "徐克",
+        "Huang Xin, Li Yang, Tsui Hark, Wu Bing, Dong Zhe, Lin Chi-an": "黄欣、李杨、徐克、吴兵、董哲、林启安",
+        "Huang Jianxin, Nansun Shi, Yu Dong": "黄建新、施南生、于冬",
+        "Wu Wai-lap": "胡伟立",
+        "Qu Bo": "曲波"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/The_Taking_of_Tiger_Mountain",
+        "https://cinehello.com/stream/immerse/68921"
+      ]
+    },
+    "pacific-rim": {
+      "title": "Pacific Rim",
+      "aliases": [
+        "环太平洋",
+        "Pacific Rim"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Pacific_Rim_(film)",
+        "https://bgm.tv/subject/80148"
+      ]
+    },
+    "resident-evil-final-chapter": {
+      "title": "Resident Evil: The Final Chapter",
+      "aliases": [
+        "生化危机：终章",
+        "Resident Evil: The Final Chapter"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Resident_Evil%3A_The_Final_Chapter",
+        "https://bgm.tv/subject/207679"
+      ]
+    },
+    "dune-2021": {
+      "title": "Dune",
+      "aliases": [
+        "沙丘",
+        "Dune"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Dune_(2021_film)",
+        "https://bgm.tv/subject/351322"
+      ]
+    },
+    "star-wars-7": {
+      "title": "Star Wars: The Force Awakens",
+      "aliases": [
+        "星球大战7：原力觉醒",
+        "Star Wars: The Force Awakens"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Star_Wars%3A_The_Force_Awakens",
+        "https://bgm.tv/subject/148784"
+      ]
+    },
+    "star-wars-8": {
+      "title": "Star Wars: The Last Jedi",
+      "aliases": [
+        "星球大战8：最后的绝地武士",
+        "Star Wars: The Last Jedi"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Star_Wars%3A_The_Last_Jedi",
+        "https://bgm.tv/subject/207409"
+      ]
+    },
+    "star-wars-9": {
+      "title": "Star Wars: The Rise of Skywalker",
+      "aliases": [
+        "星球大战9：天行者崛起",
+        "Star Wars: The Rise of Skywalker"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Star_Wars%3A_The_Rise_of_Skywalker",
+        "https://bgm.tv/subject/213943"
+      ]
+    },
+    "lost-on-journey": {
+      "title": "人在囧途",
+      "aliases": [
+        "人在囧途"
+      ],
+      "creatorNames": {
+        "Raymond Yip": "叶伟民",
+        "Liu Yiwei": "刘仪伟",
+        "Manfred Wong": "文隽",
+        "Kay Chan": "陈永健"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Lost_on_Journey",
+        "https://upimg.baike.so.com/doc/3287878-3463555.html"
+      ]
+    },
+    "x-men": {
+      "title": "X-Men",
+      "aliases": [
+        "X战警",
+        "X-Men"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/X-Men_(film)",
+        "https://bgm.tv/subject/112679"
+      ]
+    },
+    "x-men-days-of-future-past": {
+      "title": "X-Men: Days of Future Past",
+      "aliases": [
+        "X战警：逆转未来",
+        "X-Men: Days of Future Past"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/X-Men%3A_Days_of_Future_Past",
+        "https://bgm.tv/subject/112683"
+      ]
+    },
+    "x-men-apocalypse": {
+      "title": "X-Men: Apocalypse",
+      "aliases": [
+        "X战警：天启",
+        "X-Men: Apocalypse"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/X-Men%3A_Apocalypse",
+        "https://bgm.tv/subject/127576"
+      ]
+    },
+    "13-hours": {
+      "title": "13 Hours: The Secret Soldiers of Benghazi",
+      "aliases": [
+        "危机13小时",
+        "13 Hours: The Secret Soldiers of Benghazi"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/13_Hours%3A_The_Secret_Soldiers_of_Benghazi"
+      ]
+    },
+    "tron-legacy": {
+      "title": "TRON: Legacy",
+      "aliases": [
+        "创：战纪",
+        "TRON: Legacy"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Tron%3A_Legacy",
+        "https://bgm.tv/subject/86423"
+      ]
+    },
+    "martian": {
+      "title": "The Martian",
+      "aliases": [
+        "火星救援",
+        "The Martian"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/The_Martian_(film)",
+        "https://bgm.tv/subject/475366"
+      ]
+    },
+    "passengers": {
+      "title": "Passengers",
+      "aliases": [
+        "太空旅客",
+        "Passengers"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Passengers_(2016_film)"
+      ]
+    },
+    "leon": {
+      "title": "Léon",
+      "aliases": [
+        "这个杀手不太冷",
+        "Léon"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/L%C3%A9on%3A_The_Professional",
+        "https://www.gaumont.com/en/movie/leon"
+      ]
+    },
+    "inception": {
+      "title": "Inception",
+      "aliases": [
+        "盗梦空间",
+        "Inception"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Inception",
+        "https://bgm.tv/subject/24057"
+      ]
+    },
+    "tenet": {
+      "title": "Tenet",
+      "aliases": [
+        "信条",
+        "Tenet"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Tenet_(film)",
+        "https://bgm.tv/subject/414065"
+      ]
+    },
+    "article-20": {
+      "title": "第二十条",
+      "aliases": [
+        "第二十条"
+      ],
+      "creatorNames": {
+        "Zhang Yimou": "张艺谋",
+        "Li Meng, Wang Tianyi": "李萌、王天毅",
+        "Beijing Enlight Pictures, Center for Film & Television of the Supreme People's Procuratorate": "北京光线影业、最高人民检察院影视中心"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Article_20",
+        "https://m.1905.com/m/film/starlist/2257241.shtml"
+      ]
+    },
+    "truman-show": {
+      "title": "The Truman Show",
+      "aliases": [
+        "楚门的世界",
+        "The Truman Show"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/The_Truman_Show",
+        "https://bgm.tv/subject/303548"
+      ]
+    },
+    "expendables": {
+      "title": "The Expendables",
+      "aliases": [
+        "敢死队",
+        "The Expendables"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/The_Expendables_(2010_film)",
+        "https://bgm.tv/subject/627286"
+      ]
+    },
+    "expendables-2": {
+      "title": "The Expendables 2",
+      "aliases": [
+        "敢死队2",
+        "The Expendables 2"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/The_Expendables_2",
+        "https://bgm.tv/subject/627287"
+      ]
+    },
+    "three-body-tv": {
+      "title": "三体",
+      "aliases": [
+        "三体（电视剧）",
+        "三体"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Three-Body",
+        "https://bgm.tv/subject/388982"
+      ]
+    },
+    "band-of-brothers": {
+      "title": "Band of Brothers",
+      "aliases": [
+        "兄弟连",
+        "Band of Brothers"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Band_of_Brothers_(miniseries)",
+        "https://bgm.tv/subject/47364"
+      ]
+    },
+    "agents-of-shield-1": {
+      "title": "Agents of S.H.I.E.L.D. (Season 1)",
+      "aliases": [
+        "神盾局特工 第一季",
+        "Agents of S.H.I.E.L.D. (Season 1)"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Agents_of_S.H.I.E.L.D._season_1",
+        "https://bgm.tv/subject/76884"
+      ]
+    },
+    "agents-of-shield-2": {
+      "title": "Agents of S.H.I.E.L.D. (Season 2)",
+      "aliases": [
+        "神盾局特工 第二季",
+        "Agents of S.H.I.E.L.D. (Season 2)"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Agents_of_S.H.I.E.L.D._season_2",
+        "https://bgm.tv/subject/104332"
+      ]
+    },
+    "agents-of-shield-3": {
+      "title": "Agents of S.H.I.E.L.D. (Season 3)",
+      "aliases": [
+        "神盾局特工 第三季",
+        "Agents of S.H.I.E.L.D. (Season 3)"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Agents_of_S.H.I.E.L.D._season_3",
+        "https://bgm.tv/subject/147803"
+      ]
+    },
+    "crime-crackdown": {
+      "title": "扫黑风暴",
+      "aliases": [
+        "扫黑风暴"
+      ],
+      "creatorNames": {
+        "Wu Bai": "五百",
+        "Du Liang": "祖若蒙、于小千、佟睦",
+        "Central Political and Legal Affairs Commission, Penguin Film and Television, China Chang'an Publishing Media, Zhongguang Film and Television, Wu Yuan Culture Company": "中央政法委、企鹅影视、中国长安出版传媒、中广影视、五元文化"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Crime_Crackdown",
+        "https://bgm.tv/subject/347257"
+      ]
+    },
+    "longest-day-in-changan": {
+      "title": "长安十二时辰",
+      "aliases": [
+        "长安十二时辰"
+      ],
+      "creatorNames": {
+        "Cao Dun": "曹盾",
+        "Paw Studio": "爪子工作室",
+        "Ma Boyong": "马伯庸"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/The_Longest_Day_in_Chang'an",
+        "https://bgm.tv/subject/285493"
+      ]
+    },
+    "your-name": {
+      "title": "君の名は。",
+      "aliases": [
+        "你的名字。",
+        "君の名は。"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Your_Name",
+        "https://bgm.tv/subject/160209"
+      ]
+    },
+    "look-back": {
+      "title": "ルックバック",
+      "aliases": [
+        "蓦然回首",
+        "ルックバック"
+      ],
+      "creatorNames": {
+        "Haruka Nakamura": "haruka nakamura"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Look_Back_(2024_film)",
+        "https://bgm.tv/subject/480441"
+      ]
+    },
+    "colors-within": {
+      "title": "きみの色",
+      "aliases": [
+        "你的颜色",
+        "きみの色"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/The_Colors_Within",
+        "https://bgm.tv/subject/409576"
+      ]
+    },
+    "garden-of-words": {
+      "title": "言の葉の庭",
+      "aliases": [
+        "言叶之庭",
+        "言の葉の庭"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/The_Garden_of_Words",
+        "https://bgm.tv/subject/58949"
+      ]
+    },
+    "five-centimeters-anime": {
+      "title": "秒速5センチメートル",
+      "aliases": [
+        "秒速5厘米（动画）",
+        "秒速5センチメートル"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/5_Centimeters_per_Second",
+        "https://bgm.tv/subject/927"
+      ]
+    },
+    "suzume": {
+      "title": "すずめの戸締まり",
+      "aliases": [
+        "铃芽之旅",
+        "すずめの戸締まり"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Suzume",
+        "https://bgm.tv/subject/362577"
+      ]
+    },
+    "place-promised": {
+      "title": "雲のむこう、約束の場所",
+      "aliases": [
+        "云之彼端，约定的地方",
+        "雲のむこう、約束の場所"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/The_Place_Promised_in_Our_Early_Days",
+        "https://bgm.tv/subject/1707"
+      ]
+    },
+    "children-chase-stars": {
+      "title": "星を追う子ども",
+      "aliases": [
+        "追逐繁星的孩子",
+        "星を追う子ども"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Children_Who_Chase_Lost_Voices",
+        "https://bgm.tv/subject/9911"
+      ]
+    },
+    "she-and-her-cat": {
+      "title": "彼女と彼女の猫",
+      "aliases": [
+        "她和她的猫（新海诚短片）",
+        "彼女と彼女の猫"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/She_and_Her_Cat",
+        "https://bgm.tv/subject/534"
+      ]
+    },
+    "pancreas-anime": {
+      "title": "君の膵臓をたべたい",
+      "aliases": [
+        "我想吃掉你的胰脏（动画）",
+        "君の膵臓をたべたい"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/I_Want_to_Eat_Your_Pancreas_(film)",
+        "https://bgm.tv/subject/221736"
+      ]
+    },
+    "summer-ghost": {
+      "title": "サマーゴースト",
+      "aliases": [
+        "夏日幽灵",
+        "サマーゴースト"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Summer_Ghost",
+        "https://bgm.tv/subject/328674"
+      ]
+    },
+    "josee-anime": {
+      "title": "ジョゼと虎と魚たち",
+      "aliases": [
+        "乔西的虎与鱼（动画）",
+        "ジョゼと虎と魚たち"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Josee%2C_the_Tiger_and_the_Fish_(2020_film)",
+        "https://bgm.tv/subject/295778"
+      ]
+    },
+    "violet-side-story": {
+      "title": "ヴァイオレット・エヴァーガーデン 外伝 - 永遠と自動手記人形 -",
+      "aliases": [
+        "紫罗兰永恒花园 外传：永远与自动手记人偶",
+        "ヴァイオレット・エヴァーガーデン 外伝 - 永遠と自動手記人形 -"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Violet_Evergarden%3A_Eternity_and_the_Auto_Memory_Doll",
+        "https://bgm.tv/subject/280837"
+      ]
+    },
+    "violet-movie": {
+      "title": "劇場版 ヴァイオレット・エヴァーガーデン",
+      "aliases": [
+        "紫罗兰永恒花园 剧场版",
+        "劇場版 ヴァイオレット・エヴァーガーデン"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Violet_Evergarden%3A_The_Movie",
+        "https://bgm.tv/subject/242216"
+      ]
+    },
+    "k-on-movie": {
+      "title": "映画けいおん！",
+      "aliases": [
+        "轻音少女 剧场版",
+        "映画けいおん！"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/K-On!_The_Movie",
+        "https://bgm.tv/subject/12426"
+      ]
+    },
+    "nezha-2019": {
+      "title": "哪吒之魔童降世",
+      "aliases": [
+        "哪吒之魔童降世"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ne_Zha_(2019_film)",
+        "https://bgm.tv/subject/231261"
+      ]
+    },
+    "toy-story": {
+      "title": "Toy Story",
+      "aliases": [
+        "玩具总动员",
+        "Toy Story"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Toy_Story",
+        "https://bgm.tv/subject/6649"
+      ]
+    },
+    "toy-story-2": {
+      "title": "Toy Story 2",
+      "aliases": [
+        "玩具总动员2",
+        "Toy Story 2"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Toy_Story_2",
+        "https://bgm.tv/subject/6650"
+      ]
+    },
+    "toy-story-3": {
+      "title": "Toy Story 3",
+      "aliases": [
+        "玩具总动员3",
+        "Toy Story 3"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Toy_Story_3",
+        "https://bgm.tv/subject/6651"
+      ]
+    },
+    "zootopia": {
+      "title": "Zootopia",
+      "aliases": [
+        "疯狂动物城",
+        "Zootopia"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Zootopia",
+        "https://bgm.tv/subject/133860"
+      ]
+    },
+    "minions": {
+      "title": "Minions",
+      "aliases": [
+        "小黄人大眼萌",
+        "Minions"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Minions_(film)",
+        "https://bgm.tv/subject/111359"
+      ]
+    },
+    "minions-2": {
+      "title": "Minions: The Rise of Gru",
+      "aliases": [
+        "小黄人大眼萌2：神偷奶爸前传",
+        "Minions: The Rise of Gru"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Minions%3A_The_Rise_of_Gru",
+        "https://bgm.tv/subject/378297"
+      ]
+    },
+    "three-body-book": {
+      "title": "三体",
+      "aliases": [
+        "三体"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/The_Three-Body_Problem_(novel)",
+        "https://bgm.tv/subject/9585"
+      ]
+    },
+    "dark-forest": {
+      "title": "三体Ⅱ：黑暗森林",
+      "aliases": [
+        "三体Ⅱ：黑暗森林"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/The_Dark_Forest",
+        "https://bgm.tv/subject/9586"
+      ]
+    },
+    "deaths-end": {
+      "title": "三体Ⅲ：死神永生",
+      "aliases": [
+        "三体Ⅲ：死神永生"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Death's_End",
+        "https://bgm.tv/subject/10538"
+      ]
+    },
+    "futari-kyori": {
+      "title": "ふたりの距離の概算",
+      "aliases": [
+        "两人距离的概算",
+        "ふたりの距離の概算"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://ja.wikipedia.org/wiki/%E3%81%B5%E3%81%9F%E3%82%8A%E3%81%AE%E8%B7%9D%E9%9B%A2%E3%81%AE%E6%A6%82%E7%AE%97",
+        "https://bgm.tv/subject/37446"
+      ]
+    },
+    "imasara-tsubasa": {
+      "title": "いまさら翼といわれても",
+      "aliases": [
+        "迟来的翅膀",
+        "いまさら翼といわれても"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://ja.wikipedia.org/wiki/%E3%81%84%E3%81%BE%E3%81%95%E3%82%89%E7%BF%BC%E3%81%A8%E3%81%84%E3%82%8F%E3%82%8C%E3%81%A6%E3%82%82",
+        "https://bgm.tv/subject/194141"
+      ]
+    },
+    "universe-nutshell": {
+      "title": "The Universe in a Nutshell",
+      "aliases": [
+        "果壳中的宇宙",
+        "The Universe in a Nutshell"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/The_Universe_in_a_Nutshell"
+      ]
+    },
+    "totto-chan": {
+      "title": "窓ぎわのトットちゃん",
+      "aliases": [
+        "窗边的小豆豆",
+        "窓ぎわのトットちゃん"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Totto-Chan%3A_The_Little_Girl_at_the_Window",
+        "https://bgm.tv/subject/6744"
+      ]
+    },
+    "namiya-store": {
+      "title": "ナミヤ雑貨店の奇蹟",
+      "aliases": [
+        "解忧杂货店",
+        "ナミヤ雑貨店の奇蹟"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/The_Miracles_of_the_Namiya_General_Store",
+        "https://bgm.tv/subject/117017"
+      ]
+    },
+    "gta-vice-city": {
+      "title": "Grand Theft Auto: Vice City",
+      "aliases": [
+        "侠盗猎车手：罪恶都市",
+        "Grand Theft Auto: Vice City"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Grand_Theft_Auto%3A_Vice_City"
+      ]
+    },
+    "gta-iii": {
+      "title": "Grand Theft Auto III",
+      "aliases": [
+        "侠盗猎车手 III",
+        "Grand Theft Auto III"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Grand_Theft_Auto_III"
+      ]
+    },
+    "gta-san-andreas": {
+      "title": "Grand Theft Auto: San Andreas",
+      "aliases": [
+        "侠盗猎车手：圣安地列斯",
+        "Grand Theft Auto: San Andreas"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Grand_Theft_Auto%3A_San_Andreas",
+        "https://bgm.tv/subject/347"
+      ]
+    },
+    "polytopia": {
+      "title": "The Battle of Polytopia",
+      "aliases": [
+        "低模之战",
+        "The Battle of Polytopia"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/The_Battle_of_Polytopia",
+        "https://bgm.tv/subject/312122"
+      ]
+    },
+    "league-of-legends": {
+      "title": "League of Legends",
+      "aliases": [
+        "英雄联盟",
+        "League of Legends"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/League_of_Legends",
+        "https://bgm.tv/subject/18011"
+      ]
+    },
+    "brawl-stars": {
+      "title": "Brawl Stars",
+      "aliases": [
+        "荒野乱斗",
+        "Brawl Stars"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Brawl_Stars",
+        "https://bgm.tv/subject/269242"
+      ]
+    },
+    "blitz-brigade": {
+      "title": "Blitz Brigade",
+      "aliases": [
+        "闪电部队",
+        "Blitz Brigade"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Blitz_Brigade"
+      ]
+    },
+    "running-man": {
+      "title": "런닝맨",
+      "aliases": [
+        "Running Man",
+        "런닝맨"
+      ],
+      "creatorNames": {
+        "Nam Seung-yong, Ahn Jae-chul": "남승용、안재철"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Running_Man_(TV_program)",
+        "https://bgm.tv/subject/303523",
+        "https://tv.charmy.global/series/9"
+      ]
+    },
+    "conan-m01": {
+      "title": "M01 · 名探偵コナン 時計じかけの摩天楼",
+      "aliases": [
+        "M01 · 名侦探柯南：引爆摩天楼",
+        "M01 · 名探偵コナン 時計じかけの摩天楼"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Detective_Conan%3A_The_Time_Bombed_Skyscraper",
+        "https://bgm.tv/subject/2968"
+      ]
+    },
+    "conan-m02": {
+      "title": "M02 · 名探偵コナン 14番目の標的",
+      "aliases": [
+        "M02 · 名侦探柯南：第14个目标",
+        "M02 · 名探偵コナン 14番目の標的"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Detective_Conan%3A_The_Fourteenth_Target",
+        "https://bgm.tv/subject/2969"
+      ]
+    },
+    "conan-m03": {
+      "title": "M03 · 名探偵コナン 世紀末の魔術師",
+      "aliases": [
+        "M03 · 名侦探柯南：世纪末的魔术师",
+        "M03 · 名探偵コナン 世紀末の魔術師"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Detective_Conan%3A_The_Last_Wizard_of_the_Century",
+        "https://bgm.tv/subject/2970"
+      ]
+    },
+    "conan-m04": {
+      "title": "M04 · 名探偵コナン 瞳の中の暗殺者",
+      "aliases": [
+        "M04 · 名侦探柯南：瞳孔中的暗杀者",
+        "M04 · 名探偵コナン 瞳の中の暗殺者"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Detective_Conan%3A_Captured_in_Her_Eyes",
+        "https://bgm.tv/subject/823"
+      ]
+    },
+    "conan-m05": {
+      "title": "M05 · 名探偵コナン 天国へのカウントダウン",
+      "aliases": [
+        "M05 · 名侦探柯南：通往天国的倒计时",
+        "M05 · 名探偵コナン 天国へのカウントダウン"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Detective_Conan%3A_Countdown_to_Heaven",
+        "https://bgm.tv/subject/2971"
+      ]
+    },
+    "conan-m06": {
+      "title": "M06 · 名探偵コナン ベイカー街の亡霊",
+      "aliases": [
+        "M06 · 名侦探柯南：贝克街的亡灵",
+        "M06 · 名探偵コナン ベイカー街の亡霊"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Detective_Conan%3A_The_Phantom_of_Baker_Street",
+        "https://bgm.tv/subject/2972"
+      ]
+    },
+    "conan-m07": {
+      "title": "M07 · 名探偵コナン 迷宮の十字路",
+      "aliases": [
+        "M07 · 名侦探柯南：迷宫的十字路口",
+        "M07 · 名探偵コナン 迷宮の十字路"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Detective_Conan%3A_Crossroad_in_the_Ancient_Capital",
+        "https://bgm.tv/subject/2973"
+      ]
+    },
+    "conan-m08": {
+      "title": "M08 · 名探偵コナン 銀翼の奇術師",
+      "aliases": [
+        "M08 · 名侦探柯南：银翼的魔术师",
+        "M08 · 名探偵コナン 銀翼の奇術師"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Detective_Conan%3A_Magician_of_the_Silver_Sky",
+        "https://bgm.tv/subject/2974"
+      ]
+    },
+    "conan-m09": {
+      "title": "M09 · 名探偵コナン 水平線上の陰謀",
+      "aliases": [
+        "M09 · 名侦探柯南：水平线上的阴谋",
+        "M09 · 名探偵コナン 水平線上の陰謀"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Detective_Conan%3A_Strategy_Above_the_Depths",
+        "https://bgm.tv/subject/2975"
+      ]
+    },
+    "conan-m10": {
+      "title": "M10 · 名探偵コナン 探偵たちの鎮魂歌",
+      "aliases": [
+        "M10 · 名侦探柯南：侦探们的镇魂歌",
+        "M10 · 名探偵コナン 探偵たちの鎮魂歌"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Detective_Conan%3A_The_Private_Eyes'_Requiem",
+        "https://bgm.tv/subject/2976"
+      ]
+    },
+    "conan-m11": {
+      "title": "M11 · 名探偵コナン 紺碧の棺",
+      "aliases": [
+        "M11 · 名侦探柯南：绀碧之棺",
+        "M11 · 名探偵コナン 紺碧の棺"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Detective_Conan%3A_Jolly_Roger_in_the_Deep_Azure",
+        "https://bgm.tv/subject/2977"
+      ]
+    },
+    "conan-m12": {
+      "title": "M12 · 名探偵コナン 戦慄の楽譜",
+      "aliases": [
+        "M12 · 名侦探柯南：战栗的乐谱",
+        "M12 · 名探偵コナン 戦慄の楽譜"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Detective_Conan%3A_Full_Score_of_Fear",
+        "https://bgm.tv/subject/2978"
+      ]
+    },
+    "conan-m13": {
+      "title": "M13 · 名探偵コナン 漆黒の追跡者",
+      "aliases": [
+        "M13 · 名侦探柯南：漆黑的追踪者",
+        "M13 · 名探偵コナン 漆黒の追跡者"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Detective_Conan%3A_The_Raven_Chaser",
+        "https://bgm.tv/subject/2783"
+      ]
+    },
+    "conan-m14": {
+      "title": "M14 · 名探偵コナン 天空の難破船",
+      "aliases": [
+        "M14 · 名侦探柯南：天空的遇难船",
+        "M14 · 名探偵コナン 天空の難破船"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Detective_Conan%3A_The_Lost_Ship_in_the_Sky",
+        "https://bgm.tv/subject/3628"
+      ]
+    },
+    "conan-m15": {
+      "title": "M15 · 名探偵コナン 沈黙の15分",
+      "aliases": [
+        "M15 · 名侦探柯南：沉默的15分钟",
+        "M15 · 名探偵コナン 沈黙の15分"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Detective_Conan%3A_Quarter_of_Silence",
+        "https://bgm.tv/subject/10308"
+      ]
+    },
+    "conan-m16": {
+      "title": "M16 · 名探偵コナン 11人目のストライカー",
+      "aliases": [
+        "M16 · 名侦探柯南：第11个前锋",
+        "M16 · 名探偵コナン 11人目のストライカー"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Detective_Conan%3A_The_Eleventh_Striker",
+        "https://bgm.tv/subject/46940"
+      ]
+    },
+    "conan-m17": {
+      "title": "M17 · 名探偵コナン 絶海の探偵",
+      "aliases": [
+        "M17 · 名侦探柯南：绝海的侦探",
+        "M17 · 名探偵コナン 絶海の探偵"
+      ],
+      "creatorNames": {
+        "Katsuo Ono, Masakazu Yokoyama": "大野克夫、横山克"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Detective_Conan%3A_Private_Eye_in_the_Distant_Sea",
+        "https://bgm.tv/subject/54614"
+      ]
+    },
+    "conan-m18": {
+      "title": "M18 · 名探偵コナン 異次元の狙撃手",
+      "aliases": [
+        "M18 · 名侦探柯南：异次元的狙击手",
+        "M18 · 名探偵コナン 異次元の狙撃手"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Detective_Conan%3A_Dimensional_Sniper",
+        "https://bgm.tv/subject/89279"
+      ]
+    },
+    "conan-m19": {
+      "title": "M19 · 名探偵コナン 業火の向日葵",
+      "aliases": [
+        "M19 · 名侦探柯南：业火的向日葵",
+        "M19 · 名探偵コナン 業火の向日葵"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Detective_Conan%3A_Sunflowers_of_Inferno",
+        "https://bgm.tv/subject/119187"
+      ]
+    },
+    "conan-m20": {
+      "title": "M20 · 名探偵コナン 純黒の悪夢",
+      "aliases": [
+        "M20 · 名侦探柯南：纯黑的噩梦",
+        "M20 · 名探偵コナン 純黒の悪夢"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Detective_Conan%3A_The_Darkest_Nightmare",
+        "https://bgm.tv/subject/131427"
+      ]
+    },
+    "conan-m21": {
+      "title": "M21 · 名探偵コナン から紅の恋歌",
+      "aliases": [
+        "M21 · 名侦探柯南：唐红的恋歌",
+        "M21 · 名探偵コナン から紅の恋歌"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Detective_Conan%3A_The_Crimson_Love_Letter",
+        "https://bgm.tv/subject/198962"
+      ]
+    },
+    "conan-m22": {
+      "title": "M22 · 名探偵コナン ゼロの執行人",
+      "aliases": [
+        "M22 · 名侦探柯南：零的执行人",
+        "M22 · 名探偵コナン ゼロの執行人"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Detective_Conan%3A_Zero_the_Enforcer",
+        "https://bgm.tv/subject/227724"
+      ]
+    },
+    "conan-m23": {
+      "title": "M23 · 名探偵コナン 紺青の拳",
+      "aliases": [
+        "M23 · 名侦探柯南：绀青之拳",
+        "M23 · 名探偵コナン 紺青の拳"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Detective_Conan%3A_The_Fist_of_Blue_Sapphire",
+        "https://bgm.tv/subject/268067"
+      ]
+    },
+    "conan-m24": {
+      "title": "M24 · 名探偵コナン 緋色の弾丸",
+      "aliases": [
+        "M24 · 名侦探柯南：绯色的子弹",
+        "M24 · 名探偵コナン 緋色の弾丸"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Detective_Conan%3A_The_Scarlet_Bullet",
+        "https://bgm.tv/subject/295318"
+      ]
+    },
+    "conan-m25": {
+      "title": "M25 · 名探偵コナン ハロウィンの花嫁",
+      "aliases": [
+        "M25 · 名侦探柯南：万圣夜的新娘",
+        "M25 · 名探偵コナン ハロウィンの花嫁"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Detective_Conan%3A_The_Bride_of_Halloween",
+        "https://bgm.tv/subject/359930"
+      ]
+    },
+    "conan-m26": {
+      "title": "M26 · 名探偵コナン 黒鉄の魚影",
+      "aliases": [
+        "M26 · 名侦探柯南：黑铁的鱼影",
+        "M26 · 名探偵コナン 黒鉄の魚影"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Detective_Conan%3A_Black_Iron_Submarine",
+        "https://bgm.tv/subject/407515"
+      ]
+    },
+    "conan-m27": {
+      "title": "M27 · 名探偵コナン 100万ドルの五稜星",
+      "aliases": [
+        "M27 · 名侦探柯南：百万美元的五棱星",
+        "M27 · 名探偵コナン 100万ドルの五稜星"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Detective_Conan%3A_The_Million-dollar_Pentagram",
+        "https://bgm.tv/subject/429644"
+      ]
+    },
+    "conan-m28": {
+      "title": "M28 · 名探偵コナン 隻眼の残像",
+      "aliases": [
+        "M28 · 名侦探柯南：独眼的残像",
+        "M28 · 名探偵コナン 隻眼の残像"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Detective_Conan%3A_One-eyed_Flashback",
+        "https://bgm.tv/subject/489499"
+      ]
+    },
+    "conan-m29": {
+      "title": "M29 · 名探偵コナン ハイウェイの堕天使",
+      "aliases": [
+        "M29 · 名侦探柯南：高速公路的堕天使",
+        "M29 · 名探偵コナン ハイウェイの堕天使"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Detective_Conan%3A_Fallen_Angel_of_the_Highway",
+        "https://bgm.tv/subject/581920"
+      ]
+    },
+    "honobono-log": {
+      "title": "ほのぼのログ",
+      "aliases": [
+        "温暖的印记",
+        "ほのぼのログ"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://bgm.tv/subject/180670",
+        "https://bgm.tv/subject/180670"
+      ]
+    },
+    "maquia": {
+      "title": "さよならの朝に約束の花をかざろう",
+      "aliases": [
+        "朝花夕誓",
+        "さよならの朝に約束の花をかざろう"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://bgm.tv/subject/218971",
+        "https://bgm.tv/subject/218971"
+      ]
+    },
+    "silent-voice": {
+      "title": "聲の形",
+      "aliases": [
+        "声之形",
+        "聲の形"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://bgm.tv/subject/117777",
+        "https://bgm.tv/subject/117777"
+      ]
+    },
+    "shoshimin-1": {
+      "title": "小市民シリーズ",
+      "aliases": [
+        "小市民 第一季",
+        "小市民シリーズ"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://bgm.tv/subject/474906",
+        "https://bgm.tv/subject/474906"
+      ]
+    },
+    "shoshimin-2": {
+      "title": "小市民シリーズ 第2期",
+      "aliases": [
+        "小市民 第二季",
+        "小市民シリーズ 第2期"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://bgm.tv/subject/513018",
+        "https://bgm.tv/subject/513018"
+      ]
+    },
+    "nichijou": {
+      "title": "日常",
+      "aliases": [
+        "日常"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://bgm.tv/subject/9912",
+        "https://bgm.tv/subject/9912"
+      ]
+    },
+    "hyouka": {
+      "title": "氷菓",
+      "aliases": [
+        "冰菓",
+        "氷菓"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://bgm.tv/subject/27364",
+        "https://bgm.tv/subject/27364"
+      ]
+    },
+    "kaguya-1": {
+      "title": "かぐや様は告らせたい～天才たちの恋愛頭脳戦～",
+      "aliases": [
+        "辉夜大小姐想让我告白 第一季",
+        "かぐや様は告らせたい～天才たちの恋愛頭脳戦～"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://bgm.tv/subject/248175",
+        "https://bgm.tv/subject/248175"
+      ]
+    },
+    "kaguya-2": {
+      "title": "かぐや様は告らせたい?～天才たちの恋愛頭脳戦～",
+      "aliases": [
+        "辉夜大小姐想让我告白？ 第二季",
+        "かぐや様は告らせたい?～天才たちの恋愛頭脳戦～"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://bgm.tv/subject/293049",
+        "https://bgm.tv/subject/293049"
+      ]
+    },
+    "kaguya-3": {
+      "title": "かぐや様は告らせたい-ウルトラロマンティック-",
+      "aliases": [
+        "辉夜大小姐想让我告白－究极浪漫－",
+        "かぐや様は告らせたい-ウルトラロマンティック-"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://bgm.tv/subject/317613",
+        "https://bgm.tv/subject/317613"
+      ]
+    },
+    "kaguya-first-kiss": {
+      "title": "かぐや様は告らせたい-ファーストキッスは終わらない-",
+      "aliases": [
+        "辉夜大小姐想让我告白－初吻不会结束－",
+        "かぐや様は告らせたい-ファーストキッスは終わらない-"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://bgm.tv/subject/389474",
+        "https://bgm.tv/subject/389474"
+      ]
+    },
+    "frieren-1": {
+      "title": "葬送のフリーレン",
+      "aliases": [
+        "葬送的芙莉莲 第一季",
+        "葬送のフリーレン"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://bgm.tv/subject/400602",
+        "https://bgm.tv/subject/400602"
+      ]
+    },
+    "tsuki-ga-kirei": {
+      "title": "月がきれい",
+      "aliases": [
+        "月色真美",
+        "月がきれい"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://bgm.tv/subject/207573",
+        "https://bgm.tv/subject/207573"
+      ]
+    },
+    "conan-tv": {
+      "title": "名探偵コナン",
+      "aliases": [
+        "名侦探柯南（TV）",
+        "名探偵コナン"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://bgm.tv/subject/899",
+        "https://bgm.tv/subject/899"
+      ]
+    },
+    "three-body-animation": {
+      "title": "三体",
+      "aliases": [
+        "三体（艺画开天动画）",
+        "三体"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://bgm.tv/subject/285437",
+        "https://bgm.tv/subject/285437"
+      ]
+    },
+    "tsuredure-children": {
+      "title": "徒然チルドレン",
+      "aliases": [
+        "徒然喜欢你",
+        "徒然チルドレン"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://bgm.tv/subject/208754",
+        "https://bgm.tv/subject/208754"
+      ]
+    },
+    "swallowed-star": {
+      "title": "吞噬星空",
+      "aliases": [
+        "吞噬星空"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://bgm.tv/subject/244239",
+        "https://bgm.tv/subject/244239"
+      ]
+    },
+    "swallowed-star-blood": {
+      "title": "吞噬星空：血洛大陆",
+      "aliases": [
+        "吞噬星空：血洛大陆"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://bgm.tv/subject/507795",
+        "https://bgm.tv/subject/507795"
+      ]
+    },
+    "swallowed-star-original": {
+      "title": "吞噬星空：决战原始星",
+      "aliases": [
+        "吞噬星空：决战原始星"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://bgm.tv/subject/577199",
+        "https://bgm.tv/subject/577199"
+      ]
+    },
+    "qin-1": {
+      "title": "秦时明月（系列）",
+      "aliases": [
+        "秦时明月（系列）"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://bgm.tv/subject/2473",
+        "https://bgm.tv/subject/2473"
+      ]
+    },
+    "nine-songs": {
+      "title": "天行九歌",
+      "aliases": [
+        "天行九歌"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://bgm.tv/subject/127448",
+        "https://bgm.tv/subject/127448"
+      ]
+    },
+    "k-on-1": {
+      "title": "けいおん！",
+      "aliases": [
+        "轻音少女 第一季",
+        "けいおん！"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://bgm.tv/subject/1424",
+        "https://bgm.tv/subject/1424"
+      ]
+    },
+    "k-on-2": {
+      "title": "けいおん！！",
+      "aliases": [
+        "轻音少女 第二季",
+        "けいおん！！"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://bgm.tv/subject/3774",
+        "https://bgm.tv/subject/3774"
+      ]
+    },
+    "violet-tv": {
+      "title": "ヴァイオレット・エヴァーガーデン",
+      "aliases": [
+        "紫罗兰永恒花园",
+        "ヴァイオレット・エヴァーガーデン"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://bgm.tv/subject/183878",
+        "https://bgm.tv/subject/183878"
+      ]
+    },
+    "tatami-galaxy": {
+      "title": "四畳半神話大系",
+      "aliases": [
+        "四叠半神话大系",
+        "四畳半神話大系"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://bgm.tv/subject/4019",
+        "https://bgm.tv/subject/4019"
+      ]
+    },
+    "tatami-time-machine": {
+      "title": "四畳半タイムマシンブルース",
+      "aliases": [
+        "四叠半时光机布鲁斯",
+        "四畳半タイムマシンブルース"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://bgm.tv/subject/345980",
+        "https://bgm.tv/subject/345980"
+      ]
+    },
+    "city-animation": {
+      "title": "CITY THE ANIMATION",
+      "aliases": [
+        "小城日常",
+        "CITY THE ANIMATION"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://bgm.tv/subject/514358",
+        "https://bgm.tv/subject/514358"
+      ]
+    },
+    "lvxing-1": {
+      "title": "侣行（系列）",
+      "aliases": [
+        "侣行（系列）"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://bgm.tv/subject/584982",
+        "https://bgm.tv/subject/584982"
+      ]
+    },
+    "mr-six": {
+      "title": "老炮儿",
+      "aliases": [
+        "老炮儿"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://m.1905.com/m/film/2224190.shtml"
+      ]
+    },
+    "zhao-wen-dao": {
+      "title": "朝闻道",
+      "aliases": [
+        "朝闻道"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://book.douban.com/subject/30312029/"
+      ]
+    },
+    "ball-lightning": {
+      "title": "球状闪电",
+      "aliases": [
+        "球状闪电"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://item.xhsd.com/items/1010000100501769"
+      ]
+    },
+    "shouwang-de-juli": {
+      "title": "守望的距离",
+      "aliases": [
+        "守望的距离"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://search.megbook.com.tw/mall/detail.jsp?proID=3004011"
+      ]
+    },
+    "5-centimeters-per-second-live-action": {
+      "title": "秒速5センチメートル",
+      "aliases": [
+        "秒速5厘米（真人版）",
+        "秒速5センチメートル"
+      ],
+      "creatorNames": {
+        "铃木史子": "鈴木史子",
+        "新海诚《秒速5厘米》": "新海誠『秒速5センチメートル』"
+      },
+      "sources": [
+        "https://5cm-movie.jp/"
+      ]
+    },
+    "addictive-study-method": {
+      "title": "科学的根拠に基づく最高の勉強法",
+      "aliases": [
+        "上瘾式学习：科学的自学成才法",
+        "科学的根拠に基づく最高の勉強法"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://www.kadokawa.co.jp/product/322310000993/"
+      ]
+    },
+    "hibike-euphonium-2": {
+      "title": "響け！ユーフォニアム2",
+      "aliases": [
+        "響け！ユーフォニアム2 - TV",
+        "響け！ユーフォニアム2"
+      ],
+      "creatorNames": {
+        "武田 绫乃": "武田綾乃"
+      },
+      "sources": [
+        "https://tv2.anime-eupho.com/"
+      ]
+    },
+    "hibike-euphonium-3": {
+      "title": "響け！ユーフォニアム3",
+      "aliases": [
+        "響け！ユーフォニアム3 - TV",
+        "響け！ユーフォニアム3"
+      ],
+      "creatorNames": {
+        "武田 绫乃": "武田綾乃"
+      },
+      "sources": [
+        "https://anime-eupho.com/"
+      ]
+    },
+    "hibike-euphonium-fiction": {
+      "title": "響け！ユーフォニアム",
+      "aliases": [
+        "響け！ユーフォニアム"
+      ],
+      "creatorNames": {
+        "武田 绫乃": "武田綾乃"
+      },
+      "sources": [
+        "https://tkj.jp/info/euphonium/"
+      ]
+    },
+    "how-an-economy-grows-and-why-it-crashes": {
+      "title": "How an Economy Grows and Why It Crashes",
+      "aliases": [
+        "小岛经济学",
+        "How an Economy Grows and Why It Crashes"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://www.wiley.com/en-us/how-an-economy-grows-and-why-it-crashes-p-9780470526705"
+      ]
+    },
+    "isomu-anime": {
+      "title": "君は放課後インソムニア",
+      "aliases": [
+        "君は放課後インソムニア"
+      ],
+      "creatorNames": {
+        "尾城真": "オジロマコト"
+      },
+      "sources": [
+        "https://kimisomu-anime.com/"
+      ]
+    },
+    "isomu": {
+      "title": "君は放課後インソムニア",
+      "aliases": [
+        "君は放課後インソムニア 漫画",
+        "君は放課後インソムニア"
+      ],
+      "creatorNames": {
+        "尾城真": "オジロマコト"
+      },
+      "sources": [
+        "https://kimisomu-anime.com/"
+      ]
+    },
+    "jaemyeong-life-road": {
+      "title": "인간 이재명",
+      "aliases": [
+        "李在明的人生之路",
+        "인간 이재명"
+      ],
+      "creatorNames": {
+        "叙事内容研究所[韩]": "스토리텔링콘텐츠연구소"
+      },
+      "sources": [
+        "https://m.newspim.com/newsamp/view/20251127000712",
+        "https://ebook.skku.edu/ebook/?cate_id=001001011&mode=new&page_num=10&sort=pubdt"
+      ]
+    },
+    "project-hail-mary": {
+      "title": "Project Hail Mary",
+      "aliases": [
+        "挽救计划",
+        "Project Hail Mary"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://www.penguinrandomhouse.com/books/611060/project-hail-mary-by-andy-weir/"
+      ]
+    },
+    "road-to-happiness": {
+      "title": "The Conquest of Happiness",
+      "aliases": [
+        "幸福之路",
+        "The Conquest of Happiness"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://www.routledge.com/The-Conquest-of-Happiness/Russell/p/book/9780415378475"
+      ]
+    },
+    "snapnote-26546fe9-8f91-4260-8ba1-5e3e9c9d1b95": {
+      "title": "신화는 없다",
+      "aliases": [
+        "经营未来",
+        "신화는 없다"
+      ],
+      "creatorNames": {
+        "李明博": "이명박"
+      },
+      "sources": [
+        "https://www.yes24.com/product/goods/55723",
+        "https://jubeny.com/2026/04/book-summaries-18/"
+      ]
+    },
+    "the-autobiography-of-mao-tse-tung": {
+      "title": "The Autobiography of Mao Tse-tung",
+      "aliases": [
+        "毛泽东自传",
+        "The Autobiography of Mao Tse-tung"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://www.chinawriter.com.cn/xzp/2016/2016-06-13/274225.html"
+      ]
+    },
+    "white-tower": {
+      "title": "白い巨塔",
+      "aliases": [
+        "白色巨塔",
+        "白い巨塔"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://ndlsearch.ndl.go.jp/books/R100000002-I000004202925"
+      ]
+    },
+    "zelda-breath-of-the-wild": {
+      "title": "ゼルダの伝説 ブレス オブ ザ ワイルド",
+      "aliases": [
+        "ゼルダの伝説 ブレスオブザワイルド",
+        "ゼルダの伝説 ブレス オブ ザ ワイルド"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://www.nintendo.com/jp/zelda/botw/"
+      ]
+    },
+    "liz-and-the-blue-bird": {
+      "title": "リズと青い鳥",
+      "aliases": [
+        "リズと青い鳥"
+      ],
+      "creatorNames": {
+        "山田 尚子": "山田尚子",
+        "吉田 玲子": "吉田玲子",
+        "牛尾 憲輔": "牛尾憲輔"
+      },
+      "sources": [
+        "https://liz-bluebird.com/"
+      ]
+    },
+    "pingpong": {
+      "title": "ピンポン THE ANIMATION",
+      "aliases": [
+        "ピンポン THE ANIMATION"
+      ],
+      "creatorNames": {
+        "湯浅 政明": "湯浅政明",
+        "松本 大洋": "松本大洋",
+        "牛尾 憲輔": "牛尾憲輔",
+        "伊東 伸高": "伊東伸高"
+      },
+      "sources": [
+        "https://www.pingpong-anime.tv/"
+      ]
+    }
+  }
+}

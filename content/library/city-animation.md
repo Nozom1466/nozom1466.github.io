@@ -1,5 +1,5 @@
 ---
-title: "小城日常"
+title: "CITY THE ANIMATION"
 cover: "/library-covers/city-animation.webp"
 library_tags:
   - anime

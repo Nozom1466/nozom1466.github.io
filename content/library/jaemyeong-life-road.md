@@ -1,5 +1,5 @@
 ---
-title: 李在明的人生之路
+title: "인간 이재명"
 cover: https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/1764225964930926.jpg
 rating: 4.8
 library_tags:
@@ -7,7 +7,7 @@ library_tags:
 date: 2026-04-08
 summary: 李在明的奋斗史
 creators:
-  1_author: 叙事内容研究所[韩]
+  1_author: "스토리텔링콘텐츠연구소"
   2_translator:  李成日, 朴光海等
 ---
 

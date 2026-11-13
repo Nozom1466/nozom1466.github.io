@@ -1,5 +1,5 @@
 ---
-title: 白色巨塔
+title: "白い巨塔"
 cover: https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/t8_YueWen_43993718.jpg
 rating: 4.8
 library_tags:

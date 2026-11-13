@@ -1,5 +1,5 @@
 ---
-title: "言叶之庭"
+title: "言の葉の庭"
 cover: "/library-covers/garden-of-words.webp"
 library_tags:
   - anime

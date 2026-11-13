@@ -1,5 +1,5 @@
 ---
-title: "铃芽之旅"
+title: "すずめの戸締まり"
 cover: "/library-covers/suzume.webp"
 library_tags:
   - anime

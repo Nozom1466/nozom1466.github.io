@@ -1,5 +1,5 @@
 ---
-title: "葬送的芙莉莲 第一季"
+title: "葬送のフリーレン"
 cover: "/library-covers/frieren-1.webp"
 library_tags:
   - anime

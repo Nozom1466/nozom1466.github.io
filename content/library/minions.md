@@ -1,5 +1,5 @@
 ---
-title: "小黄人大眼萌"
+title: "Minions"
 cover: "/library-covers/minions.webp"
 library_tags:
   - anime

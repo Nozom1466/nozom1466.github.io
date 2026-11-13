@@ -1,5 +1,5 @@
 ---
-title: "辉夜大小姐想让我告白－究极浪漫－"
+title: "かぐや様は告らせたい-ウルトラロマンティック-"
 cover: "/library-covers/kaguya-3.webp"
 library_tags:
   - anime

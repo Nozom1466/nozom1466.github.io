@@ -1,5 +1,5 @@
 ---
-title: "楚门的世界"
+title: "The Truman Show"
 cover: "/library-covers/truman-show.webp"
 library_tags:
   - film

@@ -1,5 +1,5 @@
 ---
-title: "M24 · 名侦探柯南：绯色的子弹"
+title: "M24 · 名探偵コナン 緋色の弾丸"
 cover: "/library-covers/conan-m24.webp"
 library_tags:
   - anime

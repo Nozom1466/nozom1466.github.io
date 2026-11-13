@@ -1,5 +1,5 @@
 ---
-title: "复仇者联盟3：无限战争"
+title: "Avengers: Infinity War"
 cover: "/library-covers/avengers-infinity-war.webp"
 library_tags:
   - film

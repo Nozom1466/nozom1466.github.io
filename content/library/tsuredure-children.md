@@ -1,5 +1,5 @@
 ---
-title: "徒然喜欢你"
+title: "徒然チルドレン"
 cover: "/library-covers/tsuredure-children.webp"
 library_tags:
   - anime

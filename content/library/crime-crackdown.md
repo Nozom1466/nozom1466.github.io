@@ -7,7 +7,7 @@ date: 2026-11-13
 catalog_id: "crime-crackdown"
 release_year: 2021
 creators:
-  1_director: "Wu Bai"
-  2_writer: "Du Liang"
-  3_studio: "Central Political and Legal Affairs Commission, Penguin Film and Television, China Chang'an Publishing Media, Zhongguang Film and Television, Wu Yuan Culture Company"
+  1_director: "五百"
+  2_writer: "祖若蒙、于小千、佟睦"
+  3_studio: "中央政法委、企鹅影视、中国长安出版传媒、中广影视、五元文化"
 ---

@@ -1,5 +1,5 @@
 ---
-title: "闪电部队"
+title: "Blitz Brigade"
 cover: "/library-covers/blitz-brigade.webp"
 library_tags:
   - game

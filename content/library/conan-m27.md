@@ -1,5 +1,5 @@
 ---
-title: "M27 · 名侦探柯南：百万美元的五棱星"
+title: "M27 · 名探偵コナン 100万ドルの五稜星"
 cover: "/library-covers/conan-m27.webp"
 library_tags:
   - anime

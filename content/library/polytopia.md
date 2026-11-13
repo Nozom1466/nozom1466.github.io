@@ -1,5 +1,5 @@
 ---
-title: "低模之战"
+title: "The Battle of Polytopia"
 cover: "/library-covers/polytopia.webp"
 library_tags:
   - game
