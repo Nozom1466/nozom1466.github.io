@@ -3,6 +3,7 @@ import {readFile,writeFile} from 'node:fs/promises';
 import {load} from 'cheerio';
 import works from './works.mjs';
 const updates={
+ 'swallowed-star-original':{coverSource:'https://wetv.vip/zh-cn/play/cnqbubq7s6nxixe',image:'https://vcover-vt-pic.wetvinfo.com/vcover_vt_pic/0/cnqbubq7s6nxixe1777528344420/0'},
  'gta-iii':{coverSource:'https://www.stephenbliss.com/rockstar-games',image:'https://images.squarespace-cdn.com/content/v1/5441c4e5e4b07b71baeb625d/1419996736413-V8JXB0T47OLGK1NVUSVM/GTA3+FOB.+USA.+2002.jpg'},
  'gta-vice-city':{coverSource:'https://www.stephenbliss.com/rockstar-games',image:'https://images.squarespace-cdn.com/content/v1/5441c4e5e4b07b71baeb625d/1419996771632-934CRFOK8NCCIKPZY771/GTAVC+FOB.+USA.+2003.jpg'},
  'shouwang-de-juli':{source:'https://search.megbook.com.tw/mall/detail.jsp?proID=3004011',heading:'守望的距离',releaseYear:2017,fields:{作者:'周国平',出版社:'浙江人民出版社',ISBN:'9787213079634'},image:'http://img.megbook.hk/upload/mall/productImages/17/20/9787213079634.jpg'},

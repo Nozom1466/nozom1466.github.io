@@ -3441,13 +3441,14 @@
     },
     "cover": "/library-covers/swallowed-star-original.webp",
     "coverDimensions": {
-      "width": 2160,
-      "height": 4184
+      "width": 1540,
+      "height": 2160
     },
-    "coverSource": "https://bgm.tv/subject/577199",
-    "coverOriginal": "https://lain.bgm.tv/pic/cover/l/7b/2f/577199_YH31g.jpg",
+    "coverSource": "https://wetv.vip/zh-cn/play/cnqbubq7s6nxixe",
+    "coverOriginal": "https://vcover-vt-pic.wetvinfo.com/vcover_vt_pic/0/cnqbubq7s6nxixe1777528344420/0",
     "sources": [
-      "https://bgm.tv/subject/577199"
+      "https://bgm.tv/subject/577199",
+      "https://wetv.vip/zh-cn/play/cnqbubq7s6nxixe"
     ],
     "researched": "2026-11-13"
   },
