@@ -1,6 +1,33 @@
 {
   "version": 1,
   "works": {
+    "edge-of-tomorrow": {
+      "title": "Edge of Tomorrow",
+      "aliases": [
+        "Edge of Tomorrow"
+      ],
+      "creatorNames": {
+        "Hiroshi Sakurazaka": "桜坂洋"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Edge_of_Tomorrow",
+        "https://www.warnerbros.com/movies/edge-tomorrow",
+        "https://catalog.afi.com/Film/70705-EDGE-OFTOMORROW",
+        "https://books.shueisha.co.jp/items/contents.html?isbn=4-08-630219-5"
+      ]
+    },
+    "elysium": {
+      "title": "Elysium",
+      "aliases": [
+        "Elysium"
+      ],
+      "creatorNames": {},
+      "sources": [
+        "https://en.wikipedia.org/wiki/Elysium_(film)",
+        "https://www.sonypictures.com/movies/elysium",
+        "https://catalog.afi.com/Film/69598-ELYSIUM"
+      ]
+    },
     "yokomichi-yonosuke": {
       "title": "横道世之介",
       "aliases": [

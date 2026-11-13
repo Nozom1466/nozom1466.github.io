@@ -7,6 +7,8 @@ function add(category, data) {
   }
 }
 add('film', `
+edge-of-tomorrow|Edge of Tomorrow|Edge of Tomorrow
+elysium|Elysium|Elysium (film)
 yokomichi-yonosuke|横道世之介|A Story of Yonosuke
 liaoshen-campaign|大决战之辽沈战役|zh:大决战之辽沈战役
 huaihai-campaign|大决战之淮海战役|zh:大决战之淮海战役

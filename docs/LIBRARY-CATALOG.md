@@ -1,6 +1,6 @@
 # 书馆整理结果
 
-整理日期：2026-11-13。新增 153 个作品条目，保留原有作品和评价。新增条目均未填写评分、摘要或评价正文。
+整理日期：2026-11-13。新增 155 个作品条目，保留原有作品和评价。新增条目均未填写评分、摘要或评价正文。
 
 封面及资料逐条来源见 [library-catalog.json](library-catalog.json)。封面优先使用作品宣传图、正式发行封面；部分通过资料站取得，不包含生成式封面。
 
@@ -89,8 +89,10 @@
 - [四畳半タイムマシンブルース](../content/library/tatami-time-machine.md) · 2022
 - [CITY THE ANIMATION](../content/library/city-animation.md) · 2025
 
-### 电影（48）
+### 电影（50）
 
+- [Edge of Tomorrow](../content/library/edge-of-tomorrow.md) · 2014
+- [Elysium](../content/library/elysium.md) · 2013
 - [横道世之介](../content/library/yokomichi-yonosuke.md) · 2013
 - [大决战之辽沈战役](../content/library/liaoshen-campaign.md) · 1991
 - [大决战之淮海战役](../content/library/huaihai-campaign.md) · 1991

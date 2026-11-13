@@ -9,6 +9,7 @@ const titles={
  'kaguya-first-kiss':'かぐや様は告らせたい-ファーストキッスは終わらない-',
 };
 const people={
+ 'Hiroshi Sakurazaka':'桜坂洋',
  'Shuichi Okita':'沖田修一','Shirō Maeda':'前田司郎','Toshikazu Nishigaya, Yuki Nishimiya, Yasushi Yamazaki':'西ヶ谷寿一、西宮由貴、山崎康史',
  'Ren Takada':'高田漣','Shūichi Yoshida':'吉田修一','Shunji Iwai':'岩井俊二','Hidemi Satani':'佐谷秀美','Aki Mizuno':'水野昌','Takeshi Kobayashi':'小林武史',
  'Hirokazu Kore-eda':'是枝裕和','Kaoru Matsuzaki, Hijiri Taguchi':'松崎薫、田口聖','Yoko Kanno':'菅野よう子','Akimi Yoshida':'吉田秋生',
@@ -30,6 +31,8 @@ const people={
  'Haruka Nakamura':'haruka nakamura',
 };
 const extraSources={
+ 'edge-of-tomorrow':['https://www.warnerbros.com/movies/edge-tomorrow','https://catalog.afi.com/Film/70705-EDGE-OFTOMORROW','https://books.shueisha.co.jp/items/contents.html?isbn=4-08-630219-5'],
+ 'elysium':['https://www.sonypictures.com/movies/elysium','https://catalog.afi.com/Film/69598-ELYSIUM'],
  'yokomichi-yonosuke':['https://eiga.com/movie/57830/'],
  'insomniacs-after-school-film':['https://kimisomu-movie.com/','https://www.ponycanyon.co.jp/music/PCCG000002258'],
  'seoul-spring':['https://www.koreafilm.or.kr/museum/theater/module/TI_00000078','https://news.yonsei.ac.kr/kr/people/detail?bbSeq=27493'],

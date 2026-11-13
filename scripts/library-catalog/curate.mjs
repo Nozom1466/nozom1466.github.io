@@ -3,6 +3,8 @@ import {readFile,writeFile} from 'node:fs/promises';
 import {load} from 'cheerio';
 import works from './works.mjs';
 const updates={
+ 'edge-of-tomorrow':{coverSource:'https://www.impawards.com/2014/edge_of_tomorrow_xlg.html',image:'https://www.impawards.com/2014/posters/edge_of_tomorrow_xlg.jpg'},
+ 'elysium':{coverSource:'https://www.sonypictures.com/movies/elysium',image:'https://www.sonypictures.com/sites/default/files/chameleon/title-movie/462025_Elysium_1400x2100_English_US.jpg'},
  'swallowed-star-original':{coverSource:'https://wetv.vip/zh-cn/play/cnqbubq7s6nxixe',image:'https://vcover-vt-pic.wetvinfo.com/vcover_vt_pic/0/cnqbubq7s6nxixe1777528344420/0'},
  'gta-iii':{coverSource:'https://www.stephenbliss.com/rockstar-games',image:'https://images.squarespace-cdn.com/content/v1/5441c4e5e4b07b71baeb625d/1419996736413-V8JXB0T47OLGK1NVUSVM/GTA3+FOB.+USA.+2002.jpg'},
  'gta-vice-city':{coverSource:'https://www.stephenbliss.com/rockstar-games',image:'https://images.squarespace-cdn.com/content/v1/5441c4e5e4b07b71baeb625d/1419996771632-934CRFOK8NCCIKPZY771/GTAVC+FOB.+USA.+2003.jpg'},

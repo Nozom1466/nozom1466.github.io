@@ -1,5 +1,58 @@
 [
   {
+    "slug": "edge-of-tomorrow",
+    "title": "Edge of Tomorrow",
+    "category": "film",
+    "releaseYear": 2014,
+    "creators": {
+      "1_director": "Doug Liman",
+      "2_writer": "Christopher McQuarrie, Jez Butterworth, John-Henry Butterworth",
+      "3_producer": "Erwin Stoff, Tom Lassally, Jeffrey Silver, Gregory Jacobs, Jason Hoffs",
+      "4_music": "Christophe Beck",
+      "5_author": "桜坂洋"
+    },
+    "cover": "/library-covers/edge-of-tomorrow.webp",
+    "coverDimensions": {
+      "width": 1000,
+      "height": 1481
+    },
+    "coverSource": "https://www.impawards.com/2014/edge_of_tomorrow_xlg.html",
+    "coverOriginal": "https://www.impawards.com/2014/posters/edge_of_tomorrow_xlg.jpg",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Edge_of_Tomorrow",
+      "https://www.impawards.com/2014/edge_of_tomorrow_xlg.html",
+      "https://www.warnerbros.com/movies/edge-tomorrow",
+      "https://catalog.afi.com/Film/70705-EDGE-OFTOMORROW",
+      "https://books.shueisha.co.jp/items/contents.html?isbn=4-08-630219-5"
+    ],
+    "researched": "2026-11-13"
+  },
+  {
+    "slug": "elysium",
+    "title": "Elysium",
+    "category": "film",
+    "releaseYear": 2013,
+    "creators": {
+      "1_director": "Neill Blomkamp",
+      "2_writer": "Neill Blomkamp",
+      "3_producer": "Simon Kinberg, Bill Block, Neill Blomkamp",
+      "4_music": "Ryan Amon"
+    },
+    "cover": "/library-covers/elysium.webp",
+    "coverDimensions": {
+      "width": 1400,
+      "height": 2100
+    },
+    "coverSource": "https://www.sonypictures.com/movies/elysium",
+    "coverOriginal": "https://www.sonypictures.com/sites/default/files/chameleon/title-movie/462025_Elysium_1400x2100_English_US.jpg",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Elysium_(film)",
+      "https://www.sonypictures.com/movies/elysium",
+      "https://catalog.afi.com/Film/69598-ELYSIUM"
+    ],
+    "researched": "2026-11-13"
+  },
+  {
     "slug": "yokomichi-yonosuke",
     "title": "横道世之介",
     "category": "film",
