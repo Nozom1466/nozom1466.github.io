@@ -35,6 +35,8 @@ for(const w of works){
    put('publisher',get('publisher','publishers'));
    put('writer',get('writer','writers'));
    put('music',get('composer','composers'));
+ }else if(w.slug==='lvxing-1'){
+   put('cast','张昕宇、梁红');
  }else if(w.category==='documentary'){
    put('creator',get('导演'));
    put('cast',get('主演'));
@@ -58,6 +60,11 @@ for(const w of works){
  }
  if(!Object.keys(creators).length)throw Error('No creators: '+w.slug);
  const sources=[d.source,d.coverSource];
+ const mergedSubjects={
+   'lvxing-1':[584984,584985,584998,585006,585008,585010,585012],
+   'qin-1':[2769,6815,17045,86073,231210]
+ };
+ for(const id of mergedSubjects[w.slug]||[])sources.push(`https://bgm.tv/subject/${id}`);
  if(d.staff?.length)sources.push(`https://bgm.tv/subject/${w.bgm||d.coverBgm}`);
  const official=d.fields?.['官方网站']||cf['官方网站']||cf.website;
  if(official&&/^https?:\/\/\S+$/.test(official))sources.push(official);

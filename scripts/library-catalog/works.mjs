@@ -121,9 +121,6 @@ hyouka|冰菓|27364
 kaguya-1|辉夜大小姐想让我告白 第一季|248175
 kaguya-2|辉夜大小姐想让我告白？ 第二季|293049
 kaguya-3|辉夜大小姐想让我告白－究极浪漫－|317613
-kaguya-1-cn|辉夜大小姐想让我告白 第一季 · 中配版|248175
-kaguya-2-cn|辉夜大小姐想让我告白？ 第二季 · 中配版|293049
-kaguya-3-cn|辉夜大小姐想让我告白－究极浪漫－ · 中配版|317613
 kaguya-first-kiss|辉夜大小姐想让我告白－初吻不会结束－|389474
 frieren-1|葬送的芙莉莲 第一季|400602
 tsuki-ga-kirei|月色真美|207573
@@ -133,12 +130,7 @@ tsuredure-children|徒然喜欢你|208754
 swallowed-star|吞噬星空|244239
 swallowed-star-blood|吞噬星空：血洛大陆|507795
 swallowed-star-original|吞噬星空：决战原始星|577199
-qin-1|秦时明月之百步飞剑|2473
-qin-2|秦时明月之夜尽天明|2769
-qin-3|秦时明月之诸子百家|6815
-qin-4|秦时明月之万里长城|17045
-qin-5|秦时明月之君临天下|86073
-qin-6|秦时明月之沧海横流|231210
+qin-1|秦时明月（系列）|2473
 nine-songs|天行九歌|127448
 k-on-1|轻音少女 第一季|1424
 k-on-2|轻音少女 第二季|3774
@@ -150,7 +142,7 @@ for(const line of bgmRows.trim().split('\n')) {
   const [slug,title,id]=line.split('|'); rows.push({slug,title,category:'anime',bgm:Number(id)});
 }
 for(const [slug,title,bgm] of [
-['lvxing-1','侣行 第一季',584982],['lvxing-2','侣行 第二季',584984],['lvxing-3','侣行 第三季',584985],['our-lvxing-1','我们的侣行 第一季',584998],['earth-lvxing-3','地球之极·侣行 第三季',585006],['earth-lvxing-4','地球之极·侣行 第四季',585008],['earth-lvxing-5','地球之极·侣行 第五季',585010],['earth-lvxing-6','地球之极·侣行 第六季',585012]]) rows.push({slug,title,bgm,category:'documentary'});
+['lvxing-1','侣行（系列）',584982]]) rows.push({slug,title,bgm,category:'documentary'});
 rows.push(
  {slug:'mr-six',title:'老炮儿',category:'film'},
  {slug:'zhao-wen-dao',title:'朝闻道',category:'book'},

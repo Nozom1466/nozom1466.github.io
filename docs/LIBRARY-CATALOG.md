@@ -1,12 +1,12 @@
 # 书馆整理结果
 
-整理日期：2026-11-13。新增 167 个作品条目，保留原有作品和评价。新增条目均未填写评分、摘要或评价正文。
+整理日期：2026-11-13。新增 152 个作品条目，保留原有作品和评价。新增条目均未填写评分、摘要或评价正文。
 
 封面及资料逐条来源见 [library-catalog.json](library-catalog.json)。封面优先使用作品宣传图、正式发行封面；部分通过资料站取得，不包含生成式封面。
 
 ## 已创建条目
 
-### 动画（86）
+### 动画（78）
 
 - [你的名字。](../content/library/your-name.md) · 2016
 - [蓦然回首](../content/library/look-back.md) · 2024
@@ -69,9 +69,6 @@
 - [辉夜大小姐想让我告白 第一季](../content/library/kaguya-1.md) · 2019
 - [辉夜大小姐想让我告白？ 第二季](../content/library/kaguya-2.md) · 2020
 - [辉夜大小姐想让我告白－究极浪漫－](../content/library/kaguya-3.md) · 2022
-- [辉夜大小姐想让我告白 第一季 · 中配版](../content/library/kaguya-1-cn.md) · 2019
-- [辉夜大小姐想让我告白？ 第二季 · 中配版](../content/library/kaguya-2-cn.md) · 2020
-- [辉夜大小姐想让我告白－究极浪漫－ · 中配版](../content/library/kaguya-3-cn.md) · 2022
 - [辉夜大小姐想让我告白－初吻不会结束－](../content/library/kaguya-first-kiss.md) · 2022
 - [葬送的芙莉莲 第一季](../content/library/frieren-1.md) · 2023
 - [月色真美](../content/library/tsuki-ga-kirei.md) · 2017
@@ -81,12 +78,7 @@
 - [吞噬星空](../content/library/swallowed-star.md) · 2020
 - [吞噬星空：血洛大陆](../content/library/swallowed-star-blood.md) · 2024
 - [吞噬星空：决战原始星](../content/library/swallowed-star-original.md) · 2026
-- [秦时明月之百步飞剑](../content/library/qin-1.md) · 2007
-- [秦时明月之夜尽天明](../content/library/qin-2.md) · 2008
-- [秦时明月之诸子百家](../content/library/qin-3.md) · 2010
-- [秦时明月之万里长城](../content/library/qin-4.md) · 2012
-- [秦时明月之君临天下](../content/library/qin-5.md) · 2014
-- [秦时明月之沧海横流](../content/library/qin-6.md) · 2020
+- [秦时明月（系列）](../content/library/qin-1.md) · 2007
 - [天行九歌](../content/library/nine-songs.md) · 2016
 - [轻音少女 第一季](../content/library/k-on-1.md) · 2009
 - [轻音少女 第二季](../content/library/k-on-2.md) · 2010
@@ -170,16 +162,9 @@
 - [扫黑风暴](../content/library/crime-crackdown.md) · 2021
 - [长安十二时辰](../content/library/longest-day-in-changan.md) · 2019
 
-### 纪录片（8）
+### 纪录片（1）
 
-- [侣行 第一季](../content/library/lvxing-1.md) · 2013
-- [侣行 第二季](../content/library/lvxing-2.md)
-- [侣行 第三季](../content/library/lvxing-3.md) · 2015
-- [我们的侣行 第一季](../content/library/our-lvxing-1.md) · 2017
-- [地球之极·侣行 第三季](../content/library/earth-lvxing-3.md) · 2019
-- [地球之极·侣行 第四季](../content/library/earth-lvxing-4.md) · 2020
-- [地球之极·侣行 第五季](../content/library/earth-lvxing-5.md) · 2020
-- [地球之极·侣行 第六季](../content/library/earth-lvxing-6.md) · 2021
+- [侣行（系列）](../content/library/lvxing-1.md) · 2013
 
 ### 综艺（1）
 
@@ -201,6 +186,9 @@
 
 ## 版本与去重
 
+- 辉夜中配版不单独收录，保留原版三季及《初吻不会结束》。
+- 《侣行》合并为一个系列条目：原《侣行》第一至三季、《我们的侣行》第一季、《地球之极·侣行》第三至六季；沿用第一季封面，不增加未确认的观看范围。
+- 《秦时明月》第一至六部合并为一个系列条目，沿用第一部封面；《天行九歌》单独保留。系列年份表示开始年份。
 - 用户通过封面确认周国平的《守望的距离》，采用浙江人民出版社 2017 年平装版（ISBN 9787213079634）。
 - 用户纠正“Game of War”为 Gameloft 那款游戏；不收录 Game of War，保留已确认的《闪电部队》，不重复创建。
 - 用户确认《老炮儿》并追加《球状闪电》；刘慈欣短篇集按《朝闻道》收录，选用此前给出的长江文艺版资料。

@@ -1,5 +1,5 @@
 ---
-title: "秦时明月之百步飞剑"
+title: "秦时明月（系列）"
 cover: "/library-covers/qin-1.webp"
 library_tags:
   - anime

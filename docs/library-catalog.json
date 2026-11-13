@@ -3207,81 +3207,6 @@
     "researched": "2026-11-13"
   },
   {
-    "slug": "kaguya-1-cn",
-    "title": "辉夜大小姐想让我告白 第一季 · 中配版",
-    "category": "anime",
-    "releaseYear": 2019,
-    "creators": {
-      "1_director": "小俣真一",
-      "2_author": "赤坂アカ",
-      "3_writer": "中西やすひろ",
-      "4_studio": "A-1 Pictures",
-      "5_music": "羽岡佳"
-    },
-    "cover": "/library-covers/kaguya-1-cn.webp",
-    "coverDimensions": {
-      "width": 1536,
-      "height": 2184
-    },
-    "coverSource": "https://bgm.tv/subject/248175",
-    "coverOriginal": "https://lain.bgm.tv/pic/cover/l/2a/f7/248175_2w4zT.jpg",
-    "sources": [
-      "https://bgm.tv/subject/248175",
-      "https://kaguya.love/1st/"
-    ],
-    "researched": "2026-11-13"
-  },
-  {
-    "slug": "kaguya-2-cn",
-    "title": "辉夜大小姐想让我告白？ 第二季 · 中配版",
-    "category": "anime",
-    "releaseYear": 2020,
-    "creators": {
-      "1_director": "小俣真一",
-      "2_author": "赤坂アカ",
-      "3_writer": "中西やすひろ",
-      "4_studio": "A-1 Pictures",
-      "5_music": "羽岡佳"
-    },
-    "cover": "/library-covers/kaguya-2-cn.webp",
-    "coverDimensions": {
-      "width": 562,
-      "height": 800
-    },
-    "coverSource": "https://bgm.tv/subject/293049",
-    "coverOriginal": "https://lain.bgm.tv/pic/cover/l/36/16/293049_0e0re.jpg",
-    "sources": [
-      "https://bgm.tv/subject/293049",
-      "https://kaguya.love/2nd/"
-    ],
-    "researched": "2026-11-13"
-  },
-  {
-    "slug": "kaguya-3-cn",
-    "title": "辉夜大小姐想让我告白－究极浪漫－ · 中配版",
-    "category": "anime",
-    "releaseYear": 2022,
-    "creators": {
-      "1_director": "小俣真一",
-      "2_author": "赤坂アカ",
-      "3_writer": "中西やすひろ",
-      "4_studio": "A-1 Pictures",
-      "5_music": "羽岡佳"
-    },
-    "cover": "/library-covers/kaguya-3-cn.webp",
-    "coverDimensions": {
-      "width": 750,
-      "height": 1061
-    },
-    "coverSource": "https://bgm.tv/subject/317613",
-    "coverOriginal": "https://lain.bgm.tv/pic/cover/l/cf/9c/317613_bpGX4.jpg",
-    "sources": [
-      "https://bgm.tv/subject/317613",
-      "https://kaguya.love/3rd/"
-    ],
-    "researched": "2026-11-13"
-  },
-  {
     "slug": "kaguya-first-kiss",
     "title": "辉夜大小姐想让我告白－初吻不会结束－",
     "category": "anime",
@@ -3504,7 +3429,7 @@
   },
   {
     "slug": "qin-1",
-    "title": "秦时明月之百步飞剑",
+    "title": "秦时明月（系列）",
     "category": "anime",
     "releaseYear": 2007,
     "creators": {
@@ -3522,127 +3447,12 @@
     "coverOriginal": "https://lain.bgm.tv/pic/cover/l/5e/6b/2473_es2fg.jpg",
     "sources": [
       "https://bgm.tv/subject/2473",
-      "http://www.qinsmoon.com/"
-    ],
-    "researched": "2026-11-13"
-  },
-  {
-    "slug": "qin-2",
-    "title": "秦时明月之夜尽天明",
-    "category": "anime",
-    "releaseYear": 2008,
-    "creators": {
-      "1_director": "沈乐平",
-      "2_author": "温世仁",
-      "3_writer": "沈乐平",
-      "4_studio": "玄机科技"
-    },
-    "cover": "/library-covers/qin-2.webp",
-    "coverDimensions": {
-      "width": 312,
-      "height": 426
-    },
-    "coverSource": "https://bgm.tv/subject/2769",
-    "coverOriginal": "https://lain.bgm.tv/pic/cover/l/44/ac/2769_H6YNj.jpg",
-    "sources": [
       "https://bgm.tv/subject/2769",
-      "http://www.qinsmoon.com/"
-    ],
-    "researched": "2026-11-13"
-  },
-  {
-    "slug": "qin-3",
-    "title": "秦时明月之诸子百家",
-    "category": "anime",
-    "releaseYear": 2010,
-    "creators": {
-      "1_director": "沈乐平",
-      "2_author": "温世仁",
-      "3_writer": "沈乐平",
-      "4_studio": "玄机科技"
-    },
-    "cover": "/library-covers/qin-3.webp",
-    "coverDimensions": {
-      "width": 784,
-      "height": 1105
-    },
-    "coverSource": "https://bgm.tv/subject/6815",
-    "coverOriginal": "https://lain.bgm.tv/pic/cover/l/da/0d/6815_CdYr8.jpg",
-    "sources": [
       "https://bgm.tv/subject/6815",
-      "http://www.qinsmoon.com/"
-    ],
-    "researched": "2026-11-13"
-  },
-  {
-    "slug": "qin-4",
-    "title": "秦时明月之万里长城",
-    "category": "anime",
-    "releaseYear": 2012,
-    "creators": {
-      "1_director": "金蕾、沈乐平、吴赟",
-      "2_author": "温世仁",
-      "3_writer": "沈乐平",
-      "4_studio": "玄机科技"
-    },
-    "cover": "/library-covers/qin-4.webp",
-    "coverDimensions": {
-      "width": 1080,
-      "height": 1576
-    },
-    "coverSource": "https://bgm.tv/subject/17045",
-    "coverOriginal": "https://lain.bgm.tv/pic/cover/l/82/95/17045_rW6Is.jpg",
-    "sources": [
       "https://bgm.tv/subject/17045",
-      "http://www.qinsmoon.com"
-    ],
-    "researched": "2026-11-13"
-  },
-  {
-    "slug": "qin-5",
-    "title": "秦时明月之君临天下",
-    "category": "anime",
-    "releaseYear": 2014,
-    "creators": {
-      "1_director": "沈乐平",
-      "2_author": "温世仁",
-      "3_writer": "傅海清、沈乐平",
-      "4_studio": "玄机科技"
-    },
-    "cover": "/library-covers/qin-5.webp",
-    "coverDimensions": {
-      "width": 419,
-      "height": 600
-    },
-    "coverSource": "https://bgm.tv/subject/86073",
-    "coverOriginal": "https://lain.bgm.tv/pic/cover/l/65/bf/86073_Dx788.jpg",
-    "sources": [
       "https://bgm.tv/subject/86073",
-      "http://www.qinsmoon.com"
-    ],
-    "researched": "2026-11-13"
-  },
-  {
-    "slug": "qin-6",
-    "title": "秦时明月之沧海横流",
-    "category": "anime",
-    "releaseYear": 2020,
-    "creators": {
-      "1_director": "沈乐平",
-      "2_author": "温世仁",
-      "3_writer": "沈乐平",
-      "4_studio": "玄机科技"
-    },
-    "cover": "/library-covers/qin-6.webp",
-    "coverDimensions": {
-      "width": 960,
-      "height": 1440
-    },
-    "coverSource": "https://bgm.tv/subject/231210",
-    "coverOriginal": "https://lain.bgm.tv/pic/cover/l/8e/b8/231210_yXgIt.jpg",
-    "sources": [
       "https://bgm.tv/subject/231210",
-      "https://weibo.com/qinsmoon"
+      "http://www.qinsmoon.com/"
     ],
     "researched": "2026-11-13"
   },
@@ -3821,12 +3631,11 @@
   },
   {
     "slug": "lvxing-1",
-    "title": "侣行 第一季",
+    "title": "侣行（系列）",
     "category": "documentary",
     "releaseYear": 2013,
     "creators": {
-      "1_cast": "张昕宇, 梁红, 周茵",
-      "2_broadcaster": "优酷, 土豆"
+      "1_cast": "张昕宇、梁红"
     },
     "cover": "/library-covers/lvxing-1.webp",
     "coverDimensions": {
@@ -3836,153 +3645,13 @@
     "coverSource": "https://bgm.tv/subject/584982",
     "coverOriginal": "https://lain.bgm.tv/pic/cover/l/4e/8f/584982_8cplP.jpg",
     "sources": [
-      "https://bgm.tv/subject/584982"
-    ],
-    "researched": "2026-11-13"
-  },
-  {
-    "slug": "lvxing-2",
-    "title": "侣行 第二季",
-    "category": "documentary",
-    "releaseYear": null,
-    "creators": {
-      "1_cast": "张昕宇, 梁红, 周茵",
-      "2_broadcaster": "优酷, 土豆"
-    },
-    "cover": "/library-covers/lvxing-2.webp",
-    "coverDimensions": {
-      "width": 640,
-      "height": 1066
-    },
-    "coverSource": "https://bgm.tv/subject/584984",
-    "coverOriginal": "https://lain.bgm.tv/pic/cover/l/49/3f/584984_UUi34.jpg",
-    "sources": [
-      "https://bgm.tv/subject/584984"
-    ],
-    "researched": "2026-11-13"
-  },
-  {
-    "slug": "lvxing-3",
-    "title": "侣行 第三季",
-    "category": "documentary",
-    "releaseYear": 2015,
-    "creators": {
-      "1_cast": "张昕宇, 梁红, 周茵",
-      "2_broadcaster": "优酷"
-    },
-    "cover": "/library-covers/lvxing-3.webp",
-    "coverDimensions": {
-      "width": 690,
-      "height": 862
-    },
-    "coverSource": "https://bgm.tv/subject/584985",
-    "coverOriginal": "https://lain.bgm.tv/pic/cover/l/40/7a/584985_m9Xdd.jpg",
-    "sources": [
-      "https://bgm.tv/subject/584985"
-    ],
-    "researched": "2026-11-13"
-  },
-  {
-    "slug": "our-lvxing-1",
-    "title": "我们的侣行 第一季",
-    "category": "documentary",
-    "releaseYear": 2017,
-    "creators": {
-      "1_cast": "张昕宇, 梁红",
-      "2_broadcaster": "深圳卫视"
-    },
-    "cover": "/library-covers/our-lvxing-1.webp",
-    "coverDimensions": {
-      "width": 1080,
-      "height": 1920
-    },
-    "coverSource": "https://bgm.tv/subject/584998",
-    "coverOriginal": "https://lain.bgm.tv/pic/cover/l/7a/49/584998_lcbl8.jpg",
-    "sources": [
-      "https://bgm.tv/subject/584998"
-    ],
-    "researched": "2026-11-13"
-  },
-  {
-    "slug": "earth-lvxing-3",
-    "title": "地球之极·侣行 第三季",
-    "category": "documentary",
-    "releaseYear": 2019,
-    "creators": {
-      "1_cast": "张昕宇, 梁红",
-      "2_broadcaster": "东南卫视"
-    },
-    "cover": "/library-covers/earth-lvxing-3.webp",
-    "coverDimensions": {
-      "width": 1080,
-      "height": 1920
-    },
-    "coverSource": "https://bgm.tv/subject/585006",
-    "coverOriginal": "https://lain.bgm.tv/pic/cover/l/69/15/585006_XoXdi.jpg",
-    "sources": [
-      "https://bgm.tv/subject/585006"
-    ],
-    "researched": "2026-11-13"
-  },
-  {
-    "slug": "earth-lvxing-4",
-    "title": "地球之极·侣行 第四季",
-    "category": "documentary",
-    "releaseYear": 2020,
-    "creators": {
-      "1_cast": "张昕宇, 梁红",
-      "2_broadcaster": "东南卫视"
-    },
-    "cover": "/library-covers/earth-lvxing-4.webp",
-    "coverDimensions": {
-      "width": 690,
-      "height": 1228
-    },
-    "coverSource": "https://bgm.tv/subject/585008",
-    "coverOriginal": "https://lain.bgm.tv/pic/cover/l/a5/2f/585008_MKuzM.jpg",
-    "sources": [
-      "https://bgm.tv/subject/585008"
-    ],
-    "researched": "2026-11-13"
-  },
-  {
-    "slug": "earth-lvxing-5",
-    "title": "地球之极·侣行 第五季",
-    "category": "documentary",
-    "releaseYear": 2020,
-    "creators": {
-      "1_cast": "张昕宇, 梁红",
-      "2_broadcaster": "东南卫视"
-    },
-    "cover": "/library-covers/earth-lvxing-5.webp",
-    "coverDimensions": {
-      "width": 500,
-      "height": 740
-    },
-    "coverSource": "https://bgm.tv/subject/585010",
-    "coverOriginal": "https://lain.bgm.tv/pic/cover/l/5b/99/585010_7aAaz.jpg",
-    "sources": [
-      "https://bgm.tv/subject/585010"
-    ],
-    "researched": "2026-11-13"
-  },
-  {
-    "slug": "earth-lvxing-6",
-    "title": "地球之极·侣行 第六季",
-    "category": "documentary",
-    "releaseYear": 2021,
-    "creators": {
-      "1_cast": "张昕宇, 梁红",
-      "2_broadcaster": "东南卫视"
-    },
-    "cover": "/library-covers/earth-lvxing-6.webp",
-    "coverDimensions": {
-      "width": 1080,
-      "height": 1920
-    },
-    "coverSource": "https://bgm.tv/subject/585012",
-    "coverOriginal": "https://lain.bgm.tv/pic/cover/l/eb/94/585012_86E08.jpg",
-    "sources": [
+      "https://bgm.tv/subject/584982",
+      "https://bgm.tv/subject/584984",
+      "https://bgm.tv/subject/584985",
+      "https://bgm.tv/subject/584998",
+      "https://bgm.tv/subject/585006",
+      "https://bgm.tv/subject/585008",
+      "https://bgm.tv/subject/585010",
       "https://bgm.tv/subject/585012"
     ],
     "researched": "2026-11-13"
