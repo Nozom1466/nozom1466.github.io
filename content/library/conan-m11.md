@@ -1,5 +1,5 @@
 ---
-title: "名侦探柯南：绀碧之棺"
+title: "M11 · 名侦探柯南：绀碧之棺"
 cover: "/library-covers/conan-m11.webp"
 library_tags:
   - anime

@@ -30,35 +30,35 @@
 - [疯狂动物城](../content/library/zootopia.md) · 2016
 - [小黄人大眼萌](../content/library/minions.md) · 2015
 - [小黄人大眼萌2：神偷奶爸前传](../content/library/minions-2.md) · 2022
-- [名侦探柯南：引爆摩天楼](../content/library/conan-m01.md) · 1997
-- [名侦探柯南：第14个目标](../content/library/conan-m02.md) · 1998
-- [名侦探柯南：世纪末的魔术师](../content/library/conan-m03.md) · 1999
-- [名侦探柯南：瞳孔中的暗杀者](../content/library/conan-m04.md) · 2000
-- [名侦探柯南：通往天国的倒计时](../content/library/conan-m05.md) · 2001
-- [名侦探柯南：贝克街的亡灵](../content/library/conan-m06.md) · 2002
-- [名侦探柯南：迷宫的十字路口](../content/library/conan-m07.md) · 2003
-- [名侦探柯南：银翼的魔术师](../content/library/conan-m08.md) · 2004
-- [名侦探柯南：水平线上的阴谋](../content/library/conan-m09.md) · 2005
-- [名侦探柯南：侦探们的镇魂歌](../content/library/conan-m10.md) · 2006
-- [名侦探柯南：绀碧之棺](../content/library/conan-m11.md) · 2007
-- [名侦探柯南：战栗的乐谱](../content/library/conan-m12.md) · 2008
-- [名侦探柯南：漆黑的追踪者](../content/library/conan-m13.md) · 2009
-- [名侦探柯南：天空的遇难船](../content/library/conan-m14.md) · 2010
-- [名侦探柯南：沉默的15分钟](../content/library/conan-m15.md) · 2011
-- [名侦探柯南：第11个前锋](../content/library/conan-m16.md) · 2012
-- [名侦探柯南：绝海的侦探](../content/library/conan-m17.md) · 2013
-- [名侦探柯南：异次元的狙击手](../content/library/conan-m18.md) · 2014
-- [名侦探柯南：业火的向日葵](../content/library/conan-m19.md) · 2015
-- [名侦探柯南：纯黑的噩梦](../content/library/conan-m20.md) · 2016
-- [名侦探柯南：唐红的恋歌](../content/library/conan-m21.md) · 2017
-- [名侦探柯南：零的执行人](../content/library/conan-m22.md) · 2018
-- [名侦探柯南：绀青之拳](../content/library/conan-m23.md) · 2019
-- [名侦探柯南：绯色的子弹](../content/library/conan-m24.md) · 2021
-- [名侦探柯南：万圣夜的新娘](../content/library/conan-m25.md) · 2022
-- [名侦探柯南：黑铁的鱼影](../content/library/conan-m26.md) · 2023
-- [名侦探柯南：百万美元的五棱星](../content/library/conan-m27.md) · 2024
-- [名侦探柯南：独眼的残像](../content/library/conan-m28.md) · 2025
-- [名侦探柯南：高速公路的堕天使](../content/library/conan-m29.md) · 2026
+- [M01 · 名侦探柯南：引爆摩天楼](../content/library/conan-m01.md) · 1997
+- [M02 · 名侦探柯南：第14个目标](../content/library/conan-m02.md) · 1998
+- [M03 · 名侦探柯南：世纪末的魔术师](../content/library/conan-m03.md) · 1999
+- [M04 · 名侦探柯南：瞳孔中的暗杀者](../content/library/conan-m04.md) · 2000
+- [M05 · 名侦探柯南：通往天国的倒计时](../content/library/conan-m05.md) · 2001
+- [M06 · 名侦探柯南：贝克街的亡灵](../content/library/conan-m06.md) · 2002
+- [M07 · 名侦探柯南：迷宫的十字路口](../content/library/conan-m07.md) · 2003
+- [M08 · 名侦探柯南：银翼的魔术师](../content/library/conan-m08.md) · 2004
+- [M09 · 名侦探柯南：水平线上的阴谋](../content/library/conan-m09.md) · 2005
+- [M10 · 名侦探柯南：侦探们的镇魂歌](../content/library/conan-m10.md) · 2006
+- [M11 · 名侦探柯南：绀碧之棺](../content/library/conan-m11.md) · 2007
+- [M12 · 名侦探柯南：战栗的乐谱](../content/library/conan-m12.md) · 2008
+- [M13 · 名侦探柯南：漆黑的追踪者](../content/library/conan-m13.md) · 2009
+- [M14 · 名侦探柯南：天空的遇难船](../content/library/conan-m14.md) · 2010
+- [M15 · 名侦探柯南：沉默的15分钟](../content/library/conan-m15.md) · 2011
+- [M16 · 名侦探柯南：第11个前锋](../content/library/conan-m16.md) · 2012
+- [M17 · 名侦探柯南：绝海的侦探](../content/library/conan-m17.md) · 2013
+- [M18 · 名侦探柯南：异次元的狙击手](../content/library/conan-m18.md) · 2014
+- [M19 · 名侦探柯南：业火的向日葵](../content/library/conan-m19.md) · 2015
+- [M20 · 名侦探柯南：纯黑的噩梦](../content/library/conan-m20.md) · 2016
+- [M21 · 名侦探柯南：唐红的恋歌](../content/library/conan-m21.md) · 2017
+- [M22 · 名侦探柯南：零的执行人](../content/library/conan-m22.md) · 2018
+- [M23 · 名侦探柯南：绀青之拳](../content/library/conan-m23.md) · 2019
+- [M24 · 名侦探柯南：绯色的子弹](../content/library/conan-m24.md) · 2021
+- [M25 · 名侦探柯南：万圣夜的新娘](../content/library/conan-m25.md) · 2022
+- [M26 · 名侦探柯南：黑铁的鱼影](../content/library/conan-m26.md) · 2023
+- [M27 · 名侦探柯南：百万美元的五棱星](../content/library/conan-m27.md) · 2024
+- [M28 · 名侦探柯南：独眼的残像](../content/library/conan-m28.md) · 2025
+- [M29 · 名侦探柯南：高速公路的堕天使](../content/library/conan-m29.md) · 2026
 - [温暖的印记](../content/library/honobono-log.md) · 2016
 - [朝花夕誓](../content/library/maquia.md) · 2018
 - [声之形](../content/library/silent-voice.md) · 2016
@@ -196,7 +196,7 @@
 - 用户确认《老炮儿》并追加《球状闪电》；刘慈欣短篇集按《朝闻道》收录，选用此前给出的长江文艺版资料。
 - 《敢死队》只收录第一、二部；《闪电部队》按 Blitz Brigade 记录。
 - 《星球大战》只收录第七、八、九部。
-- 《名侦探柯南》包括 TV 和用户指定的第 1—29 部剧场版。
+- 《名侦探柯南》包括 TV 和用户指定的第 1—29 部剧场版，剧场版标题以 M01—M29 标识，TV 不加编号。
 - 《葬送的芙莉莲》仅第一季；《哪吒》仅《魔童降世》；《沙丘》仅 2021 年电影。
 - 《她和她的猫》采用新海诚原作短片；《乔西的虎与鱼》采用动画电影。
 - 《情书》《玉子爱情故事》《乒乓》等已有条目不重复创建。

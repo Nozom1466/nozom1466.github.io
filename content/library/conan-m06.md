@@ -1,5 +1,5 @@
 ---
-title: "名侦探柯南：贝克街的亡灵"
+title: "M06 · 名侦探柯南：贝克街的亡灵"
 cover: "/library-covers/conan-m06.webp"
 library_tags:
   - anime

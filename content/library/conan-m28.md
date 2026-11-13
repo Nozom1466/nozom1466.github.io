@@ -1,5 +1,5 @@
 ---
-title: "名侦探柯南：独眼的残像"
+title: "M28 · 名侦探柯南：独眼的残像"
 cover: "/library-covers/conan-m28.webp"
 library_tags:
   - anime

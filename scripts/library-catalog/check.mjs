@@ -8,6 +8,7 @@ const catalog=JSON.parse(await readFile(new URL('../../docs/library-catalog.json
 assert.equal(new Set(catalog.map(x=>x.slug)).size,catalog.length);
 assert.equal(new Set(catalog.map(x=>x.title)).size,catalog.length);
 assert.equal(catalog.filter(x=>/^conan-m/.test(x.slug)).length,29);
+for(const c of catalog.filter(x=>/^conan-m/.test(x.slug)))assert(c.title.startsWith(`M${c.slug.slice(-2)} · 名侦探柯南：`),c.slug+': movie number');
 assert.equal(catalog.filter(x=>/^expendables/.test(x.slug)).length,2);
 assert.equal(catalog.filter(x=>/^star-wars-/.test(x.slug)).length,3);
 assert(catalog.some(x=>x.slug==='blitz-brigade'));
@@ -30,6 +31,7 @@ for(const c of catalog){
  assert(Object.keys(c.creators).length>=1&&Object.keys(c.creators).length<=5,c.slug+': credits');
  for(const v of Object.values(c.creators))assert(v.trim()&&!/undefined|null/.test(v),c.slug);
  const source=await readFile(new URL(`../../content/library/${c.slug}.md`,import.meta.url),'utf8');
+ assert(source.includes(`title: ${JSON.stringify(c.title)}`),c.slug+': title matches catalog');
  assert(source.includes(`catalog_id: "${c.slug}"`));
  assert(!/^rating:|^summary:/m.test(source),c.slug+': no invented opinions');
  assert.equal(source.split('---')[2].trim(),'');

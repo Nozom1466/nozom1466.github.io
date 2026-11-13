@@ -1,5 +1,5 @@
 ---
-title: "名侦探柯南：天空的遇难船"
+title: "M14 · 名侦探柯南：天空的遇难船"
 cover: "/library-covers/conan-m14.webp"
 library_tags:
   - anime

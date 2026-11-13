@@ -1,5 +1,5 @@
 ---
-title: "名侦探柯南：绝海的侦探"
+title: "M17 · 名侦探柯南：绝海的侦探"
 cover: "/library-covers/conan-m17.webp"
 library_tags:
   - anime

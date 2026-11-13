@@ -1,5 +1,5 @@
 ---
-title: "名侦探柯南：漆黑的追踪者"
+title: "M13 · 名侦探柯南：漆黑的追踪者"
 cover: "/library-covers/conan-m13.webp"
 library_tags:
   - anime

@@ -1,5 +1,5 @@
 ---
-title: "名侦探柯南：异次元的狙击手"
+title: "M18 · 名侦探柯南：异次元的狙击手"
 cover: "/library-covers/conan-m18.webp"
 library_tags:
   - anime

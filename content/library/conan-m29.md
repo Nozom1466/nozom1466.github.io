@@ -1,5 +1,5 @@
 ---
-title: "名侦探柯南：高速公路的堕天使"
+title: "M29 · 名侦探柯南：高速公路的堕天使"
 cover: "/library-covers/conan-m29.webp"
 library_tags:
   - anime

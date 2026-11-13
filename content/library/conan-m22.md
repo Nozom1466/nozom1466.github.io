@@ -1,5 +1,5 @@
 ---
-title: "名侦探柯南：零的执行人"
+title: "M22 · 名侦探柯南：零的执行人"
 cover: "/library-covers/conan-m22.webp"
 library_tags:
   - anime

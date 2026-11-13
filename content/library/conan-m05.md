@@ -1,5 +1,5 @@
 ---
-title: "名侦探柯南：通往天国的倒计时"
+title: "M05 · 名侦探柯南：通往天国的倒计时"
 cover: "/library-covers/conan-m05.webp"
 library_tags:
   - anime

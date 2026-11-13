@@ -1,5 +1,5 @@
 ---
-title: "名侦探柯南：第14个目标"
+title: "M02 · 名侦探柯南：第14个目标"
 cover: "/library-covers/conan-m02.webp"
 library_tags:
   - anime

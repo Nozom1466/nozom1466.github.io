@@ -1,5 +1,5 @@
 ---
-title: "名侦探柯南：水平线上的阴谋"
+title: "M09 · 名侦探柯南：水平线上的阴谋"
 cover: "/library-covers/conan-m09.webp"
 library_tags:
   - anime

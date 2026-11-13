@@ -1,5 +1,5 @@
 ---
-title: "名侦探柯南：万圣夜的新娘"
+title: "M25 · 名侦探柯南：万圣夜的新娘"
 cover: "/library-covers/conan-m25.webp"
 library_tags:
   - anime

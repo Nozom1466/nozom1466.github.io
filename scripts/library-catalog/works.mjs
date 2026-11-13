@@ -110,7 +110,7 @@ blitz-brigade|闪电部队|Blitz Brigade
 add('variety', `running-man|Running Man|Running Man (TV program)`);
 const conan = [
 ['引爆摩天楼','The Time Bombed Skyscraper'],['第14个目标','The Fourteenth Target'],['世纪末的魔术师','The Last Wizard of the Century'],['瞳孔中的暗杀者','Captured in Her Eyes'],['通往天国的倒计时','Countdown to Heaven'],['贝克街的亡灵','The Phantom of Baker Street'],['迷宫的十字路口','Crossroad in the Ancient Capital'],['银翼的魔术师','Magician of the Silver Sky'],['水平线上的阴谋','Strategy Above the Depths'],['侦探们的镇魂歌',"The Private Eyes' Requiem"],['绀碧之棺','Jolly Roger in the Deep Azure'],['战栗的乐谱','Full Score of Fear'],['漆黑的追踪者','The Raven Chaser'],['天空的遇难船','The Lost Ship in the Sky'],['沉默的15分钟','Quarter of Silence'],['第11个前锋','The Eleventh Striker'],['绝海的侦探','Private Eye in the Distant Sea'],['异次元的狙击手','Dimensional Sniper'],['业火的向日葵','Sunflowers of Inferno'],['纯黑的噩梦','The Darkest Nightmare'],['唐红的恋歌','The Crimson Love Letter'],['零的执行人','Zero the Enforcer'],['绀青之拳','The Fist of Blue Sapphire'],['绯色的子弹','The Scarlet Bullet'],['万圣夜的新娘','The Bride of Halloween'],['黑铁的鱼影','Black Iron Submarine'],['百万美元的五棱星','The Million-dollar Pentagram'],['独眼的残像','One-eyed Flashback'],['高速公路的堕天使','Fallen Angel of the Highway']];
-conan.forEach(([title, en], i) => rows.push({slug:`conan-m${String(i+1).padStart(2,'0')}`,title:`名侦探柯南：${title}`,category:'anime',wiki:`Detective Conan: ${en}`}));
+conan.forEach(([title, en], i) => rows.push({slug:`conan-m${String(i+1).padStart(2,'0')}`,title:`M${String(i+1).padStart(2,'0')} · 名侦探柯南：${title}`,category:'anime',wiki:`Detective Conan: ${en}`}));
 const bgmRows = `
 honobono-log|温暖的印记|180670
 maquia|朝花夕誓|218971
