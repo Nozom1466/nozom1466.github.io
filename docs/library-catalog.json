@@ -2055,14 +2055,14 @@
     },
     "cover": "/library-covers/gta-chinatown.webp",
     "coverDimensions": {
-      "width": 1536,
-      "height": 2048
+      "width": 1280,
+      "height": 1600
     },
-    "coverSource": "https://www.ionstore.nl/nl/grand-theft-auto-chinatown-wars-playstation-psp.html",
-    "coverOriginal": "https://cdn.webshopapp.com/shops/272655/files/488456918/image.jpg",
+    "coverSource": "https://support.rockstargames.com/request/reddeadredemption2",
+    "coverOriginal": "https://images.ctfassets.net/18izrhn535ym/7K2Lckd6oHN9oFXXGESPdy/509ed917c40b850004c71d0c3c18c3ea/GTA_CW_FOB.jpg",
     "sources": [
       "https://en.wikipedia.org/wiki/Grand_Theft_Auto%3A_Chinatown_Wars",
-      "https://www.ionstore.nl/nl/grand-theft-auto-chinatown-wars-playstation-psp.html",
+      "https://support.rockstargames.com/request/reddeadredemption2",
       "http://www.rockstargames.com/chinatownwars/"
     ],
     "researched": "2026-11-13"

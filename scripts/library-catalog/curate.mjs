@@ -10,7 +10,7 @@ const updates={
  'huaihai-campaign':{source:'https://m.1905.com/m/film/1929545.shtml',heading:'大决战之淮海战役',date:'1991-08-01',fields:{导演:'李俊、蔡继渭、韦廉、杨光远',编剧:'李平分、史超、王军'},image:'https://image14.m1905.cn/uploadfile/2012/0605/20120605040151243.jpg'},
  'pingjin-campaign':{source:'https://m.1905.com/m/film/1929546.shtml',heading:'大决战之平津战役',date:'1992-01-01',fields:{导演:'李俊、蔡继渭、杨光远、韦廉',编剧:'李平分、史超、王军'},image:'https://image13.m1905.cn/mdb/uploadfile/2024/0515/20240515094758441822.jpg'},
  'crossing-chishui':{source:'https://m.1905.com/m/film/61026.shtml',heading:'四渡赤水',releaseYear:1983,fields:{导演:'蔡继渭、谷德显',编剧:'黎明、王昊、王愿坚、李传弟'},image:'https://image13.m1905.cn/uploadfile/2012/0601/20120601110137598.jpg'},
- 'gta-chinatown':{coverSource:'https://www.ionstore.nl/nl/grand-theft-auto-chinatown-wars-playstation-psp.html',image:'https://cdn.webshopapp.com/shops/272655/files/488456918/image.jpg'},
+ 'gta-chinatown':{coverSource:'https://support.rockstargames.com/request/reddeadredemption2',image:'https://images.ctfassets.net/18izrhn535ym/7K2Lckd6oHN9oFXXGESPdy/509ed917c40b850004c71d0c3c18c3ea/GTA_CW_FOB.jpg'},
  'blitz-brigade':{coverSource:'https://www.carlvaudrin.com/music.php',image:'https://www.carlvaudrin.com/img/music/blitz_brigade.jpg'},
  'brawl-stars':{coverSource:'https://www.imdb.com/title/tt9480088/',image:'https://m.media-amazon.com/images/M/MV5BMzVkNDFkNjEtZDE1OC00MTJmLWIxNjQtYWM1MWQxNThiODI0XkEyXkFqcGc%40._V1_.jpg'},
  'running-man':{coverSource:'https://sports.khan.co.kr/article/202404150000013',image:'https://images.khan.co.kr/article/2024/04/15/news-p.v1.20240414.db4acbb57fb64421bb63e36131051214.png'},
