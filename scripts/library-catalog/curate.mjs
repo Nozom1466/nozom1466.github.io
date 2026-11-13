@@ -3,6 +3,7 @@ import {readFile,writeFile} from 'node:fs/promises';
 import {load} from 'cheerio';
 import works from './works.mjs';
 const updates={
+ 'shouwang-de-juli':{source:'https://search.megbook.com.tw/mall/detail.jsp?proID=3004011',heading:'守望的距离',releaseYear:2017,fields:{作者:'周国平',出版社:'浙江人民出版社',ISBN:'9787213079634'},image:'http://img.megbook.hk/upload/mall/productImages/17/20/9787213079634.jpg'},
  'mr-six':{source:'https://m.1905.com/m/film/2224190.shtml',heading:'老炮儿',releaseYear:2015,fields:{导演:'管虎',编剧:'管虎、董润年',制片商:'华谊兄弟'},image:'https://image13.m1905.cn/mdb/uploadfile/2015/1210/20151210111542997820.jpg'},
  'zhao-wen-dao':{source:'https://book.douban.com/subject/30312029/',heading:'朝闻道',releaseYear:2018,fields:{作者:'刘慈欣',出版社:'长江文艺出版社',ISBN:'9787570204403'},image:'https://img3.doubanio.com/view/subject/l/public/s29855723.jpg'},
  'ball-lightning':{source:'https://item.xhsd.com/items/1010000100501769',heading:'球状闪电',releaseYear:2005,fields:{作者:'刘慈欣',出版社:'四川科学技术出版社',ISBN:'9787536455382'},image:'https://img2.xinhuashudian.com/bookbasepic/C/00029/75364553800810554-fm.jpg'},

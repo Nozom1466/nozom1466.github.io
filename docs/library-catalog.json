@@ -4048,5 +4048,25 @@
       "https://item.xhsd.com/items/1010000100501769"
     ],
     "researched": "2026-11-13"
+  },
+  {
+    "slug": "shouwang-de-juli",
+    "title": "守望的距离",
+    "category": "book",
+    "releaseYear": 2017,
+    "creators": {
+      "1_author": "周国平"
+    },
+    "cover": "/library-covers/shouwang-de-juli.webp",
+    "coverDimensions": {
+      "width": 370,
+      "height": 500
+    },
+    "coverSource": "https://search.megbook.com.tw/mall/detail.jsp?proID=3004011",
+    "coverOriginal": "http://img.megbook.hk/upload/mall/productImages/17/20/9787213079634.jpg",
+    "sources": [
+      "https://search.megbook.com.tw/mall/detail.jsp?proID=3004011"
+    ],
+    "researched": "2026-11-13"
   }
 ]

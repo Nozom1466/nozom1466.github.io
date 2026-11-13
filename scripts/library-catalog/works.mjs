@@ -154,6 +154,7 @@ for(const [slug,title,bgm] of [
 rows.push(
  {slug:'mr-six',title:'老炮儿',category:'film'},
  {slug:'zhao-wen-dao',title:'朝闻道',category:'book'},
- {slug:'ball-lightning',title:'球状闪电',category:'book'}
+ {slug:'ball-lightning',title:'球状闪电',category:'book'},
+ {slug:'shouwang-de-juli',title:'守望的距离',category:'book'}
 );
 export default rows;
