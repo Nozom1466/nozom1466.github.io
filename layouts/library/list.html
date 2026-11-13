@@ -40,7 +40,8 @@
         {{ with .Params.creators }}
           {{ $creatorsJson = . | jsonify }}
         {{ end }}
-        {{ $rating := .Params.rating | default 0 }}
+        {{ $rating := "" }}
+        {{ if isset .Params "rating" }}{{ $rating = .Params.rating }}{{ end }}
         {{ $summary := .Params.summary | default "" }}
         <div class="library-card" 
              data-tags="{{ $tagsStr }}"
@@ -63,7 +64,8 @@
                 {{ break }}
               {{ end }}
             {{ end }}
-            {{ $cardRating := .Params.rating | default 0.0 | float }}
+            {{ if isset .Params "rating" }}
+            {{ $cardRating := .Params.rating | float }}
             <p class="library-card-rating">
               {{- $fullStars := int (math.Floor $cardRating) -}}
               {{- $remainder := sub $cardRating (float $fullStars) -}}
@@ -79,6 +81,7 @@
               {{- end -}}
               <span class="card-rating-number">{{ printf "%.1f" $cardRating }}/5.0</span>
             </p>
+            {{ end }}
           </div>
         </div>
       {{ end }}

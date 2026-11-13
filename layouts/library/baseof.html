@@ -220,7 +220,9 @@
 
     // Popup functions
     function renderStarRating(rating) {
-      let numRating = parseFloat(rating) || 0;
+      if (rating == null || String(rating).trim() === '') return '';
+      let numRating = Number(rating);
+      if (!Number.isFinite(numRating)) return '';
       numRating = Math.max(0, Math.min(5, numRating));
 
       let starsHtml = '';
@@ -274,7 +276,9 @@
       }
 
       // Rating with stars
-      document.getElementById('popup-rating').innerHTML = renderStarRating(rating);
+      const ratingEl = document.getElementById('popup-rating');
+      ratingEl.innerHTML = renderStarRating(rating);
+      ratingEl.hidden = !ratingEl.innerHTML;
 
       // Tags
       const tagsEl = document.getElementById('popup-tags');

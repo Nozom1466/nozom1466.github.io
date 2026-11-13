@@ -1,0 +1,15 @@
+---
+title: "辉夜大小姐想让我告白？ 第二季 · 中配版"
+cover: "/library-covers/kaguya-2-cn.webp"
+library_tags:
+  - anime
+date: 2026-11-13
+catalog_id: "kaguya-2-cn"
+release_year: 2020
+creators:
+  1_director: "小俣真一"
+  2_author: "赤坂アカ"
+  3_writer: "中西やすひろ"
+  4_studio: "A-1 Pictures"
+  5_music: "羽岡佳"
+---
