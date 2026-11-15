@@ -51,12 +51,17 @@ export function convertReview(raw,{draft=true,skipDrafts=false}={}){
   const coverValue=metadata.get('cover');
   if(coverValue&&coverValue.toLowerCase()!=='first')cover=coverURL(coverValue);
   if(!cover){
-    // Without a URL, consume the first image as the cover, not a duplicate body image.
+    // Resolve a curated poster before removing an implicitly selected body image.
+    // If the poster is independent, the image and its caption stay in place.
     for(let i=0;i<lines.length&&!cover;i++){
       const music=parseAudioBlock(lines,i);
       if(music){i=music.end;continue;}
       const index=lines[i].parts.findIndex(p=>p.embed?.image);
-      if(index>=0){cover=imageURL(lines[i].parts[index].embed.image);lines[i].parts.splice(index,1);}
+      if(index>=0){
+        const candidate=imageURL(lines[i].parts[index].embed.image);
+        cover=supplementReviewMetadata({slug:'snapnote-'+n.uuid,title,cover:candidate}).cover;
+        if(cover===candidate||coverValue?.toLowerCase()==='first')lines[i].parts.splice(index,1);
+      }
     }
   }
   if(!cover)throw Error('书馆评价缺少封面，请在 cover: 下一行插入图片');

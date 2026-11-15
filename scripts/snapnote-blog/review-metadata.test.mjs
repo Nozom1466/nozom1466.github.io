@@ -6,6 +6,32 @@ import {REVIEW_TAG} from '../../static/moments/channels.mjs';
 import {access} from 'node:fs/promises';
 const slug='snapnote-a0f16e5f-d49f-4ae8-9ef9-9be58b620dba';
 
+test('an independent poster keeps the first body image and caption at their original position',()=>{
+  const image='b0ad01c284b7a1f5cc2374e54a7e4da3.png';
+  const raw={revisionId:'a'.repeat(32),tagUuids:[REVIEW_TAG],note:{uuid:slug.slice(9),createdAtMs:1700000000000,content:[
+    {insert:'Dead Poets Society\ndraft: false\nlabels: film\nrating: 4.8\ncover:\nBefore image.\n'},
+    {insert:{image}},{insert:'\ncaption: Original caption\nAfter image.\n'},
+    {insert:{image:'second.png'}},{insert:'\nLast paragraph.\n'}
+  ]}};
+  const original=JSON.stringify(raw);
+  const article=convertReview(raw,{draft:false});
+  const front=JSON.parse(article.source.split('\n\n')[0]);
+  assert.equal(front.cover,'/library-covers/dead-poets-society.jpg');
+  assert.equal(front.rating,4.8);
+  assert.equal(article.images.length,2);
+  assert.ok(article.images[0].endsWith('/'+image));
+  assert.equal((article.source.match(/<figure>/g)||[]).length,2);
+  const sequence=['<p>Before image.</p>','<figure>','Original caption','<p>After image.</p>','second.png','<p>Last paragraph.</p>'];
+  let position=-1;
+  for(const part of sequence){const next=article.source.indexOf(part,position+1);assert.ok(next>position,part);position=next;}
+  assert.equal(JSON.stringify(raw),original,'source note must not be mutated');
+  assert.equal(convertReview(raw,{draft:false}).source,article.source,'subsequent sync stays identical');
+  raw.note.uuid='11111111-1111-4111-8111-111111111111';
+  const normal=convertReview(raw,{draft:false});
+  assert.ok(JSON.parse(normal.source.split('\n\n')[0]).cover.endsWith('/'+image));
+  assert.equal((normal.source.match(/<figure>/g)||[]).length,1,'other reviews keep the existing fallback cover behavior');
+});
+
 test('official poster persists through sync without overriding a future custom cover',async()=>{
   const previous='https://snapnote-test-1316371247.cos.ap-shanghai.myqcloud.com/SnapNote_Sync/resources/b0ad01c284b7a1f5cc2374e54a7e4da3.png';
   const result=supplementReviewMetadata({slug,title:'Dead Poets Society',cover:previous});

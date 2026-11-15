@@ -1,15 +1,14 @@
 {
   "title": "Dead Poets Society",
   "date": "2026-11-15T05:18:23.778Z",
-  "lastmod": "2026-11-15T06:58:02.754Z",
+  "lastmod": "2026-11-15T18:08:04.697Z",
   "slug": "snapnote-a0f16e5f-d49f-4ae8-9ef9-9be58b620dba",
   "summary": "O‘Captain, O&#39;Captain!",
   "draft": false,
   "showtoc": false,
   "snapnote_uuid": "a0f16e5f-d49f-4ae8-9ef9-9be58b620dba",
-  "snapnote_revision": "7814955d1ba9887bc5dc4056ad624458",
+  "snapnote_revision": "6c9e9cba44659f60bc2d548ab659f68e",
   "cover": "/library-covers/dead-poets-society.jpg",
-  "cover_source": "https://www.impawards.com/1989/dead_poets_society_xxlg.html",
   "library_tags": [
     "film"
   ],
@@ -23,6 +22,7 @@
   },
   "author": "",
   "release_year": 1989,
+  "cover_source": "https://www.impawards.com/1989/dead_poets_society_xxlg.html",
   "metadata_sources": [
     "https://catalog.afi.com/Film/67915-DEAD-POETS-SOCIETY"
   ]
@@ -89,6 +89,8 @@
 <p>回想遇到的各种朋友，让我佩服的都是有自己特点、保持自己的个人色彩的同学们。想起大学的专业第一，有次在排汇报书顺序的时候第一个把名字写上去，自己笑哈哈的说 “我要当这个第一”，和大家打成一片的同时也成功的去了很好的学校；想起大学两年的室友，他说入学的时候就想着一定要出国，后来去跨国交换、去加拿大暑研，最后来到了美国找 PhD 的机会，他影响了我的人生选择；想起之前在松鼠山路上和一个项目的同学讨论过去的经历，他想都没想说 “要敢想，相信自己，敢想就能干成”，已经有了多段外企大厂实习的他后来入职了很有前景的初创公司；</p>
 
 <p>我无意强调他们的成就，但是他们个人的色彩给我留下了很深刻的印象，他们都是我过往生活的 Neil。我喜欢和他们交流，我捕捉着他们的某些色彩，将这些色彩投射到未来的我身上。我希望成为他们的一员，想成为那个有色彩的我自己。</p>
+
+<figure><a href="https://snapnote-test-1316371247.cos.ap-shanghai.myqcloud.com/SnapNote_Sync/resources/b0ad01c284b7a1f5cc2374e54a7e4da3.png" target="_blank" rel="noopener noreferrer"><img src="https://snapnote-test-1316371247.cos.ap-shanghai.myqcloud.com/SnapNote_Sync/resources/b0ad01c284b7a1f5cc2374e54a7e4da3.png" alt="文章配图" loading="lazy" style="display:block;max-width:100%;height:auto;margin:1.5em auto"></a></figure>
 
 <blockquote><p>“I went to the woods because I wished to live deliberately, to front only the essential facts of life, and see if I could not learn what it had to teach, and not, when I came to die, discover that I had not lived. I did not wish to live what was not life, living is so dear; nor did I wish to practise resignation, unless it was quite necessary. I wanted to live deep and suck out all the marrow of life, to live so sturdily and <a href="https://zhida.zhihu.com/search?content_id=262104933&amp;content_type=Article&amp;match_order=1&amp;q=Spartan&amp;zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTQ4OTI3MzcsInEiOiJTcGFydGFuIiwiemhpZGFfc291cmNlIjoiZW50aXR5IiwiY29udGVudF9pZCI6MjYyMTA0OTMzLCJjb250ZW50X3R5cGUiOiJBcnRpY2xlIiwibWF0Y2hfb3JkZXIiOjEsInpkX3Rva2VuIjpudWxsfQ.exUNqNBAB3-m6Pd6RpZI-pWmgC1dY36p5rlqMIEyhIw&amp;zhida_source=entity" rel="noopener noreferrer">Spartan</a>-like as to put to rout all that was not life, to cut a broad <a href="https://zhida.zhihu.com/search?content_id=262104933&amp;content_type=Article&amp;match_order=1&amp;q=swath&amp;zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTQ4OTI3MzcsInEiOiJzd2F0aCIsInpoaWRhX3NvdXJjZSI6ImVudGl0eSIsImNvbnRlbnRfaWQiOjI2MjEwNDkzMywiY29udGVudF90eXBlIjoiQXJ0aWNsZSIsIm1hdGNoX29yZGVyIjoxLCJ6ZF90b2tlbiI6bnVsbH0.vy2GzwRovvox9KTNdl8DT2Y19qvY3C4dOqZr7ELIGf8&amp;zhida_source=entity" rel="noopener noreferrer">swath</a> and shave close, to drive life into a corner, and reduce it to its lowest terms.”</p></blockquote>
 
