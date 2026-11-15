@@ -234,4 +234,14 @@ params:
       locations: ["黄石公园"]
       color: "blue"
       year: "2026"
+    - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/DSC_9241.jpg"
+      subject: landscape
+      locations: ["黄石公园"]
+      color: "yellow"
+      year: "2026"
+    - url: "https://myblog-1316371247.cos.ap-shanghai.myqcloud.com/myblog/DSC_9333.jpg"
+      subject: animal
+      locations: ["黄石公园"]
+      color: "green"
+      year: "2026"
 ---
