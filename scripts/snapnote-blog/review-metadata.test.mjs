@@ -3,7 +3,27 @@ import assert from 'node:assert/strict';
 import {supplementReviewMetadata} from './review-metadata.mjs';
 import {convertReview} from './review.mjs';
 import {REVIEW_TAG} from '../../static/moments/channels.mjs';
+import {access} from 'node:fs/promises';
 const slug='snapnote-a0f16e5f-d49f-4ae8-9ef9-9be58b620dba';
+
+test('official poster persists through sync without overriding a future custom cover',async()=>{
+  const previous='https://snapnote-test-1316371247.cos.ap-shanghai.myqcloud.com/SnapNote_Sync/resources/b0ad01c284b7a1f5cc2374e54a7e4da3.png';
+  const result=supplementReviewMetadata({slug,title:'Dead Poets Society',cover:previous});
+  assert.equal(result.cover,'/library-covers/dead-poets-society.jpg');
+  assert.ok(result.cover_source.includes('impawards.com/1989/'));
+  await access(new URL('../../static'+result.cover,import.meta.url));
+  assert.deepEqual(supplementReviewMetadata(result),result);
+  assert.equal(supplementReviewMetadata({slug,title:'Another film',cover:previous}).cover,previous);
+  const custom=previous.replace('b0ad01c284b7a1f5cc2374e54a7e4da3','future-cover');
+  assert.equal(supplementReviewMetadata({slug,title:'Dead Poets Society',cover:custom}).cover,custom);
+  const raw={revisionId:'a'.repeat(32),tagUuids:[REVIEW_TAG],note:{uuid:slug.slice(9),createdAtMs:1700000000000,content:[
+    {insert:'Dead Poets Society\ndraft: false\nlabels: film\nrating: 4.8\ncover: '+previous+'\n\nMy review.\n'}
+  ]}};
+  const article=convertReview(raw,{draft:false});
+  assert.equal(JSON.parse(article.source.split('\n\n')[0]).cover,result.cover);
+  assert.deepEqual(article.images,[],'local cover must not be fetched as a remote COS image');
+  assert.ok(article.source.endsWith('<p>My review.</p>\n'));
+});
 
 test('verified metadata is additive, repeatable and scoped to the same note and work',()=>{
   const input={slug,title:'Dead Poets Society',rating:4.8,summary:'My summary',cover:'cover.png',creators:{}};

@@ -8,7 +8,8 @@
   "showtoc": false,
   "snapnote_uuid": "a0f16e5f-d49f-4ae8-9ef9-9be58b620dba",
   "snapnote_revision": "7814955d1ba9887bc5dc4056ad624458",
-  "cover": "https://snapnote-test-1316371247.cos.ap-shanghai.myqcloud.com/SnapNote_Sync/resources/b0ad01c284b7a1f5cc2374e54a7e4da3.png",
+  "cover": "/library-covers/dead-poets-society.jpg",
+  "cover_source": "https://www.impawards.com/1989/dead_poets_society_xxlg.html",
   "library_tags": [
     "film"
   ],

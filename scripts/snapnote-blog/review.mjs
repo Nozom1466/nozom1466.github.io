@@ -81,5 +81,5 @@ export function convertReview(raw,{draft=true,skipDrafts=false}={}){
     if(!states[value.toLowerCase()])throw Error('status 支持 Reading、Completed、Not Started');front.status=states[value.toLowerCase()];
   }
   const normalized=supplementReviewMetadata(normalizeOriginalNames(front));
-  return {...article,title:normalized.title,section:'library',images:[cover,...article.images],source:JSON.stringify(normalized,null,2)+body};
+  return {...article,title:normalized.title,section:'library',images:[...(normalized.cover.startsWith('/')?[]:[normalized.cover]),...article.images],source:JSON.stringify(normalized,null,2)+body};
 }

@@ -5,6 +5,11 @@ const works={
     title:'Dead Poets Society',
     release_year:1989,
     source:'https://catalog.afi.com/Film/67915-DEAD-POETS-SOCIETY',
+    cover:{
+      previous:'https://snapnote-test-1316371247.cos.ap-shanghai.myqcloud.com/SnapNote_Sync/resources/b0ad01c284b7a1f5cc2374e54a7e4da3.png',
+      replacement:'/library-covers/dead-poets-society.jpg',
+      source:'https://www.impawards.com/1989/dead_poets_society_xxlg.html'
+    },
     creators:{
       director:'Peter Weir',
       screenplay:'Tom Schulman',
@@ -26,6 +31,10 @@ export function supplementReviewMetadata(front){
     if(existing){if(!creators[existing])creators[existing]=name;}
     else creators[`${++order}_${role}`]=name;
   }
+  // Replace only the old cover explicitly selected by the user; a future new
+  // SnapNote cover still takes precedence. Keep the full theatrical poster ratio.
+  const usePoster=work.cover&&[work.cover.previous,work.cover.replacement].includes(front.cover);
   return {...front,title:work.title,release_year:front.release_year??work.release_year,creators,
+    ...(usePoster?{cover:work.cover.replacement,cover_source:work.cover.source}:{}),
     metadata_sources:[...new Set([...(front.metadata_sources||[]),work.source])]};
 }
